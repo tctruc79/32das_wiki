@@ -49,5 +49,8 @@ updated every time a new chapter is ingested.
   [tctruc79.github.io/32das_wiki](https://tctruc79.github.io/32das_wiki/)
   (default `/vi/` fully bilingual, `/en/` fully English). Repo:
   [github.com/tctruc79/32das_wiki](https://github.com/tctruc79/32das_wiki).
-- Interactive Mindmap Artifact: _not created yet_ —
-  link will be added once complete.
+- Interactive bilingual Mindmap Artifact:
+  [claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d](https://claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d)
+  — a tab per chapter (K31 Ch.1-8 + K32 Ch.1 separate), an "All chapters"
+  tab (9 thematic clusters A-I), a "Self-test" tab (15 exam questions with
+  suggested answers).

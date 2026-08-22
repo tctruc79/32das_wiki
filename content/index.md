@@ -63,6 +63,12 @@ updated every time a new chapter is ingested.</span>
   [tctruc79.github.io/32das_wiki](https://tctruc79.github.io/32das_wiki/)
   (default `/vi/` fully bilingual, `/en/` fully English). Repo:
   [github.com/tctruc79/32das_wiki](https://github.com/tctruc79/32das_wiki).</span>
-- Mindmap Artifact tương tác: _chưa tạo_ — sẽ điền link sau khi hoàn tất.
-  <br><span class="en">Interactive Mindmap Artifact: _not created yet_ —
-  link will be added once complete.</span>
+- Mindmap Artifact tương tác song ngữ:
+  [claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d](https://claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d)
+  — tab theo từng chương (K31 Ch.1-8 + K32 Ch.1 riêng), tab "Tất cả chương"
+  (9 cụm chủ đề A-I), tab "Tự test" (15 câu hỏi ôn thi có đáp án gợi ý).
+  <br><span class="en">Interactive bilingual Mindmap Artifact:
+  [claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d](https://claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d)
+  — a tab per chapter (K31 Ch.1-8 + K32 Ch.1 separate), an "All chapters"
+  tab (9 thematic clusters A-I), a "Self-test" tab (15 exam questions with
+  suggested answers).</span>
