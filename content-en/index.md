@@ -45,6 +45,9 @@ updated every time a new chapter is ingested.
 
 ## Publish
 
-_Not published yet — Quartz site and Mindmap Artifact
-links will be added here once the wiki has enough content (Phase 2, per
-user request 2026-08-22)._
+- Bilingual Quartz site:
+  [tctruc79.github.io/32das_wiki](https://tctruc79.github.io/32das_wiki/)
+  (default `/vi/` fully bilingual, `/en/` fully English). Repo:
+  [github.com/tctruc79/32das_wiki](https://github.com/tctruc79/32das_wiki).
+- Interactive Mindmap Artifact: _not created yet_ —
+  link will be added once complete.

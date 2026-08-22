@@ -56,8 +56,13 @@ updated every time a new chapter is ingested.</span>
 
 ## Publish - <span class="en">Publish</span>
 
-_Chưa publish — sẽ điền link site Quartz + Mindmap Artifact sau khi wiki
-có đủ nội dung (Phase 2, theo yêu cầu người dùng 2026-08-22)._
-<br><span class="en">_Not published yet — Quartz site and Mindmap Artifact
-links will be added here once the wiki has enough content (Phase 2, per
-user request 2026-08-22)._</span>
+- Site Quartz song ngữ: [tctruc79.github.io/32das_wiki](https://tctruc79.github.io/32das_wiki/)
+  (bản mặc định `/vi/` song ngữ đầy đủ, `/en/` bản hoàn toàn tiếng Anh).
+  Repo: [github.com/tctruc79/32das_wiki](https://github.com/tctruc79/32das_wiki).
+  <br><span class="en">Bilingual Quartz site:
+  [tctruc79.github.io/32das_wiki](https://tctruc79.github.io/32das_wiki/)
+  (default `/vi/` fully bilingual, `/en/` fully English). Repo:
+  [github.com/tctruc79/32das_wiki](https://github.com/tctruc79/32das_wiki).</span>
+- Mindmap Artifact tương tác: _chưa tạo_ — sẽ điền link sau khi hoàn tất.
+  <br><span class="en">Interactive Mindmap Artifact: _not created yet_ —
+  link will be added once complete.</span>
