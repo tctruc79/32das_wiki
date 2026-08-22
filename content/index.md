@@ -1,0 +1,63 @@
+---
+aliases: ['overview']
+type: overview
+title: "Bản đồ môn học"
+title_en: "Course Map"
+tags: [overview]
+created: 2026-08-22
+updated: 2026-08-22
+---
+
+## Môn học - <span class="en">The course</span>
+
+**Introduction to Data Science and Applications** — University of Economics
+Ho Chi Minh City, Vietnam-Netherlands Programme. Giảng viên: [[tran-thi-tuan-anh]].
+<br><span class="en">**Introduction to Data Science and Applications** —
+University of Economics Ho Chi Minh City, Vietnam-Netherlands Programme.
+Instructor: [[tran-thi-tuan-anh]].</span>
+
+## 2 khóa - <span class="en">Two cohorts</span>
+
+Wiki này theo dõi 2 khóa học tách biệt hoàn toàn (xem CLAUDE.md, mục "Tách
+cụm K31/K32"): K31 (2025, đã có đủ 8 chương trong `raw/`) và K32 (2026,
+khóa hiện tại, đang được giảng viên phát tài liệu dần).
+<br><span class="en">This wiki tracks two fully separated cohorts (see
+CLAUDE.md, "Tách cụm K31/K32"): K31 (2025, all 8 chapters already in
+`raw/`) and K32 (2026, the current cohort, materials still being released
+by the instructor).</span>
+
+### K31 (2025) — 8 chương - <span class="en">K31 (2025) — 8 Chapters</span>
+
+1. Introduction: Data Science and Data-Analytic Thinking
+2. Python and Jupyter Notebook
+3. Machine Learning with Python (KNN)
+4. Decision Tree & Random Forest
+5. Ridge and Lasso Regression
+6. Clustering in Unsupervised Learning
+7. Principal Component Analysis (PCA)
+8. Deep Learning
+
+Tiến độ ingest K31: **8/8 chương — hoàn tất**.
+<br><span class="en">K31 ingest progress: **8/8 chapters — complete**.</span>
+
+### K32 (2026 — khóa hiện tại) - <span class="en">K32 (2026 — Current Cohort)</span>
+
+Tiến độ ingest K32: 1/? chương (Chapter 1 — còn 7 chương chưa có file
+trong `raw/Lecture Notes/K32/`).
+<br><span class="en">K32 ingest progress: 1/? chapters (Chapter 1 — 7
+more chapters have no file yet in `raw/Lecture Notes/K32/`).</span>
+
+## Ôn thi - <span class="en">Exam prep</span>
+
+[[on-thi]] — điểm tổng hợp duy nhất để ôn thi, cập nhật mỗi lần ingest 1
+chương mới.
+<br><span class="en">[[on-thi]] — the single compounding exam-prep page,
+updated every time a new chapter is ingested.</span>
+
+## Publish - <span class="en">Publish</span>
+
+_Chưa publish — sẽ điền link site Quartz + Mindmap Artifact sau khi wiki
+có đủ nội dung (Phase 2, theo yêu cầu người dùng 2026-08-22)._
+<br><span class="en">_Not published yet — Quartz site and Mindmap Artifact
+links will be added here once the wiki has enough content (Phase 2, per
+user request 2026-08-22)._</span>
