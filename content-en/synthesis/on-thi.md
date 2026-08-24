@@ -3,7 +3,7 @@ type: synthesis
 title: "Exam Prep"
 tags: [synthesis, exam-prep]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-08-24
 status: complete
 ---
 
@@ -24,6 +24,7 @@ section).
 | [[chapter07-pca]] | K31 | PCA: covariance, eigenvalue/eigenvector, procedure, combined with Clustering/Classification/Regression | The highest cross-reference density among the 8 chapters |
 | [[chapter08-deep-learning]] | K31 | History of deep learning, perceptron, forward/backward propagation, ANN/CNN/RNN | Gap: no source yet teaches Logistic Regression in detail |
 | [[chapter01-introduction-k32]] | K32 | 5 V's, working definition, DS vs Analytics vs BI, 5 types of analytics (adds Causal), 7-condition checklist | Separate cluster — no cross-links to K31 |
+| [[chapter02-python-jupyter-k32]] | K32 | Python (full syntax), Jupyter (kernel/cell/magic commands), Python for Data Analysis (NumPy/pandas/matplotlib/seaborn/statsmodels/scikit-learn) using `Data2.csv` | Nearly double K31's length (78 vs 41 slides) — adds 2 entirely new sections; separate cluster — no cross-links to K31 |
 
 ## Topic clusters
 
@@ -93,6 +94,16 @@ DS/Analytics/BI table, roles table), [[data-driven-decision-making-k32]]
 concrete steps, problem chain, 7-condition checklist) — all from
 [[chapter01-introduction-k32]] (K32).
 
+### J. K32 — Chapter 2: Expanded Python Tooling (2026)
+
+_A separate cluster for K32, isolated from clusters
+A-I per the separation rule._
+
+[[python-jupyter-tooling-k32]] (core Python +
+Jupyter mechanics) and [[python-data-analysis-stack]] (the data-analysis
+library stack, using `Data2.csv`) — both from
+[[chapter02-python-jupyter-k32]] (K32).
+
 ## Tensions / differences between sources
 
 No real tension within the K31 cluster itself (8/8
@@ -105,6 +116,18 @@ this is **not logged as a "tension"** between 2 pages (they don't
 cross-link) — noted here in plain text only as a historical fact (the
 instructor updated content across years), with no wikilink between the 2
 clusters.
+
+K31 vs K32 (Chapter 2): the gap is even larger than
+Chapter 1 — K32 (78 slides) is almost double K31 (41 slides) and adds 2
+sections **entirely absent from K31**: "Python Essentials by Example"
+(core syntax from scratch) and "Python for Data Analysis" (NumPy/pandas/
+matplotlib/seaborn/statsmodels/scikit-learn, using real `Data2.csv`
+data). K31's version stopped at introducing Python + installing/using
+Jupyter + Markdown, with no syntax or data-analysis-library teaching at
+all — the K31 equivalent (where it exists) is scattered across later
+algorithm chapters instead of concentrated in one place like K32. Per
+the separation rule, noted in plain text only, no cross-cluster
+wikilink.
 
 ## Concept → source map
 
@@ -136,6 +159,8 @@ clusters.
 | [[data-science-definition-k32]] | [[chapter01-introduction-k32]] | K32 |
 | [[data-driven-decision-making-k32]] | [[chapter01-introduction-k32]] | K32 |
 | [[data-analytic-thinking-k32]] | [[chapter01-introduction-k32]] | K32 |
+| [[python-jupyter-tooling-k32]] | [[chapter02-python-jupyter-k32]] | K32 |
+| [[python-data-analysis-stack]] | [[chapter02-python-jupyter-k32]] | K32 |
 
 ## Exam question bank
 
@@ -176,3 +201,10 @@ clusters.
   error?
 - (K32) Apply the 7-condition checklist to a
   concrete business problem — does it suit data science?
+- (K32) Distinguish the roles of statsmodels and
+  scikit-learn when fitting the same regression model — which is
+  oriented towards explanation, which towards prediction, and why does
+  that distinction matter?
+- (K32) Explain why `In [n]`/`Out[n]` in Jupyter
+  reflects execution order, not display order — give an example scenario
+  where misunderstanding this causes an error.

@@ -4,7 +4,7 @@ title: "Ôn thi"
 title_en: "Exam Prep"
 tags: [synthesis, exam-prep]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-08-24
 status: complete
 ---
 
@@ -27,6 +27,7 @@ section).</span>
 | [[chapter07-pca]] | K31 | PCA: hiệp phương sai, trị riêng/véc-tơ riêng, quy trình, kết hợp với Clustering/Classification/Regression | Mật độ cross-reference cao nhất trong 8 chương |
 | [[chapter08-deep-learning]] | K31 | Lịch sử học sâu, perceptron, lan truyền tiến/lùi, ANN/CNN/RNN | Gap: chưa có nguồn giảng Logistic Regression chi tiết |
 | [[chapter01-introduction-k32]] | K32 | 5 V's, định nghĩa vận hành, DS vs Analytics vs BI, 5 loại phân tích (thêm Causal), checklist 7 điều kiện | Tách cụm — không link chéo K31 |
+| [[chapter02-python-jupyter-k32]] | K32 | Python (cú pháp đầy đủ), Jupyter (kernel/cell/magic commands), Python for Data Analysis (NumPy/pandas/matplotlib/seaborn/statsmodels/scikit-learn) dùng `Data2.csv` | Gần gấp đôi bản K31 (78 vs 41 slide) — thêm 2 phần hoàn toàn mới; tách cụm — không link chéo K31 |
 
 ## 2. Cụm chủ đề - <span class="en">Topic clusters</span>
 
@@ -130,6 +131,21 @@ DS/Analytics/BI table, roles table), [[data-driven-decision-making-k32]]
 concrete steps, problem chain, 7-condition checklist) — all from
 [[chapter01-introduction-k32]] (K32).</span>
 
+### J. K32 — Chapter 2: Công cụ Python mở rộng (2026) - <span class="en">J. K32 — Chapter 2: Expanded Python Tooling (2026)</span>
+
+_Cụm riêng cho K32, tách biệt khỏi cụm A-I theo quy tắc tách cụm._
+<br><span class="en">_A separate cluster for K32, isolated from clusters
+A-I per the separation rule._</span>
+
+[[python-jupyter-tooling-k32]] (Python cơ bản + cách dùng Jupyter: cú
+pháp, kernel, cell, magic commands) và [[python-data-analysis-stack]]
+(NumPy/pandas/matplotlib/seaborn/statsmodels/scikit-learn, dùng
+`Data2.csv`) — cả hai từ [[chapter02-python-jupyter-k32]] (K32).
+<br><span class="en">[[python-jupyter-tooling-k32]] (core Python +
+Jupyter mechanics) and [[python-data-analysis-stack]] (the data-analysis
+library stack, using `Data2.csv`) — both from
+[[chapter02-python-jupyter-k32]] (K32).</span>
+
 ## 3. Mâu thuẫn / khác biệt giữa các nguồn - <span class="en">Tensions / differences between sources</span>
 
 Không có mâu thuẫn thật trong nội bộ cụm K31 (8/8 chương). Riêng K31 vs
@@ -151,6 +167,30 @@ this is **not logged as a "tension"** between 2 pages (they don't
 cross-link) — noted here in plain text only as a historical fact (the
 instructor updated content across years), with no wikilink between the 2
 clusters.</span>
+
+K31 vs K32 (Chapter 2): khác biệt còn lớn hơn cả Chapter 1 — K32 (78
+slide) gần gấp đôi K31 (41 slide) và thêm nguyên 2 phần **hoàn toàn mới
+không tồn tại ở K31**: "Python Essentials by Example" (dạy cú pháp Python
+từ đầu — biến, kiểu dữ liệu, cấu trúc điều khiển, hàm, xử lý lỗi) và
+"Python for Data Analysis" (NumPy/pandas/matplotlib/seaborn/statsmodels/
+scikit-learn, dùng dữ liệu thật `Data2.csv`). Bản K31 dừng lại ở mức giới
+thiệu Python + cài đặt/dùng Jupyter + Markdown, không dạy cú pháp hay thư
+viện phân tích dữ liệu nào — nội dung tương đương ở K31 (nếu có) nằm rải
+rác ở các chương thuật toán sau (KNN dùng scikit-learn ở Chapter 3, hồi
+quy dùng statsmodels-tương tự ở Chapter 5), không tập trung thành 1 chỗ
+như K32. Cũng theo quy tắc tách cụm, ghi nhận bằng chữ thường, không tạo
+wikilink chéo cụm.
+<br><span class="en">K31 vs K32 (Chapter 2): the gap is even larger than
+Chapter 1 — K32 (78 slides) is almost double K31 (41 slides) and adds 2
+sections **entirely absent from K31**: "Python Essentials by Example"
+(core syntax from scratch) and "Python for Data Analysis" (NumPy/pandas/
+matplotlib/seaborn/statsmodels/scikit-learn, using real `Data2.csv`
+data). K31's version stopped at introducing Python + installing/using
+Jupyter + Markdown, with no syntax or data-analysis-library teaching at
+all — the K31 equivalent (where it exists) is scattered across later
+algorithm chapters instead of concentrated in one place like K32. Per
+the separation rule, noted in plain text only, no cross-cluster
+wikilink.</span>
 
 ## 4. Bản đồ khái niệm → nguồn - <span class="en">Concept → source map</span>
 
@@ -182,6 +222,8 @@ clusters.</span>
 | [[data-science-definition-k32]] | [[chapter01-introduction-k32]] | K32 |
 | [[data-driven-decision-making-k32]] | [[chapter01-introduction-k32]] | K32 |
 | [[data-analytic-thinking-k32]] | [[chapter01-introduction-k32]] | K32 |
+| [[python-jupyter-tooling-k32]] | [[chapter02-python-jupyter-k32]] | K32 |
+| [[python-data-analysis-stack]] | [[chapter02-python-jupyter-k32]] | K32 |
 
 ## 5. Ngân hàng câu hỏi ôn thi - <span class="en">Exam question bank</span>
 
@@ -250,3 +292,16 @@ clusters.</span>
   bài toán đó có phù hợp làm khoa học dữ liệu không?
   <br><span class="en">(K32) Apply the 7-condition checklist to a
   concrete business problem — does it suit data science?</span>
+- (K32) Phân biệt vai trò của statsmodels và scikit-learn khi cùng ước
+  lượng 1 mô hình hồi quy — cái nào hướng tới giải thích, cái nào hướng
+  tới dự đoán, và vì sao sự khác biệt đó quan trọng?
+  <br><span class="en">(K32) Distinguish the roles of statsmodels and
+  scikit-learn when fitting the same regression model — which is
+  oriented towards explanation, which towards prediction, and why does
+  that distinction matter?</span>
+- (K32) Giải thích vì sao `In [n]`/`Out[n]` trong Jupyter thể hiện thứ tự
+  thực thi chứ không phải thứ tự hiển thị — cho 1 ví dụ tình huống dễ gây
+  lỗi vì hiểu sai điều này.
+  <br><span class="en">(K32) Explain why `In [n]`/`Out[n]` in Jupyter
+  reflects execution order, not display order — give an example scenario
+  where misunderstanding this causes an error.</span>

@@ -4,7 +4,7 @@ type: overview
 title: "Course Map"
 tags: [overview]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-08-24
 ---
 
 ## The course
@@ -35,8 +35,11 @@ K31 ingest progress: **8/8 chapters — complete**.
 
 ### K32 (2026 — Current Cohort)
 
-K32 ingest progress: 1/? chapters (Chapter 1 — 7
-more chapters have no file yet in `raw/Lecture Notes/K32/`).
+K32 ingest progress: 2/? chapters (Chapters 1-2 — 6
+more chapters have no file yet in `raw/Lecture Notes/K32/`). Chapter 2
+K32 is nearly double the length of the K31 version and adds a whole new
+"Python for Data Analysis" section, using the `Data2.csv` practice
+dataset.
 
 ## Exam prep
 

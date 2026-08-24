@@ -5,7 +5,7 @@ title: "Bản đồ môn học"
 title_en: "Course Map"
 tags: [overview]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-08-24
 ---
 
 ## Môn học - <span class="en">The course</span>
@@ -42,10 +42,15 @@ Tiến độ ingest K31: **8/8 chương — hoàn tất**.
 
 ### K32 (2026 — khóa hiện tại) - <span class="en">K32 (2026 — Current Cohort)</span>
 
-Tiến độ ingest K32: 1/? chương (Chapter 1 — còn 7 chương chưa có file
-trong `raw/Lecture Notes/K32/`).
-<br><span class="en">K32 ingest progress: 1/? chapters (Chapter 1 — 7
-more chapters have no file yet in `raw/Lecture Notes/K32/`).</span>
+Tiến độ ingest K32: 2/? chương (Chapter 1-2 — còn 6 chương chưa có file
+trong `raw/Lecture Notes/K32/`). Chapter 2 K32 gần gấp đôi độ dài bản K31
+và thêm hẳn phần "Python for Data Analysis" (NumPy/pandas/matplotlib/
+seaborn/statsmodels/scikit-learn), dùng dữ liệu thực hành `Data2.csv`.
+<br><span class="en">K32 ingest progress: 2/? chapters (Chapters 1-2 — 6
+more chapters have no file yet in `raw/Lecture Notes/K32/`). Chapter 2
+K32 is nearly double the length of the K31 version and adds a whole new
+"Python for Data Analysis" section, using the `Data2.csv` practice
+dataset.</span>
 
 ## Ôn thi - <span class="en">Exam prep</span>
 
