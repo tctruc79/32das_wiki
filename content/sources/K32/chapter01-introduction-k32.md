@@ -4,9 +4,9 @@ title: "Chapter 1 (K32) — Khoa học Dữ liệu và Tư duy Phân tích"
 title_en: "Chapter 1 (K32) — Data Science and Data-Analytic Thinking"
 tags: [chapter-1, k32, foundations, course-admin]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-08-28
 status: complete
-source_file: "raw/Lecture Notes/K32/VNP_DataScience_Chapter01_Introduction_2026.pdf"
+source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduction_2026.pdf"
 ---
 
 ## Metadata
@@ -324,7 +324,7 @@ source_file: "raw/Lecture Notes/K32/VNP_DataScience_Chapter01_Introduction_2026.
 
 ## Trích dẫn - <span class="en">Citation</span>
 
-`raw/Lecture Notes/K32/VNP_DataScience_Chapter01_Introduction_2026.pdf`,
+`raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduction_2026.pdf`,
 slide 1-41 theo số trang chân trang gốc (course admin: slide 2-10; nội
 dung chương: slide 11-41). File PDF có 45 trang vật lý.
 <br><span class="en">`raw/Lecture Notes/K32/

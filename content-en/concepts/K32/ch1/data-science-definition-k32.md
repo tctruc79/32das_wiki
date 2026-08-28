@@ -42,18 +42,21 @@ improves.
   reporting), Data lake (raw data of all formats, modelled only when
   used), Data integration (combining sources into one consistent
   view).
-- **Data Science vs Data Analytics vs Business Intelligence table** (5
-  criteria — question/data/methods/output/typical tools):
+- **Bảng so sánh Khoa học dữ liệu vs Phân tích dữ liệu vs Business
+  Intelligence** (5 tiêu chí — câu hỏi/dữ liệu/phương pháp/đầu ra/công
+  cụ điển hình):
 
-  | Criterion | Business Intelligence | Data Analytics | Data Science |
+  | Tiêu chí | Business Intelligence | Data Analytics | Data Science |
   |---|---|---|---|
-  | Question | What happened? | What happened, and why? | What will happen, and what should we do? |
-  | Data | Structured, internal, known | Mostly structured | Structured + unstructured, often new sources |
-  | Methods | Reporting, aggregation | Statistical analysis, testing | Modelling, machine learning, programming |
-  | Output | Dashboards, reports | Insight, recommendations | Models, predictions, data products |
-  | Typical tools | Power BI, Tableau, SQL | Excel, SQL, R | Python, R, ML libraries |
+  | Câu hỏi | Điều gì đã xảy ra? | Điều gì đã xảy ra, và vì sao? | Điều gì sẽ xảy ra, và nên làm gì? |
+  | Dữ liệu | Có cấu trúc, nội bộ, đã biết | Chủ yếu có cấu trúc | Cấu trúc + phi cấu trúc, thường có nguồn mới |
+  | Phương pháp | Báo cáo, tổng hợp | Phân tích thống kê, kiểm định | Mô hình hóa, học máy, lập trình |
+  | Đầu ra | Dashboard, báo cáo | Hiểu biết, đề xuất | Mô hình, dự đoán, sản phẩm dữ liệu |
+  | Công cụ điển hình | Power BI, Tableau, SQL | Excel, SQL, R | Python, R, thư viện học máy |
 
-  Conclusion: overlapping practices, not rival
+  **Data Science vs Data Analytics vs Business
+  Intelligence table** (5 criteria — question/data/methods/output/typical
+  tools). Conclusion: overlapping practices, not rival
   professions.
 - **Who works with data science**: **Data
   engineer**, **Data analyst**, **Data scientist**, **ML engineer**,

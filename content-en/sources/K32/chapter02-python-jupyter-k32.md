@@ -3,9 +3,9 @@ type: source
 title: "Chapter 2 (K32) — Python and Jupyter Notebook"
 tags: [chapter-2, k32, tooling, python, data-analysis]
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-28
 status: complete
-source_file: "raw/Lecture Notes/K32/VNP_DataScience_Chapter02_Python_and_Jupyter_Notebook_2026.pdf"
+source_file: "raw/Lecture Notes/K32/Chapter02/VNP_DataScience_Chapter02_Python_and_Jupyter_Notebook_2026.pdf"
 ---
 
 ## Metadata
@@ -28,7 +28,7 @@ source_file: "raw/Lecture Notes/K32/VNP_DataScience_Chapter02_Python_and_Jupyter
   separation rule** (CLAUDE.md), this page does not link directly to the
   K31 source page.
 - **Companion practice dataset**: `raw/Lecture
-  Notes/K32/Data2.csv` — used as the worked example for the pandas
+  Notes/K32/Chapter02/Data2.csv` — used as the worked example for the pandas
   section (4.3, slide 60). See the dedicated section below for its
   structure.
 
@@ -92,21 +92,24 @@ obvious way to do it".
   given the course is in an economics programme), web development,
   SEO, blockchain, game/software development, automation, GUI apps, web
   scraping, multimedia.
-- **Why Python?** (slides 21-23): key features —
-  free, open source, accessible, versatile, powerful, strong community,
-  **interpreted** (runs line by line, no compilation step), an
-  ecosystem of over **500,000 packages on PyPI**. **The comparison
-  table** (slide 22, entirely new vs K31) puts Python, R, Stata/EViews
-  and Excel side by side:
+- **Vì sao chọn Python?** (slide 21-23): đặc điểm chính — miễn phí, mã
+  nguồn mở, dễ tiếp cận, đa năng, mạnh mẽ, cộng đồng lớn, **thông dịch**
+  (chạy từng dòng, không cần biên dịch), hệ sinh thái hơn **500.000 gói
+  trên PyPI**. **Bảng so sánh Python với công cụ khác** (slide 22, mới
+  hoàn toàn so với K31):
 
-  | Tool | Strengths | Limitations |
+  | Công cụ | Điểm mạnh | Hạn chế |
   |---|---|---|
-  | Python | General-purpose, data science, ML, automation, free | Slower than C for heavy loops |
-  | R | Statistics, econometrics, graphics, free | Less general-purpose |
-  | Stata, EViews | Ready-made econometrics, easy syntax | Commercial licence, less flexible |
-  | Excel | Familiar, fast for small data | Hard to reproduce, size limits |
+  | Python | Đa dụng, khoa học dữ liệu, ML, tự động hóa, miễn phí | Chậm hơn C với vòng lặp nặng |
+  | R | Thống kê, kinh tế lượng, đồ họa, miễn phí | Ít đa dụng hơn |
+  | Stata, EViews | Kinh tế lượng dựng sẵn, cú pháp dễ | Bản quyền thương mại, kém linh hoạt |
+  | Excel | Quen thuộc, nhanh với dữ liệu nhỏ | Khó tái lập, giới hạn kích thước |
 
-  Conclusion: Python and R are **complements**, not
+  **Why Python?** (slides 21-23): key features —
+  free, open source, accessible, versatile, powerful, strong community,
+  **interpreted**, 500,000+ packages on PyPI. **The comparison table**
+  (slide 22, entirely new vs K31) puts Python, R, Stata/EViews and Excel
+  side by side. Conclusion: Python and R are **complements**, not
   substitutes. Tools: CPython interpreter; IDEs — PyCharm, Spyder,
   **VS Code** (new), Jupyter/JupyterLab; Git/GitHub; online platforms —
   **Google Colab, Kaggle Notebooks, Binder** (new — K31 only mentioned
@@ -284,7 +287,7 @@ introduces the library stack used throughout the rest of the course. →
 
 ## Practice dataset: Data2.csv
 
-- **Path**: `raw/Lecture Notes/K32/Data2.csv` — the
+- **Path**: `raw/Lecture Notes/K32/Chapter02/Data2.csv` — the
   real-data example for 4.3-4.5 (pandas). It is **Vietnamese
   provincial socioeconomic data for 2014**: 63 rows (provinces), 13
   columns, covering 2 regions in this file — the **Red River Delta**
@@ -332,7 +335,7 @@ introduces the library stack used throughout the rest of the course. →
 
 ## Citation
 
-`raw/Lecture Notes/K32/
+`raw/Lecture Notes/K32/Chapter02/
 VNP_DataScience_Chapter02_Python_and_Jupyter_Notebook_2026.pdf`, slides
-1-78; `raw/Lecture Notes/K32/Data2.csv` (the 4.3-4.5 practice
+1-78; `raw/Lecture Notes/K32/Chapter02/Data2.csv` (the 4.3-4.5 practice
 dataset).

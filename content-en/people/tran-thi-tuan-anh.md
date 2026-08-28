@@ -3,7 +3,7 @@ type: person
 title: "Trần Thị Tuấn Anh"
 tags: [instructor]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-08-28
 status: complete
 ---
 
@@ -39,3 +39,10 @@ one real individual, not content that can diverge by cohort.
   materials (K31, 2025).
 - [[chapter01-introduction-k32]] — course info,
   grading, materials (K32, 2026).
+- [[chapter02-python-jupyter-k32]] — the expanded
+  Python/Jupyter tooling chapter (K32, 2026).
+- [[chapter03-supervised-learning-k32]] — the
+  112-slide supervised learning chapter covering the whole
+  classification and regression branch (K32, 2026); this deck carries
+  several self-correction boxes versus earlier versions (slides 17, 32)
+  and a deliberate debugging exercise in the Example 3.1 code.

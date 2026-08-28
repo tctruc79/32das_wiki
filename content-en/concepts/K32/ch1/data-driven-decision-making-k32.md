@@ -22,16 +22,20 @@ action.
   why; predicting the future; **estimating the effect of a specific
   action (new)**; recommending actions; supporting real-time decisions;
   reducing subjective bias.
-- **5 types of analytics** (increasing complexity/value), as a question /
-  typical method / characteristic error table:
+- **5 loại phân tích** (mức độ phức tạp/giá trị tăng dần), trình bày
+  dưới dạng bảng câu hỏi / phương pháp điển hình / lỗi đặc trưng:
 
-  | Type | Question | Typical method | Characteristic error |
+  | Loại | Câu hỏi | Phương pháp điển hình | Lỗi đặc trưng |
   |---|---|---|---|
-  | Descriptive | What happened? | Aggregation, segmentation, visualisation | Undefined measures; comparing unlike periods |
-  | Diagnostic | Why did it happen? | Drill-down, cohort comparison, correlation | Reporting a confounded correlation as if it were an explanation |
-  | Predictive | What is likely to happen? | Supervised learning | Assuming the prediction survives the action it triggers |
-  | **Causal (new)** | What if we intervened? | Experiments; A/B tests | Claiming causation from observational comparison |
-  | Prescriptive | What should we do? | Expected value, optimisation | Optimising a statistical metric instead of the business goal |
+  | Mô tả (Descriptive) | Điều gì đã xảy ra? | Tổng hợp, phân đoạn, trực quan hóa | Đo lường không rõ định nghĩa; so sánh sai kỳ |
+  | Chẩn đoán (Diagnostic) | Vì sao nó xảy ra? | Drill-down, so sánh cohort, tương quan | Báo cáo 1 tương quan gây nhiễu như thể là lời giải thích |
+  | Dự đoán (Predictive) | Điều gì có khả năng xảy ra? | Học có giám sát | Giả định dự đoán vẫn đúng sau khi hành động dựa trên nó |
+  | **Nhân quả (Causal, mới)** | Nếu ta can thiệp thì sao? | Thực nghiệm; A/B test | Khẳng định quan hệ nhân quả từ so sánh quan sát |
+  | Đề xuất (Prescriptive) | Nên làm gì? | Kỳ vọng giá trị, tối ưu hóa | Tối ưu 1 chỉ số thống kê thay vì mục tiêu kinh doanh |
+
+  **5 types of analytics** (increasing complexity/
+  value), as a question / typical method / characteristic error
+  table.
 
 - This version has **5 types of analytics**, adding
   **Causal** (between Predictive and Prescriptive) vs the more classic

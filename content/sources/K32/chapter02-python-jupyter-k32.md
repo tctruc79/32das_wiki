@@ -4,9 +4,9 @@ title: "Chapter 2 (K32) — Python và Jupyter Notebook"
 title_en: "Chapter 2 (K32) — Python and Jupyter Notebook"
 tags: [chapter-2, k32, tooling, python, data-analysis]
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-08-28
 status: complete
-source_file: "raw/Lecture Notes/K32/VNP_DataScience_Chapter02_Python_and_Jupyter_Notebook_2026.pdf"
+source_file: "raw/Lecture Notes/K32/Chapter02/VNP_DataScience_Chapter02_Python_and_Jupyter_Notebook_2026.pdf"
 ---
 
 ## Metadata
@@ -43,11 +43,11 @@ source_file: "raw/Lecture Notes/K32/VNP_DataScience_Chapter02_Python_and_Jupyter
   syntax or data-analysis-library teaching at all. **Per the cohort
   separation rule** (CLAUDE.md), this page does not link directly to the
   K31 source page.</span>
-- **Dữ liệu thực hành đi kèm**: `raw/Lecture Notes/K32/Data2.csv` — dùng
+- **Dữ liệu thực hành đi kèm**: `raw/Lecture Notes/K32/Chapter02/Data2.csv` — dùng
   làm ví dụ minh họa cho mục pandas (4.3, slide 60). Xem chi tiết cấu
   trúc dữ liệu ở mục riêng bên dưới.
   <br><span class="en">**Companion practice dataset**: `raw/Lecture
-  Notes/K32/Data2.csv` — used as the worked example for the pandas
+  Notes/K32/Chapter02/Data2.csv` — used as the worked example for the pandas
   section (4.3, slide 60). See the dedicated section below for its
   structure.</span>
 
@@ -586,13 +586,13 @@ introduces the library stack used throughout the rest of the course. →
 
 ## Dữ liệu thực hành: Data2.csv - <span class="en">Practice dataset: Data2.csv</span>
 
-- **Đường dẫn**: `raw/Lecture Notes/K32/Data2.csv` — dữ liệu dùng làm ví
+- **Đường dẫn**: `raw/Lecture Notes/K32/Chapter02/Data2.csv` — dữ liệu dùng làm ví
   dụ thật ở mục 4.3-4.5 (pandas). Đây là dữ liệu **kinh tế-xã hội cấp
   tỉnh của Việt Nam, năm 2014**: 63 hàng (tương ứng các tỉnh/thành),
   13 cột, thuộc 2 vùng trong dữ liệu này — **Đồng bằng sông Hồng** và
   **Trung du và miền núi phía Bắc** (dữ liệu chỉ chứa 1 phần các vùng
   của Việt Nam, không phải toàn bộ 6 vùng kinh tế-xã hội).
-  <br><span class="en">**Path**: `raw/Lecture Notes/K32/Data2.csv` — the
+  <br><span class="en">**Path**: `raw/Lecture Notes/K32/Chapter02/Data2.csv` — the
   real-data example for 4.3-4.5 (pandas). It is **Vietnamese
   provincial socioeconomic data for 2014**: 63 rows (provinces), 13
   columns, covering 2 regions in this file — the **Red River Delta**
@@ -678,10 +678,10 @@ introduces the library stack used throughout the rest of the course. →
 
 ## Trích dẫn - <span class="en">Citation</span>
 
-`raw/Lecture Notes/K32/VNP_DataScience_Chapter02_Python_and_Jupyter_
-Notebook_2026.pdf`, slide 1-78; `raw/Lecture Notes/K32/Data2.csv` (dữ
+`raw/Lecture Notes/K32/Chapter02/VNP_DataScience_Chapter02_Python_
+and_Jupyter_Notebook_2026.pdf`, slide 1-78; `raw/Lecture Notes/K32/Chapter02/Data2.csv` (dữ
 liệu thực hành mục 4.3-4.5).
-<br><span class="en">`raw/Lecture Notes/K32/
+<br><span class="en">`raw/Lecture Notes/K32/Chapter02/
 VNP_DataScience_Chapter02_Python_and_Jupyter_Notebook_2026.pdf`, slides
-1-78; `raw/Lecture Notes/K32/Data2.csv` (the 4.3-4.5 practice
+1-78; `raw/Lecture Notes/K32/Chapter02/Data2.csv` (the 4.3-4.5 practice
 dataset).</span>

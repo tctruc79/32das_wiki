@@ -3,9 +3,9 @@ type: source
 title: "Chapter 1 (K32) — Data Science and Data-Analytic Thinking"
 tags: [chapter-1, k32, foundations, course-admin]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-08-28
 status: complete
-source_file: "raw/Lecture Notes/K32/VNP_DataScience_Chapter01_Introduction_2026.pdf"
+source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduction_2026.pdf"
 ---
 
 ## Metadata
