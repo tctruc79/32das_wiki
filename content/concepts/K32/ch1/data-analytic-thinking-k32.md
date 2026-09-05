@@ -4,9 +4,21 @@ title: "Tư duy Phân tích Dữ liệu (K32)"
 title_en: "Data-Analytic Thinking (K32)"
 tags: [chapter-1, k32, foundations]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-09-05
 status: complete
 ---
+
+> **Cách đọc trang này**: checklist 7 điều kiện ở dưới là công cụ ôn thi
+> thực dụng nhất của trang này — dùng nó để chấm bất kỳ đề bài "cho 1
+> tình huống kinh doanh, đây có phải bài toán khoa học dữ liệu tốt
+> không?" mà đề thi có thể đưa ra. Áp cả 7 điều kiện, chỉ cần 1 điều sai
+> là kết luận "không phù hợp" — đừng chỉ kiểm tra 1-2 điều rồi kết luận.
+> <br><span class="en">**How to read this page**: the 7-condition
+> checklist below is this page's most practical exam tool — use it to
+> grade any "given this business situation, is it a good data science
+> problem?" question the exam might pose. Apply all 7 conditions; a
+> single failure is enough to conclude "not suitable" — don't stop after
+> checking just 1-2 conditions.</span>
 
 ## Định nghĩa - <span class="en">Definition</span>
 

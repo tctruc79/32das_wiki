@@ -4,7 +4,7 @@ title: "Chỉ số đánh giá mô hình (K32)"
 title_en: "Model Evaluation Metrics (K32)"
 tags: [chapter-3, k32, model-evaluation, metrics]
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 ---
 
@@ -29,7 +29,9 @@ metrics.</span>
 ### Chỉ số hồi quy - <span class="en">Regression metrics</span>
 
 Với n quan sát, giá trị thực yᵢ, giá trị dự đoán ŷᵢ và sai số
-uᵢ = yᵢ − ŷᵢ (slide 17-18):
+uᵢ = yᵢ − ŷᵢ:
+<br><span class="en">With n observations, true value yᵢ, predicted value
+ŷᵢ and error uᵢ = yᵢ − ŷᵢ:</span>
 
 | Chỉ số | Công thức | Đặc điểm |
 |---|---|---|
@@ -39,63 +41,116 @@ uᵢ = yᵢ − ŷᵢ (slide 17-18):
 | MAPE | (100/n)Σ\|yᵢ − ŷᵢ\|/\|yᵢ\| | Không phụ thuộc thang đo, dễ truyền đạt |
 | R² | 1 − Σ(yᵢ − ŷᵢ)²/Σ(yᵢ − ȳ)² | Tỷ lệ biến thiên của y được mô hình giải thích |
 
-Các tiêu chí khác được slide nêu tên nhưng không khai triển: RSE (sai số
-bình phương tương đối), RAE (sai số tuyệt đối tương đối), RMSE chuẩn hóa,
-RMSE tương đối.
-<span class="en">**Regression metrics** (slides 17-18), with error
-uᵢ = yᵢ − ŷᵢ: MAE treats all errors equally; MSE punishes large errors and
-is in squared units; RMSE = √MSE brings the error **back into y's units**;
-MAPE is scale-free and easy to communicate; R² is the share of y's
-variation the model explains. Other criteria named but not expanded: RSE,
-RAE, Normalised RMSE, Relative RMSE.</span>
-
-**Cách chọn** (slide 18): MAE coi mọi sai số như nhau; **RMSE phạt sai số
-lớn nặng hơn**, nên dùng khi sai lầm lớn gây tốn kém; **MAPE không xác
-định khi có yᵢ = 0** và có tính bất đối xứng (phạt dự đoán cao hơn thực
-tế khác với phạt dự đoán thấp hơn).
-<br><span class="en">**How to choose** (slide 18): MAE treats all errors
-equally; **RMSE punishes large errors more**, so use it when big mistakes
-are costly; **MAPE is undefined when some yᵢ = 0** and is asymmetric.</span>
+Việc chọn chỉ số nào không phải tùy tiện — nó phụ thuộc trực tiếp vào
+**hậu quả kinh doanh của một sai số lớn**. MAE coi mọi sai số như nhau
+bất kể độ lớn, nên phù hợp khi chi phí sai lệch tăng tuyến tính theo độ
+lớn của sai số. RMSE, do bình phương từng sai số trước khi lấy trung
+bình, **phạt các sai số lớn nặng hơn nhiều lần** so với sai số nhỏ — nên
+ưu tiên dùng khi một vài dự đoán sai nghiêm trọng gây tổn thất không cân
+xứng (ví dụ dự báo nhu cầu sai lệch lớn dẫn đến thiếu hàng nghiêm trọng).
+MAPE có ưu điểm không phụ thuộc thang đo — dễ so sánh giữa các bài toán
+có đơn vị khác nhau, dễ truyền đạt cho người không chuyên — nhưng có 2
+nhược điểm cần nhớ: không xác định được khi có quan sát với yᵢ = 0, và
+mang tính bất đối xứng (phạt việc dự đoán cao hơn thực tế nặng hơn việc
+dự đoán thấp hơn thực tế, do mẫu số luôn là giá trị thực). Ngoài 5 chỉ số
+trên, còn một số tiêu chí ít dùng hơn: sai số bình phương tương đối
+(RSE), sai số tuyệt đối tương đối (RAE), và các biến thể chuẩn hóa của
+RMSE.
+<br><span class="en">Choosing a metric is not arbitrary — it depends
+directly on **the business consequence of a large error**. MAE treats
+all errors equally regardless of size, so it suits cases where the cost
+of error grows linearly with its size. RMSE, by squaring each error
+before averaging, **punishes large errors many times more heavily**
+than small ones — prefer it when a few severely wrong predictions cause
+disproportionate losses (e.g. a badly wrong demand forecast causing a
+severe stock-out). MAPE has the advantage of being scale-free — easy to
+compare across problems with different units, easy to communicate to a
+non-technical audience — but has 2 drawbacks to remember: it is
+undefined when an observation has yᵢ = 0, and it is asymmetric
+(over-predicting is penalised more heavily than under-predicting, since
+the denominator is always the true value). Beyond these 5 metrics, a few
+less common criteria exist: Relative Squared Error (RSE), Relative
+Absolute Error (RAE), and normalised variants of RMSE.</span>
 
 ### Chỉ số phân loại - <span class="en">Classification metrics</span>
 
-Toàn bộ mục này là **nội dung mới của bản 2026** (slide 19):
+Trong khi các chỉ số hồi quy đo "sai bao nhiêu", các chỉ số phân loại
+phải trả lời một câu hỏi tinh tế hơn: "sai theo hướng nào, và hướng nào
+tốn kém hơn". Điểm khởi đầu quan trọng nhất là nhận ra **độ chính xác
+(accuracy) gây hiểu lầm nghiêm trọng trên dữ liệu mất cân bằng**: nếu
+99% giao dịch trong một tập dữ liệu là hợp lệ, một mô hình *luôn luôn* dự
+đoán "hợp lệ" — không học được gì — vẫn đạt độ chính xác 99% trong khi
+hoàn toàn vô dụng cho mục đích phát hiện gian lận. Đây chính xác là lý do
+cần thêm 2 chỉ số khác, đo 2 loại sai lầm khác nhau: **độ chuẩn xác
+(precision)** — trong số các trường hợp mô hình gắn cờ dương tính, bao
+nhiêu là đúng — nên ưu tiên khi **báo động giả tốn kém** (ví dụ chặn nhầm
+một email hợp lệ thành thư rác); và **độ bao phủ (recall, hay độ nhạy)**
+— trong số các trường hợp dương tính thật sự tồn tại, mô hình bắt được
+bao nhiêu — nên ưu tiên khi **bỏ sót tốn kém** (bỏ lọt một giao dịch gian
+lận hoặc một ca bệnh). Vì 2 chỉ số này thường đánh đổi lẫn nhau (nâng
+ngưỡng để tăng precision thường làm giảm recall và ngược lại), **F1** —
+trung bình điều hòa của cả hai — được dùng khi cần một con số duy nhất
+cân bằng cả hai mối quan tâm. Cuối cùng, **ROC-AUC** đo chất lượng
+**xếp hạng** của mô hình trên *mọi* ngưỡng quyết định có thể, hữu ích
+đúng vào lúc ngưỡng phân loại chưa được cố định trước khi triển khai.
+Trong thực hành, toàn bộ bộ chỉ số phân loại này được tính cùng lúc bằng
+`classification_report(y_test, y_pred)`, dựa trên bảng đếm thô từ
+`confusion_matrix(y_test, y_pred)`.
+<br><span class="en">While regression metrics measure "how wrong",
+classification metrics must answer a subtler question: "wrong in which
+direction, and which direction is more costly". The essential starting
+point is recognising that **accuracy is severely misleading on
+imbalanced data**: if 99% of transactions in a dataset are legitimate, a
+model that *always* predicts "legitimate" — having learned nothing — is
+still 99% accurate while being entirely useless for fraud detection. This
+is exactly why two further metrics are needed, each measuring a different
+kind of mistake: **precision** — of the cases flagged positive, how many
+were correct — preferred when **false alarms are expensive**; and
+**recall (sensitivity)** — of the true positive cases, how many were
+caught — preferred when **misses are expensive**. Because these two
+typically trade off against each other, **F1**, their harmonic mean, is
+used when a single number must balance both concerns. Finally,
+**ROC-AUC** measures ranking quality across *every* possible decision
+threshold, useful precisely when the classification threshold has not
+yet been fixed before deployment. In practice, the whole classification
+metric set comes at once from `classification_report(y_test, y_pred)`,
+built from the raw counts in `confusion_matrix(y_test, y_pred)`.</span>
 
-- **Độ chính xác (accuracy)** — **gây hiểu lầm trên dữ liệu mất cân
-  bằng**. Ví dụ trên slide: nếu 99% giao dịch là hợp lệ thì một mô hình
-  *luôn* dự đoán "hợp lệ" đạt độ chính xác 99% mà hoàn toàn vô dụng.
-  <br><span class="en">**Accuracy** — **misleading on imbalanced data**:
-  if 99% of transactions are legitimate, an always-"legitimate" model is
-  99% accurate and completely useless.</span>
-- **Độ chuẩn xác (precision)** — trong số các trường hợp ta gắn cờ, bao
-  nhiêu là đúng. Dùng khi **báo động giả tốn kém** (vd chặn nhầm một thư
-  hợp lệ).
-  <br><span class="en">**Precision** — of those we flagged, how many were
-  right. Use when **false alarms are expensive** (e.g. blocking a valid
-  email).</span>
-- **Độ bao phủ (recall, còn gọi là độ nhạy)** — trong số các trường hợp
-  đúng thật, ta bắt được bao nhiêu. Dùng khi **bỏ sót tốn kém** (vd bỏ
-  lọt một vụ gian lận hoặc một ca bệnh).
-  <br><span class="en">**Recall (sensitivity)** — of the true cases, how
-  many did we catch. Use when **misses are expensive** (e.g. missing a
-  fraud or a disease).</span>
-- **F1** — trung bình điều hòa của độ chuẩn xác và độ bao phủ, dùng khi
-  cần cân bằng cả hai.
-  <br><span class="en">**F1** — the harmonic mean of precision and
-  recall, when you need to balance both.</span>
-- **ROC-AUC** — chất lượng **xếp hạng** trên mọi ngưỡng quyết định, hữu
-  ích khi ngưỡng chưa được cố định trước.
-  <br><span class="en">**ROC-AUC** — ranking quality across all
-  thresholds, useful when the decision threshold is not fixed in
-  advance.</span>
+## Ví dụ có đáp án — vì sao RMSE luôn ≥ MAE - <span class="en">Worked example — why RMSE always ≥ MAE</span>
 
-Trong mã Python của chương, cả bộ này được lấy cùng lúc bằng
-`classification_report(y_test, y_pred)`, còn `confusion_matrix(y_test,
-y_pred)` cho bảng đếm thô làm cơ sở tính chúng.
-<br><span class="en">In the chapter's Python code the whole set comes at
-once from `classification_report(y_test, y_pred)`, with
-`confusion_matrix(y_test, y_pred)` giving the raw counts they are
-computed from.</span>
+Đây là câu hỏi ôn tập số 3 của giảng viên, và câu trả lời đến từ chính
+cấu trúc của 2 công thức chứ không phải từ 1 ví dụ số cụ thể. Gọi
+aᵢ = |yᵢ − ŷᵢ| ≥ 0. Khi đó MAE là **trung bình cộng** của n số aᵢ, còn
+RMSE là **căn bậc hai của trung bình cộng các bình phương** aᵢ² — hay
+nói cách khác, RMSE chính là *căn quân phương* (root mean square) của
+cùng dãy số đó. Bất đẳng thức căn quân phương ≥ trung bình cộng (hệ quả
+trực tiếp của bất đẳng thức Cauchy–Schwarz, hoặc tương đương QM–AM) đúng
+với **mọi** dãy số không âm, nên RMSE ≥ MAE luôn đúng, không phụ thuộc
+dữ liệu cụ thể nào.
+<br><span class="en">This is the instructor's review question 3, and the
+answer comes from the structure of the two formulas themselves rather
+than from a specific numerical example. Let aᵢ = |yᵢ − ŷᵢ| ≥ 0. MAE is
+the **arithmetic mean** of the n values aᵢ, while RMSE is the **square
+root of the mean of the squared** aᵢ — in other words, RMSE is exactly
+the *quadratic mean* (root mean square) of the same sequence. The
+quadratic-mean-≥-arithmetic-mean inequality (a direct consequence of the
+Cauchy–Schwarz inequality, equivalently QM–AM) holds for **every**
+non-negative sequence, so RMSE ≥ MAE always, regardless of the specific
+data.</span>
+
+**Khi nào 2 giá trị bằng nhau**: đẳng thức QM = AM chỉ xảy ra khi mọi aᵢ
+**bằng nhau tuyệt đối** — tức mọi sai số có cùng độ lớn. Khoảng cách giữa
+RMSE và MAE vì thế còn mang thêm 1 ý nghĩa chẩn đoán: **RMSE − MAE càng
+lớn, sai số càng phân tán không đều** (một vài quan sát bị sai rất nặng
+trong khi phần lớn còn lại khá chính xác) — đúng như lý do chọn RMSE khi
+"sai lầm lớn tốn kém" đã nêu ở trên.
+<br><span class="en">**When the two are equal**: QM = AM only when every
+aᵢ is **exactly equal** — i.e. every error has the same magnitude. The
+gap between RMSE and MAE therefore carries diagnostic meaning too: **the
+larger RMSE − MAE is, the more unevenly the errors are spread** (a few
+badly-missed observations amid an otherwise accurate model) — precisely
+the reason to prefer RMSE when "large mistakes are costly," as noted
+above.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 

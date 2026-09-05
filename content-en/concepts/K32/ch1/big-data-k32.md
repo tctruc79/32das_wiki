@@ -3,9 +3,17 @@ type: concept
 title: "Big Data — 5 V's (K32)"
 tags: [chapter-1, k32, foundations]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-09-05
 status: complete
 ---
+
+> <br><span class="en">**How to read this page**: the 5 V's are often
+> tested as "given this data description, which V is it?" — a quick
+> way to tell them apart: Volume/Velocity/Variety describe the data's
+> **physical traits** (a lot/fast/diverse), while Veracity/Value describe
+> its **quality and usefulness** — two quite different groups, and the
+> second group is what actually decides whether the data is worth
+> using.</span>
 
 ## Definition
 

@@ -4,7 +4,7 @@ title: "Tăng cường và họ phương pháp tổ hợp"
 title_en: "Boosting and the Ensemble Families"
 tags: [chapter-3, k32, boosting, ensemble, xgboost]
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 ---
 
@@ -26,40 +26,54 @@ exist in the 2025 material.</span>
 
 ### 3 biến thể được nêu tên - <span class="en">The 3 named variants</span>
 
-Slide 84:
-
-- **AdaBoost** — **gán lại trọng số** cho các quan sát bị phân loại sai,
-  để cây kế tiếp tập trung vào chúng.
-- **Tăng cường gradient (Gradient boosting)** — mỗi cây mới được **khớp
-  vào phần dư** (gradient của hàm mất mát) của mô hình hiện tại.
-- **XGBoost / LightGBM / CatBoost** — các bản cài đặt **nhanh, có điều
-  chuẩn** của tăng cường gradient. Theo slide, đây thường là các thuật
-  toán **thắng các cuộc thi** trên dữ liệu bảng có cấu trúc trong kinh
-  doanh.
-
-<span class="en">Slide 84: **AdaBoost** re-weights misclassified
-observations so the next tree focuses on them; **gradient boosting** fits
-each new tree to the residuals (the gradient of the loss) of the current
-model; **XGBoost / LightGBM / CatBoost** are fast, regularised
-implementations of gradient boosting — per the slide, typically the
-algorithms that **win competitions** on structured tabular business
-data.</span>
+Ý tưởng "sửa lỗi tuần tự" của tăng cường được hiện thực hóa theo 3 cách
+khác nhau, ngày càng tinh vi hơn: **AdaBoost**, phiên bản sớm nhất,
+**gán lại trọng số** cho các quan sát bị phân loại sai để cây kế tiếp tập
+trung nhiều hơn vào chúng; **tăng cường gradient (Gradient boosting)**
+tổng quát hóa ý tưởng đó bằng cách để mỗi cây mới **khớp vào phần dư**
+(về bản chất là gradient của hàm mất mát) của mô hình hiện tại, thay vì
+chỉ đổi trọng số quan sát; và **XGBoost / LightGBM / CatBoost** là các
+bản cài đặt hiện đại, nhanh và có điều chuẩn của tăng cường gradient —
+đây chính là nhóm thuật toán thường **thắng các cuộc thi** trên dữ liệu
+bảng có cấu trúc trong kinh doanh, nhờ kết hợp được sức mạnh của gradient
+boosting với các kỹ thuật tối ưu hóa tốc độ và chống quá khớp.
+<br><span class="en">The "sequential error correction" idea of boosting is
+realised in 3 increasingly sophisticated ways: **AdaBoost**, the
+earliest version, **re-weights misclassified observations** so the next
+tree focuses more on them; **gradient boosting** generalises this by
+having each new tree **fit the residuals** (in essence, the gradient of
+the loss function) of the current model, rather than just reweighting
+observations; and **XGBoost / LightGBM / CatBoost** are fast, modern,
+regularised implementations of gradient boosting — the family that
+typically **wins competitions** on structured tabular business data, by
+combining gradient boosting's power with speed and anti-overfitting
+optimisations.</span>
 
 ### Đánh đổi - <span class="en">The trade-off</span>
 
-Tăng cường **thường chính xác hơn** rừng ngẫu nhiên, nhưng **nhạy hơn với
-siêu tham số** và **có thể quá khớp** nếu tốc độ học quá cao hoặc số vòng
-quá nhiều. Đây là lý do slide xếp rừng ngẫu nhiên là "mốc so sánh vững
-chắc" còn tăng cường là công cụ "vắt kiệt độ chính xác tối đa".
+Tăng cường **thường chính xác hơn** rừng ngẫu nhiên, nhưng cái giá phải
+trả là nó **nhạy hơn với siêu tham số** và **có thể quá khớp** nếu tốc độ
+học quá cao hoặc số vòng lặp quá nhiều — mỗi cây mới cố sửa lỗi của các
+cây trước, nên nếu không kiểm soát tốt, quá trình "sửa lỗi" đó có thể bắt
+đầu sửa cả nhiễu ngẫu nhiên. Đây là lý do thực dụng để nghĩ về rừng ngẫu
+nhiên như "mốc so sánh vững chắc, dễ tinh chỉnh" còn tăng cường là công
+cụ dùng khi cần "vắt kiệt độ chính xác tối đa" và chấp nhận đánh đổi thời
+gian tinh chỉnh.
 <br><span class="en">Boosting is usually **more accurate** than a random
-forest, but **more sensitive to hyperparameters** and **can overfit** if
-the learning rate is too high or there are too many rounds. Hence the
-slide's framing: random forest as the "solid baseline", boosting as the
-tool for "squeezing out top accuracy".</span>
+forest, but the price is being **more sensitive to hyperparameters** and
+**able to overfit** if the learning rate is too high or there are too
+many rounds — each new tree tries to correct the previous ones' errors,
+so without careful control that "correction" process can start fitting
+random noise instead. The practical way to think about it: random forest
+as the "solid, easy-to-tune baseline", boosting as the tool for when top
+accuracy is needed and a longer tuning process is an acceptable
+trade-off.</span>
 
 ### Bảng so sánh đóng bao vs tăng cường - <span class="en">Bagging vs boosting</span>
 
-Slide 85 — bảng đối chiếu 6 tiêu chí:
+Đối chiếu trực tiếp 2 họ tổ hợp trên 6 tiêu chí:
+<br><span class="en">Comparing the two ensemble families directly on 6
+criteria:</span>
 
 | Tiêu chí | Đóng bao (rừng ngẫu nhiên) | Tăng cường (XGBoost) |
 |---|---|---|
@@ -70,7 +84,7 @@ Slide 85 — bảng đối chiếu 6 tiêu chí:
 | Tốc độ tinh chỉnh | Nhanh, ít núm vặn | Chậm hơn, nhiều núm vặn |
 | Dùng điển hình | Mốc so sánh vững chắc | Vắt kiệt độ chính xác tối đa |
 
-<span class="en">Slide 85 compares the two on 6 criteria: bagging builds
+<br><span class="en">Comparing the two directly on 6 criteria: bagging builds
 trees in parallel and independently while boosting builds them
 sequentially with each fixing the last; bagging's trees are deep (low
 bias, high variance) versus boosting's shallow stumps (high bias);
@@ -80,35 +94,38 @@ to tune with few knobs, boosting slower with many; bagging is the solid
 baseline, boosting squeezes out top accuracy.</span>
 
 **Cách đọc bảng này cho kỳ thi**: hàng "chủ yếu giảm" là hàng quan trọng
-nhất — nó nối thẳng về phân rã độ chệch–phương sai ở slide 25. Đóng bao
+nhất — nó nối thẳng về phân rã độ chệch–phương sai. Đóng bao
 lấy nhiều cây phương sai cao rồi trung bình hóa để giảm phương sai; tăng
 cường lấy nhiều cây độ chệch cao rồi nối tiếp để giảm độ chệch. Hai cách
 tấn công **hai thành phần khác nhau của cùng một công thức**.
 <br><span class="en">**How to read this table for the exam**: the
 "mainly reduces" row is the crucial one — it connects straight back to
-the bias–variance decomposition on slide 25. Bagging takes many
+the bias–variance decomposition. Bagging takes many
 high-variance trees and averages away the variance; boosting takes many
 high-bias stumps and chains them to cut the bias. Two routes attacking
 **two different terms of the same formula**.</span>
 
 ### Bài tập nhóm 2 - <span class="en">Teamwork 2</span>
 
-Slide 86 yêu cầu: liệt kê một số **mở rộng khác của cây quyết định** ngoài
-rừng ngẫu nhiên; liệt kê càng nhiều **ứng dụng tiềm năng** của thuật toán
-phân loại trong kinh doanh/thực tế càng tốt; và **giải thích bằng lời của
-chính mình vì sao trung bình hóa nhiều cây làm giảm phương sai, trong khi
-trung bình hóa nhiều cây giống hệt nhau thì không**. Câu hỏi thứ ba là
-câu kiểm tra hiểu bản chất — trả lời được nó nghĩa là đã hiểu vì sao rừng
-ngẫu nhiên cần **hai** nguồn ngẫu nhiên chứ không phải một. Nộp qua biểu
-mẫu Google ghi trên slide.
-<br><span class="en">Slide 86 asks students to list other decision tree
-extensions besides random forests; list as many business/real-world
-applications of classification as possible; and **explain in their own
-words why averaging many trees reduces variance but averaging many
-identical trees would not**. The third question is the comprehension
-test — answering it means understanding why a random forest needs **two**
-sources of randomness, not one. Submitted via the Google Form on the
-slide.</span>
+Bài tập nhóm đi kèm mục này yêu cầu 3 việc: liệt kê một số **mở rộng
+khác của cây quyết định** ngoài rừng ngẫu nhiên; liệt kê càng nhiều
+**ứng dụng tiềm năng** của thuật toán phân loại trong kinh doanh/thực tế
+càng tốt; và quan trọng nhất — **giải thích bằng lời của chính mình vì
+sao trung bình hóa nhiều cây làm giảm phương sai, trong khi trung bình
+hóa nhiều cây giống hệt nhau thì không**. Câu hỏi thứ ba mới thực sự là
+câu kiểm tra hiểu bản chất: trả lời được nó nghĩa là đã hiểu vì sao rừng
+ngẫu nhiên cần **hai** nguồn ngẫu nhiên (bagging và lấy mẫu con đặc
+trưng) chứ không phải một — nếu chỉ cần một, câu hỏi này sẽ không có câu
+trả lời thỏa đáng.
+<br><span class="en">This section's teamwork exercise asks 3 things:
+list other decision tree extensions besides random forests; list as many
+business/real-world applications of classification as possible; and,
+most importantly, **explain in your own words why averaging many trees
+reduces variance but averaging many identical trees would not**. The
+third question is the real comprehension test: answering it means
+understanding why a random forest needs **two** sources of randomness
+(bagging and feature subsampling), not one — if only one were needed,
+this question would have no satisfying answer.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 

@@ -241,6 +241,8 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   is **entirely new** versus the 2025 version, which listed only 3.</span>
 - **Bảng thuật ngữ dùng xuyên suốt** (slide 14) — bảng tra cứu quan
   trọng nhất để đọc phần còn lại:
+  <br><span class="en">**Vocabulary table** (slide 14) — the most
+  important reference for reading the rest of the deck:</span>
 
   | Thuật ngữ | Ý nghĩa |
   |---|---|
@@ -253,14 +255,8 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 
   Điểm cần nhớ của slide: **tham số do thuật toán ước lượng; siêu tham số
   do bạn chọn, thường bằng kiểm định chéo**.
-  <br><span class="en">**Vocabulary table** (slide 14) — the most
-  important reference for reading the rest of the deck: observation =
-  one row (xᵢ, yᵢ); feature/input/predictor/variable/dimension/attribute
-  = one column xⱼ; label/target/output = the quantity to predict, y;
-  model = the learned f̂; parameter = learned from data (e.g. βⱼ);
-  hyperparameter = chosen before training (e.g. K, λ, tree depth). The
-  slide's takeaway: **parameters are estimated by the algorithm;
-  hyperparameters are selected by you, usually with
+  <br><span class="en">The slide's takeaway: **parameters are estimated
+  by the algorithm; hyperparameters are selected by you, usually with
   cross-validation**.</span>
 
 ### 2. Khái niệm cốt lõi và đánh giá mô hình (slide 16-25) - <span class="en">2. Core Concepts and Model Evaluation (slides 16-25)</span>
@@ -770,6 +766,8 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   the learning rate is too high or there are too many rounds.
   → [[boosting-ensemble]]</span>
 - **Bảng so sánh đóng bao vs tăng cường** (slide 85, **mới**):
+  <br><span class="en">**Bagging vs boosting table** (slide 85,
+  **new**):</span>
 
   | Tiêu chí | Đóng bao (rừng ngẫu nhiên) | Tăng cường (XGBoost) |
   |---|---|---|
@@ -780,14 +778,13 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   | Tốc độ tinh chỉnh | Nhanh, ít núm vặn | Chậm hơn, nhiều núm vặn |
   | Dùng điển hình | Mốc so sánh vững chắc | Vắt kiệt độ chính xác tối đa |
 
-  <span class="en">**Bagging vs boosting table** (slide 85, **new**):
-  bagging builds trees in parallel and independently, boosting
-  sequentially with each fixing the last; bagging trees are deep (low
-  bias, high variance) versus boosting's shallow stumps (high bias);
-  bagging mainly reduces variance, boosting reduces bias; overfitting
-  risk low versus moderate-needs-tuning; bagging is fast to tune with few
-  knobs, boosting slower with many; bagging is a solid baseline, boosting
-  squeezes out top accuracy.</span>
+  <br><span class="en">In prose: bagging builds trees in parallel and
+  independently, boosting sequentially with each fixing the last;
+  bagging trees are deep (low bias, high variance) versus boosting's
+  shallow stumps (high bias); bagging mainly reduces variance, boosting
+  reduces bias; overfitting risk low versus moderate-needs-tuning;
+  bagging is fast to tune with few knobs, boosting slower with many;
+  bagging is a solid baseline, boosting squeezes out top accuracy.</span>
 - **Bài tập nhóm 2** (slide 86): liệt kê một số mở rộng khác của cây
   quyết định ngoài rừng ngẫu nhiên; liệt kê càng nhiều ứng dụng tiềm năng
   của thuật toán phân loại trong kinh doanh/thực tế càng tốt; và **giải
@@ -930,6 +927,8 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   circle has no corners, so coefficients shrink towards zero but never
   reach it.</span>
 - **Bảng so sánh Lasso vs Ridge** (slide 100, **mới, 6 tiêu chí**):
+  <br><span class="en">**Lasso vs Ridge table** (slide 100, **new, 6
+  criteria**):</span>
 
   | Tiêu chí | Ridge (L2) | Lasso (L1) |
   |---|---|---|
@@ -944,14 +943,7 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   cả 2 hình phạt đều phụ thuộc độ lớn của hệ số, mà độ lớn hệ số lại phụ
   thuộc đơn vị đo của từng biến dự báo; không chuẩn hóa thì hình phạt bị
   áp một cách bất công.
-  <br><span class="en">**Lasso vs Ridge table** (slide 100, **new, 6
-  criteria**): Ridge's L2 penalty shrinks coefficients towards but never
-  to zero, does no variable selection, shares weight among correlated
-  predictors, is best when many predictors each matter a little, and has
-  a closed form. Lasso's L1 penalty sets some coefficients exactly to
-  zero, performs automatic variable selection, picks one of a correlated
-  group and drops the others, is best when few predictors matter a lot,
-  and is solved numerically. **Mandatory note**: always standardise the
+  <br><span class="en">**Mandatory note**: always standardise the
   features before fitting, otherwise the penalty is applied
   unfairly.</span>
 - **7.3 Tham số điều chỉnh λ** (slide 102): λ điều khiển **cường độ của
@@ -1017,6 +1009,8 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 
 **Bảng tổng kết 7 thuật toán** (slide 110) — công cụ ôn thi tốt nhất của
 cả chương:
+<br><span class="en">**Summary table of the 7 algorithms** (slide 110)
+— the chapter's best single revision tool:</span>
 
 | Thuật toán | Bài toán | Siêu tham số chính | Cần chuẩn hóa? | Điểm mạnh chính |
 |---|---|---|---|---|
@@ -1028,8 +1022,7 @@ cả chương:
 | Ridge | Hồi quy | λ | Có | Xử lý được đa cộng tuyến |
 | Lasso | Hồi quy | λ | Có | Tự động chọn biến |
 
-<span class="en">**Summary table of the 7 algorithms** (slide 110) — the
-chapter's best single revision tool: KNN (both tasks, K, scaling needed,
+<br><span class="en">In prose: KNN (both tasks, K, scaling needed,
 simple and flexible boundary); decision tree (both, depth/min leaf, no
 scaling, interpretable rules); random forest (both, `n_estimators`/
 `max_features`, no scaling, strong stable baseline); boosting (both,
@@ -1101,7 +1094,7 @@ contains 7 files besides the PDF slides.</span>
 | `Nationality.csv` | 13 hàng, 5 cột | `Age`, `Experience`, `Rank`, `Nationality`, `Go` (7 YES / 6 NO) | Không slide nào gọi tên — xem ghi chú |
 | `TeleCustomers.csv` | 1000 hàng, 8 cột | `region`, `tenure`, `age`, `marital`, `address`, `income`, `ed`, `employ` | Không slide nào gọi tên — xem ghi chú |
 
-<span class="en">**Data files**: `iris.csv` (150 rows, 4 features +
+<br><span class="en">**Data files**: `iris.csv` (150 rows, 4 features +
 `variety`, 50 of each species) drives Example 3.1; `Regression.csv` (104
 rows, `x1`-`x4` and `y`) drives Example 7.1, with `Regression.xlsx` the
 same data in Excel form; `Nationality.csv` (13 rows: `Age`,

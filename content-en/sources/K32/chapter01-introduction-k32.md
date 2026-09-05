@@ -3,7 +3,7 @@ type: source
 title: "Chapter 1 (K32) — Data Science and Data-Analytic Thinking"
 tags: [chapter-1, k32, foundations, course-admin]
 created: 2026-08-22
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduction_2026.pdf"
 ---
@@ -147,8 +147,9 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
 - 2 practice exercises: Warm-up (mentimeter,
   keywords related to data science) and "Exercise — which type of
   analytics?" (5 statements from a retailer's data, classify each; note
-  #2 especially — descriptive in form but habitually treated as
-  causal).
+  #2 especially — descriptive in form but habitually treated as causal)
+  — all 5 with worked answers in
+  [[data-driven-decision-making-k32]].
 
 ## Gaps / notes
 
@@ -159,9 +160,6 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
 - The "Data-driven culture" and "The data-driven
   organisation" slides (36-37) have only titles, content is
   image-only.
-- This is K32's first ingested chapter; 7 more
-  chapters (2-8) have no file in `raw/Lecture Notes/K32/` at the time of
-  this ingest.
 
 ## Links
 

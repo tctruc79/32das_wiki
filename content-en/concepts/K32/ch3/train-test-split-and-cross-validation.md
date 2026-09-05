@@ -19,38 +19,49 @@ the data it was trained on*.
 
 ## Explanation
 
-- **Data leakage — the most common beginner
-  mistake** (slide 16): any transformation **learned from data** —
-  scaling, imputation, feature selection — must be **fitted on the
-  training part only**, then applied to validation and test. Fitting on
-  everything leaks test information back into the model and makes the
-  reported performance **optimistic**. This is why Example 3.1 writes
-  `scaler.fit_transform(X_train)` but only `scaler.transform(X_test)` —
-  a one-word difference that decides whether the result is honest.
-- **3 forms of cross-validation** (slide 21):
+Perhaps the single most common beginner mistake in
+all of machine learning is **data leakage**: any transformation
+**learned from data** — scaling, imputation, feature selection — must be
+**fitted on the training part only**, then applied to validation and
+test. Fitting a transformation on the whole dataset before splitting lets
+test-set information leak back into training, making reported
+performance **artificially optimistic** — the model looks better than it
+will actually be on genuinely new data. The seemingly small difference
+between calling `fit_transform()` on the training set and only
+`transform()` on the test set, versus calling `fit_transform()` on both,
+is exactly the line between an honest result and a self-deceiving
+one.
 
-  | Dạng | Cách làm | Ghi chú |
-  |---|---|---|
-  | Bỏ một quan sát (LOOCV) | Tập huấn luyện n − 1 quan sát, tập kiểm tra đúng 1 quan sát, lặp n lần | Tốn tính toán nhất |
-  | K-phần (K-fold) | Chia thành K phần, huấn luyện trên K − 1, kiểm tra trên phần còn lại, xoay vòng rồi lấy trung bình K điểm số | K = 5 hoặc K = 10 là chuẩn |
-  | K-phần phân tầng (stratified) | Như K-phần nhưng giữ nguyên tỷ lệ các lớp trong từng phần | **Luôn ưu tiên cho bài toán phân loại** |
+Splitting the data once into train/test only solves
+half the problem: it allows honest evaluation, but says nothing about
+**which hyperparameter to pick**. Choosing K in KNN or λ in Ridge/Lasso
+needs a score that has **never seen the test set** — otherwise the test
+set loses its role as a neutral referee the moment it is used for tuning.
+Cross-validation solves exactly this by rotating the train/validation
+role *inside* the training set, in 3 forms:
 
-- **Why cross-validation and not just one split**:
-  hyperparameters (K in KNN, λ in Ridge/Lasso, tree depth) must be chosen
-  from a number that **has not seen the test set**. Choosing them on the
-  test set destroys its role as referee. Example 3.1 follows this
-  exactly: `GridSearchCV(..., cv=5)` picks K on the training set, then
-  the model is **evaluated once** on the untouched test set.
-- **The split settings used throughout the
-  chapter**: every code example uses `train_test_split(X, y,
-  test_size=0.3, random_state=42, stratify=y)` — 30% held out, a fixed
-  `random_state` for reproducibility, and `stratify=y` preserving class
-  proportions in both parts (the same idea as stratified K-fold).
-- **Cross-validation is also an overfitting
-  control**: slide 22 notes simply that "validation helps control
-  overfitting" — it gives an out-of-sample error estimate **before**
-  touching the test set, so overfitting can be caught and fixed while
-  there is still time.
+| Dạng | Cách làm | Ghi chú |
+|---|---|---|
+| Bỏ một quan sát (LOOCV) | Tập huấn luyện n − 1 quan sát, tập kiểm tra đúng 1 quan sát, lặp n lần | Tốn tính toán nhất |
+| K-phần (K-fold) | Chia thành K phần, huấn luyện trên K − 1, kiểm tra trên phần còn lại, xoay vòng rồi lấy trung bình K điểm số | K = 5 hoặc K = 10 là chuẩn |
+| K-phần phân tầng (stratified) | Như K-phần nhưng giữ nguyên tỷ lệ các lớp trong từng phần | **Luôn ưu tiên cho bài toán phân loại** |
+
+The correct workflow, recurring throughout the
+chapter's code examples, is: use cross-validation (typically via
+`GridSearchCV`) to choose hyperparameters **entirely within the training
+set**, then **evaluate exactly once** on the untouched test set — a
+clean separation between "model selection" and "final performance
+report". The split configuration used throughout is
+`train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)`:
+30% held out, a fixed `random_state` for reproducibility, and
+`stratify=y` preserving class proportions in both parts.
+
+Cross-validation also has a second, less-discussed
+but equally important role: it gives an out-of-sample error estimate
+**before** touching the test set, so overfitting can be caught and fixed
+**while there is still time** — rather than only discovered at the final
+evaluation step, when there is no way back to adjust the model without
+compromising the test set's integrity.
 
 ## Appears in
 

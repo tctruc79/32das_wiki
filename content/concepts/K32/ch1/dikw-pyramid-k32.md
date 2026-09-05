@@ -4,9 +4,20 @@ title: "Kim tự tháp DIKW (K32)"
 title_en: "DIKW Pyramid (K32)"
 tags: [chapter-1, k32, foundations]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-09-05
 status: complete
 ---
+
+> **Cách đọc trang này**: trang ngắn, chỉ 1 ý cần nhớ — DIKW không phải
+> 1 quy trình tự động, mỗi mũi tên đi lên là 1 lựa chọn của con người.
+> Câu hỏi thi hay gặp: "cho 1 tình huống, nó đang ở tầng nào của DIKW?"
+> — xem [[big-data-k32]] cho tầng Data và [[data-science-definition-k32]]
+> cho quá trình leo lên Wisdom.
+> <br><span class="en">**How to read this page**: short page, one idea
+> to remember — DIKW is not an automatic pipeline, every upward arrow is
+> a human choice. Common exam question: "given this scenario, which DIKW
+> layer is it at?" — see [[big-data-k32]] for the Data layer and
+> [[data-science-definition-k32]] for the climb toward Wisdom.</span>
 
 ## Định nghĩa - <span class="en">Definition</span>
 

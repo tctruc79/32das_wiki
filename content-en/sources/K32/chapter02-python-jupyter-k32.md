@@ -92,11 +92,11 @@ obvious way to do it".
   given the course is in an economics programme), web development,
   SEO, blockchain, game/software development, automation, GUI apps, web
   scraping, multimedia.
-- **Vì sao chọn Python?** (slide 21-23): đặc điểm chính — miễn phí, mã
-  nguồn mở, dễ tiếp cận, đa năng, mạnh mẽ, cộng đồng lớn, **thông dịch**
-  (chạy từng dòng, không cần biên dịch), hệ sinh thái hơn **500.000 gói
-  trên PyPI**. **Bảng so sánh Python với công cụ khác** (slide 22, mới
-  hoàn toàn so với K31):
+- **Why Python?** (slides 21-23): key features —
+  free, open source, accessible, versatile, powerful, strong community,
+  **interpreted**, 500,000+ packages on PyPI. **The comparison table**
+  (slide 22, entirely new vs K31) puts Python, R, Stata/EViews and Excel
+  side by side:
 
   | Công cụ | Điểm mạnh | Hạn chế |
   |---|---|---|
@@ -105,11 +105,7 @@ obvious way to do it".
   | Stata, EViews | Kinh tế lượng dựng sẵn, cú pháp dễ | Bản quyền thương mại, kém linh hoạt |
   | Excel | Quen thuộc, nhanh với dữ liệu nhỏ | Khó tái lập, giới hạn kích thước |
 
-  **Why Python?** (slides 21-23): key features —
-  free, open source, accessible, versatile, powerful, strong community,
-  **interpreted**, 500,000+ packages on PyPI. **The comparison table**
-  (slide 22, entirely new vs K31) puts Python, R, Stata/EViews and Excel
-  side by side. Conclusion: Python and R are **complements**, not
+  Conclusion: Python and R are **complements**, not
   substitutes. Tools: CPython interpreter; IDEs — PyCharm, Spyder,
   **VS Code** (new), Jupyter/JupyterLab; Git/GitHub; online platforms —
   **Google Colab, Kaggle Notebooks, Binder** (new — K31 only mentioned

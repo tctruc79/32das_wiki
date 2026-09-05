@@ -27,64 +27,84 @@ the data it was trained on*.</span>
 
 ## Diễn giải - <span class="en">Explanation</span>
 
-- **Rò rỉ dữ liệu — lỗi phổ biến nhất của người mới** (slide 16): mọi
-  phép biến đổi **học được từ dữ liệu** — chuẩn hóa thang đo, điền giá
-  trị khuyết, chọn biến — phải được **khớp chỉ trên phần huấn luyện**,
-  rồi mới áp lên phần kiểm định và tập kiểm tra. Nếu khớp trên toàn bộ dữ
-  liệu, thông tin của tập kiểm tra rò rỉ ngược vào mô hình và hiệu năng
-  báo cáo sẽ **lạc quan giả tạo**. Đây là lý do vì sao trong Ví dụ 3.1
-  đoạn mã viết `scaler.fit_transform(X_train)` nhưng chỉ
-  `scaler.transform(X_test)` — khác biệt 1 chữ, thay đổi cả tính trung
-  thực của kết quả.
-  <br><span class="en">**Data leakage — the most common beginner
-  mistake** (slide 16): any transformation **learned from data** —
-  scaling, imputation, feature selection — must be **fitted on the
-  training part only**, then applied to validation and test. Fitting on
-  everything leaks test information back into the model and makes the
-  reported performance **optimistic**. This is why Example 3.1 writes
-  `scaler.fit_transform(X_train)` but only `scaler.transform(X_test)` —
-  a one-word difference that decides whether the result is honest.</span>
-- **3 dạng kiểm định chéo** (slide 21):
-  <br><span class="en">**3 forms of cross-validation** (slide 21):</span>
+Sai lầm nhập môn phổ biến nhất trong toàn bộ học máy có lẽ là **rò rỉ dữ
+liệu** (data leakage): bất kỳ phép biến đổi nào **học được từ dữ liệu** —
+chuẩn hóa thang đo, điền giá trị khuyết, chọn biến — đều phải được
+**khớp chỉ trên phần huấn luyện**, rồi mới áp dụng lên phần kiểm định và
+tập kiểm tra. Nếu khớp phép biến đổi trên toàn bộ dữ liệu trước khi chia
+tập, thông tin của tập kiểm tra vô tình rò rỉ ngược vào quá trình huấn
+luyện, khiến hiệu năng báo cáo **lạc quan giả tạo** — mô hình trông có vẻ
+tốt hơn thực tế sẽ hoạt động trên dữ liệu hoàn toàn mới. Khác biệt tưởng
+như nhỏ giữa việc gọi `fit_transform()` trên tập huấn luyện rồi chỉ
+`transform()` trên tập kiểm tra, so với gọi `fit_transform()` trên cả
+hai, chính là ranh giới giữa một kết quả trung thực và một kết quả tự
+lừa dối chính mình.
+<br><span class="en">Perhaps the single most common beginner mistake in
+all of machine learning is **data leakage**: any transformation
+**learned from data** — scaling, imputation, feature selection — must be
+**fitted on the training part only**, then applied to validation and
+test. Fitting a transformation on the whole dataset before splitting lets
+test-set information leak back into training, making reported
+performance **artificially optimistic** — the model looks better than it
+will actually be on genuinely new data. The seemingly small difference
+between calling `fit_transform()` on the training set and only
+`transform()` on the test set, versus calling `fit_transform()` on both,
+is exactly the line between an honest result and a self-deceiving
+one.</span>
 
-  | Dạng | Cách làm | Ghi chú |
-  |---|---|---|
-  | Bỏ một quan sát (LOOCV) | Tập huấn luyện n − 1 quan sát, tập kiểm tra đúng 1 quan sát, lặp n lần | Tốn tính toán nhất |
-  | K-phần (K-fold) | Chia thành K phần, huấn luyện trên K − 1, kiểm tra trên phần còn lại, xoay vòng rồi lấy trung bình K điểm số | K = 5 hoặc K = 10 là chuẩn |
-  | K-phần phân tầng (stratified) | Như K-phần nhưng giữ nguyên tỷ lệ các lớp trong từng phần | **Luôn ưu tiên cho bài toán phân loại** |
+Chia dữ liệu một lần thành huấn luyện/kiểm tra chỉ giải quyết được nửa
+vấn đề: nó cho phép đánh giá mô hình trung thực, nhưng chưa nói được nên
+**chọn siêu tham số nào**. Muốn chọn K trong KNN hay λ trong Ridge/Lasso,
+cần một con số đánh giá **hoàn toàn không nhìn thấy tập kiểm tra** — nếu
+không, tập kiểm tra mất vai trò trọng tài trung lập ngay từ lúc bị dùng
+để tinh chỉnh. Kiểm định chéo giải quyết đúng vấn đề này bằng cách xoay
+vòng vai trò huấn luyện/kiểm định *bên trong* tập huấn luyện, tồn tại
+dưới 3 dạng:
+<br><span class="en">Splitting the data once into train/test only solves
+half the problem: it allows honest evaluation, but says nothing about
+**which hyperparameter to pick**. Choosing K in KNN or λ in Ridge/Lasso
+needs a score that has **never seen the test set** — otherwise the test
+set loses its role as a neutral referee the moment it is used for tuning.
+Cross-validation solves exactly this by rotating the train/validation
+role *inside* the training set, in 3 forms:</span>
 
-- **Vì sao cần kiểm định chéo chứ không chỉ 1 lần chia đôi**: siêu tham
-  số (K trong KNN, λ trong Ridge/Lasso, độ sâu cây) phải được chọn bằng
-  một con số **không nhìn thấy tập kiểm tra**. Nếu chọn siêu tham số dựa
-  trên tập kiểm tra, tập kiểm tra không còn "chưa đụng tới" nữa và mất
-  vai trò trọng tài. Ví dụ 3.1 làm đúng quy trình này: `GridSearchCV(...,
-  cv=5)` chọn K trên tập huấn luyện, sau đó **đánh giá đúng 1 lần** trên
-  tập kiểm tra chưa đụng tới.
-  <br><span class="en">**Why cross-validation and not just one split**:
-  hyperparameters (K in KNN, λ in Ridge/Lasso, tree depth) must be chosen
-  from a number that **has not seen the test set**. Choosing them on the
-  test set destroys its role as referee. Example 3.1 follows this
-  exactly: `GridSearchCV(..., cv=5)` picks K on the training set, then
-  the model is **evaluated once** on the untouched test set.</span>
-- **Tham số chia tập dùng xuyên chương**: mọi ví dụ mã trong chương dùng
-  `train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)` —
-  30% dữ liệu để kiểm tra, `random_state` cố định để kết quả tái lập
-  được, và `stratify=y` giữ đúng tỷ lệ các lớp trong cả 2 phần (cùng tinh
-  thần với K-phần phân tầng).
-  <br><span class="en">**The split settings used throughout the
-  chapter**: every code example uses `train_test_split(X, y,
-  test_size=0.3, random_state=42, stratify=y)` — 30% held out, a fixed
-  `random_state` for reproducibility, and `stratify=y` preserving class
-  proportions in both parts (the same idea as stratified K-fold).</span>
-- **Kiểm định chéo cũng là công cụ kiểm soát quá khớp**: slide 22 ghi
-  ngắn gọn "kiểm định giúp kiểm soát quá khớp" — vì nó cho ta một ước
-  lượng sai số ngoài mẫu **trước khi** chạm tới tập kiểm tra, nên có thể
-  phát hiện và sửa quá khớp khi vẫn còn kịp.
-  <br><span class="en">**Cross-validation is also an overfitting
-  control**: slide 22 notes simply that "validation helps control
-  overfitting" — it gives an out-of-sample error estimate **before**
-  touching the test set, so overfitting can be caught and fixed while
-  there is still time.</span>
+| Dạng | Cách làm | Ghi chú |
+|---|---|---|
+| Bỏ một quan sát (LOOCV) | Tập huấn luyện n − 1 quan sát, tập kiểm tra đúng 1 quan sát, lặp n lần | Tốn tính toán nhất |
+| K-phần (K-fold) | Chia thành K phần, huấn luyện trên K − 1, kiểm tra trên phần còn lại, xoay vòng rồi lấy trung bình K điểm số | K = 5 hoặc K = 10 là chuẩn |
+| K-phần phân tầng (stratified) | Như K-phần nhưng giữ nguyên tỷ lệ các lớp trong từng phần | **Luôn ưu tiên cho bài toán phân loại** |
+
+Quy trình đúng, xuất hiện lặp lại xuyên suốt các ví dụ mã của chương, là:
+dùng kiểm định chéo (thường qua `GridSearchCV`) để chọn siêu tham số
+**hoàn toàn trong nội bộ tập huấn luyện**, rồi chỉ **đánh giá đúng 1 lần
+duy nhất** trên tập kiểm tra chưa từng bị đụng tới — tách bạch rạch ròi
+giữa "chọn mô hình" và "báo cáo hiệu năng cuối cùng". Cấu hình chia tập
+dùng xuyên suốt chương là `train_test_split(X, y, test_size=0.3,
+random_state=42, stratify=y)`: 30% dữ liệu để kiểm tra, `random_state`
+cố định để kết quả tái lập được, và `stratify=y` giữ đúng tỷ lệ các lớp
+ở cả hai phần — cùng tinh thần với K-phần phân tầng.
+<br><span class="en">The correct workflow, recurring throughout the
+chapter's code examples, is: use cross-validation (typically via
+`GridSearchCV`) to choose hyperparameters **entirely within the training
+set**, then **evaluate exactly once** on the untouched test set — a
+clean separation between "model selection" and "final performance
+report". The split configuration used throughout is
+`train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)`:
+30% held out, a fixed `random_state` for reproducibility, and
+`stratify=y` preserving class proportions in both parts.</span>
+
+Kiểm định chéo còn có một vai trò thứ hai, ít được nói tới nhưng quan
+trọng không kém: nó cho một **ước lượng sai số ngoài mẫu trước khi** chạm
+tới tập kiểm tra, nên quá khớp có thể được phát hiện và sửa **khi vẫn
+còn kịp** — thay vì chỉ phát hiện ra ở bước đánh giá cuối cùng, khi không
+còn cách nào quay lại chỉnh mô hình mà không làm hỏng tính trung thực của
+tập kiểm tra.
+<br><span class="en">Cross-validation also has a second, less-discussed
+but equally important role: it gives an out-of-sample error estimate
+**before** touching the test set, so overfitting can be caught and fixed
+**while there is still time** — rather than only discovered at the final
+evaluation step, when there is no way back to adjust the model without
+compromising the test set's integrity.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 

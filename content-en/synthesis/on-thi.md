@@ -13,19 +13,19 @@ section).
 
 ## Quick lookup table
 
-| Chapter | Cohort | Topic | Notes |
+| Chương | Khóa | Chủ đề | Ghi chú |
 |---|---|---|---|
-| [[chapter01-introduction]] | K31 | What is data science, the DIKW pyramid, 4 types of analytics, data-analytic thinking | The 2025 slide deck is fairly terse — several slides have only images, no detailed definitions for the terms in slide 23 |
-| [[chapter02-python-jupyter]] | K31 | Python (history, 5 language generations, applications), Jupyter Notebook (install, Markdown, sharing) | Pure tooling, no ML theory |
-| [[chapter03-machine-learning-knn]] | K31 | ML overview, AI history, overfitting/underfitting, Classification, KNN + IRIS example | Slide 3's outline mentions Regression/Clustering/Dimension reduction/Association, but that's the outline for the whole Chapter 3-7 block, not this file's own content |
-| [[chapter04-decision-tree-random-forest]] | K31 | Decision Tree (ID3/C4.5/CART, purity measures) + Random Forest (ensemble) | |
-| [[chapter05-ridge-lasso]] | K31 | Linear regression, overfitting in regression, Ridge/Lasso, MAPE | Practice data `regression.csv` no longer in `raw/` |
-| [[chapter06-clustering]] | K31 | Unsupervised learning: clustering, distance measures, K-Means, Hierarchical | The linkage methods slide is image-only |
-| [[chapter07-pca]] | K31 | PCA: covariance, eigenvalue/eigenvector, procedure, combined with Clustering/Classification/Regression | The highest cross-reference density among the 8 chapters |
-| [[chapter08-deep-learning]] | K31 | History of deep learning, perceptron, forward/backward propagation, ANN/CNN/RNN | Gap: no source yet teaches Logistic Regression in detail |
-| [[chapter01-introduction-k32]] | K32 | 5 V's, working definition, DS vs Analytics vs BI, 5 types of analytics (adds Causal), 7-condition checklist | Separate cluster — no cross-links to K31 |
-| [[chapter02-python-jupyter-k32]] | K32 | Python (full syntax), Jupyter (kernel/cell/magic commands), Python for Data Analysis (NumPy/pandas/matplotlib/seaborn/statsmodels/scikit-learn) using `Data2.csv` | Nearly double K31's length (78 vs 41 slides) — adds 2 entirely new sections; separate cluster — no cross-links to K31 |
-| [[chapter03-supervised-learning-k32]] | K32 | The entire supervised learning branch: ML foundations, model evaluation (regression + classification metrics, cross-validation, bias–variance), classification + KNN, decision trees, random forests + boosting, regression, Ridge/Lasso/Elastic Net | 112 slides — the largest chapter; merges content the 2025 cohort split across 3 chapters. The Example 3.1 code **deliberately contains errors** (slides 41-42 state so). Teamwork 3 needs `Income.csv`, not yet in `raw/`. Separate cluster — no cross-links to K31 |
+| [[chapter01-introduction]] | K31 | Khoa học dữ liệu là gì, kim tự tháp DIKW, 4 loại phân tích, tư duy phân tích dữ liệu | Bản slide 2025 khá sơ lược — nhiều slide chỉ có hình, không có định nghĩa chi tiết cho các thuật ngữ ở slide 23 |
+| [[chapter02-python-jupyter]] | K31 | Python (lịch sử, 5 thế hệ ngôn ngữ, ứng dụng), Jupyter Notebook (cài đặt, Markdown, chia sẻ) | Thuần công cụ, không có lý thuyết ML |
+| [[chapter03-machine-learning-knn]] | K31 | Tổng quan ML, lịch sử AI, overfitting/underfitting, Classification, KNN + ví dụ IRIS | Outline slide 3 nhắc Regression/Clustering/Dimension reduction/Association nhưng đó là dàn ý cả cụm Chapter 3-7, không phải nội dung file này |
+| [[chapter04-decision-tree-random-forest]] | K31 | Cây quyết định (ID3/C4.5/CART, purity measures) + Rừng ngẫu nhiên (ensemble) | |
+| [[chapter05-ridge-lasso]] | K31 | Hồi quy tuyến tính, quá khớp trong hồi quy, Ridge/Lasso, MAPE | Dữ liệu thực hành `regression.csv` không còn trong `raw/` |
+| [[chapter06-clustering]] | K31 | Học không giám sát: phân cụm, thước đo khoảng cách, K-Means, Hierarchical | Slide linkage methods chỉ có hình |
+| [[chapter07-pca]] | K31 | PCA: hiệp phương sai, trị riêng/véc-tơ riêng, quy trình, kết hợp với Clustering/Classification/Regression | Mật độ cross-reference cao nhất trong 8 chương |
+| [[chapter08-deep-learning]] | K31 | Lịch sử học sâu, perceptron, lan truyền tiến/lùi, ANN/CNN/RNN | Gap: chưa có nguồn giảng Logistic Regression chi tiết |
+| [[chapter01-introduction-k32]] | K32 | 5 V's, định nghĩa vận hành, DS vs Analytics vs BI, 5 loại phân tích (thêm Causal), checklist 7 điều kiện | Tách cụm — không link chéo K31 |
+| [[chapter02-python-jupyter-k32]] | K32 | Python (cú pháp đầy đủ), Jupyter (kernel/cell/magic commands), Python for Data Analysis (NumPy/pandas/matplotlib/seaborn/statsmodels/scikit-learn) dùng `Data2.csv` | Gần gấp đôi bản K31 (78 vs 41 slide) — thêm 2 phần hoàn toàn mới; tách cụm — không link chéo K31 |
+| [[chapter03-supervised-learning-k32]] | K32 | Trọn nhánh học có giám sát: nền tảng ML, đánh giá mô hình (chỉ số hồi quy + phân loại, kiểm định chéo, độ chệch–phương sai), phân loại + KNN, cây quyết định, rừng ngẫu nhiên + tăng cường, hồi quy, Ridge/Lasso/Elastic Net | 112 slide — chương lớn nhất; gộp nội dung mà khóa 2025 chia làm 3 chương. Mã Ví dụ 3.1 **cố ý có lỗi** (slide 41-42 ghi rõ). Bài tập nhóm 3 cần `Income.csv` chưa có trong `raw/`. Tách cụm — không link chéo K31 |
 
 ## Topic clusters
 
@@ -190,7 +190,7 @@ cross-cluster wikilink.
 
 ## Concept → source map
 
-| Concept | Source | Cohort |
+| Khái niệm | Nguồn | Khóa |
 |---|---|---|
 | [[big-data]] | [[chapter01-introduction]] | K31 |
 | [[dikw-pyramid]] | [[chapter01-introduction]] | K31 |

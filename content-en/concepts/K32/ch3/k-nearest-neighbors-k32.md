@@ -3,7 +3,7 @@ type: concept
 title: "K-Nearest Neighbours (K32)"
 tags: [chapter-3, k32, knn, classification, algorithm]
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 ---
 
@@ -19,35 +19,28 @@ closest training observations and returns the **mode** of their labels
 
 ### The algorithm
 
-Slide 32:
-
-1. Nạp dữ liệu và **chuẩn hóa các đặc trưng**.
-2. Chọn giá trị K.
-3. Với mỗi quan sát truy vấn mới x*:
-   - tính khoảng cách từ x* tới **mọi** quan sát trong tập huấn luyện;
-   - sắp xếp các khoảng cách và giữ lại K quan sát gần nhất;
-   - đọc nhãn của K láng giềng đó;
-   - trả về mốt (phân loại) hoặc trung bình (hồi quy) làm dự đoán.
-
-Slide 32: load and **standardise the features** →
-choose K → for each new query x*: compute the distance to **every**
-training observation, sort and keep the K nearest, read their labels,
-return the mode (classification) or mean (regression). **The slide's own
-correction note**: selecting the K nearest happens **after** all
-distances are computed — **not** inside the loop over observations.
+KNN directly executes its founding assumption: load
+the data and **standardise the features**, choose K, then for each new
+query x* — compute the distance to **every** training observation, sort
+and keep the K nearest, read their labels, and return the mode
+(classification) or mean (regression) as the prediction. A point easily
+misunderstood about execution order: **selecting** the K nearest
+neighbours happens **after** all distances to every observation have
+been computed — it is not a filtering step that happens inside the loop
+over observations.
 
 ### 4 distance measures
 
-Với x = (x₁,…,x_p) và z = (z₁,…,z_p), slide 34:
+With x = (x₁,…,x_p) and z = (z₁,…,z_p):
 
-| Distance | Formula | When to use |
+| Khoảng cách | Công thức | Khi nào dùng |
 |---|---|---|
-| Euclidean | √Σ(xⱼ − zⱼ)² | The default |
-| Manhattan (city block) | Σ\|xⱼ − zⱼ\| | More robust to outliers |
-| Minkowski | (Σ\|xⱼ − zⱼ\|^q)^(1/q) | The general form: q = 2 ⇒ Euclidean, q = 1 ⇒ Manhattan |
-| Hamming | Number of differing positions | For categorical features |
+| Euclid | √Σ(xⱼ − zⱼ)² | Mặc định |
+| Manhattan (ô bàn cờ) | Σ\|xⱼ − zⱼ\| | Bền hơn trước giá trị ngoại lai |
+| Minkowski | (Σ\|xⱼ − zⱼ\|^q)^(1/q) | Dạng tổng quát: q = 2 ⇒ Euclid, q = 1 ⇒ Manhattan |
+| Hamming | Số vị trí khác nhau | Cho đặc trưng phân loại |
 
-Slide 34: Euclidean (the default), Manhattan (city
+Euclidean (the default), Manhattan (city
 block, more robust to outliers), Minkowski (the general form — q = 2
 gives Euclidean, q = 1 gives Manhattan) and Hamming (for categorical
 features, counting differing positions). Minkowski and Hamming are **new
@@ -55,14 +48,17 @@ in the 2026 version**.
 
 ### Why scaling is compulsory
 
-Ví dụ số ở slide 35 (**mới**) — dự đoán vỡ nợ tín dụng từ 2 đặc trưng:
+Because distance is the algorithm's whole
+foundation, each feature's unit of measurement directly affects the
+result — an example predicting credit default from 2 features
+illustrates this clearly:
 
-| Feature | Customer A | Customer B |
+| Đặc trưng | Khách hàng A | Khách hàng B |
 |---|---|---|
-| Age (years) | 30 | 35 |
-| Income (VND million) | 20,000 | 20,050 |
+| Tuổi (năm) | 30 | 35 |
+| Thu nhập (triệu đồng) | 20.000 | 20.050 |
 
-The numeric example on slide 35 (**new**): the
+A numeric example, **new** in this cohort: the
 Euclidean distance √(5² + 50²) ≈ 50.2 between two credit customers is
 **almost entirely driven by income**, simply because income is measured
 in bigger numbers — not because it matters more. **Rule**: always
@@ -71,64 +67,47 @@ scaler on the training set only**.
 
 ### Choosing K
 
-Slide 37: chạy KNN nhiều lần với các K khác nhau và chọn K **tối thiểu
-hóa sai số kiểm định chéo**, **không** phải sai số huấn luyện — vì sai số
-huấn luyện luôn nhỏ nhất tại K = 1 (mỗi điểm là láng giềng gần nhất của
-chính nó). Ghi chú kèm theo:
+Choosing K requires running KNN over several
+values of K and picking the one **minimising the cross-validated
+error**, **not** the training error — since training error is always
+lowest at K = 1 (every point is its own nearest neighbour, so it
+"predicts" perfectly on data it has already seen). A few accompanying
+rules:
 
-- Không có số láng giềng tối ưu chung cho mọi bộ dữ liệu.
-- **K nhỏ** ⇒ nhiễu ảnh hưởng mạnh: độ chệch thấp nhưng phương sai cao
-  (quá khớp).
-- **K lớn** ⇒ tốn tính toán hơn: phương sai thấp nhưng độ chệch cao (chưa
-  khớp).
-- Với bài toán nhị phân nên **chọn K lẻ** để tránh hòa phiếu.
-
-<span class="en">Slide 37: run KNN over several K and pick the one
-minimising the **cross-validated** error, **not** the training error
-(always minimised at K = 1, since each point is its own nearest
-neighbour). No optimal K suits all datasets; **small K** ⇒ noise
-dominates, low bias but high variance (overfitting); **large K** ⇒ more
-expensive, low variance but high bias (underfitting); for binary problems
-prefer an **odd K** to avoid tied votes.</span>
+- No single optimal number of neighbours suits
+  every dataset.
+- **Small K** ⇒ noise dominates: low bias but high
+  variance (overfitting).
+- **Large K** ⇒ more computationally expensive: low
+  variance but high bias (underfitting).
+- For binary problems, prefer an **odd K** to avoid
+  tied votes.
 
 ### Pros and cons
 
-**Ưu** (slide 38): đơn giản, dễ cài đặt; không cần xây mô hình, không
-phải tinh chỉnh nhiều tham số, không cần giả định về phân phối; ranh giới
-quyết định có thể rất phi tuyến.
+**Pros**: simple and easy to implement; no model to
+build, few parameters to tune, no distributional assumptions; the
+decision boundary can be highly non-linear.
 
-**Pros** (slide 38): simple and easy to implement;
-no model to build, few parameters to tune, no distributional assumptions;
-the decision boundary can be highly non-linear. **Cons**: significantly
-slower as features grow (the **curse of dimensionality**); prediction is
-computationally intensive as observations grow, since all distances are
-recomputed each time; it is **lazy learning** — nothing is learned at
-training time and the whole training set must be stored; sensitive to
-feature scaling and to irrelevant features.
+**Cons**: significantly slower as features grow
+(the **curse of dimensionality**); prediction is computationally
+intensive as observations grow, since all distances are recomputed each
+time; it is **lazy learning** — nothing is learned at training time and
+the whole training set must be stored; sensitive to feature scaling and
+to irrelevant features.
 
 ### Example 3.1 — the IRIS dataset
 
-Slide 39-48, dùng file `iris.csv` (150 hàng: 50 Setosa, 50 Versicolor, 50
-Virginica; 4 đặc trưng là chiều dài và chiều rộng của đài hoa và cánh
-hoa, đơn vị xen-ti-mét — chính bộ dữ liệu Fisher dùng cho mô hình phân
-biệt tuyến tính). Quy trình đầy đủ trên slide: nạp dữ liệu → chia tập
-(`test_size=0.3, random_state=42, stratify=y`) → vẽ biểu đồ phân tán tô
-màu theo loài → `StandardScaler` (khớp trên tập huấn luyện, chỉ biến đổi
-trên tập kiểm tra) → `KNeighborsClassifier(n_neighbors=5)` → dự đoán →
-ma trận nhầm lẫn và báo cáo phân loại → tìm K tốt nhất bằng
-`GridSearchCV(cv=5)` quét `range(1, 26, 2)` → **đánh giá đúng 1 lần** trên
-tập kiểm tra → dự đoán 1 bông hoa mới bằng `DataFrame` 1 hàng, chuẩn hóa
-bằng chính bộ chuẩn hóa đã khớp.
-
-Slides 39-48 use `iris.csv` (150 rows, 50 of each
+The workflow uses `iris.csv` (150 rows, 50 of each
 species; 4 features in cm — the dataset Fisher used for his linear
-discriminant). The full slide workflow: load → split → scatter plot →
-`StandardScaler` (fit on train, transform on test) →
-`KNeighborsClassifier(n_neighbors=5)` → predict → confusion matrix and
-classification report → best-K search with `GridSearchCV(cv=5)` over
-`range(1, 26, 2)` → **evaluate once** on the test set → predict a new
-flower. **Important**: slides 41-42 state that **the errors in the code
-are intentional** — the 4 planted bugs are listed in
+discriminant): load → split → scatter plot → `StandardScaler` (fit on
+train, transform on test) → `KNeighborsClassifier(n_neighbors=5)` →
+predict → confusion matrix and classification report → best-K search
+with `GridSearchCV(cv=5)` over `range(1, 26, 2)` → **evaluate once** on
+the test set → predict a new flower.
+
+**Important**: the exercise states that **the
+errors in the code are intentional** — the 4 planted bugs are listed in
 [[chapter03-supervised-learning-k32]].
 
 ## Appears in

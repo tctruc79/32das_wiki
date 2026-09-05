@@ -3,7 +3,7 @@ type: concept
 title: "The Supervised Learning Framework"
 tags: [chapter-3, k32, supervised-learning, foundations]
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 ---
 
@@ -18,45 +18,68 @@ in the chapter is just a different way of learning that same f̂.
 
 ## Explanation
 
-- **Two phases of every ML project** (slide 8):
-  **training** — learn a model from training data; **application** — test
-  it, then use it to decide. The full chain: labelled data → features x
-  and label y → learn f̂ → validate and tune → predict new x*.
-- **What makes it "supervised"**: the machine only
-  learns because **a human supplied the correct answer (the label)** for
-  the training examples. Both everyday examples on slide 9 show this: a
-  spam filter learns from ham/spam-labelled email; social-network face
-  recognition learns from users tagging friends in photos.
-- **4 types of machine learning** (slide 12) —
-  supervised is one of four:
+Placing machine learning in historical context shows
+it is not an isolated technique but the destination of a long process:
+from the 1950s Turing Test, through the term "artificial intelligence"
+coined at the 1956 Dartmouth Conference, hand-coded-rule expert systems
+in the 1980s, to the 1990s turning point when systems began **learning
+from data instead of following pre-written rules** — the true starting
+point of modern machine learning. Deep learning on big data followed in
+the 2000s-2010s, then the Transformer architecture from 2017 onward led
+to large language models. The thread running through this history: the
+boundary of "artificial intelligence" keeps shifting, but supervised
+learning's core principle — learning a function from labelled examples —
+has not.
 
-  | Loại | Dữ liệu | Ví dụ nhiệm vụ |
-  |---|---|---|
-  | Học có giám sát | Có nhãn đúng | Phân loại (đầu ra rời rạc), hồi quy (đầu ra là số) |
-  | Học không giám sát | Không nhãn | Phân cụm, giảm chiều, luật kết hợp |
-  | Học tăng cường | Phần thưởng/hình phạt từ môi trường | Tác nhân học qua tương tác |
-  | Học tự giám sát | Nhãn sinh ra từ chính dữ liệu | Dự đoán từ kế tiếp — cách tiền huấn luyện mô hình ngôn ngữ lớn |
+Every supervised-learning project, whatever
+algorithm it uses, passes through exactly 2 phases: **training** —
+learning f̂ from a labelled dataset — and **application** — testing that
+function, then using it to decide on new data. What makes it
+"supervised" lives precisely in the training phase: the machine only
+learns because **a human supplied the correct answer (the label)** for
+each example. A spam filter learns because people labelled thousands of
+emails *ham*/*spam* beforehand; a social-network face-recognition system
+learns because users tagged friends in photos themselves. Two seemingly
+different examples, one identical mechanism.
 
-  The 4th type (self-supervised) is new in the 2026
-  version; the 2025 version listed only the first three.
-- **The foundational vocabulary table** (slide 14):
-  observation = one row; feature (input/predictor/variable/dimension/
-  attribute) = one column; label (target/output) = what we predict; model
-  = the learned f̂; parameter = learned from data; hyperparameter = chosen
-  before training. The core distinction: **parameters are estimated by
-  the algorithm; hyperparameters are selected by you, usually with
-  cross-validation**.
-- **A short history of AI** (slide 6) places ML in
-  context: 1950 Turing → 1956 Dartmouth → 1980s expert systems after the
-  AI winter → 1990s learning from data → 2000s-2010s deep learning on big
-  data → 2017 onwards Transformers and LLMs → today, multi-step tasks and
-  AI as a copilot.
-- **Why the frame matters for the regression half**:
-  slide 89 restates that regression uses the **same framework** — only
-  the type of y changes; everything about splitting, cross-validation and
-  overfitting applies unchanged. That is why the chapter merges
-  classification and regression into one deck instead of splitting them
-  as the 2025 version did.
+Supervised learning is only 1 of 4 types of machine
+learning, distinguished by the **kind of learning signal** the algorithm
+receives:
+
+| Loại | Tín hiệu học | Ví dụ nhiệm vụ |
+|---|---|---|
+| Học có giám sát | Nhãn đúng do con người cung cấp | Phân loại (đầu ra rời rạc), hồi quy (đầu ra là số) |
+| Học không giám sát | Không có nhãn | Phân cụm, giảm chiều, luật kết hợp |
+| Học tăng cường | Phần thưởng/hình phạt từ môi trường | Tác nhân học qua tương tác |
+| Học tự giám sát | Nhãn tự sinh ra từ chính cấu trúc dữ liệu | Dự đoán từ kế tiếp — cách tiền huấn luyện các mô hình ngôn ngữ lớn |
+
+Self-supervised learning is the most notable
+addition here: it explains why today's large language models don't need
+billions of human-labelled examples — labels are generated automatically
+by masking part of the text and asking the model to predict it, turning
+what looks like an unsupervised problem into a supervised one without
+manual labelling effort.
+
+Reading the rest of the chapter requires a
+foundational vocabulary: **observation** = one row (xᵢ, yᵢ); **feature**
+(input/predictor/variable/dimension/attribute) = one column xⱼ; **label**
+(target/output) = what we predict, y; **model** = the learned function f̂.
+The most important distinction in this vocabulary is between
+**parameters** — numbers (like βⱼ) the algorithm **estimates from data**
+— and **hyperparameters** — choices (like K in KNN, λ in Ridge/Lasso,
+tree depth) the **user selects before training**, usually via
+cross-validation. Confusing the two is the most common conceptual error
+for beginners: a parameter is something the model discovers on its own;
+a hyperparameter is something the analyst must decide.
+
+Finally, this frame is not only for classification
+— it is the shared foundation for **both** classification and
+regression, differing only in the type of y (category ⇒ classification;
+number ⇒ regression). Everything about train/test splitting,
+cross-validation, and over/underfitting applies unchanged to both
+branches — precisely why this chapter merges classification and
+regression into a single narrative rather than splitting them into
+separate chapters.
 
 ## Appears in
 
@@ -82,5 +105,5 @@ regression).
 
 This frame does **not** cover unsupervised learning
 (clustering, dimension reduction) — slide 12 names those tasks but states
-that the lecture's focus throughout is supervised learning. At ingest
-time the 2026 cohort has no unsupervised-branch material in `raw/`.
+that the lecture's focus throughout is supervised learning. The 2026
+cohort currently has no unsupervised-branch material in `raw/`.

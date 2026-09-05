@@ -3,9 +3,17 @@ type: concept
 title: "Data Science — Definition & Roles (K32)"
 tags: [chapter-1, k32, foundations]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-09-05
 status: complete
 ---
+
+> <br><span class="en">**How to read this page**: this is Chapter 1's
+> central page — every other concept in the chapter (big data, DIKW, the
+> 5 types of analytics, analytic thinking) orbits the question "what is
+> data science, and how does it differ from neighbouring fields". If you
+> only review one page for Chapter 1, read this one first — especially
+> the DS/Analytics/BI table and the roles table, since those are the two
+> most likely sources of concept-distinction exam questions.</span>
 
 ## Definition
 
@@ -42,9 +50,9 @@ improves.
   reporting), Data lake (raw data of all formats, modelled only when
   used), Data integration (combining sources into one consistent
   view).
-- **Bảng so sánh Khoa học dữ liệu vs Phân tích dữ liệu vs Business
-  Intelligence** (5 tiêu chí — câu hỏi/dữ liệu/phương pháp/đầu ra/công
-  cụ điển hình):
+- **Data Science vs Data Analytics vs Business
+  Intelligence comparison** (5 criteria — question/data/methods/output/
+  typical tools):
 
   | Tiêu chí | Business Intelligence | Data Analytics | Data Science |
   |---|---|---|---|
@@ -54,10 +62,12 @@ improves.
   | Đầu ra | Dashboard, báo cáo | Hiểu biết, đề xuất | Mô hình, dự đoán, sản phẩm dữ liệu |
   | Công cụ điển hình | Power BI, Tableau, SQL | Excel, SQL, R | Python, R, thư viện học máy |
 
-  **Data Science vs Data Analytics vs Business
-  Intelligence table** (5 criteria — question/data/methods/output/typical
-  tools). Conclusion: overlapping practices, not rival
-  professions.
+  **Common exam trap**: ✅ "Data Science, Data
+  Analytics and Business Intelligence are 3 overlapping practices, most
+  organisations need all 3." ❌ "Business Intelligence is obsolete, every
+  organisation should switch entirely to Data Science" — wrong, because
+  BI still answers "what happened" well at a far lower cost, and most
+  day-to-day operational decisions don't need a predictive model.
 - **Who works with data science**: **Data
   engineer**, **Data analyst**, **Data scientist**, **ML engineer**,
   **Business/domain expert**. Note for VNP students: most will

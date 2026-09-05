@@ -4,7 +4,7 @@ title: "Phân loại (K32)"
 title_en: "Classification (K32)"
 tags: [chapter-3, k32, classification, supervised-learning]
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 ---
 
@@ -21,68 +21,83 @@ maps input data to a specific category is called a **classifier**.</span>
 
 ## Diễn giải - <span class="en">Explanation</span>
 
-- **3 dạng bài toán phân loại** (slide 27):
-  <br><span class="en">**3 kinds of classification problem** (slide
-  27):</span>
+Phân loại tồn tại dưới 3 dạng, phân biệt nhau bởi **số lượng và tính độc
+quyền của nhãn**: phân loại nhị phân (đúng 2 kết quả có thể, như thư rác/
+thư sạch); phân loại đa lớp (nhiều hơn 2 lớp, nhưng mỗi quan sát vẫn chỉ
+nhận **một và chỉ một** nhãn — như 3 loài hoa diên vĩ trong Ví dụ 3.1);
+và phân loại đa nhãn (mỗi quan sát có thể mang **nhiều nhãn cùng lúc**,
+như 1 bài báo vừa được gắn thẻ "tài chính" vừa "công nghệ"). Dạng thứ ba
+này là góc nhìn mới nhất, phản ánh thực tế rằng nhiều bài toán phân loại
+hiện đại (gắn thẻ nội dung, phân loại tài liệu) không ép được vào khuôn
+"một quan sát, một nhãn" của 2 dạng đầu.
+<br><span class="en">Classification comes in 3 kinds, distinguished by
+the **number and exclusivity of labels**: binary (exactly 2 possible
+outcomes, e.g. spam/ham); multi-class (more than 2 classes, but each
+observation still gets **one and only one** label — e.g. the 3 Iris
+species in Example 3.1); and multi-label (each observation may carry
+**several labels at once**, e.g. an article tagged both "finance" and
+"technology"). This third kind is the newest perspective, reflecting
+that many modern classification problems (content tagging, document
+classification) don't fit the "one observation, one label" mould of the
+first two.</span>
 
-  | Dạng | Định nghĩa | Ví dụ |
-  |---|---|---|
-  | Phân loại nhị phân | Đúng 2 kết quả có thể | Thư rác / thư sạch |
-  | Phân loại đa lớp | Nhiều hơn 2 lớp; mỗi quan sát nhận **một và chỉ một** nhãn | 3 loài hoa diên vĩ trong Ví dụ 3.1 |
-  | Phân loại đa nhãn | Mỗi quan sát có thể mang **nhiều nhãn cùng lúc** | 1 bài báo vừa gắn thẻ "tài chính" vừa gắn thẻ "công nghệ" |
+Xây một mô hình phân loại, bất kể thuật toán cụ thể nào, luôn đi qua
+đúng 4 bước: **khởi tạo** bộ phân loại sẽ dùng, **huấn luyện** nó bằng dữ
+liệu có nhãn, **dự đoán** mục tiêu cho quan sát mới (hàm `predict(X)`
+trả về nhãn dự đoán), rồi **đánh giá** mô hình trên dữ liệu giữ lại. Bốn
+bước này ánh xạ đúng 1-1 vào 4 dòng lệnh `scikit-learn` lặp lại xuyên
+suốt chương: khởi tạo lớp mô hình → `.fit()` → `.predict()` →
+`classification_report()` — một khuôn mẫu đủ ổn định để áp dụng cho bất
+kỳ thuật toán phân loại nào, từ KNN tới rừng ngẫu nhiên.
+<br><span class="en">Building a classification model, whatever the
+specific algorithm, always passes through exactly 4 steps: initialize
+the classifier, train it on labelled data, predict the target for a new
+observation, then evaluate on held-out data — mapping 1-to-1 onto the
+four `scikit-learn` lines used throughout the chapter: instantiate →
+`.fit()` → `.predict()` → `classification_report()` — a template stable
+enough to apply to any classification algorithm, from KNN to random
+forests.</span>
 
-  Dạng thứ 3 (đa nhãn) là **bổ sung mới của bản 2026**; bản 2025 chỉ nêu
-  nhị phân và đa lớp.
-  <br><span class="en">The third kind (multi-label) is **new in the 2026
-  version**; the 2025 version listed only binary and multi-class.</span>
-- **4 bước xây một mô hình phân loại** (slide 29): (1) **khởi tạo** bộ
-  phân loại sẽ dùng; (2) **huấn luyện** bộ phân loại bằng dữ liệu có
-  nhãn; (3) **dự đoán** mục tiêu — với một quan sát X chưa có nhãn,
-  `predict(X)` trả về nhãn dự đoán y; (4) **đánh giá** mô hình trên dữ
-  liệu giữ lại. Bốn bước này ánh xạ đúng 1-1 vào 4 dòng lệnh
-  `scikit-learn` dùng xuyên chương: khởi tạo lớp mô hình → `.fit()` →
-  `.predict()` → `classification_report()`.
-  <br><span class="en">**4 steps to build a classification model** (slide
-  29): initialize the classifier → train it on labelled data → predict
-  the target (`predict(X)` returns the predicted label) → evaluate on
-  held-out data. These map 1-to-1 onto the four `scikit-learn` lines used
-  throughout the chapter: instantiate → `.fit()` → `.predict()` →
-  `classification_report()`.</span>
-- **Danh sách thuật toán phân loại phổ biến** (slide 30): Naive Bayes,
-  cây quyết định, hồi quy logistic, K láng giềng gần nhất, máy véc-tơ hỗ
-  trợ (SVM), rừng ngẫu nhiên, tăng cường gradient/XGBoost, mạng nơ-ron.
-  Bài giảng chọn học **KNN** (đại diện phương pháp dựa trên khoảng cách),
-  **cây quyết định** (đại diện phương pháp dựa trên luật) và **tổ hợp
-  cây** — theo slide, ba nhóm này cùng nhau bao phủ các họ ý tưởng chính
-  dùng trong thực tế.
-  <br><span class="en">**Popular classification algorithms** (slide 30):
-  Naive Bayes, decision tree, logistic regression, KNN, SVM, random
-  forest, gradient boosting/XGBoost, neural networks. The lecture picks
-  **KNN** (distance-based), **decision trees** (rule-based) and **tree
-  ensembles** — together, per the slide, the main families of ideas used
-  in practice.</span>
-- **Chọn chỉ số theo bối cảnh — phần quan trọng nhất về mặt vận dụng**:
-  slide 19 dạy rằng độ chính xác gây hiểu lầm trên dữ liệu mất cân bằng,
-  và **bài tập nhóm 1** (slide 51) yêu cầu áp dụng đúng điều đó: với mỗi
-  ứng dụng phân loại trong một lĩnh vực thực tế (y tế, tài chính, tiếp
-  thị, mạng xã hội, thực thi pháp luật…), phải nêu **chỉ số nào quan
-  trọng nhất — độ chuẩn xác, độ bao phủ hay độ chính xác — và giải thích
-  vì sao**. Đây là dạng câu hỏi vận dụng điển hình.
-  <br><span class="en">**Choosing the metric by context — the most
-  applied part**: slide 19 teaches that accuracy misleads on imbalanced
-  data, and **Teamwork 1** (slide 51) asks students to apply exactly
-  that: for each classification application in a real-life domain, state
-  **which metric matters most — precision, recall or accuracy — and
-  justify why**. This is the archetypal applied exam question.</span>
-- **2 ứng dụng minh họa** (slide 49-50): bộ phân loại thư rác bằng KNN
-  (nguồn towardsdatascience.com) và phát hiện gian lận trong dữ liệu giao
-  dịch bằng KNN (nguồn kaggle.com). Cả hai đều là trường hợp dữ liệu mất
-  cân bằng điển hình — nên cũng là minh họa sống động cho cảnh báo về độ
-  chính xác ở slide 19.
-  <br><span class="en">**2 illustrative applications** (slides 49-50): a
-  KNN spam email classifier and KNN fraud detection on transaction data.
-  Both are textbook imbalanced-data cases — so they double as live
-  illustrations of slide 19's accuracy warning.</span>
+Trong số rất nhiều thuật toán phân loại đang tồn tại — Naive Bayes, cây
+quyết định, hồi quy logistic, K láng giềng gần nhất, máy véc-tơ hỗ trợ,
+rừng ngẫu nhiên, tăng cường gradient/XGBoost, mạng nơ-ron — chương này
+chỉ chọn dạy sâu 3: **KNN** (đại diện họ thuật toán dựa trên khoảng
+cách), **cây quyết định** (đại diện họ dựa trên luật), và **tổ hợp cây**
+(rừng ngẫu nhiên và tăng cường). Lựa chọn này không ngẫu nhiên — 3 nhóm
+này cùng nhau bao phủ hầu hết các họ ý tưởng chính được dùng trong thực
+tế, nên nắm vững cả 3 cho phép suy luận hợp lý về những thuật toán chưa
+được học chi tiết.
+<br><span class="en">Among the many classification algorithms that
+exist — Naive Bayes, decision trees, logistic regression, KNN, SVM,
+random forests, gradient boosting/XGBoost, neural networks — this
+chapter teaches only 3 in depth: **KNN** (distance-based), **decision
+trees** (rule-based), and **tree ensembles** (random forests and
+boosting). The choice is not arbitrary — together these three families
+cover most of the main ideas used in practice, so mastering them
+supports reasonable inference about algorithms not covered in
+detail.</span>
+
+Vế thực dụng nhất của cả chương nằm ở đây: chọn chỉ số đánh giá không thể
+tách rời khỏi bối cảnh ứng dụng, vì độ chính xác gây hiểu lầm trên dữ
+liệu mất cân bằng. Bài tập nhóm gắn liền với mục này yêu cầu áp dụng
+đúng nguyên tắc đó: với mỗi ứng dụng phân loại trong một lĩnh vực thực tế
+(y tế, tài chính, tiếp thị, mạng xã hội, thực thi pháp luật…), phải nêu
+rõ **chỉ số nào quan trọng nhất — độ chuẩn xác, độ bao phủ hay độ chính
+xác — và giải thích vì sao**. Hai ứng dụng minh họa của chương — bộ lọc
+thư rác và phát hiện gian lận giao dịch, cả hai dùng KNN — đều là trường
+hợp dữ liệu mất cân bằng điển hình (số email/giao dịch bất thường luôn
+chiếm thiểu số áp đảo), nên đồng thời cũng là minh chứng sống động cho lý
+do vì sao độ chính xác một mình là không đủ.
+<br><span class="en">The chapter's most applied lesson sits here:
+choosing an evaluation metric cannot be separated from the application
+context, because accuracy misleads on imbalanced data. The associated
+teamwork exercise applies exactly this principle: for each
+classification application in a real-life domain, state **which metric
+matters most — precision, recall, or accuracy — and justify why**. The
+chapter's two illustrative applications — a spam filter and transaction
+fraud detection, both via KNN — are themselves textbook imbalanced-data
+cases (anomalous emails/transactions are always a small minority), so
+they double as live evidence for why accuracy alone is not enough.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
@@ -125,9 +140,9 @@ metrics) and 55 (classification vs regression trees).</span>
 
 Hồi quy logistic được nêu tên trong danh sách thuật toán phân loại (slide
 30) nhưng **không được giảng chi tiết ở bất kỳ đâu trong chương này** —
-đây là khoảng trống nguồn của khóa 2026 tại thời điểm ingest, giống hệt
-tình trạng đã ghi nhận ở khóa 2025.
+một khoảng trống nguồn của khóa 2026, giống hệt tình trạng đã ghi nhận ở
+khóa 2025.
 <br><span class="en">Logistic regression is named in the algorithm list
 (slide 30) but is **never taught in detail anywhere in this chapter** — a
-source gap for the 2026 cohort at ingest time, mirroring the same gap
-recorded for the 2025 cohort.</span>
+source gap for the 2026 cohort, mirroring the same gap recorded for the
+2025 cohort.</span>

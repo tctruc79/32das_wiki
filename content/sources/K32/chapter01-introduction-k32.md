@@ -4,7 +4,7 @@ title: "Chapter 1 (K32) — Khoa học Dữ liệu và Tư duy Phân tích"
 title_en: "Chapter 1 (K32) — Data Science and Data-Analytic Thinking"
 tags: [chapter-1, k32, foundations, course-admin]
 created: 2026-08-22
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduction_2026.pdf"
 ---
@@ -270,12 +270,14 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
 - 2 bài tập thực hành: Warm-up (mentimeter, từ khoá liên quan khoa học dữ
   liệu) và "Exercise — loại phân tích nào?" (5 câu phát biểu từ dữ liệu 1
   nhà bán lẻ, yêu cầu phân loại; lưu ý đặc biệt câu #2 — dạng mô tả nhưng
-  hay bị báo cáo/hành động như thể là nhân quả).
+  hay bị báo cáo/hành động như thể là nhân quả) — cả 5 câu kèm đáp án và
+  giải thích ở [[data-driven-decision-making-k32]].
   <br><span class="en">2 practice exercises: Warm-up (mentimeter,
   keywords related to data science) and "Exercise — which type of
   analytics?" (5 statements from a retailer's data, classify each; note
-  #2 especially — descriptive in form but habitually treated as
-  causal).</span>
+  #2 especially — descriptive in form but habitually treated as causal)
+  — all 5 with worked answers in
+  [[data-driven-decision-making-k32]].</span>
 
 ## Khoảng trống / lưu ý - <span class="en">Gaps / notes</span>
 
@@ -292,11 +294,6 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
   <br><span class="en">The "Data-driven culture" and "The data-driven
   organisation" slides (36-37) have only titles, content is
   image-only.</span>
-- Đây là chương đầu tiên được ingest của K32; còn 7 chương (2-8) chưa có
-  file trong `raw/Lecture Notes/K32/` tại thời điểm ingest này.
-  <br><span class="en">This is K32's first ingested chapter; 7 more
-  chapters (2-8) have no file in `raw/Lecture Notes/K32/` at the time of
-  this ingest.</span>
 
 ## Liên kết - <span class="en">Links</span>
 

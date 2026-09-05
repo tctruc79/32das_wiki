@@ -163,6 +163,11 @@ obvious way to do it".</span>
   (chạy từng dòng, không cần biên dịch), hệ sinh thái hơn **500.000 gói
   trên PyPI**. **Bảng so sánh Python với công cụ khác** (slide 22, mới
   hoàn toàn so với K31):
+  <br><span class="en">**Why Python?** (slides 21-23): key features —
+  free, open source, accessible, versatile, powerful, strong community,
+  **interpreted**, 500,000+ packages on PyPI. **The comparison table**
+  (slide 22, entirely new vs K31) puts Python, R, Stata/EViews and Excel
+  side by side:</span>
 
   | Công cụ | Điểm mạnh | Hạn chế |
   |---|---|---|
@@ -177,11 +182,7 @@ obvious way to do it".</span>
   Notebook/JupyterLab; quản lý phiên bản — Git/GitHub; nền tảng online —
   **Google Colab, Kaggle Notebooks, Binder** (K31 chỉ nhắc Jupyter
   Notebook làm nền tảng online, không có 3 cái tên này).
-  <br><span class="en">**Why Python?** (slides 21-23): key features —
-  free, open source, accessible, versatile, powerful, strong community,
-  **interpreted**, 500,000+ packages on PyPI. **The comparison table**
-  (slide 22, entirely new vs K31) puts Python, R, Stata/EViews and Excel
-  side by side. Conclusion: Python and R are **complements**, not
+  <br><span class="en">Conclusion: Python and R are **complements**, not
   substitutes. Tools: CPython interpreter; IDEs — PyCharm, Spyder,
   **VS Code** (new), Jupyter/JupyterLab; Git/GitHub; online platforms —
   **Google Colab, Kaggle Notebooks, Binder** (new — K31 only mentioned

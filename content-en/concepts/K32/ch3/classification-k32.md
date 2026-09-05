@@ -3,7 +3,7 @@ type: concept
 title: "Classification (K32)"
 tags: [chapter-3, k32, classification, supervised-learning]
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 ---
 
@@ -16,39 +16,46 @@ maps input data to a specific category is called a **classifier**.
 
 ## Explanation
 
-- **3 kinds of classification problem** (slide
-  27):
+Classification comes in 3 kinds, distinguished by
+the **number and exclusivity of labels**: binary (exactly 2 possible
+outcomes, e.g. spam/ham); multi-class (more than 2 classes, but each
+observation still gets **one and only one** label — e.g. the 3 Iris
+species in Example 3.1); and multi-label (each observation may carry
+**several labels at once**, e.g. an article tagged both "finance" and
+"technology"). This third kind is the newest perspective, reflecting
+that many modern classification problems (content tagging, document
+classification) don't fit the "one observation, one label" mould of the
+first two.
 
-  | Dạng | Định nghĩa | Ví dụ |
-  |---|---|---|
-  | Phân loại nhị phân | Đúng 2 kết quả có thể | Thư rác / thư sạch |
-  | Phân loại đa lớp | Nhiều hơn 2 lớp; mỗi quan sát nhận **một và chỉ một** nhãn | 3 loài hoa diên vĩ trong Ví dụ 3.1 |
-  | Phân loại đa nhãn | Mỗi quan sát có thể mang **nhiều nhãn cùng lúc** | 1 bài báo vừa gắn thẻ "tài chính" vừa gắn thẻ "công nghệ" |
+Building a classification model, whatever the
+specific algorithm, always passes through exactly 4 steps: initialize
+the classifier, train it on labelled data, predict the target for a new
+observation, then evaluate on held-out data — mapping 1-to-1 onto the
+four `scikit-learn` lines used throughout the chapter: instantiate →
+`.fit()` → `.predict()` → `classification_report()` — a template stable
+enough to apply to any classification algorithm, from KNN to random
+forests.
 
-  The third kind (multi-label) is **new in the 2026
-  version**; the 2025 version listed only binary and multi-class.
-- **4 steps to build a classification model** (slide
-  29): initialize the classifier → train it on labelled data → predict
-  the target (`predict(X)` returns the predicted label) → evaluate on
-  held-out data. These map 1-to-1 onto the four `scikit-learn` lines used
-  throughout the chapter: instantiate → `.fit()` → `.predict()` →
-  `classification_report()`.
-- **Popular classification algorithms** (slide 30):
-  Naive Bayes, decision tree, logistic regression, KNN, SVM, random
-  forest, gradient boosting/XGBoost, neural networks. The lecture picks
-  **KNN** (distance-based), **decision trees** (rule-based) and **tree
-  ensembles** — together, per the slide, the main families of ideas used
-  in practice.
-- **Choosing the metric by context — the most
-  applied part**: slide 19 teaches that accuracy misleads on imbalanced
-  data, and **Teamwork 1** (slide 51) asks students to apply exactly
-  that: for each classification application in a real-life domain, state
-  **which metric matters most — precision, recall or accuracy — and
-  justify why**. This is the archetypal applied exam question.
-- **2 illustrative applications** (slides 49-50): a
-  KNN spam email classifier and KNN fraud detection on transaction data.
-  Both are textbook imbalanced-data cases — so they double as live
-  illustrations of slide 19's accuracy warning.
+Among the many classification algorithms that
+exist — Naive Bayes, decision trees, logistic regression, KNN, SVM,
+random forests, gradient boosting/XGBoost, neural networks — this
+chapter teaches only 3 in depth: **KNN** (distance-based), **decision
+trees** (rule-based), and **tree ensembles** (random forests and
+boosting). The choice is not arbitrary — together these three families
+cover most of the main ideas used in practice, so mastering them
+supports reasonable inference about algorithms not covered in
+detail.
+
+The chapter's most applied lesson sits here:
+choosing an evaluation metric cannot be separated from the application
+context, because accuracy misleads on imbalanced data. The associated
+teamwork exercise applies exactly this principle: for each
+classification application in a real-life domain, state **which metric
+matters most — precision, recall, or accuracy — and justify why**. The
+chapter's two illustrative applications — a spam filter and transaction
+fraud detection, both via KNN — are themselves textbook imbalanced-data
+cases (anomalous emails/transactions are always a small minority), so
+they double as live evidence for why accuracy alone is not enough.
 
 ## Appears in
 
@@ -77,5 +84,5 @@ metrics) and 55 (classification vs regression trees).
 
 Logistic regression is named in the algorithm list
 (slide 30) but is **never taught in detail anywhere in this chapter** — a
-source gap for the 2026 cohort at ingest time, mirroring the same gap
-recorded for the 2025 cohort.
+source gap for the 2026 cohort, mirroring the same gap recorded for the
+2025 cohort.

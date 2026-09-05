@@ -3,7 +3,7 @@ type: concept
 title: "Overfitting, Underfitting and the Bias–Variance Trade-off (K32)"
 tags: [chapter-3, k32, overfitting, bias-variance, model-evaluation]
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 ---
 
@@ -20,22 +20,22 @@ is the **bias–variance trade-off**.
 
 ### The two states side by side
 
-| | Underfitting (slide 23) | Overfitting (slide 24) |
+| | Chưa khớp | Quá khớp |
 |---|---|---|
-| Problem | Model too simple | Model too complex, learns the noise |
-| On the training set | Poor | Excellent |
-| On the test / forecast set | Poor | Poor |
-| Symptom | Training error high, test error high, **the two close together** | Training error very low, test error much higher — **a large gap** |
-| Fix | A more complex model; add or improve features; **less** regularization | A simpler model; less complexity; more data; **apply** regularization; prune |
+| Vấn đề | Mô hình quá đơn giản | Mô hình quá phức tạp, học cả nhiễu |
+| Trên tập huấn luyện | Kém | Cực tốt |
+| Trên tập kiểm tra / dự báo | Kém | Kém |
+| Dấu hiệu nhận biết | Sai số huấn luyện cao, sai số kiểm tra cao, **hai con số gần nhau** | Sai số huấn luyện rất thấp, sai số kiểm tra cao hơn nhiều — **khoảng cách lớn** |
+| Cách xử lý | Mô hình phức tạp hơn; thêm hoặc cải thiện đặc trưng; **giảm** mức điều chuẩn | Mô hình đơn giản hơn; giảm độ phức tạp; thu thập thêm dữ liệu; **áp dụng** điều chuẩn; tỉa cây |
 
-<span class="en">**Underfitting** (slide 23): too simple; poor on both
-training and test data; symptom is high training error *and* high test
-error, close together; fix with a more complex model, better features, or
-*less* regularization. **Overfitting** (slide 24): too complex, learns
-the noise; excellent on training data but poor on test/forecast data and
-cannot generalise; symptom is very low training error but much higher
-test error — a large gap; fix with a simpler model, less complexity, more
-data, regularization, or pruning.</span>
+**Underfitting**: too simple; poor on both training and
+test data; symptom is high training error *and* high test error, close
+together; fix with a more complex model, better features, or *less*
+regularization. **Overfitting**: too complex, learns the noise;
+excellent on training data but poor on test/forecast data and cannot
+generalise; symptom is very low training error but much higher test
+error — a large gap; fix with a simpler model, less complexity, more
+data, regularization, or pruning.
 
 The key to diagnosis: **one number is not enough**.
 High training error may mean underfitting; low training error *by itself*
@@ -46,50 +46,41 @@ overfitting signature.
 
 ### The bias–variance trade-off
 
-Slide 25 (**hoàn toàn mới** so với bản 2025) đưa ra công thức phân rã.
-Với hàm mất mát bình phương sai số, sai số dự đoán kỳ vọng tách thành 3
-phần:
+The table above describes 2 *symptoms*; the
+bias–variance decomposition (**entirely new** versus 2025) is what
+actually explains *why* they occur. For a squared-error loss, the
+expected prediction error decomposes into 3 parts:
 
-E[(y − f̂(x))²] = **Độ chệch²[f̂(x)]** + **Phương sai[f̂(x)]** + **σ²**
+E[(y − f̂(x))²] = **Bias²[f̂(x)]** + **Variance[f̂(x)]** + **σ²**
 
-- **Độ chệch²** — thành phần "quá đơn giản": mô hình sai một cách có hệ
-  thống vì không đủ khả năng biểu diễn quy luật thật.
-- **Phương sai** — thành phần "quá linh hoạt": dự đoán thay đổi mạnh khi
-  tập huấn luyện thay đổi một chút.
-- **σ²** — **sai số không thể giảm được**: nhiễu vốn có trong dữ liệu,
-  không thuật toán nào loại bỏ được.
+- **Bias²** — the "too simple" term: the model is
+  systematically wrong because it lacks the capacity to represent the
+  true pattern.
+- **Variance** — the "too flexible" term:
+  predictions swing wildly when the training set changes slightly.
+- **σ²** — the **irreducible error**: noise
+  inherent in the data that no algorithm can remove.
 
-Slide 25 (**entirely new** versus 2025) gives the
-decomposition: for a squared-error loss, E[(y − f̂(x))²] = Bias²[f̂(x)] +
-Var[f̂(x)] + σ² — the "too simple" term, the "too flexible" term, and the
-**irreducible** noise no algorithm can remove. On the complexity axis,
-**underfitting lives on the left** (high bias, low variance),
-**overfitting on the right** (low bias, high variance), and **the best
-model sits at the minimum of the total-error curve**.
+On the complexity axis: **underfitting lives on the
+left** (high bias, low variance), **overfitting on the right** (low
+bias, high variance), and **the best model sits at the minimum of the
+total-error curve**.
 
 ### The same trade-off, recurring across the chapter
 
-- **KNN** (slide 37): K nhỏ ⇒ độ chệch thấp, phương sai cao (quá khớp);
-  K lớn ⇒ phương sai thấp, độ chệch cao (chưa khớp).
-- **Cây quyết định** (slide 72): 1 cây sâu là mô hình **phương sai cao**
-  — thay đổi nhỏ trong dữ liệu tạo ra cây rất khác.
-- **Rừng ngẫu nhiên** (slide 85): chủ yếu **giảm phương sai** bằng cách
-  trung bình hóa nhiều cây đã được khử tương quan.
-- **Tăng cường** (slide 85): chủ yếu **giảm độ chệch** bằng cách nối tiếp
-  nhiều cây cụt nông.
-- **Hồi quy đa thức** (slide 92): tăng bậc p là cách kinh điển để đi từ
-  chưa khớp sang quá khớp.
-- **Điều chuẩn** (slide 90, 96): cố tình đánh đổi **một chút tính không
-  chệch để lấy nhiều độ chính xác dự đoán** — chính là cố ý dịch mô hình
-  sang trái trên trục độ phức tạp.
-
-<span class="en">The same trade-off recurs everywhere: KNN's small vs
-large K; a deep single tree as a **high-variance** model; random forests
-mainly cutting **variance** by averaging decorrelated trees; boosting
-mainly cutting **bias** by chaining shallow stumps; polynomial degree p
-as the classic route from underfitting to overfitting; and regularization
-deliberately trading **a little unbiasedness for a lot of predictive
-accuracy** — i.e. deliberately moving left on the complexity axis.</span>
+The real value of the bias–variance frame is that
+it is not an isolated abstract theory, but the shared explanation behind
+almost every remaining design choice in the chapter: in **KNN**, a small
+K gives low bias but high variance (overfitting), a large K the reverse;
+a **decision tree** grown to full depth by default is the textbook
+high-variance model; **random forests** exist to attack precisely that
+variance term by averaging decorrelated trees; **boosting** goes the
+opposite direction, attacking the bias term by chaining shallow stumps;
+in regression, raising a polynomial's degree is the classic route from
+underfitting to overfitting; and **regularization** (Ridge/Lasso) is the
+clearest example of a *deliberate* trade — accepting a little more bias
+in exchange for more predictive accuracy, i.e. intentionally moving left
+on the complexity axis.
 
 ## Appears in
 

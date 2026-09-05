@@ -3,9 +3,16 @@ type: concept
 title: "Data-Analytic Thinking (K32)"
 tags: [chapter-1, k32, foundations]
 created: 2026-08-22
-updated: 2026-08-22
+updated: 2026-09-05
 status: complete
 ---
+
+> <br><span class="en">**How to read this page**: the 7-condition
+> checklist below is this page's most practical exam tool — use it to
+> grade any "given this business situation, is it a good data science
+> problem?" question the exam might pose. Apply all 7 conditions; a
+> single failure is enough to conclude "not suitable" — don't stop after
+> checking just 1-2 conditions.</span>
 
 ## Definition
 

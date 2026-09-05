@@ -3,7 +3,7 @@ type: concept
 title: "Boosting and the Ensemble Families"
 tags: [chapter-3, k32, boosting, ensemble, xgboost]
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 ---
 
@@ -20,72 +20,71 @@ exist in the 2025 material.
 
 ### The 3 named variants
 
-Slide 84:
-
-- **AdaBoost** — **gán lại trọng số** cho các quan sát bị phân loại sai,
-  để cây kế tiếp tập trung vào chúng.
-- **Tăng cường gradient (Gradient boosting)** — mỗi cây mới được **khớp
-  vào phần dư** (gradient của hàm mất mát) của mô hình hiện tại.
-- **XGBoost / LightGBM / CatBoost** — các bản cài đặt **nhanh, có điều
-  chuẩn** của tăng cường gradient. Theo slide, đây thường là các thuật
-  toán **thắng các cuộc thi** trên dữ liệu bảng có cấu trúc trong kinh
-  doanh.
-
-<span class="en">Slide 84: **AdaBoost** re-weights misclassified
-observations so the next tree focuses on them; **gradient boosting** fits
-each new tree to the residuals (the gradient of the loss) of the current
-model; **XGBoost / LightGBM / CatBoost** are fast, regularised
-implementations of gradient boosting — per the slide, typically the
-algorithms that **win competitions** on structured tabular business
-data.</span>
+The "sequential error correction" idea of boosting is
+realised in 3 increasingly sophisticated ways: **AdaBoost**, the
+earliest version, **re-weights misclassified observations** so the next
+tree focuses more on them; **gradient boosting** generalises this by
+having each new tree **fit the residuals** (in essence, the gradient of
+the loss function) of the current model, rather than just reweighting
+observations; and **XGBoost / LightGBM / CatBoost** are fast, modern,
+regularised implementations of gradient boosting — the family that
+typically **wins competitions** on structured tabular business data, by
+combining gradient boosting's power with speed and anti-overfitting
+optimisations.
 
 ### The trade-off
 
 Boosting is usually **more accurate** than a random
-forest, but **more sensitive to hyperparameters** and **can overfit** if
-the learning rate is too high or there are too many rounds. Hence the
-slide's framing: random forest as the "solid baseline", boosting as the
-tool for "squeezing out top accuracy".
+forest, but the price is being **more sensitive to hyperparameters** and
+**able to overfit** if the learning rate is too high or there are too
+many rounds — each new tree tries to correct the previous ones' errors,
+so without careful control that "correction" process can start fitting
+random noise instead. The practical way to think about it: random forest
+as the "solid, easy-to-tune baseline", boosting as the tool for when top
+accuracy is needed and a longer tuning process is an acceptable
+trade-off.
 
 ### Bagging vs boosting
 
-Slide 85 — bảng đối chiếu 6 tiêu chí:
+Comparing the two ensemble families directly on 6
+criteria:
 
-| Criterion | Bagging (random forest) | Boosting (XGBoost) |
+| Tiêu chí | Đóng bao (rừng ngẫu nhiên) | Tăng cường (XGBoost) |
 |---|---|---|
-| How trees are built | In parallel, independently | Sequentially, each fixes the last |
-| Tree characteristics | Deep; low bias, high variance | Shallow stumps; high bias |
-| Mainly reduces | **Variance** | **Bias** |
-| Overfitting risk | Low | Moderate, needs tuning |
-| Tuning speed | Fast, few knobs | Slower, many knobs |
-| Typical use | Solid baseline | Squeezing out top accuracy |
+| Cách xây cây | Song song, độc lập | Tuần tự, cây sau sửa cây trước |
+| Đặc điểm cây | Sâu; độ chệch thấp, phương sai cao | Cây cụt nông; độ chệch cao |
+| Chủ yếu giảm | **Phương sai** | **Độ chệch** |
+| Rủi ro quá khớp | Thấp | Trung bình, cần tinh chỉnh |
+| Tốc độ tinh chỉnh | Nhanh, ít núm vặn | Chậm hơn, nhiều núm vặn |
+| Dùng điển hình | Mốc so sánh vững chắc | Vắt kiệt độ chính xác tối đa |
 
-<span class="en">Slide 85 compares the two on 6 criteria: bagging builds
+Comparing the two directly on 6 criteria: bagging builds
 trees in parallel and independently while boosting builds them
 sequentially with each fixing the last; bagging's trees are deep (low
 bias, high variance) versus boosting's shallow stumps (high bias);
 bagging mainly reduces **variance**, boosting reduces **bias**;
 overfitting risk is low versus moderate-and-needs-tuning; bagging is fast
 to tune with few knobs, boosting slower with many; bagging is the solid
-baseline, boosting squeezes out top accuracy.</span>
+baseline, boosting squeezes out top accuracy.
 
 **How to read this table for the exam**: the
 "mainly reduces" row is the crucial one — it connects straight back to
-the bias–variance decomposition on slide 25. Bagging takes many
+the bias–variance decomposition. Bagging takes many
 high-variance trees and averages away the variance; boosting takes many
 high-bias stumps and chains them to cut the bias. Two routes attacking
 **two different terms of the same formula**.
 
 ### Teamwork 2
 
-Slide 86 asks students to list other decision tree
-extensions besides random forests; list as many business/real-world
-applications of classification as possible; and **explain in their own
-words why averaging many trees reduces variance but averaging many
-identical trees would not**. The third question is the comprehension
-test — answering it means understanding why a random forest needs **two**
-sources of randomness, not one. Submitted via the Google Form on the
-slide.
+This section's teamwork exercise asks 3 things:
+list other decision tree extensions besides random forests; list as many
+business/real-world applications of classification as possible; and,
+most importantly, **explain in your own words why averaging many trees
+reduces variance but averaging many identical trees would not**. The
+third question is the real comprehension test: answering it means
+understanding why a random forest needs **two** sources of randomness
+(bagging and feature subsampling), not one — if only one were needed,
+this question would have no satisfying answer.
 
 ## Appears in
 

@@ -4,9 +4,25 @@ title: "Bộ thư viện Python cho phân tích dữ liệu"
 title_en: "Python Data Analysis Stack"
 tags: [chapter-2, k32, python, data-analysis, pandas, numpy]
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-09-05
 status: complete
 ---
+
+> **Cách đọc trang này**: 6 thư viện chia làm 2 nhóm rất khác nhau về
+> mục đích — NumPy/pandas/matplotlib/seaborn là **công cụ nền** (dùng ở
+> mọi chương sau), còn statsmodels/scikit-learn là **2 triết lý mô hình
+> hóa đối lập** (giải thích vs dự đoán) sẽ quay lại xuyên suốt Chapter 3.
+> Nắm chắc sự đối lập statsmodels/scikit-learn ở đây giúp hiểu ngay vì
+> sao Chapter 3 tách "đánh giá bằng ý nghĩa thống kê" khỏi "đánh giá bằng
+> độ chính xác dự đoán".
+> <br><span class="en">**How to read this page**: the 6 libraries split
+> into 2 very different purposes — NumPy/pandas/matplotlib/seaborn are
+> **infrastructure** (used in every later chapter), while statsmodels/
+> scikit-learn embody **2 opposing modelling philosophies** (explanation
+> vs prediction) that recur throughout Chapter 3. Understanding this
+> opposition here makes it immediately clear why Chapter 3 separates
+> "judged by statistical significance" from "judged by predictive
+> accuracy".</span>
 
 ## Định nghĩa - <span class="en">Definition</span>
 
@@ -80,6 +96,60 @@ dataset as a running example.</span>
   Vietnamese provinces, year 2014, 13 socioeconomic columns. Used as the
   real-data example for the full pandas workflow. Full structure
   documented in [[chapter02-python-jupyter-k32]].</span>
+
+## Ví dụ có mã và kết quả thật - <span class="en">Worked code + real output</span>
+
+Điều làm NumPy khác một list Python thông thường thể hiện rõ nhất qua 2
+khả năng: áp dụng phép toán lên **toàn bộ mảng cùng lúc** thay vì lặp
+từng phần tử, và sinh số ngẫu nhiên **tái lập được** nhờ đặt hạt giống
+(`seed`) — điều kiện tiên quyết để một kết quả phân tích có thể được
+người khác chạy lại và ra đúng con số giống hệt:
+<br><span class="en">What sets NumPy apart from an ordinary Python list
+shows most clearly through 2 capabilities: applying an operation to an
+**entire array at once** rather than looping element by element, and
+generating **reproducible** random numbers via a seed — a prerequisite
+for an analysis result that others can re-run and get the exact same
+numbers:</span>
+
+```python
+import numpy as np
+
+a = np.array([1, 2, 3, 4, 5])
+print(a * 2)              # phép toán áp dụng lên MỌI phần tử cùng lúc
+print(a.mean(), a.std(), a.sum())
+
+M = np.array([[1, 2], [3, 4]])          # ma trận 2x2
+print(M.shape)
+print(M @ M)                            # nhân ma trận
+
+np.random.seed(2026)
+x = np.random.normal(loc=0, scale=1, size=1000)   # 1000 số ngẫu nhiên N(0,1)
+print(round(x.mean(), 4), round(x.std(), 4))
+```
+
+Kết quả in ra:
+<br><span class="en">Printed output:</span>
+
+```
+[ 2 4 6 8 10]
+3.0 1.4142135623730951 15
+(2, 2)
+[[ 7 10]
+ [15 22]]
+-0.0315 0.9621
+```
+
+**Điểm cần nhớ**: `x.mean()` ≈ −0.0315 và `x.std()` ≈ 0.9621 — rất gần
+0 và 1 (tham số `loc=0, scale=1`) nhưng **không đúng tuyệt đối**, vì đây
+chỉ là 1.000 lần rút mẫu ngẫu nhiên, không phải toàn bộ phân phối lý
+thuyết. `np.random.seed(2026)` là lý do 2 con số này tái lập được y hệt
+mỗi lần chạy lại — thiếu dòng này, mỗi lần chạy sẽ ra 1 kết quả hơi khác.
+<br><span class="en">**Key point to remember**: `x.mean()` ≈ −0.0315 and
+`x.std()` ≈ 0.9621 — close to 0 and 1 (`loc=0, scale=1`) but **not
+exact**, since this is only 1,000 random draws, not the full theoretical
+distribution. `np.random.seed(2026)` is why these two numbers reproduce
+identically on every re-run; without it, each run would give a slightly
+different result.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 

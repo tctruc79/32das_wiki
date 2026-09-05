@@ -3,7 +3,7 @@ type: concept
 title: "Model Evaluation Metrics (K32)"
 tags: [chapter-3, k32, model-evaluation, metrics]
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 ---
 
@@ -21,54 +21,75 @@ metrics.
 
 ### Regression metrics
 
-Với n quan sát, giá trị thực yᵢ, giá trị dự đoán ŷᵢ và sai số
-uᵢ = yᵢ − ŷᵢ (slide 17-18):
+With n observations, true value yᵢ, predicted value
+ŷᵢ and error uᵢ = yᵢ − ŷᵢ:
 
-| Metric | Formula | Characteristic |
+| Chỉ số | Công thức | Đặc điểm |
 |---|---|---|
-| MAE | (1/n)Σ\|yᵢ − ŷᵢ\| | Treats all errors equally |
-| MSE | (1/n)Σ(yᵢ − ŷᵢ)² | Punishes large errors; units are y squared |
-| RMSE | √MSE | **Back in y's own units** |
-| MAPE | (100/n)Σ\|yᵢ − ŷᵢ\|/\|yᵢ\| | Scale-free, easy to communicate |
-| R² | 1 − Σ(yᵢ − ŷᵢ)²/Σ(yᵢ − ȳ)² | Share of y's variation explained by the model |
+| MAE | (1/n)Σ\|yᵢ − ŷᵢ\| | Coi mọi sai số như nhau |
+| MSE | (1/n)Σ(yᵢ − ŷᵢ)² | Phạt nặng sai số lớn; đơn vị là bình phương của y |
+| RMSE | √MSE | Đưa sai số **về đúng đơn vị của y** |
+| MAPE | (100/n)Σ\|yᵢ − ŷᵢ\|/\|yᵢ\| | Không phụ thuộc thang đo, dễ truyền đạt |
+| R² | 1 − Σ(yᵢ − ŷᵢ)²/Σ(yᵢ − ȳ)² | Tỷ lệ biến thiên của y được mô hình giải thích |
 
-Các tiêu chí khác được slide nêu tên nhưng không khai triển: RSE (sai số
-bình phương tương đối), RAE (sai số tuyệt đối tương đối), RMSE chuẩn hóa,
-RMSE tương đối.
-<span class="en">**Regression metrics** (slides 17-18), with error
-uᵢ = yᵢ − ŷᵢ: MAE treats all errors equally; MSE punishes large errors and
-is in squared units; RMSE = √MSE brings the error **back into y's units**;
-MAPE is scale-free and easy to communicate; R² is the share of y's
-variation the model explains. Other criteria named but not expanded: RSE,
-RAE, Normalised RMSE, Relative RMSE.</span>
-
-**How to choose** (slide 18): MAE treats all errors
-equally; **RMSE punishes large errors more**, so use it when big mistakes
-are costly; **MAPE is undefined when some yᵢ = 0** and is asymmetric.
+Choosing a metric is not arbitrary — it depends
+directly on **the business consequence of a large error**. MAE treats
+all errors equally regardless of size, so it suits cases where the cost
+of error grows linearly with its size. RMSE, by squaring each error
+before averaging, **punishes large errors many times more heavily**
+than small ones — prefer it when a few severely wrong predictions cause
+disproportionate losses (e.g. a badly wrong demand forecast causing a
+severe stock-out). MAPE has the advantage of being scale-free — easy to
+compare across problems with different units, easy to communicate to a
+non-technical audience — but has 2 drawbacks to remember: it is
+undefined when an observation has yᵢ = 0, and it is asymmetric
+(over-predicting is penalised more heavily than under-predicting, since
+the denominator is always the true value). Beyond these 5 metrics, a few
+less common criteria exist: Relative Squared Error (RSE), Relative
+Absolute Error (RAE), and normalised variants of RMSE.
 
 ### Classification metrics
 
-Toàn bộ mục này là **nội dung mới của bản 2026** (slide 19):
+While regression metrics measure "how wrong",
+classification metrics must answer a subtler question: "wrong in which
+direction, and which direction is more costly". The essential starting
+point is recognising that **accuracy is severely misleading on
+imbalanced data**: if 99% of transactions in a dataset are legitimate, a
+model that *always* predicts "legitimate" — having learned nothing — is
+still 99% accurate while being entirely useless for fraud detection. This
+is exactly why two further metrics are needed, each measuring a different
+kind of mistake: **precision** — of the cases flagged positive, how many
+were correct — preferred when **false alarms are expensive**; and
+**recall (sensitivity)** — of the true positive cases, how many were
+caught — preferred when **misses are expensive**. Because these two
+typically trade off against each other, **F1**, their harmonic mean, is
+used when a single number must balance both concerns. Finally,
+**ROC-AUC** measures ranking quality across *every* possible decision
+threshold, useful precisely when the classification threshold has not
+yet been fixed before deployment. In practice, the whole classification
+metric set comes at once from `classification_report(y_test, y_pred)`,
+built from the raw counts in `confusion_matrix(y_test, y_pred)`.
 
-- **Accuracy** — **misleading on imbalanced data**:
-  if 99% of transactions are legitimate, an always-"legitimate" model is
-  99% accurate and completely useless.
-- **Precision** — of those we flagged, how many were
-  right. Use when **false alarms are expensive** (e.g. blocking a valid
-  email).
-- **Recall (sensitivity)** — of the true cases, how
-  many did we catch. Use when **misses are expensive** (e.g. missing a
-  fraud or a disease).
-- **F1** — the harmonic mean of precision and
-  recall, when you need to balance both.
-- **ROC-AUC** — ranking quality across all
-  thresholds, useful when the decision threshold is not fixed in
-  advance.
+## Worked example — why RMSE always ≥ MAE
 
-In the chapter's Python code the whole set comes at
-once from `classification_report(y_test, y_pred)`, with
-`confusion_matrix(y_test, y_pred)` giving the raw counts they are
-computed from.
+This is the instructor's review question 3, and the
+answer comes from the structure of the two formulas themselves rather
+than from a specific numerical example. Let aᵢ = |yᵢ − ŷᵢ| ≥ 0. MAE is
+the **arithmetic mean** of the n values aᵢ, while RMSE is the **square
+root of the mean of the squared** aᵢ — in other words, RMSE is exactly
+the *quadratic mean* (root mean square) of the same sequence. The
+quadratic-mean-≥-arithmetic-mean inequality (a direct consequence of the
+Cauchy–Schwarz inequality, equivalently QM–AM) holds for **every**
+non-negative sequence, so RMSE ≥ MAE always, regardless of the specific
+data.
+
+**When the two are equal**: QM = AM only when every
+aᵢ is **exactly equal** — i.e. every error has the same magnitude. The
+gap between RMSE and MAE therefore carries diagnostic meaning too: **the
+larger RMSE − MAE is, the more unevenly the errors are spread** (a few
+badly-missed observations amid an otherwise accurate model) — precisely
+the reason to prefer RMSE when "large mistakes are costly," as noted
+above.
 
 ## Appears in
 

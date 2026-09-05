@@ -4,7 +4,7 @@ title: "Hồi quy tuyến tính (K32)"
 title_en: "Linear Regression (K32)"
 tags: [chapter-3, k32, regression, ols, supervised-learning]
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-05
 status: complete
 ---
 
@@ -13,6 +13,9 @@ status: complete
 Trong học máy, hồi quy là bài toán học quan hệ giữa một số biến đầu vào
 (định tính hoặc định lượng) x = [x₁, x₂, …, x_p] và một biến đầu ra
 **định lượng** y:
+<br><span class="en">In machine learning, regression is the problem of
+learning the relationship between input variables (qualitative or
+quantitative) x = [x₁,…,x_p] and a **quantitative** output y:</span>
 
 y = f(x₁, x₂, …, x_p) + u
 
@@ -20,10 +23,7 @@ trong đó u là số hạng nhiễu/sai số, mô tả mọi thứ mà mô hìn
 bắt được. Hồi quy **tuyến tính** là trường hợp f có dạng
 y = β₀ + β₁x₁ + β₂x₂ + … + β_k x_k, với β₀,…,β_k là các tham số cần học
 từ tập dữ liệu huấn luyện.
-<br><span class="en">In machine learning, regression is the problem of
-learning the relationship between input variables (qualitative or
-quantitative) x = [x₁,…,x_p] and a **quantitative** output y:
-y = f(x₁,…,x_p) + u, where u is the noise/error term describing
+<br><span class="en">where u is the noise/error term describing
 everything the model cannot capture. **Linear** regression is the case
 where f takes the form y = β₀ + β₁x₁ + … + β_k x_k, with β₀,…,β_k the
 parameters to be learned from the training data.</span>
@@ -32,95 +32,112 @@ parameters to be learned from the training data.</span>
 
 ### Cùng một khung với phân loại - <span class="en">The same frame as classification</span>
 
-Ghi chú quan trọng nhất của mục này (slide 89, **mới** ở bản 2026): hồi
-quy dùng **cùng một khung** với phân loại — **chỉ kiểu của y thay đổi**.
-Mọi thứ đã học ở phần đánh giá mô hình (chia tập huấn luyện/kiểm tra,
-kiểm định chéo, quá khớp/chưa khớp) **áp dụng nguyên vẹn**. Đây là lý do
-khóa 2026 gộp phân loại và hồi quy vào một chương duy nhất thay vì tách
-thành các chương riêng như khóa 2025.
-<br><span class="en">This section's most important note (slide 89, **new**
-in 2026): regression uses the **same framework** as classification —
-**only the type of y changes**. Everything from the model-evaluation
-section (train/test splitting, cross-validation, over/underfitting)
-**applies unchanged**. This is why the 2026 cohort merges classification
-and regression into a single chapter instead of separate ones as in
-2025.</span>
+Điều quan trọng nhất cần nắm trước khi học bất kỳ công thức hồi quy nào:
+hồi quy dùng **đúng cùng một khung** với phân loại — **chỉ kiểu của y
+thay đổi**, từ phạm trù sang số. Mọi thứ đã học ở phần đánh giá mô hình
+— chia tập huấn luyện/kiểm tra, kiểm định chéo, chẩn đoán quá khớp/chưa
+khớp — **áp dụng nguyên vẹn**, không cần học lại từ đầu. Đây chính là lý
+do chương này gộp phân loại và hồi quy vào một mạch trình bày duy nhất
+thay vì tách thành các chương riêng biệt: chúng không phải hai chủ đề
+độc lập, mà là hai ứng dụng của cùng một phương pháp luận.
+<br><span class="en">The most important thing to grasp before learning
+any regression formula: regression uses **exactly the same frame** as
+classification — **only the type of y changes**, from category to
+number. Everything already learned in the model-evaluation section —
+train/test splitting, cross-validation, diagnosing over/underfitting —
+**applies unchanged**, with nothing to relearn from scratch. This is
+exactly why this chapter merges classification and regression into a
+single narrative rather than splitting them into separate chapters: they
+are not two independent topics, but two applications of one shared
+methodology.</span>
 
 ### Hai mục đích khác nhau của cùng một mô hình - <span class="en">Two different purposes for one model</span>
 
-Slide 90 phân biệt rõ (**mới**): mô hình hồi quy tuyến tính phục vụ
+Cùng một mô hình hồi quy tuyến tính có thể phục vụ 2 mục đích khác hẳn
+nhau:
+<br><span class="en">The same linear regression model can serve 2 quite
+different purposes:</span>
 
 - **Thống kê cổ điển** — mô tả quan hệ: diễn giải hệ số, kiểm định giả
   thuyết.
+  <br><span class="en">**Classical statistics** — describing
+  relationships: interpreting coefficients, hypothesis testing.</span>
 - **Học máy** — dự đoán đầu ra tương lai: độ chính xác **ngoài mẫu**.
+  <br><span class="en">**Machine learning** — predicting future outputs:
+  **out-of-sample** accuracy.</span>
 
-Ghi chú của slide: sự phân biệt này **quan trọng** — một mô hình có thể
-xuất sắc để giải thích mà tầm thường để dự đoán, và ngược lại. Điều chuẩn
-(Phần 7) **cố tình đánh đổi một chút tính không chệch để lấy nhiều độ
-chính xác dự đoán** — chỉ hợp lý nếu mục đích là dự đoán.
-
-Đây chính là sự phân biệt statsmodels vs `scikit-learn` đã được nêu ở
-Chapter 2 K32 (mục 4.11), nay được đặt trên nền lý thuyết.
-<br><span class="en">Slide 90 draws the distinction sharply (**new**):
-the linear regression model serves **classical statistics** (describing
-relationships — interpretation, hypothesis testing) and **machine
-learning** (predicting future outputs — **out-of-sample** accuracy). The
-slide's note: the distinction matters — a model can be excellent for
-explanation and mediocre for prediction, and vice versa; regularization
-deliberately trades a little unbiasedness for a lot of predictive
-accuracy, which only makes sense if prediction is the goal. This is the
-statsmodels vs `scikit-learn` distinction from Chapter 2 K32 (Section
-4.11), now given its theoretical grounding.</span>
+Phân biệt này **quan trọng** vì một mô hình có thể xuất sắc để giải
+thích mà tầm thường để dự đoán, và ngược lại — 2 tiêu chí đánh giá "tốt"
+hoàn toàn khác nhau. Điều chuẩn (Phần 7) minh họa rõ nhất hệ quả của
+phân biệt này: nó **cố tình đánh đổi một chút tính không chệch để lấy
+nhiều độ chính xác dự đoán hơn** — một sự đánh đổi chỉ hợp lý nếu mục
+đích thực sự là dự đoán, chứ vô nghĩa nếu mục đích là diễn giải hệ số
+một cách khách quan. Đây cũng chính là sự phân biệt statsmodels vs
+`scikit-learn` đã gặp ở Chapter 2 K32, nay được đặt trên một nền lý
+thuyết vững chắc hơn.
+<br><span class="en">This distinction **matters** because a model can be
+excellent for explanation and mediocre for prediction, and vice versa —
+two entirely different criteria for "good". Regularization (Section 7)
+best illustrates the consequence: it **deliberately trades a little
+unbiasedness for more predictive accuracy** — a trade-off that only
+makes sense if the goal is genuinely prediction, and is meaningless if
+the goal is objectively interpreting coefficients. This is also the
+statsmodels vs `scikit-learn` distinction encountered in Chapter 2 K32,
+now given firmer theoretical grounding.</span>
 
 ### Hai bước - <span class="en">Two steps</span>
 
-Slide 91:
-
-- **Bước 1 — học tham số**: tìm β₀,…,β_k từ tập huấn luyện sao cho mô
-  hình khớp tốt với dữ liệu. Có 4 phương pháp được nêu tên: **OLS**
-  (bình phương tối thiểu thông thường), **LAD** (độ lệch tuyệt đối tối
-  thiểu), **MLE** (ước lượng hợp lý cực đại), **MM** (phương pháp
-  mô-men). **OLS được dùng phổ biến nhất.**
-- **Bước 2 — dự đoán**: dùng mô hình đã huấn luyện để tính đầu ra cho dữ
-  liệu mới: ŷ = β̂₀ + β̂₁x₁* + β̂₂x₂* + … + β̂_k x_k*.
-
-<span class="en">Slide 91: **Step 1 — learn the parameters** β₀,…,β_k
-from the training set, via OLS, LAD, MLE or MM (**OLS is the most
-commonly used**). **Step 2 — predict** for new data:
+Học một mô hình hồi quy tuyến tính, dù dùng phương pháp ước lượng nào,
+luôn đi qua đúng 2 bước: **học tham số** — tìm β₀,…,β_k từ tập huấn
+luyện sao cho mô hình khớp tốt với dữ liệu, qua một trong 4 phương pháp
+**OLS** (bình phương tối thiểu thông thường, phổ biến nhất), **LAD**
+(độ lệch tuyệt đối tối thiểu), **MLE** (ước lượng hợp lý cực đại), hoặc
+**MM** (phương pháp mô-men); rồi **dự đoán** — dùng mô hình đã huấn
+luyện để tính đầu ra cho dữ liệu mới: ŷ = β̂₀ + β̂₁x₁* + β̂₂x₂* + … +
+β̂_k x_k*.
+<br><span class="en">Fitting a linear regression model, whatever
+estimation method is used, always passes through exactly 2 steps:
+**learning the parameters** β₀,…,β_k from the training set via OLS
+(the most common), LAD, MLE, or MM; then **predicting** for new data:
 ŷ = β̂₀ + β̂₁x₁* + … + β̂_k x_k*.</span>
 
 ### Hai trường hợp đặc biệt - <span class="en">Two special cases</span>
 
-Slide 92:
-
-- **Hồi quy đa thức**: y = β₀ + β₁x + β₂x² + … + β_p x^p + u — vẫn là
-  **tuyến tính theo tham số**, dù phi tuyến theo biến. Ghi chú của slide
-  (mới): **tăng bậc p là cách kinh điển để đi từ chưa khớp sang quá
-  khớp** — đúng sự đánh đổi ở phần đánh giá mô hình.
-- **Biến đầu vào định tính**: dùng **biến giả** — nếu biến định tính chỉ
-  nhận 2 giá trị khác nhau thì tạo **1** biến giả; nếu nhận m giá trị
-  khác nhau thì tạo **m − 1** biến giả, để tránh **bẫy biến giả**.
-
-<span class="en">Slide 92: **polynomial regression**
-y = β₀ + β₁x + … + β_p x^p + u is still **linear in the parameters**
-though nonlinear in the variable — and the slide's note (new): **raising
-p is the classic route from underfitting to overfitting**. **Qualitative
-inputs** use **dummy variables**: 2 values ⇒ **1** dummy; m values ⇒
-**m − 1** dummies, avoiding the **dummy variable trap**.</span>
+Mô hình tuyến tính cơ bản mở rộng theo 2 hướng đáng chú ý: **hồi quy đa
+thức**, y = β₀ + β₁x + β₂x² + … + β_p x^p + u, vẫn được gọi là "tuyến
+tính" vì nó **tuyến tính theo tham số** dù phi tuyến theo biến x — và
+việc tăng bậc p chính là con đường kinh điển nhất để đi từ chưa khớp
+sang quá khớp, đúng sự đánh đổi đã học ở phần đánh giá mô hình. Hướng
+thứ hai là xử lý **biến đầu vào định tính** bằng **biến giả**: nếu biến
+định tính chỉ nhận 2 giá trị khác nhau thì tạo đúng **1** biến giả; nếu
+nhận m giá trị khác nhau thì tạo **m − 1** biến giả (không phải m) — quy
+tắc trừ đi 1 này tồn tại chính xác để tránh **bẫy biến giả** (đa cộng
+tuyến hoàn hảo giữa các biến giả và hệ số chặn).
+<br><span class="en">The basic linear model extends in 2 notable
+directions: **polynomial regression**, y = β₀ + β₁x + … + β_p x^p + u,
+is still called "linear" because it is **linear in the parameters**
+though nonlinear in the variable x — and raising the degree p is the
+classic route from underfitting to overfitting, the same trade-off
+learned in model evaluation. The second direction is handling
+**qualitative inputs** via **dummy variables**: a variable with 2
+possible values gets exactly **1** dummy; one with m values gets
+**m − 1** dummies (not m) — this minus-one rule exists precisely to
+avoid the **dummy variable trap** (perfect collinearity between the
+dummies and the intercept).</span>
 
 ### Trong Python - <span class="en">In Python</span>
 
-Ví dụ 7.1 (slide 104) dùng `LinearRegression()` từ
-`sklearn.linear_model`, khớp bằng `lr.fit(X_train, y_train)` và chấm điểm
-bằng `lr.score(X_test, y_test)` (trả về R² trên tập kiểm tra). Mô hình
-OLS thuần này đóng vai trò **mốc so sánh** cho Ridge/Lasso/Elastic Net —
-slide 107 nói rõ: nếu mô hình có điều chuẩn không thắng OLS ngoài mẫu thì
-độ phức tạp tăng thêm là không đáng.
-<br><span class="en">Example 7.1 (slide 104) uses `LinearRegression()`
-from `sklearn.linear_model`, fitted with `lr.fit(X_train, y_train)` and
-scored with `lr.score(X_test, y_test)` (test-set R²). This plain OLS
-model is the **baseline** for Ridge/Lasso/Elastic Net — slide 107 states
-that if a regularized model doesn't beat OLS out of sample, the extra
+Trong thực hành, `LinearRegression()` từ `sklearn.linear_model`, khớp
+bằng `lr.fit(X_train, y_train)` và chấm điểm bằng `lr.score(X_test,
+y_test)` (trả về R² trên tập kiểm tra), đóng vai trò **mốc so sánh** bắt
+buộc cho mọi mô hình có điều chuẩn ở Phần 7: nếu Ridge hay Lasso không
+thắng được OLS thuần ngoài mẫu, độ phức tạp tăng thêm của chúng là không
+đáng.
+<br><span class="en">In practice, `LinearRegression()` from
+`sklearn.linear_model`, fitted with `lr.fit(X_train, y_train)` and
+scored with `lr.score(X_test, y_test)` (test-set R²), serves as the
+mandatory **baseline** for every regularized model in Section 7: if
+Ridge or Lasso doesn't beat plain OLS out of sample, their added
 complexity is not justified.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
