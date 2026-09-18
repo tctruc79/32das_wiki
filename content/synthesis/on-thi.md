@@ -4,7 +4,7 @@ title: "Ôn thi"
 title_en: "Exam Prep"
 tags: [synthesis, exam-prep]
 created: 2026-08-22
-updated: 2026-08-28
+updated: 2026-09-18
 status: complete
 ---
 
@@ -28,6 +28,7 @@ section).</span>
 | [[chapter08-deep-learning]] | K31 | Lịch sử học sâu, perceptron, lan truyền tiến/lùi, ANN/CNN/RNN | Gap: chưa có nguồn giảng Logistic Regression chi tiết |
 | [[chapter01-introduction-k32]] | K32 | 5 V's, định nghĩa vận hành, DS vs Analytics vs BI, 5 loại phân tích (thêm Causal), checklist 7 điều kiện | Tách cụm — không link chéo K31 |
 | [[chapter02-python-jupyter-k32]] | K32 | Python (cú pháp đầy đủ), Jupyter (kernel/cell/magic commands), Python for Data Analysis (NumPy/pandas/matplotlib/seaborn/statsmodels/scikit-learn) dùng `Data2.csv` | Gần gấp đôi bản K31 (78 vs 41 slide) — thêm 2 phần hoàn toàn mới; tách cụm — không link chéo K31 |
+| [[chapter04-unsupervised-learning-k32]] | K32 | Trọn nhánh học không giám sát: phân cụm (khoảng cách, K-Means + k-means++, thứ bậc + liên kết + sơ đồ cây, DBSCAN/GMM, danh sách 7 bẫy) và PCA (hiệp phương sai, trị riêng/véc-tơ riêng, SVD, chọn m, hệ số tải, nén ảnh) + Part 3 ghép PCA với phân cụm/phân loại/hồi quy (PCR) và rò rỉ dữ liệu | 86 slide. Lần đầu dùng **ảnh** làm dữ liệu thực hành (`Image1.jpg`, `Image2.jpg`). 7 file mã đi kèm, trong đó **2 file có lỗi thật** (`Example3.7_KMeans.py` đặt `n_clusters=1` trên dữ liệu 3 tâm - chạy được và sai âm thầm; `..._GenerateData_and_Clustering.py` dừng với `NameError`); 2 file ảnh cần `skimage`/`cv2` không có trong môi trường môn học. Không có mã cho phân cụm thứ bậc, DBSCAN, GMM. Tách cụm - không link chéo K31 |
 | [[chapter03-supervised-learning-k32]] | K32 | Trọn nhánh học có giám sát: nền tảng ML, đánh giá mô hình (chỉ số hồi quy + phân loại, kiểm định chéo, độ chệch–phương sai), phân loại + KNN, cây quyết định, rừng ngẫu nhiên + tăng cường, hồi quy, Ridge/Lasso/Elastic Net | 112 slide — chương lớn nhất; gộp nội dung mà khóa 2025 chia làm 3 chương. Mã Ví dụ 3.1 **cố ý có lỗi** (slide 41-42 ghi rõ). Bài tập nhóm 3 cần `Income.csv` chưa có trong `raw/`. Tách cụm — không link chéo K31 |
 
 ## 2. Cụm chủ đề - <span class="en">Topic clusters</span>
@@ -213,6 +214,78 @@ loss functions, Elastic Net, Ridge's closed form, the geometric reason
 Lasso zeroes coefficients, choosing λ by CV) — the regression branch,
 from [[chapter03-supervised-learning-k32]] (K32).</span>
 
+### N. K32 - Chapter 4: Học không giám sát và phân cụm - <span class="en">N. K32 - Chapter 4: Unsupervised Learning and Clustering</span>
+
+_Cụm riêng cho K32._
+<br><span class="en">_A separate cluster for K32._</span>
+
+[[unsupervised-learning-framework]] (bảng so sánh 6 dòng với học có giám
+sát, cảnh báo thuật toán luôn trả về cấu trúc kể cả từ nhiễu),
+[[clustering-k32]] (định nghĩa, 2 điều kiện phân hoạch, 4 thứ phải có),
+[[distance-measures]] (Euclid/Manhattan/Minkowski, bảng chọn theo loại dữ
+liệu, ví dụ thu nhập-số lần ghé chứng minh phải chuẩn hóa),
+[[k-means-clustering-k32]] (hàm mục tiêu NP-khó, thuật toán Lloyd,
+k-means++ với xác suất tỉ lệ `D(x)^2`, bảng điểm mạnh và giới hạn),
+[[choosing-k-elbow-silhouette]] (`TSS = WSS + BSS`, khuỷu tay, silhouette,
+thống kê khoảng trống), [[hierarchical-clustering-k32]] (gộp dần, 4 kiểu
+liên kết, đọc và cắt sơ đồ cây, bảng so sánh 8 dòng với K-Means),
+[[dbscan-and-gaussian-mixture]] (mật độ so với gán mềm, bảng hướng dẫn
+chọn giữa 4 phương pháp) và [[clustering-pitfalls-checklist]] (7 điều phải
+kiểm tra trước khi trình bày) - nhánh phân cụm, từ
+[[chapter04-unsupervised-learning-k32]] (K32).
+<br><span class="en">[[unsupervised-learning-framework]] (the 6-row
+comparison with supervised learning, the warning that the algorithm
+always returns structure even from noise), [[clustering-k32]] (the
+definition, the 2 partition conditions, the 4 requirements),
+[[distance-measures]] (Euclidean/Manhattan/Minkowski, the data-type
+table, the income-versus-visits example proving standardisation is
+required), [[k-means-clustering-k32]] (the NP-hard objective, Lloyd's
+algorithm, k-means++ with probability proportional to `D(x)^2`, the
+strengths and limitations table), [[choosing-k-elbow-silhouette]]
+(`TSS = WSS + BSS`, the elbow, the silhouette, the gap statistic),
+[[hierarchical-clustering-k32]] (agglomeration, the 4 linkages, reading
+and cutting a dendrogram, the 8-row comparison with K-Means),
+[[dbscan-and-gaussian-mixture]] (density versus soft assignment, the
+4-method choice table) and [[clustering-pitfalls-checklist]] (the 7
+checks before presenting) - the clustering branch, from
+[[chapter04-unsupervised-learning-k32]] (K32).</span>
+
+### O. K32 - Chapter 4: PCA và giảm chiều - <span class="en">O. K32 - Chapter 4: PCA and Dimension Reduction</span>
+
+_Cụm riêng cho K32._
+<br><span class="en">_A separate cluster for K32._</span>
+
+[[pca-k32]] (phương sai là đại diện cho thông tin, hình học phép quay,
+quy trình 7 bước, vì sao chuẩn hóa không tùy chọn, giới hạn và các phương
+pháp thay thế), [[eigenvalues-and-eigenvectors]] (hiệp phương sai không
+phải tương quan, 3 tính chất của ma trận `S`, `A = V Λ V'`, SVD ổn định
+hơn và chạy được khi p lớn hơn n), [[choosing-number-of-components]] (4
+quy tắc: Kaiser, sườn dốc, lũy tích, kiểm định chéo; ví dụ 8 chỉ tiêu nơi
+cả ba quy tắc đồng ý), [[pca-loadings-interpretation]] (nhân tố quy mô so
+với nhân tố tương phản, cảnh báo dấu véc-tơ riêng là tùy ý),
+[[pca-combined-with-other-algorithms-k32]] (lời nguyền số chiều, bẫy lập
+luận vòng tròn PC1-PC2, PCA là không giám sát nên có thể bỏ đúng hướng
+tách lớp, rò rỉ dữ liệu và cách sửa bằng `Pipeline`) và
+[[principal-component-regression]] (PCR, họ hàng với Ridge, `beta mũ =
+Vm gamma mũ`, so sánh với PLS) - nhánh giảm chiều, từ
+[[chapter04-unsupervised-learning-k32]] (K32).
+<br><span class="en">[[pca-k32]] (variance as a proxy for information,
+the geometry of the rotation, the 7-step workflow, why standardisation is
+not optional, limitations and alternatives),
+[[eigenvalues-and-eigenvectors]] (covariance is not correlation, the 3
+properties of `S`, `A = V Λ V'`, the SVD being more stable and working
+when p exceeds n), [[choosing-number-of-components]] (the 4 rules:
+Kaiser, scree, cumulative, cross-validation; the 8-indicator example
+where all three agree), [[pca-loadings-interpretation]] (size versus
+contrast factors, the warning that eigenvector signs are arbitrary),
+[[pca-combined-with-other-algorithms-k32]] (the curse of dimensionality,
+the PC1-PC2 circularity trap, PCA being unsupervised so it can discard
+the very direction that separates classes, data leakage and the
+`Pipeline` fix) and [[principal-component-regression]] (PCR, its kinship
+with ridge, `betahat = Vm gammahat`, the comparison with PLS) - the
+dimension-reduction branch, from
+[[chapter04-unsupervised-learning-k32]] (K32).</span>
+
 ## 3. Mâu thuẫn / khác biệt giữa các nguồn - <span class="en">Tensions / differences between sources</span>
 
 Không có mâu thuẫn thật trong nội bộ cụm K31 (8/8 chương). Riêng K31 vs
@@ -294,6 +367,46 @@ the K nearest are selected after all distances are computed, not inside
 the loop). Per the separation rule, recorded in plain text only, with no
 cross-cluster wikilink.</span>
 
+K31 vs K32 (Chapter 4): khóa 2025 chia nội dung học không giám sát làm
+**2 chương riêng** (Clustering và PCA); khóa 2026 gộp vào **1 file 86
+slide** và thêm những phần không có ở bản 2025: hàm mục tiêu tường minh
+của K-Means kèm ghi chú NP-khó, cơ chế khởi tạo k-means++, phân rã
+`TSS = WSS + BSS`, mục DBSCAN và GMM cùng bảng hướng dẫn chọn phương
+pháp, danh sách 7 bẫy phân cụm, đường đi SVD, trọn Part 3 ghép PCA với
+phân cụm/phân loại/hồi quy (gồm PCR), mục rò rỉ dữ liệu với cách sửa bằng
+`Pipeline`, và danh sách phương pháp thay thế PCA (Kernel PCA, t-SNE/UMAP,
+autoencoder, phân tích nhân tố, Sparse PCA, Robust PCA). Theo quy tắc
+tách cụm K31/K32, đây **không phải "mâu thuẫn"** giữa 2 cụm - ghi bằng
+chữ thường, không tạo wikilink chéo.
+<br><span class="en">K31 vs K32 (Chapter 4): the 2025 cohort split the
+unsupervised material into **2 separate chapters** (Clustering and PCA);
+the 2026 cohort merges them into **one 86-slide file** and adds material
+absent from the 2025 version: K-Means' explicit objective with the
+NP-hardness note, the k-means++ initialisation, the
+`TSS = WSS + BSS` decomposition, the DBSCAN and GMM section with its
+method-choice table, the 7-point clustering pitfalls checklist, the SVD
+route, the whole of Part 3 chaining PCA with clustering/classification/
+regression (PCR included), the data-leakage section with its `Pipeline`
+fix, and the list of PCA alternatives (Kernel PCA, t-SNE/UMAP,
+autoencoders, factor analysis, Sparse PCA, Robust PCA). Per the K31/K32
+separation rule this is **not a "tension"** between the clusters -
+recorded in plain text, with no cross-cluster wikilink.</span>
+
+Một lưu ý nội bộ cụm K32, đáng ghi vì nó là **lệch giữa slide và file mã
+trong cùng một chương** (không phải lệch giữa 2 khóa): mã trên slide 30 và
+slide 71 đã bao gồm chuẩn hóa, silhouette, trị riêng, phần trăm lũy tích
+và bảng hệ số tải, nhưng **không file `.py` nào đi kèm chương làm những
+việc đó**, và 2 trong 7 file còn chứa lỗi thật. Đây là khoảng trống thực
+hành cần biết trước khi dùng các file đó làm mẫu.
+<br><span class="en">One within-K32 note, worth recording because it is a
+**slide-versus-script mismatch inside one chapter** (not a
+cohort-versus-cohort difference): the slide-30 and slide-71 code already
+includes standardisation, the silhouette, eigenvalues, cumulative
+percentages and a loadings table, but **none of the chapter's shipped
+`.py` files does any of that**, and 2 of the 7 contain real bugs. This is
+a practical gap to know about before using those files as
+templates.</span>
+
 ## 4. Bản đồ khái niệm → nguồn - <span class="en">Concept → source map</span>
 
 | Khái niệm | Nguồn | Khóa |
@@ -337,6 +450,20 @@ cross-cluster wikilink.</span>
 | [[boosting-ensemble]] | [[chapter03-supervised-learning-k32]] | K32 |
 | [[linear-regression-k32]] | [[chapter03-supervised-learning-k32]] | K32 |
 | [[regularization-ridge-lasso-elastic-net-k32]] | [[chapter03-supervised-learning-k32]] | K32 |
+| [[unsupervised-learning-framework]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[clustering-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[distance-measures]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[k-means-clustering-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[choosing-k-elbow-silhouette]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[hierarchical-clustering-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[dbscan-and-gaussian-mixture]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[clustering-pitfalls-checklist]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[pca-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[eigenvalues-and-eigenvectors]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[choosing-number-of-components]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[pca-loadings-interpretation]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[pca-combined-with-other-algorithms-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[principal-component-regression]] | [[chapter04-unsupervised-learning-k32]] | K32 |
 
 ## 5. Ngân hàng câu hỏi ôn thi - <span class="en">Exam question bank</span>
 
@@ -512,3 +639,129 @@ highest revision priority._</span>
   <br><span class="en">(K32) The same linear regression model serves 2
   different purposes — name them and explain why a model can be good for
   one and mediocre for the other.</span>
+
+### 6 chủ đề thảo luận nhóm do chính giảng viên ra (K32, Chapter 4, slide 82) - <span class="en">The instructor's own 6 group discussion topics (K32, Chapter 4, slide 82)</span>
+
+1. Liệt kê điểm giống và khác giữa phân cụm và phân loại.
+   <br><span class="en">List the similarities and differences between
+   clustering and classification.</span>
+2. So sánh ứng dụng của phân cụm thứ bậc và K-Means - khi nào chọn cái
+   nào?
+   <br><span class="en">Compare the applications of hierarchical
+   clustering and K-Means - when would you prefer each?</span>
+3. Có phương pháp phân cụm nào khác ngoài K-Means và thứ bậc không? Mô tả
+   một phương pháp và giải thích nó giải quyết vấn đề gì.
+   <br><span class="en">Are there clustering methods other than K-Means
+   and hierarchical? Describe one and explain what problem it
+   solves.</span>
+4. PCA cực đại hóa phương sai. Cho một ví dụ cụ thể trong kinh tế nơi
+   hướng có phương sai lớn nhất **không** phải hướng đáng quan tâm nhất.
+   <br><span class="en">PCA maximises variance. Give a concrete
+   economics example where the highest-variance direction is **not** the
+   most interesting one.</span>
+5. Bạn phân cụm khách hàng và ra 4 phân khúc. Quản lý hỏi: "làm sao biết
+   chúng là thật?" Bạn sẽ trình bày bằng chứng gì?
+   <br><span class="en">You cluster customers and get four segments. Your
+   manager asks: "How do we know these are real?" What evidence would you
+   present?</span>
+6. Một đồng nghiệp báo rằng PCA làm tăng R bình phương của mô hình họ
+   **trên tập huấn luyện**. Vì sao đó không phải bằng chứng cho thấy PCA
+   có ích?
+   <br><span class="en">A colleague reports that PCA raised their model's
+   R squared **on the training set**. Why is this not evidence that PCA
+   helped?</span>
+
+### Câu hỏi bổ sung từ Chapter 4 K32 - <span class="en">Additional questions from K32 Chapter 4</span>
+
+- (K32) Vì sao không thể chọn K bằng cách cực tiểu hóa WCSS? Nêu giá trị
+  của WCSS tại `K = n` và suy ra kết luận.
+  <br><span class="en">(K32) Why can K not be chosen by minimising WCSS?
+  State WCSS at `K = n` and draw the conclusion.</span>
+- (K32) Viết đẳng thức `TSS = WSS + BSS` và giải thích vì sao "cụm chặt"
+  và "cụm tách rời" là **cùng một mục tiêu**.
+  <br><span class="en">(K32) Write `TSS = WSS + BSS` and explain why
+  "compact clusters" and "well separated clusters" are **one and the same
+  objective**.</span>
+- (K32) Mô tả k-means++ và nói rõ nó chữa vấn đề gì của khởi tạo ngẫu
+  nhiên. Xác suất chọn tâm tiếp theo tỉ lệ với đại lượng nào?
+  <br><span class="en">(K32) Describe k-means++ and say what problem of
+  random initialisation it fixes. The probability of picking the next
+  centre is proportional to what quantity?</span>
+- (K32) Cho ví dụ hai khách hàng (20, 2) và (22, 14) với thu nhập tính
+  bằng triệu đồng. Tính khoảng cách Euclid, rồi tính lại khi thu nhập đổi
+  sang đơn vị đồng, và nêu kết luận về chuẩn hóa.
+  <br><span class="en">(K32) Take the two customers (20, 2) and (22, 14)
+  with income in VND million. Compute the Euclidean distance, recompute
+  it with income in VND, and state the conclusion about
+  standardisation.</span>
+- (K32) Vì sao các lần gộp trong phân cụm thứ bậc là không đảo lại được,
+  và điều đó khác K-Means ở chỗ nào?
+  <br><span class="en">(K32) Why are merges in hierarchical clustering
+  irreversible, and how does that differ from K-Means?</span>
+- (K32) Trên một sơ đồ cây, chiều cao của thanh ngang nghĩa là gì, và làm
+  sao đọc ra K từ một nhát cắt? Vì sao không được đọc ý nghĩa từ thứ tự
+  ngang của các lá?
+  <br><span class="en">(K32) On a dendrogram, what does a horizontal
+  bar's height mean, and how do you read K off a cut? Why must the
+  horizontal order of the leaves not be interpreted?</span>
+- (K32) Kể tên 4 kiểu liên kết và nêu điều phải đề phòng ở từng kiểu.
+  Kiểu nào tối ưu cùng đại lượng mà K-Means tối ưu?
+  <br><span class="en">(K32) Name the 4 linkages and the pitfall of each.
+  Which one optimises the same quantity K-Means optimises?</span>
+- (K32) Vì sao `vết(R) = p` dẫn tới ngưỡng 1 trong quy tắc Kaiser?
+  <br><span class="en">(K32) Why does `trace(R) = p` lead to the
+  threshold of 1 in Kaiser's rule?</span>
+- (K32) Phân biệt hiệp phương sai và tương quan, rồi giải thích vì sao
+  PCA trên ma trận tương quan thường được ưa dùng.
+  <br><span class="en">(K32) Distinguish covariance from correlation, then
+  explain why correlation-matrix PCA is usually preferred.</span>
+- (K32) Nêu hai cách phát biểu mục tiêu của PCA (cực đại hóa phương sai
+  và cực tiểu hóa sai số tái tạo) và nói rõ vì sao chúng cho cùng nghiệm.
+  <br><span class="en">(K32) State PCA's two equivalent objectives
+  (maximise variance, minimise reconstruction error) and say why they
+  have the same solution.</span>
+- (K32) Vì sao phần mềm dùng SVD thay vì lập ma trận hiệp phương sai? Nêu
+  2 lý do và công thức liên hệ `lambda_m` với `d_m`.
+  <br><span class="en">(K32) Why does software use the SVD instead of
+  forming the covariance matrix? Give 2 reasons and the formula relating
+  `lambda_m` to `d_m`.</span>
+- (K32) Cho một bảng hệ số tải trong đó PC1 toàn dương gần bằng nhau và
+  PC2 có dấu trái ngược giữa nhóm chỉ tiêu kinh tế và nhóm chỉ tiêu xã
+  hội - đặt tên và diễn giải hai thành phần đó.
+  <br><span class="en">(K32) Given a loadings table where PC1 is
+  uniformly positive and PC2 has opposite signs for economic versus
+  social indicators, name and interpret the two components.</span>
+- (K32) Tính tỉ số nén của PCA cho một ảnh `512 x 512` khi giữ
+  `m = 50` thành phần, và so với việc lưu toàn bộ ảnh.
+  <br><span class="en">(K32) Compute PCA's compression ratio for a
+  `512 x 512` image keeping `m = 50` components, against storing the full
+  image.</span>
+- (K32) Vì sao JPEG dùng DCT thay vì PCA? Câu trả lời nói gì về chi phí
+  của một cơ sở phụ thuộc dữ liệu?
+  <br><span class="en">(K32) Why does JPEG use the DCT rather than PCA?
+  What does the answer say about the cost of a data-dependent
+  basis?</span>
+- (K32) Giải thích "lời nguyền số chiều" và nói rõ nó làm vỡ nhóm phương
+  pháp nào.
+  <br><span class="en">(K32) Explain the curse of dimensionality and say
+  which family of methods it breaks.</span>
+- (K32) Vì sao việc chạy PCA, vẽ PC1-PC2 rồi nói "các cụm tách biệt rõ"
+  là lập luận vòng tròn? Muốn xác nhận thì cần bằng chứng gì?
+  <br><span class="en">(K32) Why is running PCA, plotting PC1-PC2 and
+  saying "the clusters are clearly separated" circular? What evidence
+  would actually validate them?</span>
+- (K32) Mô tả rò rỉ dữ liệu khi chuẩn hóa và PCA được khớp trên toàn bộ
+  dữ liệu trước khi chia tập, và nêu cách sửa.
+  <br><span class="en">(K32) Describe the leakage that occurs when
+  scaling and PCA are fitted on the full data before splitting, and give
+  the fix.</span>
+- (K32) PCR khác PLS ở chỗ nào, và vì sao PLS thường cần ít thành phần
+  hơn? Công thức nào đưa hệ số từ thành phần về biến gốc?
+  <br><span class="en">(K32) How does PCR differ from PLS, and why does
+  PLS usually need fewer components? Which formula maps coefficients from
+  components back to the original variables?</span>
+- (K32) Vì sao PCA có thể **làm hỏng** một bài toán phân loại, và nên
+  dùng gì thay thế khi mục tiêu là dự đoán?
+  <br><span class="en">(K32) Why can PCA **damage** a classification
+  problem, and what should be used instead when prediction is the
+  goal?</span>

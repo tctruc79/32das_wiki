@@ -5,7 +5,7 @@ title: "Bản đồ môn học"
 title_en: "Course Map"
 tags: [overview]
 created: 2026-08-22
-updated: 2026-09-05
+updated: 2026-09-18
 ---
 
 ## Môn học - <span class="en">The course</span>
@@ -39,9 +39,9 @@ by the instructor).</span>
 
 ### K32 (2026 — khóa hiện tại) - <span class="en">K32 (2026 — Current Cohort)</span>
 
-Wiki hiện có 3 chương K32 (Chapter 1-3):
-<br><span class="en">The wiki currently covers 3 K32 chapters (Chapters
-1-3):</span>
+Wiki hiện có 4 chương K32 (Chapter 1-4):
+<br><span class="en">The wiki currently covers 4 K32 chapters (Chapters
+1-4):</span>
 
 - **Chapter 1** — 5 V's, định nghĩa vận hành, 5 loại phân tích (thêm
   Causal), checklist 7 điều kiện.
@@ -65,6 +65,25 @@ Wiki hiện có 3 chương K32 (Chapter 1-3):
   regression, and Ridge/Lasso/Elastic Net. Comes with 2 Python scripts
   and 5 data files.</span>
 
+- **Chapter 4** ("Unsupervised Learning: Clustering & PCA", 86
+  slide) - gộp trọn nhánh học không giám sát mà khóa 2025 chia làm 2
+  chương: phân cụm (thước đo khoảng cách, K-Means và k-means++, phân cụm
+  thứ bậc với 4 kiểu liên kết và sơ đồ cây, DBSCAN/GMM, danh sách 7 bẫy)
+  và PCA (hiệp phương sai, trị riêng/véc-tơ riêng, SVD, chọn m, hệ số
+  tải, nén ảnh), cộng thêm Part 3 hoàn toàn mới về ghép PCA với phân cụm/
+  phân loại/hồi quy (gồm PCR) và rò rỉ dữ liệu. Đi kèm 7 file mã Python
+  và 2 file ảnh - lần đầu môn học dùng ảnh làm dữ liệu thực hành.
+  <br><span class="en">**Chapter 4** ("Unsupervised Learning: Clustering
+  & PCA", 86 slides) - the entire unsupervised branch that the 2025
+  cohort split across 2 chapters: clustering (distance measures, K-Means
+  and k-means++, hierarchical clustering with its 4 linkages and the
+  dendrogram, DBSCAN/GMM, the 7-point pitfalls checklist) and PCA
+  (covariance, eigenvalues/eigenvectors, the SVD, choosing m, loadings,
+  image compression), plus an entirely new Part 3 on chaining PCA with
+  clustering/classification/regression (PCR included) and data leakage.
+  Comes with 7 Python scripts and 2 images - the first time the course
+  uses images as practice data.</span>
+
 ## Ôn thi - <span class="en">Exam prep</span>
 
 [[on-thi]] — điểm tổng hợp duy nhất để ôn thi.
@@ -74,11 +93,11 @@ page.</span>
 ## Publish - <span class="en">Publish</span>
 
 - Site Quartz song ngữ: [tctruc79.github.io/32das_wiki](https://tctruc79.github.io/32das_wiki/)
-  (bản mặc định `/vi/` song ngữ đầy đủ, `/en/` bản hoàn toàn tiếng Anh).
+  (bản mặc định `/bi/` song ngữ đầy đủ, `/en/` bản hoàn toàn tiếng Anh).
   Repo: [github.com/tctruc79/32das_wiki](https://github.com/tctruc79/32das_wiki).
   <br><span class="en">Bilingual Quartz site:
   [tctruc79.github.io/32das_wiki](https://tctruc79.github.io/32das_wiki/)
-  (default `/vi/` fully bilingual, `/en/` fully English). Repo:
+  (default `/bi/` fully bilingual, `/en/` fully English). Repo:
   [github.com/tctruc79/32das_wiki](https://github.com/tctruc79/32das_wiki).</span>
 - Mindmap Artifact tương tác song ngữ:
   [claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d](https://claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d)

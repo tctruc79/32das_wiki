@@ -4,7 +4,7 @@ type: overview
 title: "Course Map"
 tags: [overview]
 created: 2026-08-22
-updated: 2026-09-05
+updated: 2026-09-18
 ---
 
 ## The course
@@ -33,8 +33,8 @@ by the instructor).
 
 ### K32 (2026 — Current Cohort)
 
-The wiki currently covers 3 K32 chapters (Chapters
-1-3):
+The wiki currently covers 4 K32 chapters (Chapters
+1-4):
 
 - **Chapter 1** — the 5 V's, a working definition,
   5 types of analytics (adding Causal), the 7-condition checklist.
@@ -48,6 +48,17 @@ The wiki currently covers 3 K32 chapters (Chapters
   regression, and Ridge/Lasso/Elastic Net. Comes with 2 Python scripts
   and 5 data files.
 
+- **Chapter 4** ("Unsupervised Learning: Clustering
+  & PCA", 86 slides) - the entire unsupervised branch that the 2025
+  cohort split across 2 chapters: clustering (distance measures, K-Means
+  and k-means++, hierarchical clustering with its 4 linkages and the
+  dendrogram, DBSCAN/GMM, the 7-point pitfalls checklist) and PCA
+  (covariance, eigenvalues/eigenvectors, the SVD, choosing m, loadings,
+  image compression), plus an entirely new Part 3 on chaining PCA with
+  clustering/classification/regression (PCR included) and data leakage.
+  Comes with 7 Python scripts and 2 images - the first time the course
+  uses images as practice data.
+
 ## Exam prep
 
 [[on-thi]] — the single compounding exam-prep
@@ -57,7 +68,7 @@ page.
 
 - Bilingual Quartz site:
   [tctruc79.github.io/32das_wiki](https://tctruc79.github.io/32das_wiki/)
-  (default `/vi/` fully bilingual, `/en/` fully English). Repo:
+  (default `/bi/` fully bilingual, `/en/` fully English). Repo:
   [github.com/tctruc79/32das_wiki](https://github.com/tctruc79/32das_wiki).
 - Interactive bilingual Mindmap Artifact:
   [claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d](https://claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d)

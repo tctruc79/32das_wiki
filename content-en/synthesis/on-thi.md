@@ -3,7 +3,7 @@ type: synthesis
 title: "Exam Prep"
 tags: [synthesis, exam-prep]
 created: 2026-08-22
-updated: 2026-08-28
+updated: 2026-09-18
 status: complete
 ---
 
@@ -25,6 +25,7 @@ section).
 | [[chapter08-deep-learning]] | K31 | Lịch sử học sâu, perceptron, lan truyền tiến/lùi, ANN/CNN/RNN | Gap: chưa có nguồn giảng Logistic Regression chi tiết |
 | [[chapter01-introduction-k32]] | K32 | 5 V's, định nghĩa vận hành, DS vs Analytics vs BI, 5 loại phân tích (thêm Causal), checklist 7 điều kiện | Tách cụm — không link chéo K31 |
 | [[chapter02-python-jupyter-k32]] | K32 | Python (cú pháp đầy đủ), Jupyter (kernel/cell/magic commands), Python for Data Analysis (NumPy/pandas/matplotlib/seaborn/statsmodels/scikit-learn) dùng `Data2.csv` | Gần gấp đôi bản K31 (78 vs 41 slide) — thêm 2 phần hoàn toàn mới; tách cụm — không link chéo K31 |
+| [[chapter04-unsupervised-learning-k32]] | K32 | The entire unsupervised branch: clustering (distances, K-Means + k-means++, hierarchical + linkage + dendrogram, DBSCAN/GMM, the 7-point pitfalls checklist) and PCA (covariance, eigenvalues/eigenvectors, SVD, choosing m, loadings, image compression) + Part 3 chaining PCA with clustering/classification/regression (PCR) and data leakage | 86 slides. First use of **images** as practice data (`Image1.jpg`, `Image2.jpg`). 7 shipped scripts, **2 of them with real bugs** (`Example3.7_KMeans.py` sets `n_clusters=1` on 3-centre data - it runs and fails silently; `..._GenerateData_and_Clustering.py` stops with a `NameError`); the 2 image scripts need `skimage`/`cv2`, absent from the course environment. No code for hierarchical clustering, DBSCAN or GMM. Separated cluster - no K31 cross-links |
 | [[chapter03-supervised-learning-k32]] | K32 | Trọn nhánh học có giám sát: nền tảng ML, đánh giá mô hình (chỉ số hồi quy + phân loại, kiểm định chéo, độ chệch–phương sai), phân loại + KNN, cây quyết định, rừng ngẫu nhiên + tăng cường, hồi quy, Ridge/Lasso/Elastic Net | 112 slide — chương lớn nhất; gộp nội dung mà khóa 2025 chia làm 3 chương. Mã Ví dụ 3.1 **cố ý có lỗi** (slide 41-42 ghi rõ). Bài tập nhóm 3 cần `Income.csv` chưa có trong `raw/`. Tách cụm — không link chéo K31 |
 
 ## Topic clusters
@@ -145,6 +146,48 @@ loss functions, Elastic Net, Ridge's closed form, the geometric reason
 Lasso zeroes coefficients, choosing λ by CV) — the regression branch,
 from [[chapter03-supervised-learning-k32]] (K32).
 
+### N. K32 - Chapter 4: Unsupervised Learning and Clustering
+
+_A separate cluster for K32._
+
+[[unsupervised-learning-framework]] (the 6-row
+comparison with supervised learning, the warning that the algorithm
+always returns structure even from noise), [[clustering-k32]] (the
+definition, the 2 partition conditions, the 4 requirements),
+[[distance-measures]] (Euclidean/Manhattan/Minkowski, the data-type
+table, the income-versus-visits example proving standardisation is
+required), [[k-means-clustering-k32]] (the NP-hard objective, Lloyd's
+algorithm, k-means++ with probability proportional to `D(x)^2`, the
+strengths and limitations table), [[choosing-k-elbow-silhouette]]
+(`TSS = WSS + BSS`, the elbow, the silhouette, the gap statistic),
+[[hierarchical-clustering-k32]] (agglomeration, the 4 linkages, reading
+and cutting a dendrogram, the 8-row comparison with K-Means),
+[[dbscan-and-gaussian-mixture]] (density versus soft assignment, the
+4-method choice table) and [[clustering-pitfalls-checklist]] (the 7
+checks before presenting) - the clustering branch, from
+[[chapter04-unsupervised-learning-k32]] (K32).
+
+### O. K32 - Chapter 4: PCA and Dimension Reduction
+
+_A separate cluster for K32._
+
+[[pca-k32]] (variance as a proxy for information,
+the geometry of the rotation, the 7-step workflow, why standardisation is
+not optional, limitations and alternatives),
+[[eigenvalues-and-eigenvectors]] (covariance is not correlation, the 3
+properties of `S`, `A = V Λ V'`, the SVD being more stable and working
+when p exceeds n), [[choosing-number-of-components]] (the 4 rules:
+Kaiser, scree, cumulative, cross-validation; the 8-indicator example
+where all three agree), [[pca-loadings-interpretation]] (size versus
+contrast factors, the warning that eigenvector signs are arbitrary),
+[[pca-combined-with-other-algorithms-k32]] (the curse of dimensionality,
+the PC1-PC2 circularity trap, PCA being unsupervised so it can discard
+the very direction that separates classes, data leakage and the
+`Pipeline` fix) and [[principal-component-regression]] (PCR, its kinship
+with ridge, `betahat = Vm gammahat`, the comparison with PLS) - the
+dimension-reduction branch, from
+[[chapter04-unsupervised-learning-k32]] (K32).
+
 ## Tensions / differences between sources
 
 No real tension within the K31 cluster itself (8/8
@@ -187,6 +230,29 @@ versions (slide 17: MSE and RMSE both contain the 1/n factor; slide 32:
 the K nearest are selected after all distances are computed, not inside
 the loop). Per the separation rule, recorded in plain text only, with no
 cross-cluster wikilink.
+
+K31 vs K32 (Chapter 4): the 2025 cohort split the
+unsupervised material into **2 separate chapters** (Clustering and PCA);
+the 2026 cohort merges them into **one 86-slide file** and adds material
+absent from the 2025 version: K-Means' explicit objective with the
+NP-hardness note, the k-means++ initialisation, the
+`TSS = WSS + BSS` decomposition, the DBSCAN and GMM section with its
+method-choice table, the 7-point clustering pitfalls checklist, the SVD
+route, the whole of Part 3 chaining PCA with clustering/classification/
+regression (PCR included), the data-leakage section with its `Pipeline`
+fix, and the list of PCA alternatives (Kernel PCA, t-SNE/UMAP,
+autoencoders, factor analysis, Sparse PCA, Robust PCA). Per the K31/K32
+separation rule this is **not a "tension"** between the clusters -
+recorded in plain text, with no cross-cluster wikilink.
+
+One within-K32 note, worth recording because it is a
+**slide-versus-script mismatch inside one chapter** (not a
+cohort-versus-cohort difference): the slide-30 and slide-71 code already
+includes standardisation, the silhouette, eigenvalues, cumulative
+percentages and a loadings table, but **none of the chapter's shipped
+`.py` files does any of that**, and 2 of the 7 contain real bugs. This is
+a practical gap to know about before using those files as
+templates.
 
 ## Concept → source map
 
@@ -231,6 +297,20 @@ cross-cluster wikilink.
 | [[boosting-ensemble]] | [[chapter03-supervised-learning-k32]] | K32 |
 | [[linear-regression-k32]] | [[chapter03-supervised-learning-k32]] | K32 |
 | [[regularization-ridge-lasso-elastic-net-k32]] | [[chapter03-supervised-learning-k32]] | K32 |
+| [[unsupervised-learning-framework]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[clustering-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[distance-measures]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[k-means-clustering-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[choosing-k-elbow-silhouette]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[hierarchical-clustering-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[dbscan-and-gaussian-mixture]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[clustering-pitfalls-checklist]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[pca-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[eigenvalues-and-eigenvectors]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[choosing-number-of-components]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[pca-loadings-interpretation]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[pca-combined-with-other-algorithms-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[principal-component-regression]] | [[chapter04-unsupervised-learning-k32]] | K32 |
 
 ## Exam question bank
 
@@ -332,3 +412,77 @@ highest revision priority._
 - (K32) The same linear regression model serves 2
   different purposes — name them and explain why a model can be good for
   one and mediocre for the other.
+
+### The instructor's own 6 group discussion topics (K32, Chapter 4, slide 82)
+
+1. List the similarities and differences between
+   clustering and classification.
+2. Compare the applications of hierarchical
+   clustering and K-Means - when would you prefer each?
+3. Are there clustering methods other than K-Means
+   and hierarchical? Describe one and explain what problem it
+   solves.
+4. PCA maximises variance. Give a concrete
+   economics example where the highest-variance direction is **not** the
+   most interesting one.
+5. You cluster customers and get four segments. Your
+   manager asks: "How do we know these are real?" What evidence would you
+   present?
+6. A colleague reports that PCA raised their model's
+   R squared **on the training set**. Why is this not evidence that PCA
+   helped?
+
+### Additional questions from K32 Chapter 4
+
+- (K32) Why can K not be chosen by minimising WCSS?
+  State WCSS at `K = n` and draw the conclusion.
+- (K32) Write `TSS = WSS + BSS` and explain why
+  "compact clusters" and "well separated clusters" are **one and the same
+  objective**.
+- (K32) Describe k-means++ and say what problem of
+  random initialisation it fixes. The probability of picking the next
+  centre is proportional to what quantity?
+- (K32) Take the two customers (20, 2) and (22, 14)
+  with income in VND million. Compute the Euclidean distance, recompute
+  it with income in VND, and state the conclusion about
+  standardisation.
+- (K32) Why are merges in hierarchical clustering
+  irreversible, and how does that differ from K-Means?
+- (K32) On a dendrogram, what does a horizontal
+  bar's height mean, and how do you read K off a cut? Why must the
+  horizontal order of the leaves not be interpreted?
+- (K32) Name the 4 linkages and the pitfall of each.
+  Which one optimises the same quantity K-Means optimises?
+- (K32) Why does `trace(R) = p` lead to the
+  threshold of 1 in Kaiser's rule?
+- (K32) Distinguish covariance from correlation, then
+  explain why correlation-matrix PCA is usually preferred.
+- (K32) State PCA's two equivalent objectives
+  (maximise variance, minimise reconstruction error) and say why they
+  have the same solution.
+- (K32) Why does software use the SVD instead of
+  forming the covariance matrix? Give 2 reasons and the formula relating
+  `lambda_m` to `d_m`.
+- (K32) Given a loadings table where PC1 is
+  uniformly positive and PC2 has opposite signs for economic versus
+  social indicators, name and interpret the two components.
+- (K32) Compute PCA's compression ratio for a
+  `512 x 512` image keeping `m = 50` components, against storing the full
+  image.
+- (K32) Why does JPEG use the DCT rather than PCA?
+  What does the answer say about the cost of a data-dependent
+  basis?
+- (K32) Explain the curse of dimensionality and say
+  which family of methods it breaks.
+- (K32) Why is running PCA, plotting PC1-PC2 and
+  saying "the clusters are clearly separated" circular? What evidence
+  would actually validate them?
+- (K32) Describe the leakage that occurs when
+  scaling and PCA are fitted on the full data before splitting, and give
+  the fix.
+- (K32) How does PCR differ from PLS, and why does
+  PLS usually need fewer components? Which formula maps coefficients from
+  components back to the original variables?
+- (K32) Why can PCA **damage** a classification
+  problem, and what should be used instead when prediction is the
+  goal?
