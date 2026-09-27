@@ -45,8 +45,8 @@ all the data (exhaustive).</span>
   **inter-cluster separation** - different centroids far apart is
   better. A good clustering maximizes both cohesion and separation at
   once.</span>
-- **Khác biệt với Classification**: Clustering không cần nhãn (học không
-  giám sát), Classification cần nhãn đúng để huấn luyện (học có giám
+- **Khác biệt với phân loại**: phân cụm không cần nhãn (học không
+  giám sát), phân loại cần nhãn đúng để huấn luyện (học có giám
   sát) - cùng mục tiêu "nhóm dữ liệu" nhưng khác hoàn toàn về dữ liệu đầu
   vào.
   <br><span class="en">**Difference from Classification**: Clustering

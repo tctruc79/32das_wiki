@@ -11,7 +11,7 @@ status: complete
 ## Định nghĩa - <span class="en">Definition</span>
 
 Các chỉ số đánh giá mô hình đo mức độ sai lệch giữa giá trị dự đoán và
-giá trị thực tế (cho bài toán regression), kết hợp với kiểm định chéo để
+giá trị thực tế (cho bài toán hồi quy), kết hợp với kiểm định chéo để
 kiểm tra mô hình có tổng quát hóa tốt trên dữ liệu chưa từng thấy hay
 không.
 <br><span class="en">Model evaluation metrics measure how far predicted
@@ -21,7 +21,7 @@ data.</span>
 
 ## Diễn giải - <span class="en">Explanation</span>
 
-- **3 chỉ số chính cho bài toán regression**:
+- **3 chỉ số chính cho bài toán hồi quy**:
   <br><span class="en">**3 main metrics for regression problems**:</span>
   - **Sai số tuyệt đối trung bình (MAE)** = trung bình của
     |Thực tế − Dự đoán|.
@@ -79,6 +79,6 @@ data.</span>
   <br><span class="en">[[overfitting-underfitting]] - cross-validation is
   the main tool for detecting overfitting.</span>
 - [[k-nearest-neighbors]] - dùng các chỉ số này để đánh giá khi KNN được
-  áp dụng cho bài toán regression.
+  áp dụng cho bài toán hồi quy.
   <br><span class="en">[[k-nearest-neighbors]] - uses these metrics when
   KNN is applied to a regression problem.</span>

@@ -11,7 +11,7 @@ status: complete
 ## Định nghĩa - <span class="en">Definition</span>
 
 PCA thường được dùng như 1 bước tiền xử lý trước các thuật toán khác
-(Clustering, Classification, Regression) để loại bỏ tương quan, giảm
+(phân cụm, phân loại, hồi quy) để loại bỏ tương quan, giảm
 nhiễu, và tăng tốc - chứ ít khi dùng đơn độc.
 <br><span class="en">PCA is often used as a preprocessing step before
 other algorithms (Clustering, Classification, Regression) to remove
@@ -69,8 +69,8 @@ correlations, reduce noise, and speed things up - rarely used alone.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter07-pca]] - toàn bộ mục 7.4: vì sao kết hợp, PCA+Clustering,
-  PCA+Classification, PCA+Regression (PCR).
+- [[chapter07-pca]] - toàn bộ mục 7.4: vì sao kết hợp, PCA + phân cụm,
+  PCA + phân loại, PCA + hồi quy (PCR).
   <br><span class="en">[[chapter07-pca]] - all of section 7.4: why
   combine, PCA+Clustering, PCA+Classification, PCA+Regression
   (PCR).</span>

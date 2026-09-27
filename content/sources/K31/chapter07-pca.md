@@ -28,7 +28,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter07_PCA.pdf"
 - 4 phần: (1) PCA là gì, (2) cách chọn thành phần chính (hiệp phương sai,
   trị riêng/véc-tơ riêng), (3) quy trình 5 bước + các ví dụ ứng dụng
   (nhận diện khuôn mặt, khử nhiễu, nén ảnh), (4) kết hợp PCA với các
-  thuật toán khác (Clustering/Classification/Regression) - phần này có
+  thuật toán khác (phân cụm/phân loại/hồi quy) - phần này có
   mật độ liên hệ chéo cao nhất trong toàn môn, tự tổng hợp lại hầu hết
   các thuật toán đã học trước đó.
   <br><span class="en">4 parts: (1) what is PCA, (2) how to choose
@@ -254,8 +254,8 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter07_PCA.pdf"
   riêng/véc-tơ riêng, quy trình.
   <br><span class="en">[[pca]] - the main concept page: definition,
   covariance, eigenvalue/eigenvector, procedure.</span>
-- [[pca-combined-with-other-algorithms]] - PCA + Clustering/
-  Classification/Regression, tổng hợp lại toàn bộ thuật toán đã học
+- [[pca-combined-with-other-algorithms]] - PCA + phân cụm/
+  phân loại/hồi quy, tổng hợp lại toàn bộ thuật toán đã học
   trong môn.
   <br><span class="en">[[pca-combined-with-other-algorithms]] - PCA +
   Clustering/Classification/Regression, synthesizing back into every

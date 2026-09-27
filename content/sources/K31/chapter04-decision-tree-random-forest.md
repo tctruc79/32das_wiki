@@ -15,7 +15,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter04_DecisionTree_2025.
   slide**: 34.
   <br><span class="en">**Cohort**: K31 (2025). **Instructor**:
   [[tran-thi-tuan-anh]]. **Slide count**: 34.</span>
-- **Vị trí trong môn**: thuật toán classification thứ hai sau
+- **Vị trí trong môn**: thuật toán phân loại thứ hai sau
   [[k-nearest-neighbors]], đồng thời giới thiệu học tổ hợp (ensemble
   learning) qua Rừng ngẫu nhiên.
   <br><span class="en">**Position in the course**: the second
@@ -54,7 +54,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter04_DecisionTree_2025.
   branches from the tree.</span>
 - **Cây phân loại vs cây hồi quy** (slide 5): **Cây phân loại
   (Classification trees)** - đầu ra định tính, dùng chỉ số Gini, entropy,
-  hoặc classification error để tìm thuộc tính tách tốt nhất, dự đoán bằng
+  hoặc sai số phân loại để tìm thuộc tính tách tốt nhất, dự đoán bằng
   hạng mục chiếm đa số ở nút lá. **Cây hồi quy (Regression trees)** - đầu
   ra định lượng, dùng giảm phương sai (variance reduction), sai số bình
   phương trung bình, hoặc chỉ số tương tự, dự đoán bằng trung bình/trung
@@ -81,10 +81,10 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter04_DecisionTree_2025.
     tốt với dữ liệu định tính (categorical) nhưng không xử lý được dữ
     liệu số. Có thể dẫn tới quá khớp và tạo cây thiên lệch (biased).
   - **C4.5**: cải tiến của ID3, phát triển bởi Ross Quinlan. Dùng được
-    cho cả classification lẫn regression. Dùng gain ratio thay vì
+    cho cả phân loại lẫn hồi quy. Dùng gain ratio thay vì
     information gain để xử lý thiên lệch với thuộc tính nhiều giá trị.
     Giảm quá khớp, xử lý được dữ liệu thiếu.
-  - **CART**: dùng được cho cả classification lẫn regression. Dùng Gini
+  - **CART**: dùng được cho cả phân loại lẫn hồi quy. Dùng Gini
     impurity cho cây phân loại và sai số bình phương trung bình cho cây
     hồi quy. Xử lý được tập dữ liệu lớn.
   <br><span class="en">**How to build a decision tree** (slides 8-12):
@@ -196,7 +196,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter04_DecisionTree_2025.
   Forest code example.</span>
 - **Bài tập nhóm** (slide 33): liệt kê thêm các mở rộng khác của cây
   quyết định (ngoài Random Forest); liệt kê càng nhiều càng tốt ứng dụng
-  tiềm năng của thuật toán Classification trong kinh doanh/thực tế.
+  tiềm năng của thuật toán phân loại trong kinh doanh/thực tế.
   <br><span class="en">**Group exercise** (slide 33): list other
   extensions of decision trees (besides Random Forest); list as many
   potential real-world/business applications of Classification as
@@ -208,20 +208,20 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter04_DecisionTree_2025.
   CART.
   <br><span class="en">[[decision-tree]] - the full concept page: purity
   measures, ID3/C4.5/CART.</span>
-- [[random-forest]] - trang khái niệm ensemble learning.
+- [[random-forest]] - trang khái niệm học tổ hợp.
   <br><span class="en">[[random-forest]] - the ensemble learning concept
   page.</span>
-- [[k-nearest-neighbors]] - thuật toán classification trước đó, đối
+- [[k-nearest-neighbors]] - thuật toán phân loại trước đó, đối
   chiếu lazy learning (KNN) vs eager learning (Decision Tree).
   <br><span class="en">[[k-nearest-neighbors]] - the previous
   classification algorithm, contrasting lazy learning (KNN) vs eager
   learning (Decision Tree).</span>
-- [[overfitting-underfitting]] - pruning và số lượng cây trong Random
+- [[overfitting-underfitting]] - tỉa cây và số lượng cây trong Random
   Forest là 2 cơ chế kiểm soát quá khớp cụ thể ở chương này.
   <br><span class="en">[[overfitting-underfitting]] - pruning and the
   number of trees in Random Forest are 2 concrete overfitting-control
   mechanisms in this chapter.</span>
-- [[classification]] - Decision Tree là 1 trong 5 thuật toán classification
+- [[classification]] - Decision Tree là 1 trong 5 thuật toán phân loại
   đã liệt kê ở Chapter 3.
   <br><span class="en">[[classification]] - Decision Tree is one of the 5
   classification algorithms listed in Chapter 3.</span>

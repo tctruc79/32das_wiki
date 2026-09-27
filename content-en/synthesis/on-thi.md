@@ -414,6 +414,10 @@ content.
 
 ## Exam question bank
 
+The 20 quick warm-up questions for K32 Chapter 3 (about 20 seconds each)
+live on their own page, [[warm-up-ch3-k32]] - the question bank below is
+the kind that needs deeper reasoning and calculation.
+
 - Distinguish the 4 types of analytics (descriptive/
   diagnostic/predictive/prescriptive) - given a concrete example, classify
   it.

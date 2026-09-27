@@ -55,8 +55,8 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter06_Clustering.pdf"
   - all clusters together cover all observations.</span>
 - **Classification vs Clustering** (slide 4): slide chỉ có hình so sánh,
   không có văn bản trích xuất được - nhưng khác biệt cốt lõi (đã ngụ ý
-  xuyên suốt chương) là Classification cần nhãn (học có giám sát), còn
-  Clustering không cần nhãn (học không giám sát).
+  xuyên suốt chương) là phân loại cần nhãn (học có giám sát), còn
+  phân cụm không cần nhãn (học không giám sát).
   <br><span class="en">**Classification vs Clustering** (slide 4): the
   slide has only a comparison image, no extractable text - but the core
   difference (implied throughout the chapter) is Classification needs
@@ -182,8 +182,8 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter06_Clustering.pdf"
   specific characteristics, share campaigns successful with similar
   people); document analysis (cluster and organize similar
   documents).</span>
-- **Thảo luận nhóm** (slide 26): liệt kê điểm giống/khác giữa Clustering
-  và Classification; ứng dụng của Hierarchical Clustering vs K-Means; có
+- **Thảo luận nhóm** (slide 26): liệt kê điểm giống/khác giữa phân cụm
+  và phân loại; ứng dụng của Hierarchical Clustering vs K-Means; có
   phương pháp phân cụm nào khác ngoài K-Means và Hierarchical không?
   <br><span class="en">**Group discussion** (slide 26): list similarities/
   differences between Clustering and Classification; applications of
@@ -202,7 +202,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter06_Clustering.pdf"
 - [[hierarchical-clustering]] - thuật toán phân cấp + dendrogram.
   <br><span class="en">[[hierarchical-clustering]] - the hierarchical
   algorithm + dendrogram.</span>
-- [[machine-learning-overview]] - Clustering là nhánh đầu tiên của học
+- [[machine-learning-overview]] - phân cụm là nhánh đầu tiên của học
   không giám sát được giảng chi tiết trong môn.
   <br><span class="en">[[machine-learning-overview]] - Clustering is the
   first unsupervised branch taught in detail in the course.</span>

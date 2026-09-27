@@ -32,9 +32,9 @@ based on the learned model, in 2 phases: training and application.</span>
   revolutionizes AI via complex neural networks on big data (2000s-2010s)
   → ChatGPT and current AI breakthroughs.</span>
 - **3 loại học máy chính**: Học có giám sát (Supervised - dữ liệu có
-  nhãn đáp án đúng, gồm Classification và Regression); Học không giám sát
-  (Unsupervised - dữ liệu không nhãn, gồm Clustering, Dimension
-  reduction, Association); Học tăng cường (Reinforcement Learning).
+  nhãn đáp án đúng, gồm phân loại và hồi quy); Học không giám sát
+  (Unsupervised - dữ liệu không nhãn, gồm phân cụm, giảm chiều, luật
+  kết hợp); Học tăng cường (Reinforcement Learning).
   <br><span class="en">**3 main ML types**: Supervised (labeled correct
   answers, includes Classification and Regression); Unsupervised
   (unlabeled data, includes Clustering, Dimension reduction, Association);

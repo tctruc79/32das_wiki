@@ -36,7 +36,7 @@ on attributes chosen for splitting at each node.</span>
 - **3 thuật toán xây cây chính**: **ID3** (sớm nhất, dùng entropy/
   information gain, không xử lý dữ liệu số, dễ quá khớp); **C4.5** (cải
   tiến ID3, dùng gain ratio, giảm quá khớp, xử lý dữ liệu thiếu); **CART**
-  (dùng Gini impurity cho classification/MSE cho regression, xử lý được
+  (dùng Gini impurity cho phân loại/MSE cho hồi quy, xử lý được
   dữ liệu lớn).
   <br><span class="en">**3 main tree-building algorithms**: **ID3**
   (earliest, uses entropy/information gain, doesn't handle numeric data,

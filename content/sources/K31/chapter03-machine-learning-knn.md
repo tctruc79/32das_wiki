@@ -27,7 +27,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter03_Machine Learning_2
 
 - Chương có 3 phần lớn: (1) tổng quan học máy + lịch sử AI, (2) các khái
   niệm cơ bản (đánh giá mô hình, kiểm định chéo, quá khớp/chưa khớp), (3)
-  Classification sâu vào thuật toán K-Nearest Neighbours.
+  phân loại, đi sâu vào thuật toán K-Nearest Neighbours.
   <br><span class="en">The chapter has 3 major parts: (1) ML overview +
   AI history, (2) basic concepts (model evaluation, cross-validation,
   overfitting/underfitting), (3) Classification going deep into
@@ -37,9 +37,8 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter03_Machine Learning_2
   **Dimension reduction**, **Association** - nhưng slide 3 này chỉ là dàn
   ý tổng cho CẢ CỤM chương ML (Chapter 3-7), không phải nội dung riêng
   của Chapter 3. Nội dung thật của file PDF này (44 slide) chỉ dừng ở
-  Classification/KNN - không có Regression/Clustering/Dimension
-  reduction/Association trong file này (các chủ đề đó có file PDF riêng ở
-  Chapter 4-7).
+  phân loại/KNN - không có hồi quy/phân cụm/giảm chiều/luật kết hợp
+  trong file này (các chủ đề đó có file PDF riêng ở Chapter 4-7).
   <br><span class="en">The chapter's original outline (slide 3) lists 7
   items: Introduction to ML, Some basic concepts, Classification,
   **Regression**, **Clustering**, **Dimension reduction**, **Association**
@@ -110,10 +109,10 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter03_Machine Learning_2
   automatically detects people and suggests tagging them.</span>
 - **3 loại học máy chính** (slide 11): **Học có giám sát (Supervised
   Learning)** - dữ liệu huấn luyện được gán nhãn đáp án đúng; 2 dạng phổ
-  biến nhất: Classification (đầu ra là nhãn rời rạc) và Regression (đầu
+  biến nhất: phân loại (đầu ra là nhãn rời rạc) và hồi quy (đầu
   ra là số). **Học không giám sát (Unsupervised Learning)** - cho 1 tập
   dữ liệu không nhãn, muốn phân tích và khám phá mẫu hình bên trong:
-  Clustering, Dimension reduction, Association. **Học tăng cường
+  phân cụm, giảm chiều, luật kết hợp. **Học tăng cường
   (Reinforcement Learning)**.
   <br><span class="en">**3 main types of ML** (slide 11): **Supervised
   Learning** - training data is labeled with correct answers; the 2 most
@@ -172,9 +171,9 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter03_Machine Learning_2
   accurate predictions. Solution: use a simpler model, reduce model
   complexity. Cross-validation helps control overfitting.</span>
 
-### 3. Classification (slide 21-43) - <span class="en">3. Classification (slides 21-43)</span>
+### 3. Phân loại (slide 21-43) - <span class="en">3. Classification (slides 21-43)</span>
 
-- **Classification là gì** (slide 22): kỹ thuật phân loại dữ liệu vào 1
+- **Phân loại là gì** (slide 22): kỹ thuật phân loại dữ liệu vào 1
   số lượng lớp cho trước. Thuật ngữ kỹ thuật: **Bộ phân loại
   (Classifier)** - thuật toán ánh xạ dữ liệu đầu vào tới 1 hạng mục cụ
   thể; **Phân loại nhị phân (Binary Classification)** - bài toán có 2 kết
@@ -261,7 +260,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter03_Machine Learning_2
   - **Ứng dụng thực tế** (slide 40, 42-43): bộ lọc email spam bằng KNN;
     phát hiện gian lận trong dữ liệu giao dịch bằng KNN (2 case study
     dẫn nguồn towardsdatascience.com và kaggle.com). Teamwork 1 (slide
-    41): thảo luận nhóm tìm thêm ứng dụng thực tế của Classification,
+    41): thảo luận nhóm tìm thêm ứng dụng thực tế của phân loại,
     nộp kết quả cho giảng viên đánh giá.
     <br><span class="en">**Real-world applications** (slide 40, 42-43):
     spam email classifier with KNN; fraud detection in transaction data

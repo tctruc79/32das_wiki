@@ -83,7 +83,7 @@ explicit programming.</span>
   <br><span class="en">[[big-data]] - the driver that made deep learning
   feasible (enough data + enough processing power).</span>
 - [[classification]] - perceptron đơn lẻ tương đương về bản chất với
-  Logistic Regression, 1 thuật toán classification.
+  Logistic Regression, 1 thuật toán phân loại.
   <br><span class="en">[[classification]] - a single perceptron is
   essentially equivalent to Logistic Regression, a classification
   algorithm.</span>

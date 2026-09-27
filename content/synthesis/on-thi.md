@@ -59,7 +59,7 @@ Notebook) dùng xuyên suốt Chapter 3-8.
 infrastructure (Python + Jupyter Notebook) used throughout Chapters
 3-8.</span>
 
-### D. Học máy nền tảng & Classification/KNN - <span class="en">D. ML foundations & Classification/KNN</span>
+### D. Học máy nền tảng & phân loại/KNN - <span class="en">D. ML foundations & Classification/KNN</span>
 
 [[machine-learning-overview]] (lịch sử AI/ML, 3 loại ML),
 [[overfitting-underfitting]] + [[model-evaluation-metrics]] (chủ đề xuyên
@@ -71,9 +71,9 @@ theme running through Chapters 3-5), [[classification]] +
 [[k-nearest-neighbors]] (the first algorithm) - all from
 [[chapter03-machine-learning-knn]] (K31).</span>
 
-### E. Regression & Regularization - <span class="en">E. Regression & Regularization</span>
+### E. Hồi quy & điều chuẩn - <span class="en">E. Regression & Regularization</span>
 
-[[linear-regression]] + [[regularization-ridge-lasso]] - nhánh Regression
+[[linear-regression]] + [[regularization-ridge-lasso]] - nhánh hồi quy
 của học có giám sát, từ [[chapter05-ridge-lasso]] (K31).
 <br><span class="en">[[linear-regression]] + [[regularization-ridge-lasso]]
 - the Regression branch of supervised learning, from
@@ -91,8 +91,8 @@ main algorithms) - from [[chapter06-clustering]] (K31).</span>
 ### G. Giảm chiều: PCA - <span class="en">G. Dimension Reduction: PCA</span>
 
 [[pca]] (hiệp phương sai, trị riêng/véc-tơ riêng, quy trình 5 bước) +
-[[pca-combined-with-other-algorithms]] (PCA+Clustering/Classification/
-Regression) - từ [[chapter07-pca]] (K31). Đây là chương tổng hợp lại
+[[pca-combined-with-other-algorithms]] (PCA + phân cụm/phân loại/
+hồi quy) - từ [[chapter07-pca]] (K31). Đây là chương tổng hợp lại
 nhiều nhất trong môn - liên kết ngược tới [[clustering]],
 [[k-means-clustering]], [[hierarchical-clustering]], [[classification]],
 [[k-nearest-neighbors]], [[regularization-ridge-lasso]].
@@ -474,7 +474,7 @@ the loop). Per the separation rule, recorded in plain text only, with no
 cross-cluster wikilink.</span>
 
 K31 vs K32 (Chapter 4): khóa 2025 chia nội dung học không giám sát làm
-**2 chương riêng** (Clustering và PCA); khóa 2026 gộp vào **1 file 86
+**2 chương riêng** (phân cụm và PCA); khóa 2026 gộp vào **1 file 86
 slide** và thêm những phần không có ở bản 2025: hàm mục tiêu tường minh
 của K-Means kèm ghi chú NP-khó, cơ chế khởi tạo k-means++, phân rã
 `TSS = WSS + BSS`, mục DBSCAN và GMM cùng bảng hướng dẫn chọn phương
@@ -625,6 +625,14 @@ content.</span>
 | [[computer-vision-tasks]] | [[chapter05-deep-learning-k32]] | K32 |
 
 ## 5. Ngân hàng câu hỏi ôn thi - <span class="en">Exam question bank</span>
+
+Bộ 20 câu hỏi khởi động nhanh riêng cho Chapter 3 K32 (trả lời trong
+khoảng 20 giây mỗi câu) nằm ở trang riêng [[warm-up-ch3-k32]] - ngân
+hàng câu hỏi dưới đây là loại cần lập luận và tính toán sâu hơn.
+<br><span class="en">The 20 quick warm-up questions for K32 Chapter 3
+(about 20 seconds each) live on their own page, [[warm-up-ch3-k32]] -
+the question bank below is the kind that needs deeper reasoning and
+calculation.</span>
 
 - Phân biệt 4 loại phân tích (mô tả/chẩn đoán/dự đoán/đề xuất) - cho 1 ví
   dụ cụ thể và yêu cầu xếp loại.

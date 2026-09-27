@@ -32,7 +32,7 @@ source_file: "raw/Lecture Notes/K32/Chapter04/VNP_DataScience_Unsupervised_Learn
   giám sát** (có nhãn `y`); chương này dạy trọn nhánh **không giám sát**
   (chỉ có `x`): phân cụm để giảm số **dòng**, và phân tích thành phần
   chính để giảm số **cột**. Ở khóa 2025, cùng khối nội dung này được chia
-  làm **2 chương riêng biệt** (Clustering và PCA); khóa 2026 gộp lại
+  làm **2 chương riêng biệt** (phân cụm và PCA); khóa 2026 gộp lại
   thành 1 file duy nhất, thêm hẳn Part 3 về cách ghép PCA với các thuật
   toán khác và một danh sách đầy đủ các bẫy thực hành. **Theo quy tắc
   tách cụm khóa học** (CLAUDE.md, mục "Tách cụm K31/K32"), trang này

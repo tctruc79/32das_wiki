@@ -52,7 +52,7 @@ regression assumes that relationship is linear: y = β₀ + β₁x₁ + ... +
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter05-ridge-lasso]] - định nghĩa regression, 4 phương pháp học
+- [[chapter05-ridge-lasso]] - định nghĩa hồi quy, 4 phương pháp học
   tham số, đa thức, biến giả.
   <br><span class="en">[[chapter05-ridge-lasso]] - regression definition,
   4 parameter-learning methods, polynomial, dummy variables.</span>
@@ -64,7 +64,7 @@ regression assumes that relationship is linear: y = β₀ + β₁x₁ + ... +
   <br><span class="en">[[regularization-ridge-lasso]] - the solution to
   linear regression's overfitting problem when there are too many
   parameters.</span>
-- [[machine-learning-overview]] - Regression là 1 trong 2 nhánh chính của
+- [[machine-learning-overview]] - hồi quy là 1 trong 2 nhánh chính của
   học có giám sát, cùng với [[classification]].
   <br><span class="en">[[machine-learning-overview]] - Regression is one
   of the 2 main supervised learning branches, alongside

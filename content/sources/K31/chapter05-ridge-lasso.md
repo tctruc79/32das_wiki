@@ -16,8 +16,8 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter05_Ridge and Lasso.pd
   <br><span class="en">**Cohort**: K31 (2025). **Instructor**:
   [[tran-thi-tuan-anh]]. **Slide count**: 19 (the shortest of the 8
   chapters).</span>
-- **Vị trí trong môn**: nhánh **Regression** của học có giám sát (nhánh
-  Classification đã học ở Chapter 3-4). Dữ liệu thực hành `regression.csv`
+- **Vị trí trong môn**: nhánh **hồi quy** của học có giám sát (nhánh
+  phân loại đã học ở Chapter 3-4). Dữ liệu thực hành `regression.csv`
   - **không còn nằm trong `raw/`** sau lần dọn dẹp cấu trúc thư mục gần
   đây (chỉ còn ở `Lecture Notes/Chapter5_Ridge and Lasso regression/
   Chapter5_Data/Regression.csv` ngoài `raw/`, xem CLAUDE.md mục "Kiến
@@ -32,7 +32,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter05_Ridge and Lasso.pd
 
 ## Tóm tắt - <span class="en">Summary</span>
 
-- 3 phần: (1) Regression trong học có giám sát - định nghĩa, hồi quy
+- 3 phần: (1) hồi quy trong học có giám sát - định nghĩa, hồi quy
   tuyến tính, cách học tham số, trường hợp đặc biệt (đa thức, biến giả);
   (2) vấn đề quá khớp và điều chuẩn (regularization) - Ridge/Lasso, công
   thức loss, vai trò tham số λ; (3) code Python + các chỉ số đánh giá dự
@@ -45,9 +45,9 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter05_Ridge and Lasso.pd
 
 ## Nội dung chính - <span class="en">Key content</span>
 
-### 5.1 Regression trong học có giám sát (slide 3-7) - <span class="en">5.1 Regression in supervised learning (slides 3-7)</span>
+### 5.1 Hồi quy trong học có giám sát (slide 3-7) - <span class="en">5.1 Regression in supervised learning (slides 3-7)</span>
 
-- **Regression là gì** (slide 4): trong học máy, regression là bài toán
+- **Hồi quy là gì** (slide 4): trong học máy, hồi quy là bài toán
   học quan hệ giữa các biến đầu vào x = [x₁, x₂, ..., xₚ] (định tính hoặc
   định lượng) và 1 biến đầu ra định lượng y. Mô hình: y = f(x₁,...,xₚ) +
   u, với u là số hạng nhiễu/sai số - mô tả mọi thứ mô hình không nắm bắt
@@ -176,7 +176,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter05_Ridge and Lasso.pd
 
 ## Liên kết - <span class="en">Links</span>
 
-- [[linear-regression]] - trang khái niệm về regression, OLS/LAD/MLE/MM,
+- [[linear-regression]] - trang khái niệm về hồi quy, OLS/LAD/MLE/MM,
   hồi quy đa thức, biến giả.
   <br><span class="en">[[linear-regression]] - the regression concept
   page, OLS/LAD/MLE/MM, polynomial regression, dummy variables.</span>
@@ -192,8 +192,8 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter05_Ridge and Lasso.pd
   Chapter 3.
   <br><span class="en">[[model-evaluation-metrics]] - adds MAPE to the
   metric set from Chapter 3.</span>
-- [[machine-learning-overview]] - Regression là nhánh thứ 2 của học có
-  giám sát, hoàn thiện bức tranh cùng Classification.
+- [[machine-learning-overview]] - hồi quy là nhánh thứ 2 của học có
+  giám sát, hoàn thiện bức tranh cùng phân loại.
   <br><span class="en">[[machine-learning-overview]] - Regression is the
   2nd branch of supervised learning, completing the picture alongside
   Classification.</span>

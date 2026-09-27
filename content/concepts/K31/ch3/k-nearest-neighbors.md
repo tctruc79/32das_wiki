@@ -76,7 +76,7 @@ observations.</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[classification]] - KNN là 1 trong 5 thuật toán classification phổ
+- [[classification]] - KNN là 1 trong 5 thuật toán phân loại phổ
   biến được liệt kê.
   <br><span class="en">[[classification]] - KNN is one of the 5 popular
   classification algorithms listed.</span>

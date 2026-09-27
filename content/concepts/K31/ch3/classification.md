@@ -55,11 +55,11 @@ label outputs.</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[k-nearest-neighbors]] - thuật toán classification đầu tiên được học
+- [[k-nearest-neighbors]] - thuật toán phân loại đầu tiên được học
   chi tiết.
   <br><span class="en">[[k-nearest-neighbors]] - the first classification
   algorithm taught in detail.</span>
-- [[machine-learning-overview]] - classification là 1 trong 2 nhánh chính
+- [[machine-learning-overview]] - phân loại là 1 trong 2 nhánh chính
   của học có giám sát.
   <br><span class="en">[[machine-learning-overview]] - classification is
   one of the 2 main branches of supervised learning.</span>

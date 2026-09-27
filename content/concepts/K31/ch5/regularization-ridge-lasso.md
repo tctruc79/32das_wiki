@@ -10,7 +10,7 @@ status: complete
 
 ## Định nghĩa - <span class="en">Definition</span>
 
-Điều chuẩn (regularization) thêm 1 số hạng phạt vào loss function của hồi
+Điều chuẩn (regularization) thêm 1 số hạng phạt vào hàm mất mát của hồi
 quy để kiểm soát độ lớn của hệ số, giúp tránh quá khớp. Ridge phạt theo
 tổng bình phương hệ số (chuẩn L2), Lasso phạt theo tổng trị tuyệt đối hệ
 số (chuẩn L1).
