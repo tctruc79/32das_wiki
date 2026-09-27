@@ -1,7 +1,7 @@
 ---
 type: source
-title: "Chapter 1 (K32) — Khoa học Dữ liệu và Tư duy Phân tích"
-title_en: "Chapter 1 (K32) — Data Science and Data-Analytic Thinking"
+title: "Chapter 1 (K32) - Khoa học Dữ liệu và Tư duy Phân tích"
+title_en: "Chapter 1 (K32) - Data Science and Data-Analytic Thinking"
 tags: [chapter-1, k32, foundations, course-admin]
 created: 2026-08-22
 updated: 2026-09-05
@@ -12,30 +12,30 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
 ## Metadata
 
 - **Môn học**: Introduction to Data Science and Applications, University
-  of Economics Ho Chi Minh City — Vietnam-Netherlands Programme.
+  of Economics Ho Chi Minh City - Vietnam-Netherlands Programme.
   <br><span class="en">**Course**: Introduction to Data Science and
-  Applications, University of Economics Ho Chi Minh City — Vietnam-
+  Applications, University of Economics Ho Chi Minh City - Vietnam-
   Netherlands Programme.</span>
 - **Khóa**: K32 (2026, khóa hiện tại).
   <br><span class="en">**Cohort**: K32 (2026, current cohort).</span>
 - **Giảng viên**: [[tran-thi-tuan-anh]].
   <br><span class="en">**Instructor**: [[tran-thi-tuan-anh]].</span>
 - **Số slide**: 41 (theo số trang chân trang gốc; file PDF có 45 trang
-  vật lý — chênh lệch do 1 số trang tiêu đề/section-divider không đánh
+  vật lý - chênh lệch do 1 số trang tiêu đề/section-divider không đánh
   số).
   <br><span class="en">**Slide count**: 41 (per the original footer
-  numbering; the PDF has 45 physical pages — the gap is from title/
+  numbering; the PDF has 45 physical pages - the gap is from title/
   section-divider pages without a footer number).</span>
-- **Vị trí trong môn**: chương mở đầu — cùng đề mục 4 phần như bản K31
+- **Vị trí trong môn**: chương mở đầu - cùng đề mục 4 phần như bản K31
   (2025) của chương này, nhưng nội dung mở rộng đáng kể với nhiều
   framework mới. **Theo quy tắc tách cụm khóa học** (CLAUDE.md, mục
   "Tách cụm K31/K32"), trang này KHÔNG link trực tiếp tới trang nguồn K31
-  — mọi so sánh với K31 chỉ ghi bằng chữ thường, không phải wikilink.
-  <br><span class="en">**Position in the course**: the opening chapter —
+  - mọi so sánh với K31 chỉ ghi bằng chữ thường, không phải wikilink.
+  <br><span class="en">**Position in the course**: the opening chapter -
   same 4-part outline as the K31 (2025) version of this chapter, but
   content substantially expanded with new frameworks. **Per the cohort
   separation rule** (CLAUDE.md, "Tách cụm K31/K32"), this page does NOT
-  link directly to the K31 source page — any K31 comparisons are noted in
+  link directly to the K31 source page - any K31 comparisons are noted in
   plain text only, never as a wikilink.</span>
 
 ## Tóm tắt - <span class="en">Summary</span>
@@ -83,13 +83,13 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
   thuộc (vai trò chiến lược của dữ liệu, hỗ trợ ra quyết định kinh
   doanh, học máy cơ bản, Python, ứng dụng thực tế); mục **mới thứ 6**:
   đánh giá 1 bài toán kinh doanh có phù hợp để làm khoa học dữ liệu hay
-  không, và cần bằng chứng gì — tương ứng trực tiếp với checklist 7 điều
+  không, và cần bằng chứng gì - tương ứng trực tiếp với checklist 7 điều
   kiện ở slide 35.
   <br><span class="en">**Learning objectives** (6 items, slide 4): the
   first 5 keep the familiar spirit (data's strategic role, supporting
   business decisions, basic ML techniques, Python, real-world
   applications); **new 6th item**: judge whether a business problem is
-  suitable for data science at all, and what evidence would be needed —
+  suitable for data science at all, and what evidence would be needed -
   directly mapping to the 7-condition checklist on slide 35.</span>
 - **Công cụ** (slide 6): Python 3.13, Jupyter Notebook/Spyder, **+
   Google Colab** (chạy trên trình duyệt, không cần cài đặt).
@@ -119,25 +119,25 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
 - **Khung 5 V's của dữ liệu lớn** (slide 16): **Volume** (nhiều dữ liệu
   hơn khả năng lưu trữ/xử lý của 1 máy), **Velocity** (đến liên tục,
   thường cần ra quyết định nhanh), **Variety** (dữ liệu có cấu trúc, bán
-  cấu trúc, phi cấu trúc trộn lẫn — bảng biểu, văn bản, hình ảnh, log),
+  cấu trúc, phi cấu trúc trộn lẫn - bảng biểu, văn bản, hình ảnh, log),
   **Veracity** (chất lượng không chắc chắn: thiếu, trùng lặp, đo sai,
   không nhất quán), **Value** (yếu tố duy nhất có giá trị thương mại
   thật, và là yếu tố *không* tự động có được). Key point đi kèm: dữ liệu
   lớn nói về kích thước/độ phức tạp, không nhất thiết nói về chất lượng
-  bằng chứng — dữ liệu *đúng* thường có giá trị hơn dữ liệu *nhiều*. →
+  bằng chứng - dữ liệu *đúng* thường có giá trị hơn dữ liệu *nhiều*. →
   [[big-data-k32]]
   <br><span class="en">**The 5 V's of big data** (slide 16): **Volume**,
   **Velocity**, **Variety**, **Veracity**, **Value**. Key point: big data
-  is about size/complexity, not necessarily evidence quality — the
+  is about size/complexity, not necessarily evidence quality - the
   *right* data is often more valuable than *more* data. →
   [[big-data-k32]]</span>
 - **Kim tự tháp DIKW** (slide 20): giữ khung Data→Information→
   Knowledge→Wisdom, thêm 1 câu tổng kết: mỗi bước đi lên đều đòi hỏi 1
-  lựa chọn của con người — ghi lại cái gì, tổ chức nó ra sao, nó có nghĩa
+  lựa chọn của con người - ghi lại cái gì, tổ chức nó ra sao, nó có nghĩa
   là gì, và làm gì với nó. → [[dikw-pyramid-k32]]
   <br><span class="en">**The DIKW pyramid** (slide 20): keeps the
   Data→Information→Knowledge→Wisdom framework, adds a summary line: each
-  step upward requires a human choice — what to record, how to organise
+  step upward requires a human choice - what to record, how to organise
   it, what it means, and what to do about it. → [[dikw-pyramid-k32]]</span>
 
 ### 2. Khoa học dữ liệu là gì (slide 21-28) - <span class="en">2. What is data science (slides 21-28)</span>
@@ -145,43 +145,43 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
 - **3 khối định nghĩa** (slide 21): Provost & Fawcett (giáo trình), "một
   công thức tổng quát chung" (khớp gần như nguyên văn định nghĩa "Harvard"
   ở K31), "một công thức liên ngành" (khớp định nghĩa "Coursera" ở K31)
-  — không còn gắn tên trường/nền tảng cụ thể như bản K31.
+  - không còn gắn tên trường/nền tảng cụ thể như bản K31.
   <br><span class="en">**3 definition blocks** (slide 21): Provost &
   Fawcett (textbook), "a common general formulation" (matches K31's
   "Harvard" definition almost word for word), "an interdisciplinary
-  formulation" (matches K31's "Coursera" definition) — no longer tied to
+  formulation" (matches K31's "Coursera" definition) - no longer tied to
   specific university/platform names like the K31 version.</span>
 - **"Định nghĩa vận hành" của giảng viên** (slide 22, mới): "thực hành
-  trích xuất tri thức có liên quan tới quyết định từ dữ liệu — kết hợp
-  lập luận thống kê, phương pháp tính toán và tri thức lĩnh vực — được
+  trích xuất tri thức có liên quan tới quyết định từ dữ liệu - kết hợp
+  lập luận thống kê, phương pháp tính toán và tri thức lĩnh vực - được
   đánh giá bằng việc quyết định có được cải thiện hay không." Nhấn mạnh 3
   tiêu chí: liên quan tới quyết định (loại trừ phân tích không đổi được
   gì); kết hợp (không thành phần nào một mình là đủ); đánh giá bằng việc
   quyết định có cải thiện (dùng để chấm mini project). → [[data-science-definition-k32]]
   <br><span class="en">**The instructor's "working definition"** (slide
   22, new): "the practice of extracting decision-relevant knowledge from
-  data — combining statistical reasoning, computational method and domain
-  knowledge — judged by whether a decision improves." → [[data-science-definition-k32]]</span>
+  data - combining statistical reasoning, computational method and domain
+  knowledge - judged by whether a decision improves." → [[data-science-definition-k32]]</span>
 - **Sơ đồ AI vs Machine Learning vs Deep Learning vs Khoa học dữ liệu**
   (slide 24): nhắc tới statistical learning, deep learning, Gen AI/LLM,
-  expert system, visualization — hình ảnh/Venn diagram, phần text trích
+  expert system, visualization - hình ảnh/Venn diagram, phần text trích
   xuất qua `pdftotext` bị lỗi OCR nặng, không đủ tin cậy để mô tả chi
   tiết.
   <br><span class="en">**AI vs Machine Learning vs Deep Learning vs Data
   Science diagram** (slide 24): mentions statistical learning, deep
-  learning, Gen AI/LLM, expert system, visualization — an image/Venn
+  learning, Gen AI/LLM, expert system, visualization - an image/Venn
   diagram, the `pdftotext` extraction is badly OCR-garbled, not reliable
   enough to describe in detail.</span>
 - **Phân biệt thuật ngữ** (slide 25, bảng định nghĩa 1 dòng/thuật ngữ,
   chi tiết hơn K31): khoa học dữ liệu, phân tích dữ liệu (analytics),
   phân tích 1 tập dữ liệu (analysis), khai phá dữ liệu, kỹ thuật dữ liệu,
   thao tác dữ liệu, trực quan hóa dữ liệu, kho dữ liệu, hồ dữ liệu, tích
-  hợp dữ liệu — mỗi thuật ngữ có định nghĩa 1 dòng (K31 chỉ liệt kê tên).
+  hợp dữ liệu - mỗi thuật ngữ có định nghĩa 1 dòng (K31 chỉ liệt kê tên).
   <br><span class="en">**Distinguishing terminology** (slide 25, a
   1-line-definition table per term, more detailed than K31): data
   science, data analytics, data analysis, data mining, data engineering,
   data manipulation, data visualisation, data warehouse, data lake, data
-  integration — each with a 1-line definition (K31 only listed
+  integration - each with a 1-line definition (K31 only listed
   names).</span>
 - **Bảng so sánh Khoa học dữ liệu vs Phân tích dữ liệu vs Business
   Intelligence** (slide 26, mới): theo 5 tiêu chí (câu hỏi/dữ liệu/
@@ -193,12 +193,12 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
   rival professions.</span>
 - **Ai làm việc với khoa học dữ liệu** (slide 27, bảng vai trò mới): kỹ
   sư dữ liệu, nhà phân tích dữ liệu, nhà khoa học dữ liệu, kỹ sư học máy,
-  chuyên gia kinh doanh/lĩnh vực — kèm ghi chú riêng cho sinh viên VNP:
+  chuyên gia kinh doanh/lĩnh vực - kèm ghi chú riêng cho sinh viên VNP:
   phần lớn sẽ **đặt hàng và đánh giá** phân tích hơn là tự xây dựng, nên
   framing/evaluation/interpretation quan trọng hơn thuật toán.
   <br><span class="en">**Who works with data science** (slide 27, new
   roles table): data engineer, data analyst, data scientist, ML engineer,
-  business/domain expert — with a note for VNP students: most will
+  business/domain expert - with a note for VNP students: most will
   **commission and evaluate** analysis rather than build it, so framing/
   evaluation/interpretation matter more than algorithms.</span>
 - **Ứng dụng** (slide 28): giữ khung K31 (kinh doanh, y tế, chính phủ) +
@@ -212,15 +212,15 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
 
 ### 3. Khoa học dữ liệu và ra quyết định dựa trên dữ liệu (slide 29-31) - <span class="en">3. Data science and data-driven decision making (slides 29-31)</span>
 
-- **5 loại phân tích** (slide 30-31, K31 chỉ có 4 — **khác biệt quan
+- **5 loại phân tích** (slide 30-31, K31 chỉ có 4 - **khác biệt quan
   trọng nhất chương này**): Mô tả, Chẩn đoán, Dự đoán, **Nhân quả
   (Causal, mới)**, Đề xuất. Trình bày dưới dạng bảng 3 cột: câu hỏi /
-  phương pháp điển hình / lỗi đặc trưng cho từng loại — chi tiết hơn hẳn
-  K31. Ví dụ lỗi đặc trưng: Predictive — giả định dự đoán vẫn đúng sau
-  khi hành động dựa trên nó được thực hiện; Causal — khẳng định quan hệ
+  phương pháp điển hình / lỗi đặc trưng cho từng loại - chi tiết hơn hẳn
+  K31. Ví dụ lỗi đặc trưng: Predictive - giả định dự đoán vẫn đúng sau
+  khi hành động dựa trên nó được thực hiện; Causal - khẳng định quan hệ
   nhân quả từ so sánh quan sát (observational). → [[data-driven-decision-making-k32]]
   <br><span class="en">**5 types of analytics** (slides 30-31, K31 only
-  had 4 — **the most important difference in this chapter**):
+  had 4 - **the most important difference in this chapter**):
   Descriptive, Diagnostic, Predictive, **Causal (new)**, Prescriptive.
   Presented as a 3-column table: question / typical method /
   characteristic error per type. → [[data-driven-decision-making-k32]]</span>
@@ -259,35 +259,35 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
   <br><span class="en">**7-condition checklist** for whether a problem
   suits data science (slide 35, new, matching Learning Objective #6): all
   7 must hold, any single failure stops the assessment.</span>
-- **Key ideas summary** (slide 38, mới — K31 không có slide tổng kết
+- **Key ideas summary** (slide 38, mới - K31 không có slide tổng kết
   riêng): 5 ý chính, nhấn mạnh lại "đánh giá bằng việc quyết định có cải
   thiện", 3 thành phần kết hợp, 5 loại phân tích, và các bước tư duy
   phân tích.
-  <br><span class="en">**Key ideas summary** (slide 38, new — K31 has no
+  <br><span class="en">**Key ideas summary** (slide 38, new - K31 has no
   dedicated summary slide): 5 key points, re-emphasizing "judged by
   whether a decision improves," the 3 combined components, the 5 types
   of analytics, and the analytic-thinking steps.</span>
 - 2 bài tập thực hành: Warm-up (mentimeter, từ khoá liên quan khoa học dữ
-  liệu) và "Exercise — loại phân tích nào?" (5 câu phát biểu từ dữ liệu 1
-  nhà bán lẻ, yêu cầu phân loại; lưu ý đặc biệt câu #2 — dạng mô tả nhưng
-  hay bị báo cáo/hành động như thể là nhân quả) — cả 5 câu kèm đáp án và
+  liệu) và "Exercise - loại phân tích nào?" (5 câu phát biểu từ dữ liệu 1
+  nhà bán lẻ, yêu cầu phân loại; lưu ý đặc biệt câu #2 - dạng mô tả nhưng
+  hay bị báo cáo/hành động như thể là nhân quả) - cả 5 câu kèm đáp án và
   giải thích ở [[data-driven-decision-making-k32]].
   <br><span class="en">2 practice exercises: Warm-up (mentimeter,
-  keywords related to data science) and "Exercise — which type of
+  keywords related to data science) and "Exercise - which type of
   analytics?" (5 statements from a retailer's data, classify each; note
-  #2 especially — descriptive in form but habitually treated as causal)
-  — all 5 with worked answers in
+  #2 especially - descriptive in form but habitually treated as causal)
+  - all 5 with worked answers in
   [[data-driven-decision-making-k32]].</span>
 
 ## Khoảng trống / lưu ý - <span class="en">Gaps / notes</span>
 
 - Sơ đồ "AI vs Machine learning vs Deep learning vs Data science" (slide
   24) là hình ảnh/Venn diagram, `pdftotext` trích xuất ra text rời rạc,
-  không đủ tin cậy để dựng thành nội dung chi tiết — cần xem trực tiếp
+  không đủ tin cậy để dựng thành nội dung chi tiết - cần xem trực tiếp
   slide gốc nếu cần.
   <br><span class="en">The "AI vs ML vs Deep Learning vs Data Science"
   diagram (slide 24) is an image/Venn diagram; `pdftotext` extraction is
-  fragmented and unreliable for detailed content — view the original
+  fragmented and unreliable for detailed content - view the original
   slide if needed.</span>
 - Slide "Data-driven culture" và "The data-driven organisation" (slide
   36-37) chỉ có tiêu đề, nội dung là hình ảnh.
@@ -297,26 +297,26 @@ source_file: "raw/Lecture Notes/K32/Chapter01/VNP_DataScience_Chapter01_Introduc
 
 ## Liên kết - <span class="en">Links</span>
 
-- [[big-data-k32]] — khung 5 V's.
-  <br><span class="en">[[big-data-k32]] — the 5 V's framework.</span>
-- [[dikw-pyramid-k32]] — kim tự tháp DIKW + câu tổng kết mới.
-  <br><span class="en">[[dikw-pyramid-k32]] — the DIKW pyramid + the new
+- [[big-data-k32]] - khung 5 V's.
+  <br><span class="en">[[big-data-k32]] - the 5 V's framework.</span>
+- [[dikw-pyramid-k32]] - kim tự tháp DIKW + câu tổng kết mới.
+  <br><span class="en">[[dikw-pyramid-k32]] - the DIKW pyramid + the new
   summary line.</span>
-- [[data-science-definition-k32]] — định nghĩa vận hành, bảng thuật ngữ,
+- [[data-science-definition-k32]] - định nghĩa vận hành, bảng thuật ngữ,
   bảng so sánh DS/Analytics/BI, bảng vai trò.
-  <br><span class="en">[[data-science-definition-k32]] — the working
+  <br><span class="en">[[data-science-definition-k32]] - the working
   definition, terminology table, DS/Analytics/BI comparison table, roles
   table.</span>
-- [[data-driven-decision-making-k32]] — 5 loại phân tích (thêm Causal),
+- [[data-driven-decision-making-k32]] - 5 loại phân tích (thêm Causal),
   bảng phương pháp/lỗi đặc trưng.
-  <br><span class="en">[[data-driven-decision-making-k32]] — 5 types of
+  <br><span class="en">[[data-driven-decision-making-k32]] - 5 types of
   analytics (adds Causal), method/error table.</span>
-- [[data-analytic-thinking-k32]] — 5 bước cụ thể, chuỗi bài toán kinh
+- [[data-analytic-thinking-k32]] - 5 bước cụ thể, chuỗi bài toán kinh
   doanh→khoa học dữ liệu, checklist 7 điều kiện.
-  <br><span class="en">[[data-analytic-thinking-k32]] — the 5 concrete
+  <br><span class="en">[[data-analytic-thinking-k32]] - the 5 concrete
   steps, business→data-science problem chain, 7-condition checklist.</span>
-- [[tran-thi-tuan-anh]] — giảng viên môn học, cùng người dạy K31.
-  <br><span class="en">[[tran-thi-tuan-anh]] — course instructor, the
+- [[tran-thi-tuan-anh]] - giảng viên môn học, cùng người dạy K31.
+  <br><span class="en">[[tran-thi-tuan-anh]] - course instructor, the
   same person who teaches K31.</span>
 
 ## Trích dẫn - <span class="en">Citation</span>

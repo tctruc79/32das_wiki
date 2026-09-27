@@ -11,7 +11,7 @@ status: complete
 
 PCA is often used as a preprocessing step before
 other algorithms (Clustering, Classification, Regression) to remove
-correlations, reduce noise, and speed things up — rarely used alone.
+correlations, reduce noise, and speed things up - rarely used alone.
 
 ## Explanation
 
@@ -28,10 +28,10 @@ correlations, reduce noise, and speed things up — rarely used alone.
   multicollinearity; distance-based classifiers like SVM/KNN benefit from
   PCA in high dimensions. Classic example: MNIST digit classification
   using PCA before SVM.
-- **+ Regression — Principal Component Regression
-  (PCR)**: Step 1 — apply PCA to predictors X; Step 2 — regress y on the
+- **+ Regression - Principal Component Regression
+  (PCR)**: Step 1 - apply PCA to predictors X; Step 2 - regress y on the
   selected PCs (y ≈ Zγ, Z = XVₘ). Useful when predictors are highly
-  correlated — this is an **alternative** to
+  correlated - this is an **alternative** to
   [[regularization-ridge-lasso|Ridge/Lasso]] for multicollinearity, but
   the mechanism differs: Ridge/Lasso directly penalizes original
   coefficient magnitude, while PCR transforms the variable space first
@@ -41,16 +41,16 @@ correlations, reduce noise, and speed things up — rarely used alone.
 
 ## Appears in
 
-- [[chapter07-pca]] — all of section 7.4: why
+- [[chapter07-pca]] - all of section 7.4: why
   combine, PCA+Clustering, PCA+Classification, PCA+Regression
   (PCR).
 
 ## Related concepts
 
-- [[pca]] — the mathematical foundation of the
+- [[pca]] - the mathematical foundation of the
   transform.
-- [[regularization-ridge-lasso]] — another
+- [[regularization-ridge-lasso]] - another
   multicollinearity solution, same problem but a different mechanism than
   PCR.
-- [[clustering]], [[classification]] — the 2
+- [[clustering]], [[classification]] - the 2
   algorithm branches directly supported by PCA.

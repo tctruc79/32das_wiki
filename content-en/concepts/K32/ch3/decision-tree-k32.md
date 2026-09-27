@@ -12,7 +12,7 @@ status: complete
 A decision tree classifies observations by sorting
 them down the tree **from the root to a leaf node**, answering one
 question about one attribute at each step. It represents the
-**rule-based** family of methods — as opposed to the distance-based
+**rule-based** family of methods - as opposed to the distance-based
 family that KNN represents.
 
 ## Explanation
@@ -47,7 +47,7 @@ Building a decision tree is, at its core, a
 3-step recursive procedure: start from an empty tree → split on the
 next **best** attribute → recurse on each child node. The algorithm's
 entire difficulty is packed into the word "best": it means the split
-that makes the child nodes as **pure as possible** — the less classes
+that makes the child nodes as **pure as possible** - the less classes
 are mixed within a node, the closer that node is to allowing a decisive
 call.
 
@@ -64,7 +64,7 @@ there are 3 ways to measure purity:
 Lower ⇒ purer. The 3 purity measures are
 classification error 1 − max(pᵢ), **Gini impurity** 1 − Σpᵢ² (CART's
 default) and **entropy** −Σpᵢlog₂(pᵢ) (ID3's criterion, running 0 to
-log₂K — with K = 3, up to ≈ 1.585 bits). The worked example below
+log₂K - with K = 3, up to ≈ 1.585 bits). The worked example below
 computes all three for the same node, to see how they agree.
 
 ### Information gain and the build rules
@@ -107,42 +107,42 @@ may overfit and produce biased trees because information gain **favours
 attributes with many distinct values**. CART: both tasks, Gini/MSE,
 **always binary splits**, handles large datasets, supports
 cost-complexity pruning. **Programming note**: `scikit-learn` implements
-optimised CART — `DecisionTreeClassifier`/`DecisionTreeRegressor` are
-**CART, not ID3** — but ID3 remains worth learning first as the clearest
+optimised CART - `DecisionTreeClassifier`/`DecisionTreeRegressor` are
+**CART, not ID3** - but ID3 remains worth learning first as the clearest
 algorithm for grasping the core idea.
 
 ### When to stop, and pruning
 
 **Stopping** happens when all records share the
 output, or share the same inputs, or `min_samples_leaf` / `max_depth` is
-reached. But stopping in time is not enough to avoid overfitting — a
+reached. But stopping in time is not enough to avoid overfitting - a
 **pruning** mechanism is also needed (new versus 2025): **pre-pruning**
 (early stopping
 via those rules) and **post-pruning** (grow the full tree, then cut back
-branches that don't improve validation performance) — in CART, cost-
+branches that don't improve validation performance) - in CART, cost-
 complexity pruning controlled by α = `ccp_alpha`, penalising the **number
 of leaves**.
 
 ### Single-tree pros and cons
 
 A single tree draws its appeal from **very high
-interpretability** — it reads directly as a set of if/else rules,
+interpretability** - it reads directly as a set of if/else rules,
 **requires no feature scaling** (unlike KNN), handles both numeric and
 categorical inputs, and automatically captures non-linear relationships
 and interactions without manual feature engineering.
 
 But that same flexibility is also the source of
-its biggest weakness: a single tree is **unstable** — a small change in
+its biggest weakness: a single tree is **unstable** - a small change in
 the training data can produce a structurally very different tree (a
 high-variance symptom), and it easily overfits when grown to full
 depth. Because every split is **axis-parallel** (asking about one
 variable at a time), a genuinely diagonal decision boundary in the data
 can only be approximated by a staircase of splits.
 
-This instability — not low accuracy — is what
+This instability - not low accuracy - is what
 directly motivates the next section: if **averaging many trees removes
 most of a single tree's instability**, the natural next question is how
-to make the trees different enough for averaging to matter — exactly
+to make the trees different enough for averaging to matter - exactly
 the problem random forests solve.
 
 ### Examples 4.1 and 4.2 in Python
@@ -151,15 +151,15 @@ In practice, fitting a `DecisionTreeClassifier(
 criterion="gini", max_depth=3, min_samples_leaf=5, random_state=42)`
 (`criterion` can switch to `"entropy"`) and printing train accuracy
 **next to** test accuracy is the fastest, most direct overfitting
-diagnostic — a direct application of the under/overfitting comparison
+diagnostic - a direct application of the under/overfitting comparison
 learned earlier. Then print the confusion matrix and classification
 report, and visualise the tree with `plot_tree(...)` to see exactly the
-rules it learned. The final step — ranking which features actually drive
-predictions via `tree.feature_importances_` — turns what looks like a
+rules it learned. The final step - ranking which features actually drive
+predictions via `tree.feature_importances_` - turns what looks like a
 pure prediction tool into an exploratory one, answering "which variable
 matters most" without a separate statistical model.
 
-## Worked example — computing all 3 purity measures by hand
+## Worked example - computing all 3 purity measures by hand
 
 Consider a leaf node with 16 class-A, 13 class-B and
 1 class-C observation (n = 30). The 3 class proportions are pA ≈ 0.533,
@@ -175,37 +175,37 @@ pB ≈ 0.433, pC ≈ 0.033. Applying the 3 formulas above directly:
 
 This node sits fairly close to **maximal impurity
 between its two dominant classes** (the ceiling for K = 3 is log₂3 ≈
-1.585 bits) — sensible, since classes A and B nearly split the
+1.585 bits) - sensible, since classes A and B nearly split the
 observations evenly, with C a clear minority.
 
 The instructor's own review question poses the same
 calculation at a more extreme case: a node with exactly 20 class-A and
 20 class-B observations (pA = pB = 0.5, no third class). Entropy =
-−(0.5×(−1) + 0.5×(−1)) = **1 bit** — exactly the maximum possible for 2
-classes — and Gini = 1 − 0.5 = **0.5**, also Gini's maximum at K = 2. The
+−(0.5×(−1) + 0.5×(−1)) = **1 bit** - exactly the maximum possible for 2
+classes - and Gini = 1 − 0.5 = **0.5**, also Gini's maximum at K = 2. The
 node is **completely impure**: a new point landing here is a 50/50 coin
-flip between classes — the worst case a leaf can be in, not the
+flip between classes - the worst case a leaf can be in, not the
 best.
 
 ## Appears in
 
-[[chapter03-supervised-learning-k32]] — slides 53-75
+[[chapter03-supervised-learning-k32]] - slides 53-75
 (all of Section 4), 110 (summary table: both tasks, depth/min leaf, **no
 scaling**, interpretable rules), 111 (review question 2: entropy and Gini
 for a 20A/20B node).
 
 ## Related
 
-- [[random-forest-k32]] — the direct answer to the
+- [[random-forest-k32]] - the direct answer to the
   single tree's instability.
-- [[boosting-ensemble]] — the other ensembling
+- [[boosting-ensemble]] - the other ensembling
   route, using shallow stumps instead of deep trees.
-- [[k-nearest-neighbors-k32]] — the preceding
+- [[k-nearest-neighbors-k32]] - the preceding
   algorithm, opposite on two axes: rule-based vs distance-based, and
   **needs no** vs **requires** scaling.
-- [[overfitting-underfitting-k32]] — pruning and
+- [[overfitting-underfitting-k32]] - pruning and
   depth limits are the tree-specific overfitting controls.
-- [[classification-k32]] — the problem setting the
+- [[classification-k32]] - the problem setting the
   tree solves.
 
 ## Notes
@@ -214,5 +214,5 @@ The worked tree-building example with real numbers
 (slides 67-68) exists only as images with no extractable text, so its
 figures are not recorded here; everything above comes from the prose
 slides (62-66, 69-71). Also, the Example 4.1 code on slide 73 **omits the
-line `y_pred = tree.predict(X_test)`** while slide 74 uses `y_pred` — the
+line `y_pred = tree.predict(X_test)`** while slide 74 uses `y_pred` - the
 file `Example3.2_DecisionTree_New.py` in `raw/` supplies it.

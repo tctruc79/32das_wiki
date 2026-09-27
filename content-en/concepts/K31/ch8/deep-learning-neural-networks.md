@@ -16,7 +16,7 @@ explicit programming.
 
 ## Explanation
 
-- **History**: 3 waves — cybernetics (1940s-1960s),
+- **History**: 3 waves - cybernetics (1940s-1960s),
   connectionism (1980s-1990s), and modern deep learning (from 2006). The
   concept isn't new but boomed recently thanks to enough processing power
   and data (see [[big-data]]).
@@ -25,35 +25,35 @@ explicit programming.
   weighted sum of all inputs, then applies an activation function to
   produce the output signal. A single perceptron can be imagined as a
   Logistic Regression model.
-- **How it learns**: **Forward Propagation** —
+- **How it learns**: **Forward Propagation** -
   signal flows from input through the layers to produce a prediction;
-  **Backward Propagation** — error is propagated back to update weights.
+  **Backward Propagation** - error is propagated back to update weights.
   Both repeat over many iterations for the network to "learn" (the
   original slide has no detailed math formulas, only illustrations).
 - **3 main neural network types**:
-  - **ANN** — a group of perceptrons arranged in 3
+  - **ANN** - a group of perceptrons arranged in 3
     layers: Input, Hidden, Output. Each layer learns a set of
     weights.
-  - **RNN** — has a recurrent connection on the
+  - **RNN** - has a recurrent connection on the
     hidden state to capture sequential information; shares parameters
     across time steps (3 weight matrices U, W, V), reducing the number
     of parameters to train.
-  - **CNN** — uses automatically learned filters
+  - **CNN** - uses automatically learned filters
     (kernels) via convolution to extract relevant features from input
     data (especially popular for images).
 
 ## Appears in
 
-- [[chapter08-deep-learning]] — history, perceptron,
+- [[chapter08-deep-learning]] - history, perceptron,
   forward/backward propagation, the 3 network types.
 
 ## Related concepts
 
-- [[big-data]] — the driver that made deep learning
+- [[big-data]] - the driver that made deep learning
   feasible (enough data + enough processing power).
-- [[classification]] — a single perceptron is
+- [[classification]] - a single perceptron is
   essentially equivalent to Logistic Regression, a classification
   algorithm.
-- [[linear-regression]] — both are "learn parameters
+- [[linear-regression]] - both are "learn parameters
   from data" problems, differing only in the optimization algorithm (OLS
   vs forward/backward propagation).

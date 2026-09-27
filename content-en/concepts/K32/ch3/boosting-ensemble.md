@@ -13,7 +13,7 @@ Boosting is the second ensemble family alongside
 bagging. The core difference is the **order in which trees are built**:
 bagging builds them **in parallel and independently**; boosting builds
 them **sequentially**, each new tree **correcting the previous ones'
-errors**. This entire section is **new** in the 2026 cohort — it does not
+errors**. This entire section is **new** in the 2026 cohort - it does not
 exist in the 2025 material.
 
 ## Explanation
@@ -27,7 +27,7 @@ tree focuses more on them; **gradient boosting** generalises this by
 having each new tree **fit the residuals** (in essence, the gradient of
 the loss function) of the current model, rather than just reweighting
 observations; and **XGBoost / LightGBM / CatBoost** are fast, modern,
-regularised implementations of gradient boosting — the family that
+regularised implementations of gradient boosting - the family that
 typically **wins competitions** on structured tabular business data, by
 combining gradient boosting's power with speed and anti-overfitting
 optimisations.
@@ -37,7 +37,7 @@ optimisations.
 Boosting is usually **more accurate** than a random
 forest, but the price is being **more sensitive to hyperparameters** and
 **able to overfit** if the learning rate is too high or there are too
-many rounds — each new tree tries to correct the previous ones' errors,
+many rounds - each new tree tries to correct the previous ones' errors,
 so without careful control that "correction" process can start fitting
 random noise instead. The practical way to think about it: random forest
 as the "solid, easy-to-tune baseline", boosting as the tool for when top
@@ -68,8 +68,8 @@ to tune with few knobs, boosting slower with many; bagging is the solid
 baseline, boosting squeezes out top accuracy.
 
 **How to read this table for the exam**: the
-"mainly reduces" row is the crucial one — it connects straight back to
-the bias–variance decomposition. Bagging takes many
+"mainly reduces" row is the crucial one - it connects straight back to
+the bias-variance decomposition. Bagging takes many
 high-variance trees and averages away the variance; boosting takes many
 high-bias stumps and chains them to cut the bias. Two routes attacking
 **two different terms of the same formula**.
@@ -83,33 +83,33 @@ most importantly, **explain in your own words why averaging many trees
 reduces variance but averaging many identical trees would not**. The
 third question is the real comprehension test: answering it means
 understanding why a random forest needs **two** sources of randomness
-(bagging and feature subsampling), not one — if only one were needed,
+(bagging and feature subsampling), not one - if only one were needed,
 this question would have no satisfying answer.
 
 ## Appears in
 
-[[chapter03-supervised-learning-k32]] — slide 84
+[[chapter03-supervised-learning-k32]] - slide 84
 (Section 5.2: the 3 variants and the trade-off), 85 (the comparison
 table), 86 (Teamwork 2), 110 (summary table: both tasks, learning rate
 and rounds, **no scaling**, highest accuracy on tabular data).
 
 ## Related
 
-- [[random-forest-k32]] — the bagging family's
+- [[random-forest-k32]] - the bagging family's
   representative, the other side of the comparison table.
-- [[decision-tree-k32]] — the building block of both
+- [[decision-tree-k32]] - the building block of both
   ensemble families.
-- [[overfitting-underfitting-k32]] — the
-  bias–variance decomposition is the theory explaining why the two
+- [[overfitting-underfitting-k32]] - the
+  bias-variance decomposition is the theory explaining why the two
   families differ.
-- [[classification-k32]] — the problem setting;
+- [[classification-k32]] - the problem setting;
   gradient boosting/XGBoost also appear in slide 30's algorithm
   list.
 
 ## Notes
 
 The boosting section has **no Python example** in
-the chapter — unlike KNN (Example 3.1), decision trees (Examples
+the chapter - unlike KNN (Example 3.1), decision trees (Examples
 4.1-4.2), random forests (Example 5.1) and regularization (Example 7.1).
 The slides give concepts and the comparison table only. A source gap: to
 practise boosting you must find the syntax yourself

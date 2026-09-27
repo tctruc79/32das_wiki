@@ -12,10 +12,10 @@ status: complete
 
 PCA thường được dùng như 1 bước tiền xử lý trước các thuật toán khác
 (Clustering, Classification, Regression) để loại bỏ tương quan, giảm
-nhiễu, và tăng tốc — chứ ít khi dùng đơn độc.
+nhiễu, và tăng tốc - chứ ít khi dùng đơn độc.
 <br><span class="en">PCA is often used as a preprocessing step before
 other algorithms (Clustering, Classification, Regression) to remove
-correlations, reduce noise, and speed things up — rarely used alone.</span>
+correlations, reduce noise, and speed things up - rarely used alone.</span>
 
 ## Diễn giải - <span class="en">Explanation</span>
 
@@ -46,20 +46,20 @@ correlations, reduce noise, and speed things up — rarely used alone.</span>
   multicollinearity; distance-based classifiers like SVM/KNN benefit from
   PCA in high dimensions. Classic example: MNIST digit classification
   using PCA before SVM.</span>
-- **+ Hồi quy — Hồi quy Thành phần Chính (Principal Component Regression,
-  PCR)**: Bước 1 — áp PCA lên biến dự báo X; Bước 2 — hồi quy y theo các
+- **+ Hồi quy - Hồi quy Thành phần Chính (Principal Component Regression,
+  PCR)**: Bước 1 - áp PCA lên biến dự báo X; Bước 2 - hồi quy y theo các
   thành phần chính đã chọn (y ≈ Zγ, Z = XVₘ). Hữu ích khi biến dự báo
-  tương quan cao — đây là **giải pháp thay thế** cho
+  tương quan cao - đây là **giải pháp thay thế** cho
   [[regularization-ridge-lasso|Ridge/Lasso]] khi xử lý đa cộng tuyến,
   nhưng cơ chế khác hẳn: Ridge/Lasso phạt trực tiếp độ lớn hệ số hồi quy
   gốc, còn PCR biến đổi không gian biến trước rồi mới hồi quy trên không
   gian mới. Rủi ro của PCR: thành phần chính bị loại bỏ vẫn có thể chứa
   thông tin dự báo có giá trị (khác với Ridge/Lasso, vốn giữ nguyên toàn
   bộ biến gốc, chỉ co hệ số).
-  <br><span class="en">**+ Regression — Principal Component Regression
-  (PCR)**: Step 1 — apply PCA to predictors X; Step 2 — regress y on the
+  <br><span class="en">**+ Regression - Principal Component Regression
+  (PCR)**: Step 1 - apply PCA to predictors X; Step 2 - regress y on the
   selected PCs (y ≈ Zγ, Z = XVₘ). Useful when predictors are highly
-  correlated — this is an **alternative** to
+  correlated - this is an **alternative** to
   [[regularization-ridge-lasso|Ridge/Lasso]] for multicollinearity, but
   the mechanism differs: Ridge/Lasso directly penalizes original
   coefficient magnitude, while PCR transforms the variable space first
@@ -69,23 +69,23 @@ correlations, reduce noise, and speed things up — rarely used alone.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter07-pca]] — toàn bộ mục 7.4: vì sao kết hợp, PCA+Clustering,
+- [[chapter07-pca]] - toàn bộ mục 7.4: vì sao kết hợp, PCA+Clustering,
   PCA+Classification, PCA+Regression (PCR).
-  <br><span class="en">[[chapter07-pca]] — all of section 7.4: why
+  <br><span class="en">[[chapter07-pca]] - all of section 7.4: why
   combine, PCA+Clustering, PCA+Classification, PCA+Regression
   (PCR).</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[pca]] — nền tảng toán học của phép biến đổi.
-  <br><span class="en">[[pca]] — the mathematical foundation of the
+- [[pca]] - nền tảng toán học của phép biến đổi.
+  <br><span class="en">[[pca]] - the mathematical foundation of the
   transform.</span>
-- [[regularization-ridge-lasso]] — giải pháp khác cho đa cộng tuyến,
+- [[regularization-ridge-lasso]] - giải pháp khác cho đa cộng tuyến,
   cùng vấn đề nhưng khác cơ chế với PCR.
-  <br><span class="en">[[regularization-ridge-lasso]] — another
+  <br><span class="en">[[regularization-ridge-lasso]] - another
   multicollinearity solution, same problem but a different mechanism than
   PCR.</span>
-- [[clustering]], [[classification]] — 2 nhánh thuật toán được PCA hỗ trợ
+- [[clustering]], [[classification]] - 2 nhánh thuật toán được PCA hỗ trợ
   trực tiếp.
-  <br><span class="en">[[clustering]], [[classification]] — the 2
+  <br><span class="en">[[clustering]], [[classification]] - the 2
   algorithm branches directly supported by PCA.</span>

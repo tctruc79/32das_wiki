@@ -11,10 +11,10 @@ status: complete
 
 Regularization in regression imposes **a penalty for
 each parameter** included in the model. In regularized regression the
-**magnitude of the coefficients** — not just of the error term — is
+**magnitude of the coefficients** - not just of the error term - is
 penalised, discouraging complex models and thereby avoiding overfitting.
 The chapter teaches three forms: **Ridge** (L2 penalty), **Lasso** (L1
-penalty) and **Elastic Net** (both combined — new in the 2026
+penalty) and **Elastic Net** (both combined - new in the 2026
 cohort).
 
 ## Explanation
@@ -23,7 +23,7 @@ cohort).
 
 An overfit regression model typically has **too
 many parameters for the number of observations available** to estimate
-reliably — coefficients, p-values, and even R² can all become
+reliably - coefficients, p-values, and even R² can all become
 **misleading**: the model looks like it fits very well on training data,
 but those numbers don't reflect the true relationship. Regularization is
 the most direct way to address this at the source, by changing the loss
@@ -47,7 +47,7 @@ The OLS, Ridge (+λΣβⱼ²) and Lasso (+λΣ|βⱼ|) losses
 share the same residual sum of squares, with λ the tuning parameter, and
 the intercept β₀ is **never penalised**. Elastic Net combines both
 penalties in one loss, with **α = 1 giving exactly Lasso and α = 0
-giving exactly Ridge** — the other two are simply special cases of
+giving exactly Ridge** - the other two are simply special cases of
 Elastic Net. It is especially useful when predictors are strongly
 correlated, where Lasso alone tends to arbitrarily pick one variable
 from the group and drop the rest (an unstable behaviour when variables
@@ -58,7 +58,7 @@ with shared weight.
 
 Ridge has a notable mathematical advantage Lasso
 lacks: the closed form β̂_ridge = (X'X + λI)⁻¹X'y. Adding λI makes the
-matrix **invertible even when X'X is singular** — exactly why Ridge
+matrix **invertible even when X'X is singular** - exactly why Ridge
 handles **multicollinearity** and the **k > n** case, where X'X is
 guaranteed non-invertible. Lasso has **no closed form**, since its loss
 contains an absolute value non-differentiable at 0, and must be solved
@@ -74,11 +74,11 @@ Both methods minimise the residual sum of squares
 subject to a **budget on the coefficients**, and the budget's **shape**
 is what actually decides the outcome:
 
-- Ridge's budget is a **circle**: β₁² + β₂² ≤ t —
+- Ridge's budget is a **circle**: β₁² + β₂² ≤ t -
   no corners, so the RSS contours touch it at an arbitrary point on the
   circle ⇒ coefficients **shrink towards zero but never reach it**.
 - Lasso's budget is a **diamond**: |β₁| + |β₂| ≤ t
-  — with **corners sitting right on the axes**. The RSS contours usually
+  - with **corners sitting right on the axes**. The RSS contours usually
   touch the diamond **at a corner**, and touching at a corner means
   **one coefficient is exactly zero**.
 
@@ -105,7 +105,7 @@ Lasso's L1 penalty sets **some coefficients exactly to zero**, performs
 **automatic** variable selection, picks one of a correlated group and
 drops the rest, suits **few** predictors each mattering **a lot**, and is
 solved numerically. **Mandatory note**: always standardise the features
-before fitting — both penalties depend on coefficient magnitude, which
+before fitting - both penalties depend on coefficient magnitude, which
 depends on each predictor's units, so without standardising the penalty
 is applied **unfairly**.
 
@@ -115,7 +115,7 @@ is applied **unfairly**.
 extremes show the role clearly: at λ = 0, Ridge and Lasso **exactly
 match** plain least squares (the penalty vanishes); as λ → ∞, **all
 slope parameters are forced to 0** (only the intercept remains). The
-ideal penalty therefore lies **somewhere between these two extremes** —
+ideal penalty therefore lies **somewhere between these two extremes** -
 and should **never be chosen by eye or by intuition**: the correct
 approach is to fit over a **grid** of λ values and pick the one with the
 **lowest cross-validated error**, the same hyperparameter-selection
@@ -129,7 +129,7 @@ A full worked example, using `Regression.csv`
 (dependent variable `y`, explanatory `x1`-`x4`), fits all 4 models for
 direct comparison: `LinearRegression()` as the baseline, `Ridge(
 alpha=10)`, `Lasso(alpha=0.01)`, and `ElasticNet(alpha=0.1,
-l1_ratio=0.5)` — where **`l1_ratio` plays the role of α** in the
+l1_ratio=0.5)` - where **`l1_ratio` plays the role of α** in the
 formula and **`alpha` plays the role of λ**, an easy syntax confusion
 since the name `alpha` is reused with 2 different meanings between
 `Ridge`/`Lasso` and `ElasticNet`. Finally, print the test-set R² of all
@@ -137,7 +137,7 @@ since the name `alpha` is reused with 2 different meanings between
 `scikit-learn` functions. The "compare like with like" principle must be
 followed strictly: always compute every metric on the **test set** (not
 the training set), and always compare a regularized model against the
-**plain OLS baseline** — if Ridge and Lasso don't beat OLS out of
+**plain OLS baseline** - if Ridge and Lasso don't beat OLS out of
 sample, their added complexity is **not justified**.
 
 ### Teamwork 3
@@ -150,51 +150,51 @@ evaluate Ridge and Lasso; **report MAE, RMSE and R² on the test set, and
 state which variables the Lasso eliminated**. One notebook cell per
 task.
 
-## Worked example — 400 predictors, 120 observations: which to pick?
+## Worked example - 400 predictors, 120 observations: which to pick?
 
 This is the instructor's review question 5, and it
 directly applies the Ridge-vs-Lasso comparison above. With k = 400
-predictors and n = 120 observations, this is a **k ≫ n** situation — far
+predictors and n = 120 observations, this is a **k ≫ n** situation - far
 more parameters than observations, so a plain OLS model cannot even be
 solved (X'X is not invertible when k > n). Both Ridge and Lasso fix that
 invertibility problem via their penalty term, but the real question is
 about the **assumed true structure**: with 400 candidate predictors and
 only 120 observations to tell them apart, the more plausible assumption
 is almost always that only a **small** subset of the 400 actually
-matters — the rest being noise or redundant. That is exactly the setting
+matters - the rest being noise or redundant. That is exactly the setting
 Lasso is built for: "few predictors matter a lot." Ridge, by contrast,
-implicitly assumes **many** variables each contribute a small amount —
+implicitly assumes **many** variables each contribute a small amount -
 more defensible only when there is a theoretical reason to believe all
 400 are relevant in some way (e.g. genomic or image data, where every
 feature carries some information).
 
 **Practical conclusion**: choose **Lasso** (or
 Elastic Net if the predictors are suspected to be strongly correlated,
-to avoid Lasso arbitrarily dropping members of a correlated group) —
+to avoid Lasso arbitrarily dropping members of a correlated group) -
 because the real goal here is not just prediction, but **reducing 400
 variables to a small, interpretable set**, precisely the one strength
 Ridge lacks.
 
 ## Appears in
 
-[[chapter03-supervised-learning-k32]] — slides
+[[chapter03-supervised-learning-k32]] - slides
 94-108 (all of Section 7), 110 (summary table: both are regression, both
 tuned by λ, both **need scaling**; Ridge handles multicollinearity, Lasso
 does automatic variable selection), 111 (review question 5: 400
-predictors and 120 observations — Ridge or Lasso?).
+predictors and 120 observations - Ridge or Lasso?).
 
 ## Related
 
-- [[linear-regression-k32]] — the base model the
+- [[linear-regression-k32]] - the base model the
   penalty is added to; OLS is also the mandatory baseline.
-- [[overfitting-underfitting-k32]] — the problem
+- [[overfitting-underfitting-k32]] - the problem
   regularization exists to solve; it **deliberately** moves the model
   left on the complexity axis.
-- [[train-test-split-and-cross-validation]] — the
+- [[train-test-split-and-cross-validation]] - the
   mechanism for choosing λ.
-- [[model-evaluation-metrics-k32]] — the metric set
+- [[model-evaluation-metrics-k32]] - the metric set
   used in Section 7.5 to compare the models.
-- [[k-nearest-neighbors-k32]] — the chapter's other
+- [[k-nearest-neighbors-k32]] - the chapter's other
   algorithm that **requires standardisation**, for the same reason: the
   result depends on the absolute size of the numbers.
 
@@ -202,7 +202,7 @@ predictors and 120 observations — Ridge or Lasso?).
 
 Teamwork 3 asks for `Income.csv`, but **that file is
 not in `raw/`**. The Chapter03 folder only has `TeleCustomers.csv` with
-an `income` column (plus 7 explanatory variables) — most likely the
+an `income` column (plus 7 explanatory variables) - most likely the
 substitute, or `Income.csv` will be released later. The exercise can be
 done in full on `TeleCustomers.csv`.
 

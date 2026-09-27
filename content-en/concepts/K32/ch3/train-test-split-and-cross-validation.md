@@ -21,11 +21,11 @@ the data it was trained on*.
 
 Perhaps the single most common beginner mistake in
 all of machine learning is **data leakage**: any transformation
-**learned from data** — scaling, imputation, feature selection — must be
+**learned from data** - scaling, imputation, feature selection - must be
 **fitted on the training part only**, then applied to validation and
 test. Fitting a transformation on the whole dataset before splitting lets
 test-set information leak back into training, making reported
-performance **artificially optimistic** — the model looks better than it
+performance **artificially optimistic** - the model looks better than it
 will actually be on genuinely new data. The seemingly small difference
 between calling `fit_transform()` on the training set and only
 `transform()` on the test set, versus calling `fit_transform()` on both,
@@ -35,7 +35,7 @@ one.
 Splitting the data once into train/test only solves
 half the problem: it allows honest evaluation, but says nothing about
 **which hyperparameter to pick**. Choosing K in KNN or λ in Ridge/Lasso
-needs a score that has **never seen the test set** — otherwise the test
+needs a score that has **never seen the test set** - otherwise the test
 set loses its role as a neutral referee the moment it is used for tuning.
 Cross-validation solves exactly this by rotating the train/validation
 role *inside* the training set, in 3 forms:
@@ -49,7 +49,7 @@ role *inside* the training set, in 3 forms:
 The correct workflow, recurring throughout the
 chapter's code examples, is: use cross-validation (typically via
 `GridSearchCV`) to choose hyperparameters **entirely within the training
-set**, then **evaluate exactly once** on the untouched test set — a
+set**, then **evaluate exactly once** on the untouched test set - a
 clean separation between "model selection" and "final performance
 report". The split configuration used throughout is
 `train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)`:
@@ -59,28 +59,28 @@ report". The split configuration used throughout is
 Cross-validation also has a second, less-discussed
 but equally important role: it gives an out-of-sample error estimate
 **before** touching the test set, so overfitting can be caught and fixed
-**while there is still time** — rather than only discovered at the final
+**while there is still time** - rather than only discovered at the final
 evaluation step, when there is no way back to adjust the model without
 compromising the test set's integrity.
 
 ## Appears in
 
-[[chapter03-supervised-learning-k32]] — slide 16
+[[chapter03-supervised-learning-k32]] - slide 16
 (splitting and leakage), 21 (cross-validation), 22 (validation controls
 overfitting), 37 (choosing K by CV error), 46 (`GridSearchCV` in Example
 3.1), 102 (choosing λ with `RidgeCV`/`LassoCV`).
 
 ## Related
 
-- [[overfitting-underfitting-k32]] — what splitting
+- [[overfitting-underfitting-k32]] - what splitting
   and cross-validation exist to detect.
-- [[model-evaluation-metrics-k32]] — the numbers
+- [[model-evaluation-metrics-k32]] - the numbers
   computed *on* those splits.
 - [[k-nearest-neighbors-k32]] and
-  [[regularization-ridge-lasso-elastic-net-k32]] — the two places
+  [[regularization-ridge-lasso-elastic-net-k32]] - the two places
   cross-validation is used directly to pick a hyperparameter (K and
   λ).
-- [[supervised-learning-framework]] — where the
+- [[supervised-learning-framework]] - where the
   parameter vs hyperparameter distinction is defined.
 
 ## Notes

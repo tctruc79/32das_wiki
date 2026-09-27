@@ -32,23 +32,23 @@ knowledge and insight from data, in service of decision-making.
   definitions): data science, data analytics, data analysis, data mining,
   data manipulation, data engineering, data visualization, data
   warehouse/data lake, data integration. **Note**: the K31 slide does not
-  itself define each term — a different source is needed for detailed
+  itself define each term - a different source is needed for detailed
   definitions.
 - **Who can use it, and where it's applied**: anyone
   with a bit of understanding/training can use data insights to improve
-  their life/career/business — not just experts. Applications range from
+  their life/career/business - not just experts. Applications range from
   business (targeted marketing, credit scoring, fraud detection),
   healthcare (medical imaging, public health), to government (smart
   cities, e-government).
 
 ## Appears in
 
-- [[chapter01-introduction]] — 3 definitions, term
+- [[chapter01-introduction]] - 3 definitions, term
   distinctions, who can use it, real-world applications.
 
 ## Related concepts
 
-- [[big-data]] — big data is the context/premise
+- [[big-data]] - big data is the context/premise
   behind the data science boom, not the field itself.
-- [[dikw-pyramid]] — data science is the systematic
+- [[dikw-pyramid]] - data science is the systematic
   process of climbing from Data to Wisdom.

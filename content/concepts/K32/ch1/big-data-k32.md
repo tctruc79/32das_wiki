@@ -1,7 +1,7 @@
 ---
 type: concept
-title: "Dữ liệu lớn — 5 V's (K32)"
-title_en: "Big Data — 5 V's (K32)"
+title: "Dữ liệu lớn - 5 V's (K32)"
+title_en: "Big Data - 5 V's (K32)"
 tags: [chapter-1, k32, foundations]
 created: 2026-08-22
 updated: 2026-09-05
@@ -9,16 +9,16 @@ status: complete
 ---
 
 > **Cách đọc trang này**: 5 V's hay bị hỏi dưới dạng "cho 1 mô tả dữ
-> liệu, đây là V nào?" — mẹo phân biệt nhanh: Volume/Velocity/Variety mô
+> liệu, đây là V nào?" - mẹo phân biệt nhanh: Volume/Velocity/Variety mô
 > tả **đặc điểm vật lý** của dữ liệu (nhiều/nhanh/đa dạng), còn
-> Veracity/Value mô tả **chất lượng và ích lợi** của nó — 2 nhóm khác
+> Veracity/Value mô tả **chất lượng và ích lợi** của nó - 2 nhóm khác
 > hẳn nhau, và nhóm sau mới là thứ thật sự quyết định dữ liệu có đáng
 > dùng hay không.
 > <br><span class="en">**How to read this page**: the 5 V's are often
-> tested as "given this data description, which V is it?" — a quick
+> tested as "given this data description, which V is it?" - a quick
 > way to tell them apart: Volume/Velocity/Variety describe the data's
 > **physical traits** (a lot/fast/diverse), while Veracity/Value describe
-> its **quality and usefulness** — two quite different groups, and the
+> its **quality and usefulness** - two quite different groups, and the
 > second group is what actually decides whether the data is worth
 > using.</span>
 
@@ -34,19 +34,19 @@ Value.</span>
 
 ## Diễn giải - <span class="en">Explanation</span>
 
-- **5 V's**: **Volume** — nhiều dữ liệu hơn khả năng lưu trữ/xử lý truyền
-  thống trên 1 máy; **Velocity** — dữ liệu đến liên tục, thường cần ra
-  quyết định nhanh; **Variety** — dữ liệu có cấu trúc, bán cấu trúc và
+- **5 V's**: **Volume** - nhiều dữ liệu hơn khả năng lưu trữ/xử lý truyền
+  thống trên 1 máy; **Velocity** - dữ liệu đến liên tục, thường cần ra
+  quyết định nhanh; **Variety** - dữ liệu có cấu trúc, bán cấu trúc và
   phi cấu trúc trộn lẫn (bảng biểu, văn bản, hình ảnh, log); **Veracity**
-  — chất lượng không chắc chắn: thiếu, trùng lặp, đo sai, không nhất
-  quán; **Value** — yếu tố duy nhất thực sự có giá trị thương mại, và là
+  - chất lượng không chắc chắn: thiếu, trùng lặp, đo sai, không nhất
+  quán; **Value** - yếu tố duy nhất thực sự có giá trị thương mại, và là
   yếu tố *không* tự động có được chỉ vì có nhiều dữ liệu.
-  <br><span class="en">**5 V's**: **Volume** — more data than
-  traditional systems can store/process on one machine; **Velocity** —
-  data arrives continuously, often needing fast decisions; **Variety** —
+  <br><span class="en">**5 V's**: **Volume** - more data than
+  traditional systems can store/process on one machine; **Velocity** -
+  data arrives continuously, often needing fast decisions; **Variety** -
   structured, semi-structured, unstructured data mixed together;
-  **Veracity** — uncertain quality: missing, duplicated, mismeasured,
-  inconsistent; **Value** — the only truly commercially valuable trait,
+  **Veracity** - uncertain quality: missing, duplicated, mismeasured,
+  inconsistent; **Value** - the only truly commercially valuable trait,
   and the one that is *not* automatic just because there's more
   data.</span>
 - **Key point**: dữ liệu lớn nói về kích thước/độ phức tạp của dữ liệu,
@@ -58,18 +58,18 @@ Value.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter01-introduction-k32]] — giới thiệu đầy đủ khung 5 V's + key
+- [[chapter01-introduction-k32]] - giới thiệu đầy đủ khung 5 V's + key
   point về Value.
-  <br><span class="en">[[chapter01-introduction-k32]] — the full 5 V's
+  <br><span class="en">[[chapter01-introduction-k32]] - the full 5 V's
   framework + the Value key point.</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[dikw-pyramid-k32]] — dữ liệu lớn là nguyên liệu thô ở tầng "Data" của
+- [[dikw-pyramid-k32]] - dữ liệu lớn là nguyên liệu thô ở tầng "Data" của
   kim tự tháp.
-  <br><span class="en">[[dikw-pyramid-k32]] — big data is the raw
+  <br><span class="en">[[dikw-pyramid-k32]] - big data is the raw
   material at the "Data" layer of the pyramid.</span>
-- [[data-science-definition-k32]] — khoa học dữ liệu là ngành khai thác
+- [[data-science-definition-k32]] - khoa học dữ liệu là ngành khai thác
   hiểu biết từ (Big) Data.
-  <br><span class="en">[[data-science-definition-k32]] — data science is
+  <br><span class="en">[[data-science-definition-k32]] - data science is
   the field that extracts insight from (Big) Data.</span>

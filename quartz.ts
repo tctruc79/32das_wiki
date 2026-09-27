@@ -1,26 +1,26 @@
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
 import { componentRegistry } from "./quartz/components/registry"
 
-// Lưu ý: KHÔNG dùng ExternalPlugin.Explorer({...}) — wrapper sinh tự động
+// Lưu ý: KHÔNG dùng ExternalPlugin.Explorer({...}) - wrapper sinh tự động
 // trong .quartz/plugins/index.ts ghi override dưới khoá chuẩn hoá
 // "quartz-community__explorer", nhưng buildLayoutForEntries() lại đọc
 // override bằng đúng chuỗi source trong YAML ("@quartz-community/explorer")
-// — 2 khoá lệch nhau nên override qua ExternalPlugin không bao giờ được
+// - 2 khoá lệch nhau nên override qua ExternalPlugin không bao giờ được
 // áp dụng. Gọi thẳng componentRegistry bằng đúng khoá mà loader đọc.
 //
 // LƯU Ý QUAN TRỌNG (sự cố 2026-09-07, xem log.md): @quartz-community/explorer
 // serialize sortFn bằng `opts.sortFn?.toString()` rồi tái tạo bằng
 // `new Function("a","b","return ("+src+")(a,b)")` ở phía client (xem
-// node_modules/@quartz-community/explorer/dist/index.js) — .toString() chỉ
+// node_modules/@quartz-community/explorer/dist/index.js) - .toString() chỉ
 // lấy đúng văn bản nguồn của CHÍNH hàm đó, KHÔNG mang theo closure sang biến/
 // hàm khai báo ở module scope bên ngoài. Từng có bản trước đặt EXPLICIT_ORDER
-// và orderKey() ở module scope rồi gọi orderKey() từ trong sortFn — build vẫn
+// và orderKey() ở module scope rồi gọi orderKey() từ trong sortFn - build vẫn
 // pass vì đây là lỗi runtime phía client, nhưng khi trang chạy thật, sortFn bị
 // tái tạo cô lập nên "orderKey is not defined" throw ngay trong Array.sort(),
 // khiến toàn bộ hàm dựng file-trie phía trên bắt exception và trả về null ->
 // Explorer render rỗng, không có thông báo lỗi nào hiện trên UI. Vì vậy toàn
 // bộ EXPLICIT_ORDER + orderKey() PHẢI khai báo NGAY BÊN TRONG thân hàm sortFn
-// dưới đây — đây là nơi DUY NHẤT chỉnh thứ tự Explorer, không tồn tại bản sao
+// dưới đây - đây là nơi DUY NHẤT chỉnh thứ tự Explorer, không tồn tại bản sao
 // nào khác ở module scope.
 componentRegistry.setOptionOverrides("@quartz-community/explorer", {
   sortFn: (a: { isFolder: boolean; slug: string; displayName: string }, b: typeof a) => {
@@ -35,7 +35,7 @@ componentRegistry.setOptionOverrides("@quartz-community/explorer", {
       people: 3,
       synthesis: 4,
 
-      // Concepts — K31
+      // Concepts - K31
       "concepts/k31/ch1/big-data": 1,
       "concepts/k31/ch1/dikw-pyramid": 2,
       "concepts/k31/ch1/data-science-definition": 3,
@@ -65,7 +65,7 @@ componentRegistry.setOptionOverrides("@quartz-community/explorer", {
 
       "concepts/k31/ch8/deep-learning-neural-networks": 1,
 
-      // Concepts — K32
+      // Concepts - K32
       "concepts/k32/ch1/big-data-k32": 1,
       "concepts/k32/ch1/dikw-pyramid-k32": 2,
       "concepts/k32/ch1/data-science-definition-k32": 3,
@@ -89,11 +89,11 @@ componentRegistry.setOptionOverrides("@quartz-community/explorer", {
     }
 
     // KHÔNG khai báo hàm con có tên (function orderKey / const orderKey = ...)
-    // ở đây dù chỉ để tính path — bản trước dùng `function orderKey(){...}` bên
+    // ở đây dù chỉ để tính path - bản trước dùng `function orderKey(){...}` bên
     // trong sortFn tưởng đã tự chứa đủ, nhưng esbuild bundle quartz.ts với
     // keepNames nên tự chèn thêm lệnh gọi `__name(orderKey, "orderKey")` ngay
     // sau khai báo hàm đó (helper __name nằm ở phần đầu bundle, ngoài văn bản
-    // sortFn) — khi sortFn bị tách ra tái tạo cô lập ở client, `__name` cũng
+    // sortFn) - khi sortFn bị tách ra tái tạo cô lập ở client, `__name` cũng
     // undefined y hệt lỗi orderKey trước đó. Vì vậy chỉ dùng biến + object
     // literal thuần, không có bất kỳ function nào được gán tên.
     const pathA = a.isFolder ? a.slug.replace(/\/index$/, "") : a.slug

@@ -39,15 +39,15 @@ data.</span>
     (Norm RMSEP), RMSE tương đối (RRMSEP).
     <br><span class="en">Other metrics (not detailed in the slide): RSE,
     RAE, Normalized RMSE (Norm RMSEP), Relative RMSE (RRMSEP).</span>
-  - **Sai số phần trăm tuyệt đối trung bình (MAPE)** — bổ sung ở Chapter
+  - **Sai số phần trăm tuyệt đối trung bình (MAPE)** - bổ sung ở Chapter
     5: (1/n)Σ|Yᵢ−Ŷᵢ|/|Yᵢ| × 100. Khác MAE/MSE/RMSE ở chỗ MAPE là chỉ số
     **tương đối** (tính theo %), nên so sánh được giữa các bài toán có
-    thang đo khác nhau — điều mà MAE/MSE/RMSE (chỉ số tuyệt đối) không
+    thang đo khác nhau - điều mà MAE/MSE/RMSE (chỉ số tuyệt đối) không
     làm được.
-    <br><span class="en">**Mean Absolute Percentage Error (MAPE)** —
+    <br><span class="en">**Mean Absolute Percentage Error (MAPE)** -
     added in Chapter 5: (1/n)Σ|Yᵢ−Ŷᵢ|/|Yᵢ| × 100. Unlike MAE/MSE/RMSE,
     MAPE is a **relative** metric (in %), so it's comparable across
-    problems with different scales — something MAE/MSE/RMSE (absolute
+    problems with different scales - something MAE/MSE/RMSE (absolute
     metrics) can't do.</span>
 - **Kiểm định chéo (Cross-validation)**: kỹ thuật kiểm tra hiệu quả mô
   hình bằng cách chia dữ liệu thành tập huấn luyện (training set) và tập
@@ -61,24 +61,24 @@ data.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter03-machine-learning-knn]] — 3 chỉ số MAE/MSE/RMSE, kiểm định
+- [[chapter03-machine-learning-knn]] - 3 chỉ số MAE/MSE/RMSE, kiểm định
   chéo (leave-one-out, K-folds); dùng lại y hệt cho đánh giá KNN
   Regression (slide 39).
-  <br><span class="en">[[chapter03-machine-learning-knn]] — the 3
+  <br><span class="en">[[chapter03-machine-learning-knn]] - the 3
   MAE/MSE/RMSE metrics, cross-validation (leave-one-out, K-folds); reused
   identically for evaluating KNN Regression (slide 39).</span>
-- [[chapter05-ridge-lasso]] — bổ sung MAPE (chỉ số mới, không có ở
+- [[chapter05-ridge-lasso]] - bổ sung MAPE (chỉ số mới, không có ở
   Chapter 3) vào bộ chỉ số đánh giá hồi quy.
-  <br><span class="en">[[chapter05-ridge-lasso]] — adds MAPE (new,
+  <br><span class="en">[[chapter05-ridge-lasso]] - adds MAPE (new,
   absent from Chapter 3) to the regression evaluation metric set.</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[overfitting-underfitting]] — kiểm định chéo là công cụ chính để phát
+- [[overfitting-underfitting]] - kiểm định chéo là công cụ chính để phát
   hiện quá khớp.
-  <br><span class="en">[[overfitting-underfitting]] — cross-validation is
+  <br><span class="en">[[overfitting-underfitting]] - cross-validation is
   the main tool for detecting overfitting.</span>
-- [[k-nearest-neighbors]] — dùng các chỉ số này để đánh giá khi KNN được
+- [[k-nearest-neighbors]] - dùng các chỉ số này để đánh giá khi KNN được
   áp dụng cho bài toán regression.
-  <br><span class="en">[[k-nearest-neighbors]] — uses these metrics when
+  <br><span class="en">[[k-nearest-neighbors]] - uses these metrics when
   KNN is applied to a regression problem.</span>

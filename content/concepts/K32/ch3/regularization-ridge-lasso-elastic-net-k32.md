@@ -11,17 +11,17 @@ status: complete
 ## Định nghĩa - <span class="en">Definition</span>
 
 Điều chuẩn trong hồi quy là cách **áp một hình phạt cho mỗi tham số** đưa
-vào mô hình. Trong hồi quy có điều chuẩn, **độ lớn của các hệ số** — chứ
-không chỉ độ lớn của số hạng sai số — cũng bị phạt; mô hình phức tạp vì
+vào mô hình. Trong hồi quy có điều chuẩn, **độ lớn của các hệ số** - chứ
+không chỉ độ lớn của số hạng sai số - cũng bị phạt; mô hình phức tạp vì
 thế bị "nản lòng", và đó là cách tránh quá khớp. Chương này dạy 3 dạng:
 **Ridge** (hình phạt L2), **Lasso** (hình phạt L1) và **Elastic Net**
-(kết hợp cả hai — nội dung mới của khóa 2026).
+(kết hợp cả hai - nội dung mới của khóa 2026).
 <br><span class="en">Regularization in regression imposes **a penalty for
 each parameter** included in the model. In regularized regression the
-**magnitude of the coefficients** — not just of the error term — is
+**magnitude of the coefficients** - not just of the error term - is
 penalised, discouraging complex models and thereby avoiding overfitting.
 The chapter teaches three forms: **Ridge** (L2 penalty), **Lasso** (L1
-penalty) and **Elastic Net** (both combined — new in the 2026
+penalty) and **Elastic Net** (both combined - new in the 2026
 cohort).</span>
 
 ## Diễn giải - <span class="en">Explanation</span>
@@ -29,7 +29,7 @@ cohort).</span>
 ### Vấn đề cần giải - <span class="en">The problem being solved</span>
 
 Một mô hình hồi quy quá khớp thường có **quá nhiều tham số so với số
-quan sát sẵn có** để ước lượng đáng tin cậy — hệ quả là các hệ số hồi
+quan sát sẵn có** để ước lượng đáng tin cậy - hệ quả là các hệ số hồi
 quy, giá trị p và cả R² đều có thể trở nên **gây hiểu lầm**: mô hình
 trông như khớp rất tốt trên dữ liệu huấn luyện, nhưng các con số đó
 không phản ánh đúng quan hệ thật. Điều chuẩn là cách hữu ích và trực
@@ -37,7 +37,7 @@ tiếp nhất để xử lý vấn đề này ngay từ gốc, bằng cách thay
 mất mát mà mô hình tối thiểu hóa.
 <br><span class="en">An overfit regression model typically has **too
 many parameters for the number of observations available** to estimate
-reliably — coefficients, p-values, and even R² can all become
+reliably - coefficients, p-values, and even R² can all become
 **misleading**: the model looks like it fits very well on training data,
 but those numbers don't reflect the true relationship. Regularization is
 the most direct way to address this at the source, by changing the loss
@@ -61,7 +61,7 @@ penalised**.</span>
 
 Elastic Net kết hợp cả hai hình phạt trong cùng một hàm mất mát:
 Loss = Σᵢ(yᵢ − β₀ − Σⱼβⱼxⱼᵢ)² + λ[ αΣⱼ|βⱼ| + ((1−α)/2)Σⱼβⱼ² ] → min,
-trong đó **α = 1 cho ra đúng Lasso; α = 0 cho ra đúng Ridge** — 2 mô
+trong đó **α = 1 cho ra đúng Lasso; α = 0 cho ra đúng Ridge** - 2 mô
 hình kia thực chất chỉ là 2 trường hợp riêng của Elastic Net. Elastic
 Net đặc biệt hữu ích khi các biến dự báo **tương quan mạnh** với nhau:
 Lasso đơn thuần có xu hướng chọn **tùy tiện 1 biến** trong nhóm tương
@@ -72,7 +72,7 @@ trọng số san sẻ đều.
 share the same residual sum of squares, with λ the tuning parameter, and
 the intercept β₀ is **never penalised**. Elastic Net combines both
 penalties in one loss, with **α = 1 giving exactly Lasso and α = 0
-giving exactly Ridge** — the other two are simply special cases of
+giving exactly Ridge** - the other two are simply special cases of
 Elastic Net. It is especially useful when predictors are strongly
 correlated, where Lasso alone tends to arbitrarily pick one variable
 from the group and drop the rest (an unstable behaviour when variables
@@ -83,7 +83,7 @@ with shared weight.</span>
 
 Ridge có một lợi thế toán học đáng chú ý mà Lasso không có: nghiệm hiển
 β̂_ridge = (X'X + λI)⁻¹X'y. Việc cộng thêm λI làm ma trận **khả nghịch
-ngay cả khi X'X suy biến** — đây chính là lý do Ridge xử lý được **đa
+ngay cả khi X'X suy biến** - đây chính là lý do Ridge xử lý được **đa
 cộng tuyến** (khi các biến dự báo tương quan mạnh khiến X'X gần như
 suy biến) và cả trường hợp **k > n** (số biến nhiều hơn số quan sát, khi
 X'X chắc chắn không khả nghịch). Lasso **không có nghiệm hiển** do hàm
@@ -91,7 +91,7 @@ mất mát chứa trị tuyệt đối không khả vi tại 0, nên phải gi�
 phương pháp số.
 <br><span class="en">Ridge has a notable mathematical advantage Lasso
 lacks: the closed form β̂_ridge = (X'X + λI)⁻¹X'y. Adding λI makes the
-matrix **invertible even when X'X is singular** — exactly why Ridge
+matrix **invertible even when X'X is singular** - exactly why Ridge
 handles **multicollinearity** and the **k > n** case, where X'X is
 guaranteed non-invertible. Lasso has **no closed form**, since its loss
 contains an absolute value non-differentiable at 0, and must be solved
@@ -112,18 +112,18 @@ là điều quyết định**:
 subject to a **budget on the coefficients**, and the budget's **shape**
 is what actually decides the outcome:</span>
 
-- Ràng buộc Ridge là **hình tròn**: β₁² + β₂² ≤ t — không có góc nhọn,
+- Ràng buộc Ridge là **hình tròn**: β₁² + β₂² ≤ t - không có góc nhọn,
   nên các đường đồng mức của tổng bình phương phần dư chạm nó ở một điểm
   bất kỳ trên đường tròn ⇒ hệ số **co về gần 0 nhưng không bao giờ chạm
   0**.
-  <br><span class="en">Ridge's budget is a **circle**: β₁² + β₂² ≤ t —
+  <br><span class="en">Ridge's budget is a **circle**: β₁² + β₂² ≤ t -
   no corners, so the RSS contours touch it at an arbitrary point on the
   circle ⇒ coefficients **shrink towards zero but never reach it**.</span>
-- Ràng buộc Lasso là **hình thoi**: |β₁| + |β₂| ≤ t — **có các góc nhọn
+- Ràng buộc Lasso là **hình thoi**: |β₁| + |β₂| ≤ t - **có các góc nhọn
   nằm ngay trên trục tọa độ**. Các đường đồng mức thường chạm hình thoi
   **tại một góc**, và chạm tại góc nghĩa là **có một hệ số đúng bằng 0**.
   <br><span class="en">Lasso's budget is a **diamond**: |β₁| + |β₂| ≤ t
-  — with **corners sitting right on the axes**. The RSS contours usually
+  - with **corners sitting right on the axes**. The RSS contours usually
   touch the diamond **at a corner**, and touching at a corner means
   **one coefficient is exactly zero**.</span>
 
@@ -142,7 +142,7 @@ methods across 6 criteria:</span>
 | Hợp nhất khi | **Nhiều** biến dự báo, mỗi biến ảnh hưởng **nhỏ** | **Ít** biến dự báo, mỗi biến ảnh hưởng **lớn** |
 | Nghiệm | Dạng hiển (đóng) | Bằng phương pháp số |
 
-**Lưu ý bắt buộc**: phải **chuẩn hóa các đặc trưng trước khi khớp** — cả
+**Lưu ý bắt buộc**: phải **chuẩn hóa các đặc trưng trước khi khớp** - cả
 2 hình phạt đều phụ thuộc độ lớn của hệ số, mà độ lớn hệ số lại phụ thuộc
 **đơn vị đo** của từng biến dự báo; không chuẩn hóa thì hình phạt bị áp
 một cách **bất công** giữa các biến.
@@ -155,7 +155,7 @@ Lasso's L1 penalty sets **some coefficients exactly to zero**, performs
 **automatic** variable selection, picks one of a correlated group and
 drops the rest, suits **few** predictors each mattering **a lot**, and is
 solved numerically. **Mandatory note**: always standardise the features
-before fitting — both penalties depend on coefficient magnitude, which
+before fitting - both penalties depend on coefficient magnitude, which
 depends on each predictor's units, so without standardising the penalty
 is applied **unfairly**.</span>
 
@@ -165,7 +165,7 @@ is applied **unfairly**.</span>
 thấy rõ vai trò: khi λ = 0, Ridge và Lasso **trùng khít với** hồi quy
 bình phương tối thiểu thuần (hình phạt biến mất); khi λ → ∞, **mọi tham
 số độ dốc bị ép tiến về 0** (mô hình chỉ còn hệ số chặn). Hình phạt lý
-tưởng do đó nằm **đâu đó giữa 2 thái cực** này — và **không nên chọn
+tưởng do đó nằm **đâu đó giữa 2 thái cực** này - và **không nên chọn
 bằng mắt hay bằng kinh nghiệm**: cách làm đúng là khớp mô hình trên một
 **lưới** các giá trị λ rồi chọn giá trị có **sai số kiểm định chéo thấp
 nhất**, đúng nguyên tắc chọn siêu tham số đã học ở phần đánh giá mô
@@ -176,7 +176,7 @@ tham số này là `alpha`, không phải λ**.
 extremes show the role clearly: at λ = 0, Ridge and Lasso **exactly
 match** plain least squares (the penalty vanishes); as λ → ∞, **all
 slope parameters are forced to 0** (only the intercept remains). The
-ideal penalty therefore lies **somewhere between these two extremes** —
+ideal penalty therefore lies **somewhere between these two extremes** -
 and should **never be chosen by eye or by intuition**: the correct
 approach is to fit over a **grid** of λ values and pick the one with the
 **lowest cross-validated error**, the same hyperparameter-selection
@@ -189,7 +189,7 @@ automated by `RidgeCV` and `LassoCV`. One easy syntax confusion:
 Một ví dụ thực hành đầy đủ, dùng `Regression.csv` (biến phụ thuộc là cột
 `y`, 4 biến giải thích `x1`-`x4`), khớp cả 4 mô hình để so sánh trực
 tiếp: `LinearRegression()` làm mốc so sánh; `Ridge(alpha=10)`;
-`Lasso(alpha=0.01)`; và `ElasticNet(alpha=0.1, l1_ratio=0.5)` — trong đó
+`Lasso(alpha=0.01)`; và `ElasticNet(alpha=0.1, l1_ratio=0.5)` - trong đó
 **`l1_ratio` đóng vai trò α** trong công thức Elastic Net, còn **`alpha`
 đóng vai trò λ** (một điểm rất dễ nhầm trong cú pháp, vì tên tham số
 `alpha` được dùng lại với 2 ý nghĩa khác nhau ở `Ridge`/`Lasso` so với
@@ -197,14 +197,14 @@ tiếp: `LinearRegression()` làm mốc so sánh; `Ridge(alpha=10)`;
 sánh trực tiếp, cùng với MAE, MSE, MAPE, RMSE qua các hàm tương ứng của
 `scikit-learn`. Nguyên tắc "so sánh cùng hệ quy chiếu" cần tuân thủ
 nghiêm ngặt: luôn tính mọi chỉ số trên **tập kiểm tra** (không phải tập
-huấn luyện), và luôn so mô hình có điều chuẩn với **mốc OLS thuần** —
+huấn luyện), và luôn so mô hình có điều chuẩn với **mốc OLS thuần** -
 nếu Ridge và Lasso không thắng được OLS ngoài mẫu, độ phức tạp tăng
 thêm của chúng là **không đáng**.
 <br><span class="en">A full worked example, using `Regression.csv`
 (dependent variable `y`, explanatory `x1`-`x4`), fits all 4 models for
 direct comparison: `LinearRegression()` as the baseline, `Ridge(
 alpha=10)`, `Lasso(alpha=0.01)`, and `ElasticNet(alpha=0.1,
-l1_ratio=0.5)` — where **`l1_ratio` plays the role of α** in the
+l1_ratio=0.5)` - where **`l1_ratio` plays the role of α** in the
 formula and **`alpha` plays the role of λ**, an easy syntax confusion
 since the name `alpha` is reused with 2 different meanings between
 `Ridge`/`Lasso` and `ElasticNet`. Finally, print the test-set R² of all
@@ -212,7 +212,7 @@ since the name `alpha` is reused with 2 different meanings between
 `scikit-learn` functions. The "compare like with like" principle must be
 followed strictly: always compute every metric on the **test set** (not
 the training set), and always compare a regularized model against the
-**plain OLS baseline** — if Ridge and Lasso don't beat OLS out of
+**plain OLS baseline** - if Ridge and Lasso don't beat OLS out of
 sample, their added complexity is **not justified**.</span>
 
 ### Bài tập nhóm 3 - <span class="en">Teamwork 3</span>
@@ -233,87 +233,87 @@ evaluate Ridge and Lasso; **report MAE, RMSE and R² on the test set, and
 state which variables the Lasso eliminated**. One notebook cell per
 task.</span>
 
-## Ví dụ có đáp án — 400 biến dự báo, 120 quan sát: chọn gì? - <span class="en">Worked example — 400 predictors, 120 observations: which to pick?</span>
+## Ví dụ có đáp án - 400 biến dự báo, 120 quan sát: chọn gì? - <span class="en">Worked example - 400 predictors, 120 observations: which to pick?</span>
 
 Đây là câu hỏi ôn tập số 5 của giảng viên, và là bài toán ứng dụng trực
 tiếp bảng so sánh Ridge vs Lasso ở trên. Với k = 400 biến dự báo và
-n = 120 quan sát, ta đang ở tình huống **k ≫ n** — số tham số cần ước
+n = 120 quan sát, ta đang ở tình huống **k ≫ n** - số tham số cần ước
 lượng vượt xa số quan sát sẵn có, nên một mô hình OLS thuần thậm chí
 không giải được (ma trận X'X không khả nghịch khi k > n). Cả Ridge lẫn
 Lasso đều giải quyết được vấn đề khả nghịch này nhờ số hạng phạt, nhưng
 câu hỏi thực chất nằm ở **giả định về cấu trúc thật của mô hình**: với
 400 biến ứng viên mà chỉ có 120 quan sát để phân biệt, giả định hợp lý
 nhất gần như luôn là chỉ một **số nhỏ** trong 400 biến đó thực sự có ảnh
-hưởng — phần lớn còn lại là nhiễu hoặc dư thừa. Đây đúng là tình huống
+hưởng - phần lớn còn lại là nhiễu hoặc dư thừa. Đây đúng là tình huống
 Lasso được thiết kế cho: "ít biến dự báo, mỗi biến ảnh hưởng lớn." Ridge,
 ngược lại, giả định ngầm rằng **rất nhiều** biến cùng đóng góp một phần
-nhỏ — hợp lý hơn nếu có lý do lý thuyết để tin cả 400 biến đều liên quan
+nhỏ - hợp lý hơn nếu có lý do lý thuyết để tin cả 400 biến đều liên quan
 theo cách nào đó (ví dụ dữ liệu gen hoặc ảnh, nơi mọi đặc trưng đều mang
 một phần thông tin).
 <br><span class="en">This is the instructor's review question 5, and it
 directly applies the Ridge-vs-Lasso comparison above. With k = 400
-predictors and n = 120 observations, this is a **k ≫ n** situation — far
+predictors and n = 120 observations, this is a **k ≫ n** situation - far
 more parameters than observations, so a plain OLS model cannot even be
 solved (X'X is not invertible when k > n). Both Ridge and Lasso fix that
 invertibility problem via their penalty term, but the real question is
 about the **assumed true structure**: with 400 candidate predictors and
 only 120 observations to tell them apart, the more plausible assumption
 is almost always that only a **small** subset of the 400 actually
-matters — the rest being noise or redundant. That is exactly the setting
+matters - the rest being noise or redundant. That is exactly the setting
 Lasso is built for: "few predictors matter a lot." Ridge, by contrast,
-implicitly assumes **many** variables each contribute a small amount —
+implicitly assumes **many** variables each contribute a small amount -
 more defensible only when there is a theoretical reason to believe all
 400 are relevant in some way (e.g. genomic or image data, where every
 feature carries some information).</span>
 
 **Kết luận thực dụng**: chọn **Lasso** (hoặc Elastic Net nếu nghi ngờ các
 biến dự báo tương quan mạnh với nhau, để tránh Lasso loại bỏ tùy tiện 1
-biến trong một nhóm tương quan) — vì mục tiêu thực chất ở đây không chỉ
+biến trong một nhóm tương quan) - vì mục tiêu thực chất ở đây không chỉ
 là dự đoán tốt, mà còn là **thu gọn 400 biến xuống một tập nhỏ diễn giải
 được**, đúng thế mạnh duy nhất Ridge không có.
 <br><span class="en">**Practical conclusion**: choose **Lasso** (or
 Elastic Net if the predictors are suspected to be strongly correlated,
-to avoid Lasso arbitrarily dropping members of a correlated group) —
+to avoid Lasso arbitrarily dropping members of a correlated group) -
 because the real goal here is not just prediction, but **reducing 400
 variables to a small, interpretable set**, precisely the one strength
 Ridge lacks.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-[[chapter03-supervised-learning-k32]] — slide 94-108 (toàn bộ Phần 7),
+[[chapter03-supervised-learning-k32]] - slide 94-108 (toàn bộ Phần 7),
 110 (bảng tổng kết: Ridge và Lasso đều là bài toán hồi quy, siêu tham số
 là λ, **đều cần chuẩn hóa**; điểm mạnh của Ridge là xử lý đa cộng tuyến,
 của Lasso là tự động chọn biến), 111 (câu hỏi ôn tập số 5: 400 biến dự
-báo và 120 quan sát — chọn Ridge hay Lasso?).
-<br><span class="en">[[chapter03-supervised-learning-k32]] — slides
+báo và 120 quan sát - chọn Ridge hay Lasso?).
+<br><span class="en">[[chapter03-supervised-learning-k32]] - slides
 94-108 (all of Section 7), 110 (summary table: both are regression, both
 tuned by λ, both **need scaling**; Ridge handles multicollinearity, Lasso
 does automatic variable selection), 111 (review question 5: 400
-predictors and 120 observations — Ridge or Lasso?).</span>
+predictors and 120 observations - Ridge or Lasso?).</span>
 
 ## Liên quan - <span class="en">Related</span>
 
-- [[linear-regression-k32]] — mô hình nền mà điều chuẩn thêm hình phạt
+- [[linear-regression-k32]] - mô hình nền mà điều chuẩn thêm hình phạt
   vào; OLS cũng là mốc so sánh bắt buộc.
-  <br><span class="en">[[linear-regression-k32]] — the base model the
+  <br><span class="en">[[linear-regression-k32]] - the base model the
   penalty is added to; OLS is also the mandatory baseline.</span>
-- [[overfitting-underfitting-k32]] — vấn đề mà điều chuẩn ra đời để giải;
+- [[overfitting-underfitting-k32]] - vấn đề mà điều chuẩn ra đời để giải;
   điều chuẩn là cách **cố ý** dịch mô hình sang trái trên trục độ phức
   tạp.
-  <br><span class="en">[[overfitting-underfitting-k32]] — the problem
+  <br><span class="en">[[overfitting-underfitting-k32]] - the problem
   regularization exists to solve; it **deliberately** moves the model
   left on the complexity axis.</span>
-- [[train-test-split-and-cross-validation]] — cơ chế chọn λ.
-  <br><span class="en">[[train-test-split-and-cross-validation]] — the
+- [[train-test-split-and-cross-validation]] - cơ chế chọn λ.
+  <br><span class="en">[[train-test-split-and-cross-validation]] - the
   mechanism for choosing λ.</span>
-- [[model-evaluation-metrics-k32]] — bộ chỉ số dùng ở mục 7.5 để so sánh
+- [[model-evaluation-metrics-k32]] - bộ chỉ số dùng ở mục 7.5 để so sánh
   các mô hình.
-  <br><span class="en">[[model-evaluation-metrics-k32]] — the metric set
+  <br><span class="en">[[model-evaluation-metrics-k32]] - the metric set
   used in Section 7.5 to compare the models.</span>
-- [[k-nearest-neighbors-k32]] — thuật toán còn lại trong chương **bắt
+- [[k-nearest-neighbors-k32]] - thuật toán còn lại trong chương **bắt
   buộc chuẩn hóa**, và vì cùng một lý do: kết quả phụ thuộc độ lớn tuyệt
   đối của các con số.
-  <br><span class="en">[[k-nearest-neighbors-k32]] — the chapter's other
+  <br><span class="en">[[k-nearest-neighbors-k32]] - the chapter's other
   algorithm that **requires standardisation**, for the same reason: the
   result depends on the absolute size of the numbers.</span>
 
@@ -322,12 +322,12 @@ predictors and 120 observations — Ridge or Lasso?).</span>
 Bài tập nhóm 3 yêu cầu file `Income.csv`, nhưng **file này không có trong
 `raw/`**. Trong thư mục Chapter03 chỉ có `TeleCustomers.csv` là chứa cột
 `income` (cùng 7 biến giải thích: `region`, `tenure`, `age`, `marital`,
-`address`, `ed`, `employ`) — nhiều khả năng là file thay thế, hoặc
+`address`, `ed`, `employ`) - nhiều khả năng là file thay thế, hoặc
 `Income.csv` sẽ được phát sau. Bài tập vẫn làm được trọn vẹn trên
 `TeleCustomers.csv`.
 <br><span class="en">Teamwork 3 asks for `Income.csv`, but **that file is
 not in `raw/`**. The Chapter03 folder only has `TeleCustomers.csv` with
-an `income` column (plus 7 explanatory variables) — most likely the
+an `income` column (plus 7 explanatory variables) - most likely the
 substitute, or `Income.csv` will be released later. The exercise can be
 done in full on `TeleCustomers.csv`.</span>
 

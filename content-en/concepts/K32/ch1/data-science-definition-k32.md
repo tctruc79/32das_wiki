@@ -1,6 +1,6 @@
 ---
 type: concept
-title: "Data Science — Definition & Roles (K32)"
+title: "Data Science - Definition & Roles (K32)"
 tags: [chapter-1, k32, foundations]
 created: 2026-08-22
 updated: 2026-09-05
@@ -8,10 +8,10 @@ status: complete
 ---
 
 > <br><span class="en">**How to read this page**: this is Chapter 1's
-> central page — every other concept in the chapter (big data, DIKW, the
+> central page - every other concept in the chapter (big data, DIKW, the
 > 5 types of analytics, analytic thinking) orbits the question "what is
 > data science, and how does it differ from neighbouring fields". If you
-> only review one page for Chapter 1, read this one first — especially
+> only review one page for Chapter 1, read this one first - especially
 > the DS/Analytics/BI table and the roles table, since those are the two
 > most likely sources of concept-distinction exam questions.</span>
 
@@ -32,10 +32,10 @@ improves.
   interdisciplinary field using algorithms, procedures and processes to
   examine large amounts of data, in order to uncover patterns, generate
   insight and direct decision-making."
-- **The instructor's "working definition"** — a
+- **The instructor's "working definition"** - a
   synthesized definition emphasizing 3 criteria: **decision-relevant**
   (excludes analysis that changes nothing); **combining** (no single
-  ingredient suffices — statistics + computing + domain knowledge);
+  ingredient suffices - statistics + computing + domain knowledge);
   **judged by whether a decision improves** (also the course's mini
   project grading criterion).
 - **Distinguishing terminology** (a 1-line
@@ -51,7 +51,7 @@ improves.
   used), Data integration (combining sources into one consistent
   view).
 - **Data Science vs Data Analytics vs Business
-  Intelligence comparison** (5 criteria — question/data/methods/output/
+  Intelligence comparison** (5 criteria - question/data/methods/output/
   typical tools):
 
   | Criterion | Business Intelligence | Data Analytics | Data Science |
@@ -65,17 +65,17 @@ improves.
   **Common exam trap**: ✅ "Data Science, Data
   Analytics and Business Intelligence are 3 overlapping practices, most
   organisations need all 3." ❌ "Business Intelligence is obsolete, every
-  organisation should switch entirely to Data Science" — wrong, because
+  organisation should switch entirely to Data Science" - wrong, because
   BI still answers "what happened" well at a far lower cost, and most
   day-to-day operational decisions don't need a predictive model.
 - **Who works with data science**: **Data
   engineer**, **Data analyst**, **Data scientist**, **ML engineer**,
   **Business/domain expert**. Note for VNP students: most will
-  **commission and evaluate** analysis rather than build it — so framing,
+  **commission and evaluate** analysis rather than build it - so framing,
   evaluation, interpretation matter more than algorithms.
 - **AI vs Machine Learning vs Deep Learning vs Data
   Science diagram**: mentions statistical learning, deep learning, Gen
-  AI/LLM — an image/Venn diagram, the `pdftotext` extraction is badly
+  AI/LLM - an image/Venn diagram, the `pdftotext` extraction is badly
   OCR-garbled, not reliable enough to describe the relationships in
   detail. See the original slide (`raw/Lecture Notes/K32/
   VNP_DataScience_Chapter01_Introduction_2026.pdf`, slide 24).
@@ -86,17 +86,17 @@ improves.
 
 ## Appears in
 
-- [[chapter01-introduction-k32]] — all of section
+- [[chapter01-introduction-k32]] - all of section
   "2. What is data science?": 3 definitions + working definition,
   terminology table, DS/Analytics/BI table, roles table, real-world
   applications (incl. the Vietnam section).
 
 ## Related concepts
 
-- [[big-data-k32]] — big data is the context/premise
+- [[big-data-k32]] - big data is the context/premise
   behind the data science boom.
-- [[dikw-pyramid-k32]] — data science is the
+- [[dikw-pyramid-k32]] - data science is the
   systematic process of climbing from Data to Wisdom.
-- [[data-analytic-thinking-k32]] — analytic thinking
+- [[data-analytic-thinking-k32]] - analytic thinking
   is the prerequisite for correctly applying the above definitions/roles
   to a concrete problem.

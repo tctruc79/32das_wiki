@@ -10,9 +10,9 @@ updated: 2026-09-27
 
 ## Môn học - <span class="en">The course</span>
 
-**Introduction to Data Science and Applications** — University of Economics
+**Introduction to Data Science and Applications** - University of Economics
 Ho Chi Minh City, Vietnam-Netherlands Programme. Giảng viên: [[tran-thi-tuan-anh]].
-<br><span class="en">**Introduction to Data Science and Applications** —
+<br><span class="en">**Introduction to Data Science and Applications** -
 University of Economics Ho Chi Minh City, Vietnam-Netherlands Programme.
 Instructor: [[tran-thi-tuan-anh]].</span>
 
@@ -20,13 +20,13 @@ Instructor: [[tran-thi-tuan-anh]].</span>
 
 Wiki này theo dõi 2 khóa học tách biệt hoàn toàn (xem CLAUDE.md, mục "Tách
 cụm K31/K32"): K31 (2025, đã có đủ 8 chương trong `raw/`) và K32 (2026,
-khóa hiện tại, đã đủ 5/5 chương — hết phần lý thuyết).
+khóa hiện tại, đã đủ 5/5 chương - hết phần lý thuyết).
 <br><span class="en">This wiki tracks two fully separated cohorts (see
 CLAUDE.md, "Tách cụm K31/K32"): K31 (2025, all 8 chapters already in
-`raw/`) and K32 (2026, the current cohort, complete at 5/5 chapters — the
+`raw/`) and K32 (2026, the current cohort, complete at 5/5 chapters - the
 theory is finished).</span>
 
-### K31 (2025) — 8 chương - <span class="en">K31 (2025) — 8 Chapters</span>
+### K31 (2025) - 8 chương - <span class="en">K31 (2025) - 8 Chapters</span>
 
 1. Introduction: Data Science and Data-Analytic Thinking
 2. Python and Jupyter Notebook
@@ -37,33 +37,33 @@ theory is finished).</span>
 7. Principal Component Analysis (PCA)
 8. Deep Learning
 
-### K32 (2026 — khóa hiện tại) - <span class="en">K32 (2026 — Current Cohort)</span>
+### K32 (2026 - khóa hiện tại) - <span class="en">K32 (2026 - Current Cohort)</span>
 
-Wiki có đủ 5 chương K32 (Chapter 1-5) — **đây là toàn bộ phần lý thuyết của
+Wiki có đủ 5 chương K32 (Chapter 1-5) - **đây là toàn bộ phần lý thuyết của
 khóa 2026, không có Chapter 6-8**. Sau Chapter 5 còn đúng 2 buổi: 1 buổi
 chuyên gia chia sẻ về học máy/học sâu, 1 buổi các nhóm thuyết trình.
-<br><span class="en">The wiki holds all 5 K32 chapters (Chapters 1-5) —
+<br><span class="en">The wiki holds all 5 K32 chapters (Chapters 1-5) -
 **this is the entire theory component of the 2026 cohort; there is no
 Chapter 6-8**. After Chapter 5 exactly two sessions remain: an expert talk
 on machine learning/deep learning, and the group presentations.</span>
 
-- **Chapter 1** — 5 V's, định nghĩa vận hành, 5 loại phân tích (thêm
+- **Chapter 1** - 5 V's, định nghĩa vận hành, 5 loại phân tích (thêm
   Causal), checklist 7 điều kiện.
-  <br><span class="en">**Chapter 1** — the 5 V's, a working definition,
+  <br><span class="en">**Chapter 1** - the 5 V's, a working definition,
   5 types of analytics (adding Causal), the 7-condition checklist.</span>
-- **Chapter 2** — gần gấp đôi độ dài bản 2025, thêm hẳn phần "Python for
+- **Chapter 2** - gần gấp đôi độ dài bản 2025, thêm hẳn phần "Python for
   Data Analysis" (NumPy/pandas/matplotlib/seaborn/statsmodels/
   scikit-learn), dùng dữ liệu thực hành `Data2.csv`.
-  <br><span class="en">**Chapter 2** — nearly double the 2025 version,
+  <br><span class="en">**Chapter 2** - nearly double the 2025 version,
   adding a whole "Python for Data Analysis" section and the `Data2.csv`
   practice dataset.</span>
-- **Chapter 3** ("Supervised Learning", 112 slide — chương lớn nhất của
-  wiki) — gộp trọn nhánh học có giám sát mà khóa 2025 chia làm 3 chương:
+- **Chapter 3** ("Supervised Learning", 112 slide - chương lớn nhất của
+  wiki) - gộp trọn nhánh học có giám sát mà khóa 2025 chia làm 3 chương:
   nền tảng học máy, đánh giá mô hình, phân loại + KNN, cây quyết định,
   rừng ngẫu nhiên + tăng cường, hồi quy, và Ridge/Lasso/Elastic Net. Đi
   kèm 2 file mã Python và 5 file dữ liệu.
-  <br><span class="en">**Chapter 3** ("Supervised Learning", 112 slides —
-  the wiki's largest chapter) — the entire supervised branch that the
+  <br><span class="en">**Chapter 3** ("Supervised Learning", 112 slides -
+  the wiki's largest chapter) - the entire supervised branch that the
   2025 cohort split across 3 chapters: ML foundations, model evaluation,
   classification + KNN, decision trees, random forests + boosting,
   regression, and Ridge/Lasso/Elastic Net. Comes with 2 Python scripts
@@ -115,8 +115,8 @@ on machine learning/deep learning, and the group presentations.</span>
 
 ## Ôn thi - <span class="en">Exam prep</span>
 
-[[on-thi]] — điểm tổng hợp duy nhất để ôn thi.
-<br><span class="en">[[on-thi]] — the single compounding exam-prep
+[[on-thi]] - điểm tổng hợp duy nhất để ôn thi.
+<br><span class="en">[[on-thi]] - the single compounding exam-prep
 page.</span>
 
 ## Publish - <span class="en">Publish</span>
@@ -130,17 +130,17 @@ page.</span>
   [github.com/tctruc79/32das_wiki](https://github.com/tctruc79/32das_wiki).</span>
 - Mindmap Artifact tương tác song ngữ:
   [claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d](https://claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d)
-  — mỗi tab chương hiển thị đầy đủ chiều rộng màn hình, gồm 2 nhóm thẻ
+  - mỗi tab chương hiển thị đầy đủ chiều rộng màn hình, gồm 2 nhóm thẻ
   mặc định mở sẵn: **📄 Nội dung theo slide** (toàn văn tường thuật
   chương) và **🔎 Khái niệm chi tiết** (toàn bộ nội dung từng trang
-  concept — định nghĩa, công thức, ví dụ Python, không rút gọn). Tiền tố
+  concept - định nghĩa, công thức, ví dụ Python, không rút gọn). Tiền tố
   `K31 ·`/`K32 ·` thống nhất trên mọi tab (K31 Ch.1-8 + K32 Ch.1-5 riêng,
   không link chéo cụm). Tab "Tất cả chương" gộp theo cụm chủ đề xuyên
   chương để nhìn tổng quan, và tab "Tự test" có câu hỏi ôn thi kèm đáp án
   gợi ý.
   <br><span class="en">Interactive bilingual Mindmap Artifact:
   [claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d](https://claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d)
-  — each chapter tab displays full-width, with 2 default-open groups:
+  - each chapter tab displays full-width, with 2 default-open groups:
   **📄 Full slide walkthrough** and **🔎 Concept deep-dives** (every
   concept page's complete content, nothing condensed). A uniform
   `K31 ·`/`K32 ·` prefix stays on every tab (K31 Ch.1-8 + K32 Ch.1-5

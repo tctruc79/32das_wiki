@@ -10,26 +10,26 @@ status: complete
 ## Vai trò - <span class="en">Role</span>
 
 Giảng viên môn **Introduction to Data Science and Applications**, Vietnam-
-Netherlands Programme, University of Economics Ho Chi Minh City — dạy cả
+Netherlands Programme, University of Economics Ho Chi Minh City - dạy cả
 khóa K31 (2025) và khóa K32 (2026, khóa hiện tại).
 <br><span class="en">Instructor of **Introduction to Data Science and
 Applications**, Vietnam-Netherlands Programme, University of Economics Ho
-Chi Minh City — teaches both the 2025 cohort and the 2026 (current)
+Chi Minh City - teaches both the 2025 cohort and the 2026 (current)
 cohort.</span>
 
 Đây là trang duy nhất được phép link tới cả 2 cụm K31/K32 (xem CLAUDE.md,
 mục "Tách cụm K31/K32") vì là 1 người thật, không phải nội dung có thể
 khác biệt theo khóa.
 <br><span class="en">This is the only page allowed to link to both the
-K31 and K32 clusters (see CLAUDE.md, "Tách cụm K31/K32") — because she is
+K31 and K32 clusters (see CLAUDE.md, "Tách cụm K31/K32") - because she is
 one real individual, not content that can diverge by cohort.</span>
 
 ## Ghi chú - <span class="en">Notes</span>
 
 - Website môn học: K31 (2025) nêu sites.google.com/site/anhttt/; K32
-  (2026) nêu anhttt.edu.vn — đổi tên miền giữa 2 khóa.
+  (2026) nêu anhttt.edu.vn - đổi tên miền giữa 2 khóa.
   <br><span class="en">Course website: K31 (2025) lists
-  sites.google.com/site/anhttt/; K32 (2026) lists anhttt.edu.vn — the
+  sites.google.com/site/anhttt/; K32 (2026) lists anhttt.edu.vn - the
   domain changed between cohorts.</span>
 - Sách giáo khoa chính: Provost & Fawcett (2013) *Data Science for
   Business*; VanderPlas (2016) *Python Data Science Handbook* (cả K31 và
@@ -43,48 +43,48 @@ one real individual, not content that can diverge by cohort.</span>
   with Applications in Python*.</span>
 - Cách tính điểm đổi hẳn giữa 2 khóa: K31 dùng Tham gia lớp 10% + Bài
   tập nhóm 30% + Mini project nhóm 60%; K32 dùng Individual Assessment
-  50% + Group Assessment 50% — trọng số cá nhân tăng mạnh.
+  50% + Group Assessment 50% - trọng số cá nhân tăng mạnh.
   <br><span class="en">Grading changed substantially between cohorts: K31
   used Participation 10% + Group Assignments 30% + Mini Group Project
-  60%; K32 uses Individual Assessment 50% + Group Assessment 50% — a
+  60%; K32 uses Individual Assessment 50% + Group Assessment 50% - a
   much heavier individual weighting.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter01-introduction]] — thông tin môn học, đánh giá, tài liệu
+- [[chapter01-introduction]] - thông tin môn học, đánh giá, tài liệu
   (K31, 2025).
-  <br><span class="en">[[chapter01-introduction]] — course info, grading,
+  <br><span class="en">[[chapter01-introduction]] - course info, grading,
   materials (K31, 2025).</span>
-- [[chapter01-introduction-k32]] — thông tin môn học, đánh giá, tài liệu
+- [[chapter01-introduction-k32]] - thông tin môn học, đánh giá, tài liệu
   (K32, 2026).
-  <br><span class="en">[[chapter01-introduction-k32]] — course info,
+  <br><span class="en">[[chapter01-introduction-k32]] - course info,
   grading, materials (K32, 2026).</span>
-- [[chapter02-python-jupyter-k32]] — chương công cụ Python/Jupyter mở
+- [[chapter02-python-jupyter-k32]] - chương công cụ Python/Jupyter mở
   rộng (K32, 2026).
-  <br><span class="en">[[chapter02-python-jupyter-k32]] — the expanded
+  <br><span class="en">[[chapter02-python-jupyter-k32]] - the expanded
   Python/Jupyter tooling chapter (K32, 2026).</span>
-- [[chapter03-supervised-learning-k32]] — chương học có giám sát 112
+- [[chapter03-supervised-learning-k32]] - chương học có giám sát 112
   slide, gộp trọn nhánh phân loại và hồi quy (K32, 2026); bản này có
   nhiều khung tự sửa lỗi so với các bản slide trước (slide 17, 32) và 1
   bài tập gỡ lỗi cố ý trong mã Ví dụ 3.1.
-  <br><span class="en">[[chapter03-supervised-learning-k32]] — the
+  <br><span class="en">[[chapter03-supervised-learning-k32]] - the
   112-slide supervised learning chapter covering the whole
   classification and regression branch (K32, 2026); this deck carries
   several self-correction boxes versus earlier versions (slides 17, 32)
   and a deliberate debugging exercise in the Example 3.1 code.</span>
-- [[chapter04-unsupervised-learning-k32]] — chương học không giám sát 86
+- [[chapter04-unsupervised-learning-k32]] - chương học không giám sát 86
   slide, gộp trọn phân cụm và PCA (K32, 2026); kèm 7 file mã Python và 2
   file ảnh, trong đó 2 script chứa lỗi thật.
-  <br><span class="en">[[chapter04-unsupervised-learning-k32]] — the
+  <br><span class="en">[[chapter04-unsupervised-learning-k32]] - the
   86-slide unsupervised learning chapter covering all of clustering and PCA
   (K32, 2026); with 7 Python scripts and 2 images, two of the scripts
   carrying real bugs.</span>
-- [[chapter05-deep-learning-k32]] — chương học sâu 90 slide gồm 3 bài giảng
+- [[chapter05-deep-learning-k32]] - chương học sâu 90 slide gồm 3 bài giảng
   gộp (K32, 2026). Đây là chương đầu tiên giảng viên **không soạn từ hai
   giáo trình nền của môn** mà dựng lại từ khóa học của một trường khác
   (slide 1 ghi rõ), và là chương K32 đầu tiên **không có file mã hay dữ
   liệu thực hành nào** đi kèm, cũng không có bài tập hay câu hỏi thảo luận.
-  <br><span class="en">[[chapter05-deep-learning-k32]] — the 90-slide deep
+  <br><span class="en">[[chapter05-deep-learning-k32]] - the 90-slide deep
   learning chapter comprising 3 merged lectures (K32, 2026). It is the first
   chapter the instructor built **not from the course's two base textbooks**
   but from another university's course (slide 1 states so), and the first

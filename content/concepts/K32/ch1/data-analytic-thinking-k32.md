@@ -9,25 +9,25 @@ status: complete
 ---
 
 > **Cách đọc trang này**: checklist 7 điều kiện ở dưới là công cụ ôn thi
-> thực dụng nhất của trang này — dùng nó để chấm bất kỳ đề bài "cho 1
+> thực dụng nhất của trang này - dùng nó để chấm bất kỳ đề bài "cho 1
 > tình huống kinh doanh, đây có phải bài toán khoa học dữ liệu tốt
 > không?" mà đề thi có thể đưa ra. Áp cả 7 điều kiện, chỉ cần 1 điều sai
-> là kết luận "không phù hợp" — đừng chỉ kiểm tra 1-2 điều rồi kết luận.
+> là kết luận "không phù hợp" - đừng chỉ kiểm tra 1-2 điều rồi kết luận.
 > <br><span class="en">**How to read this page**: the 7-condition
-> checklist below is this page's most practical exam tool — use it to
+> checklist below is this page's most practical exam tool - use it to
 > grade any "given this business situation, is it a good data science
 > problem?" question the exam might pose. Apply all 7 conditions; a
-> single failure is enough to conclude "not suitable" — don't stop after
+> single failure is enough to conclude "not suitable" - don't stop after
 > checking just 1-2 conditions.</span>
 
 ## Định nghĩa - <span class="en">Definition</span>
 
 Tư duy phân tích dữ liệu là cách tiếp cận 1 bài toán bắt đầu từ quyết
-định cần đưa ra — không phải từ dữ liệu hay công cụ sẵn có — rồi truy vấn
+định cần đưa ra - không phải từ dữ liệu hay công cụ sẵn có - rồi truy vấn
 ngược nguồn gốc dữ liệu, baseline, loại bằng chứng, chi phí sai số, trước
 khi đánh giá bài toán đó có thực sự phù hợp làm khoa học dữ liệu không.
 <br><span class="en">Data-analytic thinking approaches a problem starting
-from the decision to be made — not from available data or tools — then
+from the decision to be made - not from available data or tools - then
 traces back the data's origin, a baseline, the evidence type, and the
 cost of errors, before assessing whether the problem actually suits data
 science.</span>
@@ -44,12 +44,12 @@ science.</span>
   là ẩn dụ):
   1. Bắt đầu từ quyết định, không phải từ dữ liệu hay công cụ. Hỏi: sẽ
      làm gì khác đi một khi biết câu trả lời?
-  2. Hỏi dữ liệu đến từ đâu — ai ghi lại, khi nào, vì mục đích gì, và ai
+  2. Hỏi dữ liệu đến từ đâu - ai ghi lại, khi nào, vì mục đích gì, và ai
      bị thiếu trong dữ liệu đó.
-  3. Đòi hỏi 1 **baseline**. "Tốt hơn cái gì?" — 1 mô hình 85% accuracy
+  3. Đòi hỏi 1 **baseline**. "Tốt hơn cái gì?" - 1 mô hình 85% accuracy
      vô nghĩa nếu chỉ đoán ngẫu nhiên đã cho 87%.
-  4. Phân biệt rõ bằng chứng đang có thuộc loại nào — association,
-     prediction, hay cause — và nói rõ đang có loại nào.
+  4. Phân biệt rõ bằng chứng đang có thuộc loại nào - association,
+     prediction, hay cause - và nói rõ đang có loại nào.
   5. Gắn 1 chi phí cho việc sai, theo từng hướng sai, **trước khi** xây
      mô hình.
   <br><span class="en">**5 concrete analytic-thinking steps** (an
@@ -59,16 +59,16 @@ science.</span>
   attach a cost to being wrong, before building the model.</span>
 - **Chuỗi "bài toán kinh doanh → bài toán khoa học dữ liệu"**: Problem →
   Decision → Analytical question → Data → Method → Evidence → Decision.
-  Chuỗi này khép kín — kết thúc đúng nơi nó bắt đầu, ở 1 quyết định. Nếu
+  Chuỗi này khép kín - kết thúc đúng nơi nó bắt đầu, ở 1 quyết định. Nếu
   không đặt tên được ít nhất 2 hành động khả dĩ, thì không có quyết định
-  thật — và do đó không có dự án khoa học dữ liệu.
+  thật - và do đó không có dự án khoa học dữ liệu.
   <br><span class="en">**"Business problem → data science problem"
   chain**: Problem → Decision → Analytical question → Data → Method →
-  Evidence → Decision. A closed loop — ends where it began, at a
+  Evidence → Decision. A closed loop - ends where it began, at a
   decision. If you can't name at least 2 possible actions, there's no
-  real decision — and therefore no data science project.</span>
+  real decision - and therefore no data science project.</span>
 - **Checklist 7 điều kiện** đánh giá "bài toán có phù hợp làm khoa học dữ
-  liệu không" — tất cả phải đúng, chỉ cần 1 điều sai là dừng:
+  liệu không" - tất cả phải đúng, chỉ cần 1 điều sai là dừng:
   1. Có 1 quyết định thực sự tồn tại và có thể thay đổi.
   2. Quyết định đó lặp lại đủ thường xuyên để đáng công sức đầu tư.
   3. Outcome được định nghĩa rõ, đo lường được, quan sát được trong 1
@@ -81,7 +81,7 @@ science.</span>
   7. Hành động dựa trên kết quả là khả thi, hợp pháp, và lợi ích vượt
      quá chi phí.
   <br><span class="en">**7-condition checklist** for "does this problem
-  suit data science" — all must hold, any single failure stops it: (1) a
+  suit data science" - all must hold, any single failure stops it: (1) a
   real, changeable decision exists; (2) it recurs often enough to be
   worth the effort; (3) the outcome is well-defined, measurable,
   observable within a useful timeframe; (4) data describing the decision
@@ -97,24 +97,24 @@ science.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter01-introduction-k32]] — ẩn dụ la bàn/chuyển động, 5 bước tư
+- [[chapter01-introduction-k32]] - ẩn dụ la bàn/chuyển động, 5 bước tư
   duy cụ thể, chuỗi bài toán kinh doanh→khoa học dữ liệu, checklist 7
   điều kiện.
-  <br><span class="en">[[chapter01-introduction-k32]] — the compass/
+  <br><span class="en">[[chapter01-introduction-k32]] - the compass/
   movement metaphor, the 5 concrete steps, the business→data-science
   problem chain, the 7-condition checklist.</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[data-driven-decision-making-k32]] — bước 4 trong quy trình 5 bước
+- [[data-driven-decision-making-k32]] - bước 4 trong quy trình 5 bước
   (phân biệt association/prediction/cause) ánh xạ trực tiếp tới 5 loại
   phân tích ở đó.
-  <br><span class="en">[[data-driven-decision-making-k32]] — step 4 of
+  <br><span class="en">[[data-driven-decision-making-k32]] - step 4 of
   the 5-step process (distinguishing association/prediction/cause) maps
   directly onto the 5 types of analytics there.</span>
-- [[data-science-definition-k32]] — checklist 7 điều kiện là phiên bản
+- [[data-science-definition-k32]] - checklist 7 điều kiện là phiên bản
   vận hành được của "định nghĩa vận hành" (đánh giá bằng việc quyết định
   có cải thiện).
-  <br><span class="en">[[data-science-definition-k32]] — the 7-condition
+  <br><span class="en">[[data-science-definition-k32]] - the 7-condition
   checklist is the operational version of the "working definition"
   (judged by whether a decision improves).</span>

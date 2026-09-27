@@ -32,15 +32,15 @@ new processing technologies.
 
 ## Appears in
 
-- [[chapter01-introduction]] — introduces the big
+- [[chapter01-introduction]] - introduces the big
   data definition and the boom's drivers, setting up the whole
   course.
 
 ## Related concepts
 
-- [[dikw-pyramid]] — big data is the raw material at
+- [[dikw-pyramid]] - big data is the raw material at
   the "Data" layer of the pyramid; the real value lies in climbing up to
   Information → Knowledge → Wisdom.
-- [[data-science-definition]] — data science is the
+- [[data-science-definition]] - data science is the
   field that extracts insight from (big) data; big data is the
   context/premise, not the field itself.

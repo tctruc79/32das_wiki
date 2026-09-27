@@ -27,17 +27,17 @@ based on the learned model, in 2 phases: training and application.
   Reinforcement Learning.
 - 2 phases of every ML method: **Training** (model
   learns from training data) and **Application** (model is tested then
-  used for decisions) — illustrated with spam filters, Facebook face
+  used for decisions) - illustrated with spam filters, Facebook face
   recognition.
 
 ## Appears in
 
-- [[chapter03-machine-learning-knn]] — ML
+- [[chapter03-machine-learning-knn]] - ML
   definition, AI history, the 3 ML types.
 
 ## Related concepts
 
-- [[classification]] — the first Supervised Learning
+- [[classification]] - the first Supervised Learning
   branch taught in detail in the course.
-- [[overfitting-underfitting]] — the central concern
+- [[overfitting-underfitting]] - the central concern
   when training any ML model.

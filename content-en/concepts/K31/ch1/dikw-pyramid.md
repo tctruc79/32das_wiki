@@ -30,14 +30,14 @@ transformation: Data → Information → Knowledge → Wisdom.
 
 ## Appears in
 
-- [[chapter01-introduction]] — introduces the DIKW
+- [[chapter01-introduction]] - introduces the DIKW
   framework (slides 19-20), grounding the reasoning for data-driven
   decision making in part 3.
 
 ## Related concepts
 
-- [[big-data]] — big data is the raw material at the
+- [[big-data]] - big data is the raw material at the
   "Data" layer.
-- [[data-driven-decision-making]] — the process of
+- [[data-driven-decision-making]] - the process of
   climbing from Data to Wisdom is exactly the goal of data-driven decision
   making.

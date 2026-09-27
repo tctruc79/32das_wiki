@@ -1,24 +1,24 @@
 ---
 type: concept
-title: "Khoa học Dữ liệu — Định nghĩa & Vai trò (K32)"
-title_en: "Data Science — Definition & Roles (K32)"
+title: "Khoa học Dữ liệu - Định nghĩa & Vai trò (K32)"
+title_en: "Data Science - Definition & Roles (K32)"
 tags: [chapter-1, k32, foundations]
 created: 2026-08-22
 updated: 2026-09-05
 status: complete
 ---
 
-> **Cách đọc trang này**: đây là trang trung tâm của Chapter 1 — mọi
+> **Cách đọc trang này**: đây là trang trung tâm của Chapter 1 - mọi
 > khái niệm khác trong chương (dữ liệu lớn, DIKW, 5 loại phân tích, tư
 > duy phân tích) đều xoay quanh câu hỏi "khoa học dữ liệu là gì, và khác
 > gì với các ngành lân cận". Nếu chỉ ôn 1 trang cho Chapter 1, hãy đọc
-> trang này trước — đặc biệt bảng so sánh DS/Analytics/BI và bảng vai
+> trang này trước - đặc biệt bảng so sánh DS/Analytics/BI và bảng vai
 > trò, vì đây là 2 bảng dễ ra câu hỏi phân biệt khái niệm nhất.
 > <br><span class="en">**How to read this page**: this is Chapter 1's
-> central page — every other concept in the chapter (big data, DIKW, the
+> central page - every other concept in the chapter (big data, DIKW, the
 > 5 types of analytics, analytic thinking) orbits the question "what is
 > data science, and how does it differ from neighbouring fields". If you
-> only review one page for Chapter 1, read this one first — especially
+> only review one page for Chapter 1, read this one first - especially
 > the DS/Analytics/BI table and the roles table, since those are the two
 > most likely sources of concept-distinction exam questions.</span>
 
@@ -50,22 +50,22 @@ improves.</span>
   interdisciplinary field using algorithms, procedures and processes to
   examine large amounts of data, in order to uncover patterns, generate
   insight and direct decision-making."</span>
-- **"Định nghĩa vận hành" của giảng viên** — định nghĩa tổng hợp riêng,
+- **"Định nghĩa vận hành" của giảng viên** - định nghĩa tổng hợp riêng,
   nhấn mạnh 3 tiêu chí: **liên quan tới quyết định** (loại trừ phân tích
   không thay đổi được gì); **kết hợp** (không thành phần nào một mình là
-  đủ — thống kê + tính toán + tri thức lĩnh vực); **đánh giá bằng việc
+  đủ - thống kê + tính toán + tri thức lĩnh vực); **đánh giá bằng việc
   quyết định có cải thiện** (cũng là tiêu chí chấm mini project của môn
   học).
-  <br><span class="en">**The instructor's "working definition"** — a
+  <br><span class="en">**The instructor's "working definition"** - a
   synthesized definition emphasizing 3 criteria: **decision-relevant**
   (excludes analysis that changes nothing); **combining** (no single
-  ingredient suffices — statistics + computing + domain knowledge);
+  ingredient suffices - statistics + computing + domain knowledge);
   **judged by whether a decision improves** (also the course's mini
   project grading criterion).</span>
 - **Phân biệt thuật ngữ** (bảng định nghĩa 1 dòng/thuật ngữ, chi tiết
   hơn hẳn cách chỉ liệt kê tên): Khoa học dữ liệu (toàn bộ thực hành, từ
-  đặt câu hỏi tới hỗ trợ quyết định), Phân tích dữ liệu — analysis (khảo
-  sát 1 tập dữ liệu để trả lời câu hỏi cụ thể), Phân tích dữ liệu —
+  đặt câu hỏi tới hỗ trợ quyết định), Phân tích dữ liệu - analysis (khảo
+  sát 1 tập dữ liệu để trả lời câu hỏi cụ thể), Phân tích dữ liệu -
   analytics (hoạt động tổ chức dùng phân tích để ra quyết định, thường
   là báo cáo/dashboard), Khai phá dữ liệu (trích xuất mẫu hình từ tập dữ
   liệu lớn), Kỹ thuật dữ liệu (xây dựng pipeline/kho lưu trữ), Thao tác
@@ -86,10 +86,10 @@ improves.</span>
   used), Data integration (combining sources into one consistent
   view).</span>
 - **Bảng so sánh Khoa học dữ liệu vs Phân tích dữ liệu vs Business
-  Intelligence** (5 tiêu chí — câu hỏi/dữ liệu/phương pháp/đầu ra/công
+  Intelligence** (5 tiêu chí - câu hỏi/dữ liệu/phương pháp/đầu ra/công
   cụ điển hình):
   <br><span class="en">**Data Science vs Data Analytics vs Business
-  Intelligence comparison** (5 criteria — question/data/methods/output/
+  Intelligence comparison** (5 criteria - question/data/methods/output/
   typical tools):</span>
 
   | Tiêu chí | Business Intelligence | Data Analytics | Data Science |
@@ -103,13 +103,13 @@ improves.</span>
   **Bẫy thi thường gặp**: ✅ "Data Science, Data Analytics và Business
   Intelligence là 3 thực hành chồng lấn, hầu hết tổ chức cần cả 3." ❌
   "Business Intelligence đã lỗi thời, mọi tổ chức nên chuyển hẳn sang
-  Data Science" — sai vì BI vẫn trả lời tốt câu hỏi "điều gì đã xảy ra"
+  Data Science" - sai vì BI vẫn trả lời tốt câu hỏi "điều gì đã xảy ra"
   bằng chi phí thấp hơn hẳn, và phần lớn quyết định vận hành hàng ngày
   không cần đến mô hình dự đoán.
   <br><span class="en">**Common exam trap**: ✅ "Data Science, Data
   Analytics and Business Intelligence are 3 overlapping practices, most
   organisations need all 3." ❌ "Business Intelligence is obsolete, every
-  organisation should switch entirely to Data Science" — wrong, because
+  organisation should switch entirely to Data Science" - wrong, because
   BI still answers "what happened" well at a far lower cost, and most
   day-to-day operational decisions don't need a predictive model.</span>
 - **Ai làm việc với khoa học dữ liệu**: **Kỹ sư dữ liệu** (xây dựng/bảo
@@ -124,17 +124,17 @@ improves.</span>
   <br><span class="en">**Who works with data science**: **Data
   engineer**, **Data analyst**, **Data scientist**, **ML engineer**,
   **Business/domain expert**. Note for VNP students: most will
-  **commission and evaluate** analysis rather than build it — so framing,
+  **commission and evaluate** analysis rather than build it - so framing,
   evaluation, interpretation matter more than algorithms.</span>
 - **Sơ đồ AI vs Machine Learning vs Deep Learning vs Khoa học dữ liệu**:
-  nhắc tới statistical learning, deep learning, Gen AI/LLM — hình ảnh/
+  nhắc tới statistical learning, deep learning, Gen AI/LLM - hình ảnh/
   Venn diagram, phần text trích xuất qua `pdftotext` bị lỗi OCR nặng,
   không đủ tin cậy để mô tả chi tiết quan hệ giữa 4 khái niệm. Cần xem
   slide gốc (`raw/Lecture Notes/K32/
   VNP_DataScience_Chapter01_Introduction_2026.pdf`, slide 24).
   <br><span class="en">**AI vs Machine Learning vs Deep Learning vs Data
   Science diagram**: mentions statistical learning, deep learning, Gen
-  AI/LLM — an image/Venn diagram, the `pdftotext` extraction is badly
+  AI/LLM - an image/Venn diagram, the `pdftotext` extraction is badly
   OCR-garbled, not reliable enough to describe the relationships in
   detail. See the original slide (`raw/Lecture Notes/K32/
   VNP_DataScience_Chapter01_Introduction_2026.pdf`, slide 24).</span>
@@ -151,27 +151,27 @@ improves.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter01-introduction-k32]] — toàn bộ nội dung mục "2. Khoa học dữ
+- [[chapter01-introduction-k32]] - toàn bộ nội dung mục "2. Khoa học dữ
   liệu là gì?": 3 định nghĩa + định nghĩa vận hành, bảng thuật ngữ, bảng
   so sánh DS/Analytics/BI, bảng vai trò, ứng dụng thực tế (kèm mục Việt
   Nam).
-  <br><span class="en">[[chapter01-introduction-k32]] — all of section
+  <br><span class="en">[[chapter01-introduction-k32]] - all of section
   "2. What is data science?": 3 definitions + working definition,
   terminology table, DS/Analytics/BI table, roles table, real-world
   applications (incl. the Vietnam section).</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[big-data-k32]] — dữ liệu lớn là bối cảnh/tiền đề khiến khoa học dữ
+- [[big-data-k32]] - dữ liệu lớn là bối cảnh/tiền đề khiến khoa học dữ
   liệu bùng nổ.
-  <br><span class="en">[[big-data-k32]] — big data is the context/premise
+  <br><span class="en">[[big-data-k32]] - big data is the context/premise
   behind the data science boom.</span>
-- [[dikw-pyramid-k32]] — khoa học dữ liệu là quá trình có hệ thống để leo
+- [[dikw-pyramid-k32]] - khoa học dữ liệu là quá trình có hệ thống để leo
   từ Data lên Wisdom.
-  <br><span class="en">[[dikw-pyramid-k32]] — data science is the
+  <br><span class="en">[[dikw-pyramid-k32]] - data science is the
   systematic process of climbing from Data to Wisdom.</span>
-- [[data-analytic-thinking-k32]] — tư duy phân tích là điều kiện cần để
+- [[data-analytic-thinking-k32]] - tư duy phân tích là điều kiện cần để
   áp dụng đúng các định nghĩa/vai trò ở trên vào 1 bài toán cụ thể.
-  <br><span class="en">[[data-analytic-thinking-k32]] — analytic thinking
+  <br><span class="en">[[data-analytic-thinking-k32]] - analytic thinking
   is the prerequisite for correctly applying the above definitions/roles
   to a concrete problem.</span>

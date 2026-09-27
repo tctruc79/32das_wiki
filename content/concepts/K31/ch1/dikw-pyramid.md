@@ -43,19 +43,19 @@ transformation: Data → Information → Knowledge → Wisdom.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter01-introduction]] — giới thiệu khung DIKW (slide 19-20), làm
+- [[chapter01-introduction]] - giới thiệu khung DIKW (slide 19-20), làm
   nền cho lý do cần ra quyết định dựa trên dữ liệu ở phần 3.
-  <br><span class="en">[[chapter01-introduction]] — introduces the DIKW
+  <br><span class="en">[[chapter01-introduction]] - introduces the DIKW
   framework (slides 19-20), grounding the reasoning for data-driven
   decision making in part 3.</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[big-data]] — dữ liệu lớn là nguyên liệu thô ở tầng "Data".
-  <br><span class="en">[[big-data]] — big data is the raw material at the
+- [[big-data]] - dữ liệu lớn là nguyên liệu thô ở tầng "Data".
+  <br><span class="en">[[big-data]] - big data is the raw material at the
   "Data" layer.</span>
-- [[data-driven-decision-making]] — quá trình leo từ Data lên Wisdom chính
+- [[data-driven-decision-making]] - quá trình leo từ Data lên Wisdom chính
   là mục tiêu của việc ra quyết định dựa trên dữ liệu.
-  <br><span class="en">[[data-driven-decision-making]] — the process of
+  <br><span class="en">[[data-driven-decision-making]] - the process of
   climbing from Data to Wisdom is exactly the goal of data-driven decision
   making.</span>

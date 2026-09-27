@@ -49,23 +49,23 @@ new processing technologies.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter01-introduction]] — giới thiệu định nghĩa dữ liệu lớn và động
+- [[chapter01-introduction]] - giới thiệu định nghĩa dữ liệu lớn và động
   lực bùng nổ, làm tiền đề cho toàn môn học.
-  <br><span class="en">[[chapter01-introduction]] — introduces the big
+  <br><span class="en">[[chapter01-introduction]] - introduces the big
   data definition and the boom's drivers, setting up the whole
   course.</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[dikw-pyramid]] — dữ liệu lớn là nguyên liệu thô ở tầng "Data" của kim
+- [[dikw-pyramid]] - dữ liệu lớn là nguyên liệu thô ở tầng "Data" của kim
   tự tháp; giá trị thật nằm ở việc leo lên Information → Knowledge →
   Wisdom.
-  <br><span class="en">[[dikw-pyramid]] — big data is the raw material at
+  <br><span class="en">[[dikw-pyramid]] - big data is the raw material at
   the "Data" layer of the pyramid; the real value lies in climbing up to
   Information → Knowledge → Wisdom.</span>
-- [[data-science-definition]] — khoa học dữ liệu là ngành khai thác hiểu
+- [[data-science-definition]] - khoa học dữ liệu là ngành khai thác hiểu
   biết từ dữ liệu (lớn); dữ liệu lớn là bối cảnh/tiền đề, không phải bản
   thân ngành học.
-  <br><span class="en">[[data-science-definition]] — data science is the
+  <br><span class="en">[[data-science-definition]] - data science is the
   field that extracts insight from (big) data; big data is the
   context/premise, not the field itself.</span>

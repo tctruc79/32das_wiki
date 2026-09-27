@@ -7,7 +7,7 @@ updated: 2026-09-27
 status: complete
 ---
 
-The single compounding exam-prep page — updated
+The single compounding exam-prep page - updated
 MANDATORY every time a new chapter is ingested (see CLAUDE.md, INGEST
 section).
 
@@ -34,18 +34,18 @@ section).
 ### A. Foundations: data, data science, DIKW
 
 [[big-data]], [[dikw-pyramid]],
-[[data-science-definition]] — the 3 most foundational concepts of the
+[[data-science-definition]] - the 3 most foundational concepts of the
 course, all originating from [[chapter01-introduction]] (K31).
 
 ### B. Decision-making & analytic thinking
 
 [[data-driven-decision-making]] (4 types of
-analytics) and [[data-analytic-thinking]] (compass/movement metaphor) — a
+analytics) and [[data-analytic-thinking]] (compass/movement metaphor) - a
 complementary pair, both from [[chapter01-introduction]] (K31).
 
 ### C. Tooling
 
-[[python-jupyter-tooling]] — the hands-on
+[[python-jupyter-tooling]] - the hands-on
 infrastructure (Python + Jupyter Notebook) used throughout Chapters
 3-8.
 
@@ -54,60 +54,60 @@ infrastructure (Python + Jupyter Notebook) used throughout Chapters
 [[machine-learning-overview]] (AI/ML history, 3 ML
 types), [[overfitting-underfitting]] + [[model-evaluation-metrics]] (a
 theme running through Chapters 3-5), [[classification]] +
-[[k-nearest-neighbors]] (the first algorithm) — all from
+[[k-nearest-neighbors]] (the first algorithm) - all from
 [[chapter03-machine-learning-knn]] (K31).
 
 ### E. Regression & Regularization
 
 [[linear-regression]] + [[regularization-ridge-lasso]]
-— the Regression branch of supervised learning, from
+- the Regression branch of supervised learning, from
 [[chapter05-ridge-lasso]] (K31).
 
 ### F. Unsupervised Learning: Clustering
 
 [[clustering]] (definition, distance measures,
 evaluation), [[k-means-clustering]] + [[hierarchical-clustering]] (the 2
-main algorithms) — from [[chapter06-clustering]] (K31).
+main algorithms) - from [[chapter06-clustering]] (K31).
 
 ### G. Dimension Reduction: PCA
 
 [[pca]] (covariance, eigenvalue/eigenvector, the
 5-step procedure) + [[pca-combined-with-other-algorithms]] (PCA+
-Clustering/Classification/Regression) — from [[chapter07-pca]] (K31). The
-course's most synthesizing chapter — back-links to [[clustering]],
+Clustering/Classification/Regression) - from [[chapter07-pca]] (K31). The
+course's most synthesizing chapter - back-links to [[clustering]],
 [[k-means-clustering]], [[hierarchical-clustering]], [[classification]],
 [[k-nearest-neighbors]], [[regularization-ridge-lasso]].
 
 ### H. Deep Learning
 
-[[deep-learning-neural-networks]] — history,
-perceptron, forward/backward propagation, ANN/CNN/RNN — from
+[[deep-learning-neural-networks]] - history,
+perceptron, forward/backward propagation, ANN/CNN/RNN - from
 [[chapter08-deep-learning]] (K31), K31's final chapter.
 
-### I. K32 — Chapter 1 (2026)
+### I. K32 - Chapter 1 (2026)
 
 _A separate cluster for K32, fully isolated from
-clusters A-H (K31) per the separation rule — no cross wikilinks, cohort
+clusters A-H (K31) per the separation rule - no cross wikilinks, cohort
 names in plain text only when comparison is needed._
 
 [[big-data-k32]] (5 V's), [[dikw-pyramid-k32]],
 [[data-science-definition-k32]] (working definition, terminology table,
 DS/Analytics/BI table, roles table), [[data-driven-decision-making-k32]]
 (5 types of analytics, adds Causal), [[data-analytic-thinking-k32]] (5
-concrete steps, problem chain, 7-condition checklist) — all from
+concrete steps, problem chain, 7-condition checklist) - all from
 [[chapter01-introduction-k32]] (K32).
 
-### J. K32 — Chapter 2: Expanded Python Tooling (2026)
+### J. K32 - Chapter 2: Expanded Python Tooling (2026)
 
 _A separate cluster for K32, isolated from clusters
 A-I per the separation rule._
 
 [[python-jupyter-tooling-k32]] (core Python +
 Jupyter mechanics) and [[python-data-analysis-stack]] (the data-analysis
-library stack, using `Data2.csv`) — both from
+library stack, using `Data2.csv`) - both from
 [[chapter02-python-jupyter-k32]] (K32).
 
-### K. K32 — Chapter 3: Supervised Learning Foundations and Methodology
+### K. K32 - Chapter 3: Supervised Learning Foundations and Methodology
 
 _A separate cluster for K32, isolated from clusters
 A-J per the separation rule._
@@ -118,11 +118,11 @@ parameter vs hyperparameter vocabulary),
 [[train-test-split-and-cross-validation]] (splitting, data leakage,
 LOOCV/K-fold/stratified), [[model-evaluation-metrics-k32]] (regression
 plus classification metrics) and [[overfitting-underfitting-k32]]
-(over/underfitting + the bias–variance decomposition) — the 4
+(over/underfitting + the bias-variance decomposition) - the 4
 methodological concepts that apply to **every algorithm** in the
 chapter, all from [[chapter03-supervised-learning-k32]] (K32).
 
-### L. K32 — Chapter 3: Classification and Ensemble Algorithms
+### L. K32 - Chapter 3: Classification and Ensemble Algorithms
 
 _A separate cluster for K32._
 
@@ -132,11 +132,11 @@ multi-label, the 4 build steps), [[k-nearest-neighbors-k32]]
 learning), [[decision-tree-k32]] (rule-based; ID3 vs CART, the 3 purity
 measures, information gain, pruning), [[random-forest-k32]] (bagging +
 feature subsampling, OOB error) and [[boosting-ensemble]] (AdaBoost/
-gradient/XGBoost, the bagging vs boosting table) — the chapter's main
+gradient/XGBoost, the bagging vs boosting table) - the chapter's main
 algorithmic spine, from [[chapter03-supervised-learning-k32]]
 (K32).
 
-### M. K32 — Chapter 3: Regression and Regularization
+### M. K32 - Chapter 3: Regression and Regularization
 
 _A separate cluster for K32._
 
@@ -144,7 +144,7 @@ _A separate cluster for K32._
 supervised frame, OLS/LAD/MLE/MM, polynomials, dummies, explanation vs
 prediction) and [[regularization-ridge-lasso-elastic-net-k32]] (the 3
 loss functions, Elastic Net, Ridge's closed form, the geometric reason
-Lasso zeroes coefficients, choosing λ by CV) — the regression branch,
+Lasso zeroes coefficients, choosing λ by CV) - the regression branch,
 from [[chapter03-supervised-learning-k32]] (K32).
 
 ### N. K32 - Chapter 4: Unsupervised Learning and Clustering
@@ -253,24 +253,24 @@ feature-learning and classification halves) - the vision branch, from
 ## Tensions / differences between sources
 
 No real tension within the K31 cluster itself (8/8
-chapters). K31 vs K32 (Chapter 1): the 2 versions differ substantially —
+chapters). K31 vs K32 (Chapter 1): the 2 versions differ substantially -
 K32 (2026) adds the 5 V's framework, its own working definition, a
 DS/Analytics/BI comparison table, a roles table, a 5th analytics type
-(Causal), a concrete 5-step thinking process, a 7-condition checklist —
+(Causal), a concrete 5-step thinking process, a 7-condition checklist -
 none present in K31 (2025). Per the K31/K32 separation rule (CLAUDE.md),
 this is **not logged as a "tension"** between 2 pages (they don't
-cross-link) — noted here in plain text only as a historical fact (the
+cross-link) - noted here in plain text only as a historical fact (the
 instructor updated content across years), with no wikilink between the 2
 clusters.
 
 K31 vs K32 (Chapter 2): the gap is even larger than
-Chapter 1 — K32 (78 slides) is almost double K31 (41 slides) and adds 2
+Chapter 1 - K32 (78 slides) is almost double K31 (41 slides) and adds 2
 sections **entirely absent from K31**: "Python Essentials by Example"
 (core syntax from scratch) and "Python for Data Analysis" (NumPy/pandas/
 matplotlib/seaborn/statsmodels/scikit-learn, using real `Data2.csv`
 data). K31's version stopped at introducing Python + installing/using
 Jupyter + Markdown, with no syntax or data-analysis-library teaching at
-all — the K31 equivalent (where it exists) is scattered across later
+all - the K31 equivalent (where it exists) is scattered across later
 algorithm chapters instead of concentrated in one place like K32. Per
 the separation rule, noted in plain text only, no cross-cluster
 wikilink.
@@ -280,7 +280,7 @@ structure** difference, not just a length one. The 2025 cohort split the
 supervised branch across **3 separate chapters**; the 2026 cohort merges
 all three into **one 112-slide file** titled "Supervised Learning" and
 adds much that never existed before: the classification metric set,
-cross-validation (LOOCV/K-fold/stratified), the bias–variance
+cross-validation (LOOCV/K-fold/stratified), the bias-variance
 decomposition, multi-label classification, Minkowski and Hamming
 distances, the numeric example proving why KNN needs scaling,
 classification vs regression trees, pre-/post-pruning and `ccp_alpha`,
@@ -415,13 +415,13 @@ content.
 ## Exam question bank
 
 - Distinguish the 4 types of analytics (descriptive/
-  diagnostic/predictive/prescriptive) — given a concrete example, classify
+  diagnostic/predictive/prescriptive) - given a concrete example, classify
   it.
 - Why is big data technology NOT the same as data
   mining?
 - Explain the "compass" and "movement" metaphor for
   data-analytic thinking vs data-driven decision making.
-- Distinguish overfitting from underfitting — how is
+- Distinguish overfitting from underfitting - how is
   each addressed?
 - Explain the KNN algorithm's steps, and why
   choosing small vs large K trades off bias and variance
@@ -431,37 +431,37 @@ content.
   ID3/C4.5/CART.
 - How does Random Forest control overfitting, and
   how does that differ from choosing K in KNN?
-- Distinguish Ridge (L2) from Lasso (L1) — the
+- Distinguish Ridge (L2) from Lasso (L1) - the
   fundamental difference in the loss formula and its practical
   meaning.
 - Why is MAPE more useful than MAE/MSE/RMSE when
   comparing error across problems with different scales?
-- Compare K-Means and Hierarchical Clustering — when
+- Compare K-Means and Hierarchical Clustering - when
   should each be used?
 - Explain the relationship between eigenvalues,
   eigenvectors, and principal components in PCA.
 - Compare PCR and Ridge/Lasso as 2 ways to handle
-  multicollinearity — where do their mechanisms differ?
+  multicollinearity - where do their mechanisms differ?
 - Explain why a single perceptron can be seen as
   equivalent to Logistic Regression.
-- Distinguish ANN, CNN, RNN — what data does each
+- Distinguish ANN, CNN, RNN - what data does each
   suit?
 - (K32) Distinguish the 5 types of analytics,
-  especially Causal vs Predictive — what is each type's characteristic
+  especially Causal vs Predictive - what is each type's characteristic
   error?
 - (K32) Apply the 7-condition checklist to a
-  concrete business problem — does it suit data science?
+  concrete business problem - does it suit data science?
 - (K32) Distinguish the roles of statsmodels and
-  scikit-learn when fitting the same regression model — which is
+  scikit-learn when fitting the same regression model - which is
   oriented towards explanation, which towards prediction, and why does
   that distinction matter?
 - (K32) Explain why `In [n]`/`Out[n]` in Jupyter
-  reflects execution order, not display order — give an example scenario
+  reflects execution order, not display order - give an example scenario
   where misunderstanding this causes an error.
 
 ### The instructor's own 5 review questions (K32, Chapter 3, slide 111)
 
-_These are printed directly on the slide — the
+_These are printed directly on the slide - the
 highest revision priority._
 
 1. Why does a very small K in KNN give low bias but
@@ -483,10 +483,10 @@ highest revision priority._
 - (K32) Why is accuracy misleading on imbalanced
   data? For fraud detection, would you prioritise precision or recall,
   and why?
-- (K32) Write the bias–variance decomposition and
+- (K32) Write the bias-variance decomposition and
   explain each term, including the irreducible one.
 - (K32) Given ages 30 vs 35 and incomes 20,000 vs
-  20,050 — compute the Euclidean distance and explain why KNN requires
+  20,050 - compute the Euclidean distance and explain why KNN requires
   scaling.
 - (K32) Compare ID3 and CART on 4 points: splitting
   criterion, split type, handling of numeric data, and applicable tasks.
@@ -494,7 +494,7 @@ highest revision priority._
 - (K32) Distinguish pre-pruning from post-pruning.
   What does `ccp_alpha` penalise?
 - (K32) A random forest has 2 sources of randomness
-  — name them and explain why **both** are needed. Why would averaging
+  - name them and explain why **both** are needed. Why would averaging
   identical trees not reduce variance?
 - (K32) How is the out-of-bag error computed, and
   why is it called a "free validation estimate"?
@@ -502,7 +502,7 @@ highest revision priority._
   built, what the trees look like, and which term of the error
   decomposition each mainly reduces.
 - (K32) Explain **geometrically** why Lasso sets
-  coefficients exactly to zero while Ridge does not — the role of the
+  coefficients exactly to zero while Ridge does not - the role of the
   diamond and the circle.
 - (K32) What Lasso problem does Elastic Net solve
   when predictors are strongly correlated? Which models do α = 1 and
@@ -510,7 +510,7 @@ highest revision priority._
 - (K32) Why can Ridge handle the k > n case? Point
   to the role of λI in β̂ = (X'X + λI)⁻¹X'y.
 - (K32) The same linear regression model serves 2
-  different purposes — name them and explain why a model can be good for
+  different purposes - name them and explain why a model can be good for
   one and mediocre for the other.
 
 ### The instructor's own 6 group discussion topics (K32, Chapter 4, slide 82)

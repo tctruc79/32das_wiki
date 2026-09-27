@@ -20,21 +20,21 @@ until stable.</span>
 
 ## Diễn giải - <span class="en">Explanation</span>
 
-- **Các bước**: **Khởi tạo** — chọn ngẫu nhiên K điểm làm tâm cụm; **Lặp**
-  — tính khoảng cách từ mỗi điểm tới K tâm cụm, gán vào tâm gần nhất, đổi
+- **Các bước**: **Khởi tạo** - chọn ngẫu nhiên K điểm làm tâm cụm; **Lặp**
+  - tính khoảng cách từ mỗi điểm tới K tâm cụm, gán vào tâm gần nhất, đổi
   tâm cụm thành trung bình các điểm vừa gán; **Dừng** khi không còn điểm
   nào đổi gán.
-  <br><span class="en">**Steps**: **Initialize** — pick K random points
-  as centroids; **Iterate** — compute distance from each point to K
+  <br><span class="en">**Steps**: **Initialize** - pick K random points
+  as centroids; **Iterate** - compute distance from each point to K
   centroids, assign to the closest, update centroids to the average of
   assigned points; **Stop** when no assignment changes.</span>
 - **Yêu cầu biết trước K**: khác với [[hierarchical-clustering]], K-Means
   cần biết số cụm K ngay từ đầu. Kết quả phụ thuộc vào việc khởi tạo tâm
-  cụm ban đầu (ngẫu nhiên) — có thể cho kết quả khác nhau giữa các lần
+  cụm ban đầu (ngẫu nhiên) - có thể cho kết quả khác nhau giữa các lần
   chạy.
   <br><span class="en">**Requires K in advance**: unlike
   [[hierarchical-clustering]], K-Means needs the number of clusters K
-  known upfront. Results depend on the initial (random) centroids — can
+  known upfront. Results depend on the initial (random) centroids - can
   give different results across runs.</span>
 - **Triển khai** (`sklearn.cluster.KMeans`): tham số chính gồm
   `n_clusters` (K), `init` (cách khởi tạo tâm cụm), `n_init` (số lần
@@ -52,22 +52,22 @@ until stable.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter06-clustering]] — các bước thuật toán, code Python, ví dụ, ứng
+- [[chapter06-clustering]] - các bước thuật toán, code Python, ví dụ, ứng
   dụng thực tế.
-  <br><span class="en">[[chapter06-clustering]] — algorithm steps, Python
+  <br><span class="en">[[chapter06-clustering]] - algorithm steps, Python
   code, examples, real-world applications.</span>
-- [[chapter07-pca]] — PCA giúp cụm K-Means gọn hơn khi áp dụng trước như
+- [[chapter07-pca]] - PCA giúp cụm K-Means gọn hơn khi áp dụng trước như
   bước tiền xử lý.
-  <br><span class="en">[[chapter07-pca]] — PCA makes K-Means clusters
+  <br><span class="en">[[chapter07-pca]] - PCA makes K-Means clusters
   more compact when applied first as a preprocessing step.</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[clustering]] — khung khái niệm chung, thước đo khoảng cách dùng để
+- [[clustering]] - khung khái niệm chung, thước đo khoảng cách dùng để
   tính "gần nhất".
-  <br><span class="en">[[clustering]] — the general concept framework,
+  <br><span class="en">[[clustering]] - the general concept framework,
   the distance measures used to determine "closest."</span>
-- [[hierarchical-clustering]] — lựa chọn thay thế khi không biết trước
+- [[hierarchical-clustering]] - lựa chọn thay thế khi không biết trước
   số cụm.
-  <br><span class="en">[[hierarchical-clustering]] — the alternative when
+  <br><span class="en">[[hierarchical-clustering]] - the alternative when
   the number of clusters is unknown upfront.</span>

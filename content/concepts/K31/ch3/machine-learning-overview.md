@@ -31,9 +31,9 @@ based on the learned model, in 2 phases: training and application.</span>
   winter" (1980s) → ML rises, learning from data (1990s) → deep learning
   revolutionizes AI via complex neural networks on big data (2000s-2010s)
   → ChatGPT and current AI breakthroughs.</span>
-- **3 loại học máy chính**: Học có giám sát (Supervised — dữ liệu có
+- **3 loại học máy chính**: Học có giám sát (Supervised - dữ liệu có
   nhãn đáp án đúng, gồm Classification và Regression); Học không giám sát
-  (Unsupervised — dữ liệu không nhãn, gồm Clustering, Dimension
+  (Unsupervised - dữ liệu không nhãn, gồm Clustering, Dimension
   reduction, Association); Học tăng cường (Reinforcement Learning).
   <br><span class="en">**3 main ML types**: Supervised (labeled correct
   answers, includes Classification and Regression); Unsupervised
@@ -41,27 +41,27 @@ based on the learned model, in 2 phases: training and application.</span>
   Reinforcement Learning.</span>
 - 2 giai đoạn của mọi phương pháp học máy: **Huấn luyện** (mô hình học từ
   tập dữ liệu huấn luyện) và **Áp dụng** (mô hình được kiểm tra rồi dùng
-  để ra quyết định) — ví dụ minh họa: bộ lọc spam, nhận diện khuôn mặt
+  để ra quyết định) - ví dụ minh họa: bộ lọc spam, nhận diện khuôn mặt
   Facebook.
   <br><span class="en">2 phases of every ML method: **Training** (model
   learns from training data) and **Application** (model is tested then
-  used for decisions) — illustrated with spam filters, Facebook face
+  used for decisions) - illustrated with spam filters, Facebook face
   recognition.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter03-machine-learning-knn]] — định nghĩa ML, lịch sử AI, 3 loại
+- [[chapter03-machine-learning-knn]] - định nghĩa ML, lịch sử AI, 3 loại
   học máy.
-  <br><span class="en">[[chapter03-machine-learning-knn]] — ML
+  <br><span class="en">[[chapter03-machine-learning-knn]] - ML
   definition, AI history, the 3 ML types.</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[classification]] — nhánh Supervised Learning đầu tiên được học chi
+- [[classification]] - nhánh Supervised Learning đầu tiên được học chi
   tiết trong môn.
-  <br><span class="en">[[classification]] — the first Supervised Learning
+  <br><span class="en">[[classification]] - the first Supervised Learning
   branch taught in detail in the course.</span>
-- [[overfitting-underfitting]] — vấn đề trung tâm khi huấn luyện bất kỳ
+- [[overfitting-underfitting]] - vấn đề trung tâm khi huấn luyện bất kỳ
   mô hình học máy nào.
-  <br><span class="en">[[overfitting-underfitting]] — the central concern
+  <br><span class="en">[[overfitting-underfitting]] - the central concern
   when training any ML model.</span>

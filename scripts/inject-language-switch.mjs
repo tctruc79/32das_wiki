@@ -15,16 +15,16 @@ const SNIPPET_MARKER = "id=\"lang-switch-bar\""
 const SKIP_MARKER = "http-equiv=\"refresh\""
 
 // LƯU Ý: data-basepath đọc từ document.body.dataset.basepath ĐÃ bao gồm sẵn suffix
-// "/bi" hoặc "/en" (do fix-basepath.mjs cộng thêm vào baseUrl gốc trước bước này — xem
+// "/bi" hoặc "/en" (do fix-basepath.mjs cộng thêm vào baseUrl gốc trước bước này - xem
 // comment trong fix-basepath.mjs). Vì vậy script bên dưới phải tách ngôn ngữ NGAY TỪ
 // basepath (không phải từ phần path còn lại sau khi trừ basepath), rồi hoán đổi suffix
 // "/bi" <-> "/en" ngay trong basepath để ra basepath của cây kia. Bug cũ: script từng coi
 // basepath là gốc chung (không có /bi hay /en) và tự thêm "/en" hoặc "/bi" vào SAU
-// basepath — với basepath đã có sẵn "/bi", kết quả bị lồng thành ".../bi/en/" (404).
+// basepath - với basepath đã có sẵn "/bi", kết quả bị lồng thành ".../bi/en/" (404).
 // LƯU Ý MÀU SẮC: KHÔNG dùng var(--light)/var(--dark) của Quartz cho cặp
-// background/text của nút — 2 biến này đổi Ý NGHĨA giữa light/dark mode (vd --light
+// background/text của nút - 2 biến này đổi Ý NGHĨA giữa light/dark mode (vd --light
 // = màu NỀN TRANG, nên ở dark mode nó ra màu tối, khiến nút "biến mất" vì trùng màu nền
-// trang — đã tận mắt kiểm tra bằng browser trên bản deploy thật, dark mode làm nút vô
+// trang - đã tận mắt kiểm tra bằng browser trên bản deploy thật, dark mode làm nút vô
 // hình dù href vẫn đúng). Dùng "color: inherit" (luôn khớp màu chữ đọc được của theme
 // hiện tại) + nền/viền xám bán trong suốt (rgba trung tính) để tương phản đủ ở CẢ 2 theme
 // mà không cần biết đang ở theme nào.

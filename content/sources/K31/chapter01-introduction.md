@@ -1,7 +1,7 @@
 ---
 type: source
-title: "Chapter 1 (K31) — Data Science và Tư duy Phân tích Dữ liệu"
-title_en: "Chapter 1 (K31) — Data Science and Data-Analytic Thinking"
+title: "Chapter 1 (K31) - Data Science và Tư duy Phân tích Dữ liệu"
+title_en: "Chapter 1 (K31) - Data Science and Data-Analytic Thinking"
 tags: [chapter-1, k31, foundations, course-admin]
 created: 2026-08-22
 updated: 2026-08-22
@@ -12,9 +12,9 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
 ## Metadata
 
 - **Môn học**: Introduction to Data Science and Applications, University of
-  Economics Ho Chi Minh City — Vietnam-Netherlands Programme.
+  Economics Ho Chi Minh City - Vietnam-Netherlands Programme.
   <br><span class="en">**Course**: Introduction to Data Science and
-  Applications, University of Economics Ho Chi Minh City — Vietnam-
+  Applications, University of Economics Ho Chi Minh City - Vietnam-
   Netherlands Programme.</span>
 - **Khóa**: K31 (2025).
   <br><span class="en">**Cohort**: K31 (2025).</span>
@@ -22,9 +22,9 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   <br><span class="en">**Instructor**: [[tran-thi-tuan-anh]].</span>
 - **Số slide**: 38.
   <br><span class="en">**Slide count**: 38.</span>
-- **Vị trí trong môn**: chương mở đầu — gồm phần course admin (slide 2-9)
+- **Vị trí trong môn**: chương mở đầu - gồm phần course admin (slide 2-9)
   và nội dung học thuật đầu tiên (slide 10-38).
-  <br><span class="en">**Position in the course**: the opening chapter —
+  <br><span class="en">**Position in the course**: the opening chapter -
   contains course admin (slides 2-9) and the first academic content
   (slides 10-38).</span>
 
@@ -42,10 +42,10 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   in 4 parts: (1) data in today's world, (2) what is data science, (3)
   data science and data-driven decision making, (4) data-analytic
   thinking.</span>
-- Bản slide 2025 này khá ngắn gọn — nhiều slide chỉ có tiêu đề + hình ảnh
+- Bản slide 2025 này khá ngắn gọn - nhiều slide chỉ có tiêu đề + hình ảnh
   minh họa, không có văn bản trích xuất được (đã ghi rõ trong mục Nội dung
   chính bên dưới, không suy diễn thêm nội dung không có trong slide).
-  <br><span class="en">This 2025 slide deck is fairly terse — several
+  <br><span class="en">This 2025 slide deck is fairly terse - several
   slides have only a title + illustrative image, with no extractable text
   (flagged explicitly in Nội dung chính below; no content is invented
   beyond what the slide actually contains).</span>
@@ -57,7 +57,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
 - **Mục tiêu học tập** (slide 3): nhận diện vai trò chiến lược của dữ
   liệu/năng lực khoa học dữ liệu; nhận biết cách khoa học dữ liệu hỗ trợ ra
   quyết định kinh doanh; biết một số kỹ thuật học máy cơ bản để giải bài
-  toán kinh doanh; biết Python — ngôn ngữ dùng phổ biến trong phân tích dữ
+  toán kinh doanh; biết Python - ngôn ngữ dùng phổ biến trong phân tích dữ
   liệu; biết ứng dụng thực tế của khoa học dữ liệu.
   <br><span class="en">**Learning objectives** (slide 3): identify the
   strategic role of data/data science capability; recognize how data
@@ -86,7 +86,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
 - **Sách giáo khoa** (slide 8): Provost & Fawcett (2013) *Data Science for
   Business: What You Need to Know about Data Mining and Data-Analytic
   Thinking* (1st ed.); Jake VanderPlas (2016) *Python Data Science
-  Handbook — Essential Tools for Working with Data*. Tài liệu khác: Cathy
+  Handbook - Essential Tools for Working with Data*. Tài liệu khác: Cathy
   O'Neil & Rachel Schutt (2013) *Doing Data Science: Straight Talk from
   the Frontline*; Lillian Pierson & Jake Porway (2015) *Data Science for
   Dummies*.
@@ -116,14 +116,14 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   dữ liệu. Đôi khi công nghệ dữ liệu lớn được dùng trực tiếp để thực hiện
   kỹ thuật khai phá dữ liệu, nhưng phổ biến hơn nhiều là dùng để **xử lý
   dữ liệu nhằm hỗ trợ** cho khai phá dữ liệu và các hoạt động khoa học dữ
-  liệu khác — chứ không phải tự nó là khai phá dữ liệu.
+  liệu khác - chứ không phải tự nó là khai phá dữ liệu.
   <br><span class="en">**Big data** (slide 16): essentially means
   datasets that are too large for traditional data processing systems,
   and therefore require new processing technologies. Big data
   technologies are used for many tasks, including data engineering.
   Occasionally they're used for implementing data mining techniques
   directly, but much more often for data processing **in support of**
-  data mining and other data science activities — not data mining
+  data mining and other data science activities - not data mining
   itself.</span>
 - Slide 17 ("Mức độ liên quan") chỉ có tiêu đề, không có nội dung văn bản.
   <br><span class="en">Slide 17 ("The relevance") has only a title, no
@@ -145,28 +145,28 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   developed. → These lead to the increasingly widespread business
   application of data science principles and data-mining
   techniques.</span>
-- **Kim tự tháp DIKW** (slide 19-20): Dữ liệu (Data) — dữ kiện thô, chưa
-  qua xử lý, không có ngữ cảnh hay ý nghĩa; Thông tin (Information) — dữ
-  liệu đã được tổ chức, cấu trúc hóa để có ý nghĩa; Tri thức (Knowledge) —
+- **Kim tự tháp DIKW** (slide 19-20): Dữ liệu (Data) - dữ kiện thô, chưa
+  qua xử lý, không có ngữ cảnh hay ý nghĩa; Thông tin (Information) - dữ
+  liệu đã được tổ chức, cấu trúc hóa để có ý nghĩa; Tri thức (Knowledge) -
   thông tin kết hợp với kinh nghiệm và sự diễn giải, cho phép hiểu biết và
-  nhận thức sâu sắc; Trí tuệ (Wisdom) — khả năng vận dụng tri thức để ra
+  nhận thức sâu sắc; Trí tuệ (Wisdom) - khả năng vận dụng tri thức để ra
   quyết định. Slide 19 chỉ có hình minh họa (nguồn:
   jeffwinterinsights.com), định nghĩa đầy đủ nằm ở slide 20.
-  <br><span class="en">**The DIKW pyramid** (slides 19-20): Data — raw,
-  unprocessed facts and figures without context or meaning; Information —
+  <br><span class="en">**The DIKW pyramid** (slides 19-20): Data - raw,
+  unprocessed facts and figures without context or meaning; Information -
   data that has been organized and structured so that it has meaning;
-  Knowledge — information combined with experience and interpretation,
-  allowing understanding and insight; Wisdom — the ability to apply
+  Knowledge - information combined with experience and interpretation,
+  allowing understanding and insight; Wisdom - the ability to apply
   knowledge to make decisions. Slide 19 has only an illustration (source:
   jeffwinterinsights.com), the full definitions are on slide 20.</span>
 
 ### 2. Khoa học dữ liệu là gì? (slide 21-29) - <span class="en">2. What is data science? (slides 21-29)</span>
 
 - **3 định nghĩa được trích dẫn** (slide 21, build-animation 3 lượt trong
-  cùng 1 slide nên PDF lặp lại 3 trang — gộp lại thành 1 mục ở đây):
+  cùng 1 slide nên PDF lặp lại 3 trang - gộp lại thành 1 mục ở đây):
   <br><span class="en">**3 definitions cited** (slide 21, a
   build-animation revealed across 3 duplicate PDF pages of the same
-  slide — merged into one entry here):</span>
+  slide - merged into one entry here):</span>
   - **Đại học Harvard**: "Khoa học dữ liệu là một lĩnh vực nghiên cứu sử
     dụng các phương pháp, quy trình và hệ thống khoa học để trích xuất
     tri thức và hiểu biết từ dữ liệu."
@@ -192,7 +192,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   <br><span class="en">Slide 22 ("What is data science?") has only an
   illustration, no text.</span>
 - **Phân biệt thuật ngữ** (slide 23): slide chỉ liệt kê TÊN các thuật ngữ
-  cần phân biệt, không kèm định nghĩa chi tiết trong chính slide này —
+  cần phân biệt, không kèm định nghĩa chi tiết trong chính slide này -
   Khoa học dữ liệu (Data science), Phân tích dữ liệu ở cấp tổ chức (Data
   analytics), Phân tích 1 tập dữ liệu cụ thể (Data analysis), Khai phá dữ
   liệu (Data mining), Thao tác dữ liệu (Data manipulation, xuất hiện 2
@@ -201,7 +201,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   warehouse / Data lake), Tích hợp dữ liệu (Data integration).
   <br><span class="en">**Distinguishing terminology** (slide 23): the
   slide only lists the term NAMES to be distinguished, without detailed
-  definitions in this slide itself — Data science, Data analytics, Data
+  definitions in this slide itself - Data science, Data analytics, Data
   analysis, Data mining, Data manipulation (appears twice in the original
   list), Data engineering, Data visualization, Data warehouse / Data
   lake, Data integration.</span>
@@ -219,16 +219,16 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   understanding and training can begin using data insights to improve
   their lives, their careers, and the well-being of their
   businesses.</span>
-- **Ứng dụng khoa học dữ liệu** (slide 29): Trong kinh doanh — tiếp thị
+- **Ứng dụng khoa học dữ liệu** (slide 29): Trong kinh doanh - tiếp thị
   nhắm mục tiêu, quảng cáo trực tuyến, đề xuất bán chéo; chấm điểm tín
-  dụng và giao dịch; phát hiện gian lận. Trong y tế và khoa học sự sống —
+  dụng và giao dịch; phát hiện gian lận. Trong y tế và khoa học sự sống -
   chẩn đoán hình ảnh y tế; y tế công cộng. Trong chính phủ và chính sách
-  công — thành phố thông minh; chính phủ điện tử. Và nhiều lĩnh vực khác.
+  công - thành phố thông minh; chính phủ điện tử. Và nhiều lĩnh vực khác.
   <br><span class="en">**Applying data science** (slide 29): In business
-  — targeted marketing, online advertising, cross-sell recommendations;
+  - targeted marketing, online advertising, cross-sell recommendations;
   credit scoring and trading; fraud detection. In healthcare and life
-  sciences — medical imaging and diagnostics; public health. In
-  government and public policy — smart cities; e-government. And many
+  sciences - medical imaging and diagnostics; public health. In
+  government and public policy - smart cities; e-government. And many
   other areas.</span>
 
 ### 3. Khoa học dữ liệu và ra quyết định dựa trên dữ liệu (slide 30-33) - <span class="en">3. Data science and data-driven decision making (slides 30-33)</span>
@@ -248,18 +248,18 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
 - Slide 31 chỉ lặp lại tiêu đề phần, không có nội dung văn bản mới.
   <br><span class="en">Slide 31 only repeats the section header, no new
   text content.</span>
-- **4 loại phân tích** (slide 32): Phân tích mô tả — trả lời câu hỏi "Điều
-  gì đã xảy ra?"; Phân tích chẩn đoán — tìm câu trả lời cho câu hỏi "Vì
-  sao điều này xảy ra?" hoặc "Điều gì đã sai?"; Phân tích dự đoán — dự
+- **4 loại phân tích** (slide 32): Phân tích mô tả - trả lời câu hỏi "Điều
+  gì đã xảy ra?"; Phân tích chẩn đoán - tìm câu trả lời cho câu hỏi "Vì
+  sao điều này xảy ra?" hoặc "Điều gì đã sai?"; Phân tích dự đoán - dự
   đoán 1 sự kiện hoặc xu hướng tương lai, "Điều gì có khả năng xảy ra?";
-  Phân tích đề xuất — tối ưu hóa quy trình, cấu trúc, và hệ thống thông
+  Phân tích đề xuất - tối ưu hóa quy trình, cấu trúc, và hệ thống thông
   qua hành động có thông tin, dựa trên phân tích dự đoán. Slide 33 (cùng
   tiêu đề) chỉ có hình minh họa, không có văn bản thêm.
   <br><span class="en">**4 types of analytics** (slide 32): Descriptive
-  analytics — answers the question "What happened?"; Diagnostic analytics
-  — finds answers to "why did this particular something happen?" or
-  "what went wrong?"; Predictive analytics — predicts a future event or
-  trend, "What is likely to happen?"; Prescriptive analytics — optimizes
+  analytics - answers the question "What happened?"; Diagnostic analytics
+  - finds answers to "why did this particular something happen?" or
+  "what went wrong?"; Predictive analytics - predicts a future event or
+  trend, "What is likely to happen?"; Prescriptive analytics - optimizes
   processes, structures, and systems through informed action based on
   predictive analytics. Slide 33 (same title) has only an illustration,
   no additional text.</span>
@@ -274,32 +274,32 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   the "compass," then data-driven decision making provides the
   "movement."</span>
 - Slide 35 ("Văn hóa dữ liệu-hóa") và slide 36 ("Tổ chức dữ liệu-hóa") chỉ
-  có tiêu đề, không có nội dung văn bản trích xuất được — chỉ có hình
+  có tiêu đề, không có nội dung văn bản trích xuất được - chỉ có hình
   minh họa (nguồn: Internet).
   <br><span class="en">Slide 35 ("Data-driven culture") and slide 36
   ("Data-driven organization") have only titles, no extractable text
-  content — only an illustration (source: Internet).</span>
+  content - only an illustration (source: Internet).</span>
 
 ## Liên kết - <span class="en">Links</span>
 
-- [[big-data]] — bối cảnh vì sao khoa học dữ liệu bùng nổ.
-  <br><span class="en">[[big-data]] — the context behind the data science
+- [[big-data]] - bối cảnh vì sao khoa học dữ liệu bùng nổ.
+  <br><span class="en">[[big-data]] - the context behind the data science
   boom.</span>
-- [[dikw-pyramid]] — khung tư duy Data→Wisdom, nhắc lại xuyên suốt phần 3.
-  <br><span class="en">[[dikw-pyramid]] — the Data→Wisdom framework,
+- [[dikw-pyramid]] - khung tư duy Data→Wisdom, nhắc lại xuyên suốt phần 3.
+  <br><span class="en">[[dikw-pyramid]] - the Data→Wisdom framework,
   recurring throughout part 3.</span>
-- [[data-science-definition]] — 3 định nghĩa + phân biệt thuật ngữ liên
+- [[data-science-definition]] - 3 định nghĩa + phân biệt thuật ngữ liên
   quan.
-  <br><span class="en">[[data-science-definition]] — 3 definitions + the
+  <br><span class="en">[[data-science-definition]] - 3 definitions + the
   related terminology distinction.</span>
-- [[data-driven-decision-making]] — 4 loại phân tích.
-  <br><span class="en">[[data-driven-decision-making]] — the 4 types of
+- [[data-driven-decision-making]] - 4 loại phân tích.
+  <br><span class="en">[[data-driven-decision-making]] - the 4 types of
   analytics.</span>
-- [[data-analytic-thinking]] — ẩn dụ la bàn/sự chuyển động.
-  <br><span class="en">[[data-analytic-thinking]] — the compass/movement
+- [[data-analytic-thinking]] - ẩn dụ la bàn/sự chuyển động.
+  <br><span class="en">[[data-analytic-thinking]] - the compass/movement
   metaphor.</span>
-- [[tran-thi-tuan-anh]] — giảng viên môn học.
-  <br><span class="en">[[tran-thi-tuan-anh]] — course instructor.</span>
+- [[tran-thi-tuan-anh]] - giảng viên môn học.
+  <br><span class="en">[[tran-thi-tuan-anh]] - course instructor.</span>
 
 ## Trích dẫn - <span class="en">Citation</span>
 

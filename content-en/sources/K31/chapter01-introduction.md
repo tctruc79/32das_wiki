@@ -1,6 +1,6 @@
 ---
 type: source
-title: "Chapter 1 (K31) — Data Science and Data-Analytic Thinking"
+title: "Chapter 1 (K31) - Data Science and Data-Analytic Thinking"
 tags: [chapter-1, k31, foundations, course-admin]
 created: 2026-08-22
 updated: 2026-08-22
@@ -11,12 +11,12 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
 ## Metadata
 
 - **Course**: Introduction to Data Science and
-  Applications, University of Economics Ho Chi Minh City — Vietnam-
+  Applications, University of Economics Ho Chi Minh City - Vietnam-
   Netherlands Programme.
 - **Cohort**: K31 (2025).
 - **Instructor**: [[tran-thi-tuan-anh]].
 - **Slide count**: 38.
-- **Position in the course**: the opening chapter —
+- **Position in the course**: the opening chapter -
   contains course admin (slides 2-9) and the first academic content
   (slides 10-38).
 
@@ -29,7 +29,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   in 4 parts: (1) data in today's world, (2) what is data science, (3)
   data science and data-driven decision making, (4) data-analytic
   thinking.
-- This 2025 slide deck is fairly terse — several
+- This 2025 slide deck is fairly terse - several
   slides have only a title + illustrative image, with no extractable text
   (flagged explicitly in Key content below; no content is invented
   beyond what the slide actually contains).
@@ -73,7 +73,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   technologies are used for many tasks, including data engineering.
   Occasionally they're used for implementing data mining techniques
   directly, but much more often for data processing **in support of**
-  data mining and other data science activities — not data mining
+  data mining and other data science activities - not data mining
   itself.
 - Slide 17 ("The relevance") has only a title, no
   text content.
@@ -86,11 +86,11 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   developed. → These lead to the increasingly widespread business
   application of data science principles and data-mining
   techniques.
-- **The DIKW pyramid** (slides 19-20): Data — raw,
-  unprocessed facts and figures without context or meaning; Information —
+- **The DIKW pyramid** (slides 19-20): Data - raw,
+  unprocessed facts and figures without context or meaning; Information -
   data that has been organized and structured so that it has meaning;
-  Knowledge — information combined with experience and interpretation,
-  allowing understanding and insight; Wisdom — the ability to apply
+  Knowledge - information combined with experience and interpretation,
+  allowing understanding and insight; Wisdom - the ability to apply
   knowledge to make decisions. Slide 19 has only an illustration (source:
   jeffwinterinsights.com), the full definitions are on slide 20.
 
@@ -98,7 +98,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
 
 - **3 definitions cited** (slide 21, a
   build-animation revealed across 3 duplicate PDF pages of the same
-  slide — merged into one entry here):
+  slide - merged into one entry here):
   - **Harvard University**: "Data science is a
     field of study that uses scientific methods, processes, and systems
     to extract knowledge and insights from data."
@@ -113,7 +113,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   illustration, no text.
 - **Distinguishing terminology** (slide 23): the
   slide only lists the term NAMES to be distinguished, without detailed
-  definitions in this slide itself — Data science, Data analytics, Data
+  definitions in this slide itself - Data science, Data analytics, Data
   analysis, Data mining, Data manipulation (appears twice in the original
   list), Data engineering, Data visualization, Data warehouse / Data
   lake, Data integration.
@@ -126,10 +126,10 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   their lives, their careers, and the well-being of their
   businesses.
 - **Applying data science** (slide 29): In business
-  — targeted marketing, online advertising, cross-sell recommendations;
+  - targeted marketing, online advertising, cross-sell recommendations;
   credit scoring and trading; fraud detection. In healthcare and life
-  sciences — medical imaging and diagnostics; public health. In
-  government and public policy — smart cities; e-government. And many
+  sciences - medical imaging and diagnostics; public health. In
+  government and public policy - smart cities; e-government. And many
   other areas.
 
 ### 3. Data science and data-driven decision making (slides 30-33)
@@ -143,10 +143,10 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
 - Slide 31 only repeats the section header, no new
   text content.
 - **4 types of analytics** (slide 32): Descriptive
-  analytics — answers the question "What happened?"; Diagnostic analytics
-  — finds answers to "why did this particular something happen?" or
-  "what went wrong?"; Predictive analytics — predicts a future event or
-  trend, "What is likely to happen?"; Prescriptive analytics — optimizes
+  analytics - answers the question "What happened?"; Diagnostic analytics
+  - finds answers to "why did this particular something happen?" or
+  "what went wrong?"; Predictive analytics - predicts a future event or
+  trend, "What is likely to happen?"; Prescriptive analytics - optimizes
   processes, structures, and systems through informed action based on
   predictive analytics. Slide 33 (same title) has only an illustration,
   no additional text.
@@ -159,21 +159,21 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   "movement."
 - Slide 35 ("Data-driven culture") and slide 36
   ("Data-driven organization") have only titles, no extractable text
-  content — only an illustration (source: Internet).
+  content - only an illustration (source: Internet).
 
 ## Links
 
-- [[big-data]] — the context behind the data science
+- [[big-data]] - the context behind the data science
   boom.
-- [[dikw-pyramid]] — the Data→Wisdom framework,
+- [[dikw-pyramid]] - the Data→Wisdom framework,
   recurring throughout part 3.
-- [[data-science-definition]] — 3 definitions + the
+- [[data-science-definition]] - 3 definitions + the
   related terminology distinction.
-- [[data-driven-decision-making]] — the 4 types of
+- [[data-driven-decision-making]] - the 4 types of
   analytics.
-- [[data-analytic-thinking]] — the compass/movement
+- [[data-analytic-thinking]] - the compass/movement
   metaphor.
-- [[tran-thi-tuan-anh]] — course instructor.
+- [[tran-thi-tuan-anh]] - course instructor.
 
 ## Citation
 

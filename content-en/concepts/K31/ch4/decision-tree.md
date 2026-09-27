@@ -18,7 +18,7 @@ on attributes chosen for splitting at each node.
 - **Core concepts**: Node/Decision Node (attribute),
   Branch/Sub-tree, Root node, Leaf node (final output), Splitting
   (dividing per condition), Pruning (removing unneeded branches).
-- **Leaf node purity measures** — 3 metrics, all
+- **Leaf node purity measures** - 3 metrics, all
   measuring class "mixedness" in a node: **Classification error** = 1 −
   max(pᵢ); **Gini impurity** = 1 − Σpᵢ²; **Entropy** = −Σpᵢlog₂(pᵢ). Lower
   = purer (single class).
@@ -28,25 +28,25 @@ on attributes chosen for splitting at each node.
   overfitting, handles missing data); **CART** (Gini impurity for
   classification/MSE for regression, handles large datasets).
 - **Information gain** = the entropy decrease after
-  splitting on an attribute — building a tree is essentially finding the
+  splitting on an attribute - building a tree is essentially finding the
   highest-gain attribute repeatedly, until entropy = 0 (or another
   stopping criterion: min observations/node, max depth).
 - The first example in the course of **eager
-  learning** (builds the model at training time) — contrasting
+  learning** (builds the model at training time) - contrasting
   [[k-nearest-neighbors]] (lazy learning, no upfront model, computes only
   at prediction time).
 
 ## Appears in
 
-- [[chapter04-decision-tree-random-forest]] — full
+- [[chapter04-decision-tree-random-forest]] - full
   definition, 3 algorithms, 3 purity metrics, build process, Python
   implementation on IRIS.
 
 ## Related concepts
 
-- [[random-forest]] — combines many decision trees
+- [[random-forest]] - combines many decision trees
   to reduce overfitting.
-- [[k-nearest-neighbors]] — contrasts eager learning
+- [[k-nearest-neighbors]] - contrasts eager learning
   (Decision Tree) vs lazy learning (KNN).
-- [[overfitting-underfitting]] — pruning is the
+- [[overfitting-underfitting]] - pruning is the
   concrete overfitting-control mechanism for decision trees.

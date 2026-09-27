@@ -1,6 +1,6 @@
 ---
 type: source
-title: "Chapter 2 (K31) — Python and Jupyter Notebook"
+title: "Chapter 2 (K31) - Python and Jupyter Notebook"
 tags: [chapter-2, k31, tooling, python]
 created: 2026-08-22
 updated: 2026-08-22
@@ -13,7 +13,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter02_Python and Jupyter
 - **Cohort**: K31 (2025).
 - **Instructor**: [[tran-thi-tuan-anh]].
 - **Slide count**: 41.
-- **Position in the course**: the tooling chapter —
+- **Position in the course**: the tooling chapter -
   preparing Python/Jupyter before the machine learning algorithms in
   Chapters 3-8.
 
@@ -24,7 +24,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter02_Python and Jupyter
   quiz questions about Python's history, then moves to introducing Python
   and a Jupyter Notebook hands-on guide.
 - The 8 "Practical Exercises" (slides 25-32) and the
-  "Tasks in Pairs" section (slide 40) are coding exercises — the specific
+  "Tasks in Pairs" section (slide 40) are coding exercises - the specific
   program content is an image, not extractable via `pdftotext`.
 
 ## Key content
@@ -36,12 +36,12 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter02_Python and Jupyter
   first compiler), Pascal (1970), C (1972)/C# (2001), Java/JavaScript/
   Delphi (1995).
 - **Q2**: Main reason Python was created? (the
-  specific answer isn't in the extracted text — the slide only shows 4
+  specific answer isn't in the extracted text - the slide only shows 4
   choices: replace C, develop web apps, create a beginner-friendly
   language, build operating systems).
 - **Q3**: Who is credited with creating Python? →
-  **Guido van Rossum** (distinguished from Dennis Ritchie — created C/
-  UNIX; Larry Page — Google's search engine; Bill Gates — co-founder of
+  **Guido van Rossum** (distinguished from Dennis Ritchie - created C/
+  UNIX; Larry Page - Google's search engine; Bill Gates - co-founder of
   Microsoft).
 - **Q4**: Python's design philosophy? → **All of the
   above**: readability counts (clear, understandable, easy to comprehend);
@@ -58,11 +58,11 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter02_Python and Jupyter
   limit code blocks and a less busy appearance. Can be placed as a
   fourth-generation programming language.
 - **5 generations of programming languages** (slide
-  16): 1st gen — machine languages (binary, machine-dependent); 2nd gen —
+  16): 1st gen - machine languages (binary, machine-dependent); 2nd gen -
   assembly languages (human-readable, needs an assembler to convert to
-  machine code); 3rd gen — procedural languages (C, C++, Pascal, FORTRAN,
-  COBOL, Java...); 4th gen — non-procedural, enables database access
-  (SQL, R, **Python**, Matlab...); 5th gen — based on the concept of
+  machine code); 3rd gen - procedural languages (C, C++, Pascal, FORTRAN,
+  COBOL, Java...); 4th gen - non-procedural, enables database access
+  (SQL, R, **Python**, Matlab...); 5th gen - based on the concept of
   artificial intelligence (PROLOG, LISP, Mercury...).
 - **What is Python used for?** (slide 17): AI &
   machine learning; data analytics; web development (YouTube, Instagram,
@@ -74,8 +74,8 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter02_Python and Jupyter
   free; open source; accessible (people of all ages can learn); versatile
   (solves problems across many fields); powerful (from simple to complex
   tasks); strong community support. **Commonly used software/tools**:
-  Python interpreter — CPython; IDEs — PyCharm, Spyder, Jupyter Notebook
-  and JupyterLab; version control — Git (and GitHub); online platforms —
+  Python interpreter - CPython; IDEs - PyCharm, Spyder, Jupyter Notebook
+  and JupyterLab; version control - Git (and GitHub); online platforms -
   Jupyter Notebook.
 
 ### 2. Jupyter Notebook: How to Use? (slides 21-40)
@@ -87,10 +87,10 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter02_Python and Jupyter
   Notebooks can be easily shared as HTML, PDF, or via GitHub, nbviewer,
   Google Colab. Can be extended with plugins (e.g. JupyterLab,
   JupyterHub).
-- **Installation** (slide 22): 2 ways — (1) install
+- **Installation** (slide 22): 2 ways - (1) install
   Anaconda (download the latest version for Python 3.10, follow the
   instructions, Jupyter is included); (2) install manually via `pip` (for
-  advanced users) — update pip
+  advanced users) - update pip
   (`python -m pip install --upgrade pip`), install Jupyter
   (`python -m pip install jupyter`), launch
   (`jupyter notebook`).
@@ -98,7 +98,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter02_Python and Jupyter
   run Jupyter → click "New" top-right, select "Python 3" → notebook opens
   in a new tab. Example 1: type `print('Hello World!')` then run (Run
   button or Ctrl+Enter). 8 "Practical Exercises" (slides 25-32) ask you to
-  find the output of given Python programs — the program content is an
+  find the output of given Python programs - the program content is an
   image, not extractable. Slide 33 assigns 6 more self-written coding
   tasks: sum of two numbers; area of a rectangle; a "guess the number"
   game; first 10 Fibonacci numbers; Celsius-to-Fahrenheit converter; run a
@@ -114,9 +114,9 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter02_Python and Jupyter
   **Date:**, and another Markdown cell listing your top 3 favorite
   foods.
 - **Sharing notebooks** (slides 38-39): before
-  sharing — "Cell > All Output > Clear" then "Kernel > Restart and Run
+  sharing - "Cell > All Output > Clear" then "Kernel > Restart and Run
   All"; export via "File > Download As". Export to PDF via `nbconvert`: 2
-  options — via LaTeX, or via HTML (recommended): run Anaconda prompt,
+  options - via LaTeX, or via HTML (recommended): run Anaconda prompt,
   install `pip install nbconvert[webpdf]`, then run
   `jupyter nbconvert --to webpdf --allow-chromium-download
   your-notebook-file.ipynb`.
@@ -129,12 +129,12 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter02_Python and Jupyter
 
 ## Links
 
-- [[python-jupyter-tooling]] — the concept page
+- [[python-jupyter-tooling]] - the concept page
   synthesizing Python + Jupyter Notebook tooling.
-- [[chapter01-introduction]] — Chapter 1 already
+- [[chapter01-introduction]] - Chapter 1 already
   named Python as the course's main language (Tools section, slide
   5).
-- [[tran-thi-tuan-anh]] — course instructor.
+- [[tran-thi-tuan-anh]] - course instructor.
 
 ## Citation
 

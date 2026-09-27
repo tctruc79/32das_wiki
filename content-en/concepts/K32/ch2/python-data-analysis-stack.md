@@ -8,7 +8,7 @@ status: complete
 ---
 
 > <br><span class="en">**How to read this page**: the 6 libraries split
-> into 2 very different purposes — NumPy/pandas/matplotlib/seaborn are
+> into 2 very different purposes - NumPy/pandas/matplotlib/seaborn are
 > **infrastructure** (used in every later chapter), while statsmodels/
 > scikit-learn embody **2 opposing modelling philosophies** (explanation
 > vs prediction) that recur throughout Chapter 3. Understanding this
@@ -21,13 +21,13 @@ status: complete
 The 6 Python libraries used throughout the course's
 hands-on work: NumPy (numerical arrays), pandas (DataFrames), matplotlib
 and seaborn (visualization), statsmodels (econometrics), scikit-learn
-(machine learning) — first introduced as a full set in Chapter 2 K32
+(machine learning) - first introduced as a full set in Chapter 2 K32
 ("Python for Data Analysis"), using the `Data2.csv` Vietnamese provincial
 dataset as a running example.
 
 ## Explanation
 
-- **NumPy (`np`)**: efficient numerical arrays —
+- **NumPy (`np`)**: efficient numerical arrays -
   element-wise operations, fast stats, matrix algebra, reproducible
   random number generation.
 - **pandas (`pd`)**: tabular data structures
@@ -38,11 +38,11 @@ dataset as a running example.
   matplotlib for fine-grained control; seaborn for statistical charts on
   tabular data plus a **correlation heatmap**.
 - **statsmodels (`sm`)**: oriented towards
-  **explanation** — simple or formula-based OLS regression, full
+  **explanation** - simple or formula-based OLS regression, full
   coefficient/test tables, categorical variables, robust standard
   errors.
 - **scikit-learn (`sklearn`)**: oriented towards
-  **prediction** — train/test split, fit, predict, evaluate. Core
+  **prediction** - train/test split, fit, predict, evaluate. Core
   distinction: statsmodels asks "is this coefficient significant",
   scikit-learn asks "how well does this predict unseen data".
 - **`Data2.csv`** (the example dataset): 63
@@ -55,7 +55,7 @@ dataset as a running example.
 What sets NumPy apart from an ordinary Python list
 shows most clearly through 2 capabilities: applying an operation to an
 **entire array at once** rather than looping element by element, and
-generating **reproducible** random numbers via a seed — a prerequisite
+generating **reproducible** random numbers via a seed - a prerequisite
 for an analysis result that others can re-run and get the exact same
 numbers:
 
@@ -87,7 +87,7 @@ Printed output:
 ```
 
 **Key point to remember**: `x.mean()` ≈ −0.0315 and
-`x.std()` ≈ 0.9621 — close to 0 and 1 (`loc=0, scale=1`) but **not
+`x.std()` ≈ 0.9621 - close to 0 and 1 (`loc=0, scale=1`) but **not
 exact**, since this is only 1,000 random draws, not the full theoretical
 distribution. `np.random.seed(2026)` is why these two numbers reproduce
 identically on every re-run; without it, each run would give a slightly
@@ -95,16 +95,16 @@ different result.
 
 ## Appears in
 
-- [[chapter02-python-jupyter-k32]] — all of Section
+- [[chapter02-python-jupyter-k32]] - all of Section
   4 "Python for Data Analysis" (slides 58-68).
 
 ## Related concepts
 
-- [[python-jupyter-tooling-k32]] — the prerequisite:
+- [[python-jupyter-tooling-k32]] - the prerequisite:
   core Python syntax and Jupyter mechanics, taught right before this
   section in the same chapter.
 - The linear regression model and train/test
-  workflow shown here are only a preview — the K31 cohort teaches linear
+  workflow shown here are only a preview - the K31 cohort teaches linear
   regression and Ridge/Lasso in much more depth in its own chapter
   (Chapter 5). Per the K31/K32 separation rule, no cross-cluster
-  wikilink is created here — noted in plain text only.
+  wikilink is created here - noted in plain text only.

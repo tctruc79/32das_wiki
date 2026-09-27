@@ -1,6 +1,6 @@
 ---
 type: source
-title: "Chapter 3 (K32) — Supervised Learning"
+title: "Chapter 3 (K32) - Supervised Learning"
 tags: [chapter-3, k32, supervised-learning, classification, regression, knn, decision-tree, random-forest, boosting, regularization]
 created: 2026-08-28
 updated: 2026-08-28
@@ -11,28 +11,28 @@ source_file: "raw/Lecture Notes/K32/Chapter03/VNP_DataScience_SupervisedLearning
 ## Metadata
 
 - **Course**: Introduction to Data Science and
-  Applications, University of Economics Ho Chi Minh City — Vietnam-
+  Applications, University of Economics Ho Chi Minh City - Vietnam-
   Netherlands Programme.
 - **Cohort**: K32 (2026, current cohort).
 - **Instructor**: [[tran-thi-tuan-anh]].
 - **Slide count**: 112 (matches the PDF's physical
   page count; the footer numbers up to `112 / 112`). PDF metadata
-  creation date: 2026-08-27 — the newest version at ingest time.
+  creation date: 2026-08-27 - the newest version at ingest time.
 - **Position in the course**: this is K32's **first
-  algorithm chapter** and the largest deck so far — a single file
+  algorithm chapter** and the largest deck so far - a single file
   covering the whole **supervised learning** branch: ML foundations,
   model evaluation, classification + KNN, decision trees, ensemble
   methods (random forest + boosting), regression, and Ridge/Lasso/
   Elastic Net regularization. In the 2025 cohort the same material was
   split across **3 separate chapters**; the 2026 cohort merges them into
   one and adds entirely new sections (classification metrics,
-  cross-validation, the bias–variance trade-off, boosting, Elastic Net).
+  cross-validation, the bias-variance trade-off, boosting, Elastic Net).
   **Per the cohort separation rule** (CLAUDE.md), this page does not link
-  to any K31 page — comparisons are stated in plain text only.
+  to any K31 page - comparisons are stated in plain text only.
 - **Filename does not follow the chapter-number
   pattern**: the file is `VNP_DataScience_SupervisedLearning_2026.pdf`
   (no `Chapter03` string unlike the previous two), but the user placed it
-  in `raw/Lecture Notes/K32/Chapter03/` — so this wiki treats it as
+  in `raw/Lecture Notes/K32/Chapter03/` - so this wiki treats it as
   K32's Chapter 3.
 - **Companion files in the same folder**: 2 Python
   scripts (`Example3.1_Iris_New.py`, `Example3.2_DecisionTree_New.py`)
@@ -58,8 +58,8 @@ source_file: "raw/Lecture Notes/K32/Chapter03/VNP_DataScience_SupervisedLearning
   methodology: data splitting + a **data leakage** warning, the complete
   regression metric set (adding MAPE, R²) with guidance on *which metric
   when*, the **classification** metric set (accuracy, precision, recall,
-  F1, ROC-AUC — entirely new), **cross-validation** (LOOCV, K-fold,
-  stratified K-fold), and the **bias–variance** decomposition
+  F1, ROC-AUC - entirely new), **cross-validation** (LOOCV, K-fold,
+  stratified K-fold), and the **bias-variance** decomposition
   formula.
 - **Sections 3-5 (classification)**: keep the 2025
   spine of KNN → decision tree → random forest, but add: 4 distance
@@ -72,7 +72,7 @@ source_file: "raw/Lecture Notes/K32/Chapter03/VNP_DataScience_SupervisedLearning
   Boosting/XGBoost) with a bagging-vs-boosting comparison table.
 - **Sections 6-7 (regression)**: regression is
   placed back inside the supervised-learning frame ("only the type of y
-  changes — everything from Section 2 applies unchanged"), sharply
+  changes - everything from Section 2 applies unchanged"), sharply
   distinguishing **classical statistics** (explanation, testing) from
   **machine learning** (out-of-sample prediction). Regularization adds
   **Elastic Net** (absent in 2025), the geometric explanation of *why
@@ -101,14 +101,14 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 - **What is machine learning** (slide 5): a subset
   of artificial intelligence dealing with a machine's ability to learn;
   the aim is to make machines smarter and more efficient.
-- **A short history of AI** (slide 6): 1950s —
+- **A short history of AI** (slide 6): 1950s -
   early concepts, Alan Turing and the Turing Test; the term "artificial
-  intelligence" appears at the **1956** Dartmouth Conference; 1980s —
-  expert systems after the AI winter; 1990s — ML techniques learning
-  *from data* rather than hand-coded rules; 2000s-2010s — deep learning
-  on big data; **2017 onwards** — the Transformer architecture leads to
+  intelligence" appears at the **1956** Dartmouth Conference; 1980s -
+  expert systems after the AI winter; 1990s - ML techniques learning
+  *from data* rather than hand-coded rules; 2000s-2010s - deep learning
+  on big data; **2017 onwards** - the Transformer architecture leads to
   large language models (ChatGPT, Claude, Gemini), multimodal and
-  generative AI; today — AI handles text, images, voice, video and
+  generative AI; today - AI handles text, images, voice, video and
   multi-step tasks, increasingly acting as a copilot or agent alongside
   humans.
 - **Two phases of every ML project** (slide 8):
@@ -121,18 +121,18 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   new message) and face recognition on social networks (users train the
   system by tagging friends in photos; new uploads get automatic
   detection and tag suggestions). The slide's note: **both are
-  supervised — the machine only learns because a human supplied the
+  supervised - the machine only learns because a human supplied the
   correct answer (the label)**.
 - **4 main types of ML** (slide 12): **supervised**
-  (labelled training data — the lecture's focus; split into
+  (labelled training data - the lecture's focus; split into
   classification [discrete outputs] and regression [numeric outputs]);
-  **unsupervised** (unlabelled data, discover patterns — clustering,
+  **unsupervised** (unlabelled data, discover patterns - clustering,
   dimension reduction, association); **reinforcement** (an agent learns
   by interacting with an environment for rewards/penalties);
   **self-supervised** (labels generated from the data itself, e.g.
-  next-word prediction — how modern LLMs are pre-trained). The 4th type
+  next-word prediction - how modern LLMs are pre-trained). The 4th type
   is **entirely new** versus the 2025 version, which listed only 3.
-- **Vocabulary table** (slide 14) — the most
+- **Vocabulary table** (slide 14) - the most
   important reference for reading the rest of the deck:
 
   | Term | Meaning |
@@ -153,25 +153,25 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 - **Splitting the data** (slide 16): never judge a
   model on the data it was trained on. The training set estimates
   parameters; the **test set is touched once**, at the very end, for an
-  honest performance figure. The **data leakage** warning — *the most
+  honest performance figure. The **data leakage** warning - *the most
   common beginner mistake*: any transformation learned from data
   (scaling, imputation, feature selection) must be fitted on the training
   part only, then applied to validation and test; otherwise test
   performance is optimistic. →
   [[train-test-split-and-cross-validation]]
 - **Regression metrics** (slides 17-18): with error
-  uᵢ = yᵢ − ŷᵢ — MAE, MSE, RMSE = √MSE (back in y's units), MAPE
+  uᵢ = yᵢ − ŷᵢ - MAE, MSE, RMSE = √MSE (back in y's units), MAPE
   (scale-free), and R² = 1 − Σ(yᵢ − ŷᵢ)²/Σ(yᵢ − ȳ)². Other criteria
   named: RSE, RAE, Normalised RMSE, Relative RMSE. **How to choose**: MAE
   treats all errors equally; RMSE punishes large errors, so use it when
   big mistakes are costly; MAPE is undefined when some yᵢ = 0 and is
   asymmetric. → [[model-evaluation-metrics-k32]]
 - **Classification metrics** (slide 19, **entirely
-  new**): **accuracy is misleading on imbalanced data** — with 99%
+  new**): **accuracy is misleading on imbalanced data** - with 99%
   legitimate transactions, an always-"legitimate" model is 99% accurate
-  and useless. **Precision**: of those flagged, how many were right — use
+  and useless. **Precision**: of those flagged, how many were right - use
   when false alarms are expensive. **Recall (sensitivity)**: of the true
-  cases, how many did we catch — use when misses are expensive.
+  cases, how many did we catch - use when misses are expensive.
   **F1**: the harmonic mean, to balance both. **ROC-AUC**: ranking
   quality across all thresholds, when the decision threshold is not fixed
   in advance.
@@ -179,7 +179,7 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   test model effectiveness and **choose hyperparameters**. LOOCV
   (training on n − 1, testing on exactly 1, repeated n times); K-fold
   (K parts, train on K − 1, rotate, average the K scores; K = 5 or 10 is
-  standard); stratified K-fold (preserves class proportions per fold —
+  standard); stratified K-fold (preserves class proportions per fold -
   **always prefer this for classification**).
 - **Underfitting** (slide 23): the model is too
   simple to capture the underlying patterns; it performs poorly on both
@@ -191,9 +191,9 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   training data, poor on test/forecast data, cannot generalise. Fix: a
   simpler model, less complexity, more data, regularization (Section 7),
   or prune the tree. Symptom: very low training error but much higher
-  test error — a large gap between the two curves.
-- **The bias–variance trade-off** (slide 25,
-  **entirely new**): E[(y − f̂(x))²] = Bias²[f̂(x)] + Var[f̂(x)] + σ² —
+  test error - a large gap between the two curves.
+- **The bias-variance trade-off** (slide 25,
+  **entirely new**): E[(y − f̂(x))²] = Bias²[f̂(x)] + Var[f̂(x)] + σ² -
   too simple, too flexible, and the **irreducible** error. Underfitting
   lives on the left of the complexity axis, overfitting on the right; the
   best model sits at the minimum of the total-error curve.
@@ -204,7 +204,7 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   data into a given number of classes. Terms: **classifier**; **binary**
   (two outcomes); **multi-class** (more than two, one and only one label
   per observation); **multi-label** (several labels at once, e.g. an
-  article tagged both "finance" and "technology") — the last is **new**
+  article tagged both "finance" and "technology") - the last is **new**
   versus 2025. → [[classification-k32]]
 - **4 steps to build a classification model** (slide
   29): initialize the classifier → train on labelled data → predict the
@@ -213,7 +213,7 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   decision tree (Section 4), logistic regression, KNN, SVM, random forest
   (Section 5), gradient boosting/XGBoost, neural networks. The lecture
   covers KNN (distance-based), decision trees (rule-based) and tree
-  ensembles — together the main families of ideas used in
+  ensembles - together the main families of ideas used in
   practice.
 - **What is KNN** (slide 31): one of the most
   popular ML algorithms; **assumes similar things are near each other**;
@@ -224,19 +224,19 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   **every** training observation, sort and keep the K nearest, read their
   labels, return the mode (classification) or mean (regression). **The
   slide's correction note**: selecting the K nearest happens **after**
-  all distances are computed — not inside the loop over
+  all distances are computed - not inside the loop over
   observations.
 - **4 distance measures** (slide 34): **Euclidean**
   (default), **Manhattan** (city block, more robust to outliers),
   **Minkowski** (the general form; q = 2 Euclidean, q = 1 Manhattan),
-  **Hamming** (for categorical features — the number of positions that
+  **Hamming** (for categorical features - the number of positions that
   differ). The last two are **new** versus 2025.
 - **Why scaling is compulsory for KNN** (slide 35,
   a **new** numeric example): predicting credit default from age (30 vs
   35) and income (20,000 vs 20,050 VND million) gives a Euclidean
-  distance of √(5² + 50²) ≈ 50.2 — **almost entirely driven by income**,
+  distance of √(5² + 50²) ≈ 50.2 - **almost entirely driven by income**,
   simply because income is measured in bigger numbers. **Rule**: always
-  standardise (z = (x − x̄)/s) or min–max scale before KNN, and **fit the
+  standardise (z = (x − x̄)/s) or min-max scale before KNN, and **fit the
   scaler on the training set only**.
 - **Choosing K** (slide 37): run KNN over several K
   and pick the one minimising the **cross-validated** error, not the
@@ -245,16 +245,16 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   (overfitting); **large K** ⇒ more expensive, low variance but high bias
   (underfitting); for binary problems prefer an **odd K** to avoid tied
   votes.
-- **KNN pros and cons** (slide 38): **pros** —
+- **KNN pros and cons** (slide 38): **pros** -
   simple, no model to build, few parameters, no distributional
-  assumptions, highly non-linear decision boundary. **Cons** —
+  assumptions, highly non-linear decision boundary. **Cons** -
   significantly slower as features grow (the **curse of
   dimensionality**); prediction is computationally intensive as
   observations grow; it is **lazy learning** (nothing learned at training
   time, the whole training set must be stored); sensitive to feature
   scaling and irrelevant features.
-- **Example 3.1 — the IRIS dataset** (slides 39-48):
-  using `iris.csv` — 3 species, 4 measured features (sepal/petal length
+- **Example 3.1 - the IRIS dataset** (slides 39-48):
+  using `iris.csv` - 3 species, 4 measured features (sepal/petal length
   and width in cm), the dataset Fisher used for his linear discriminant.
   The slide workflow: load → `train_test_split(test_size=0.3,
   random_state=42, stratify=y)` → scatter plot coloured by species →
@@ -264,7 +264,7 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   over `range(1, 26, 2)`** → evaluate **once** on the untouched test set
   → predict a new flower via a 1-row `DataFrame`, scaled with the already
   fitted scaler. **Slides 41-42 state explicitly that the errors in the
-  code are intentional for learning purposes** — see "Gaps / notes".
+  code are intentional for learning purposes** - see "Gaps / notes".
 - **Applications and group work** (slides 49-51): a
   KNN spam classifier and KNN fraud detection on transaction data.
   **Teamwork 1** (slide 51): each group gets a real-life domain, lists as
@@ -291,8 +291,8 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   **pure** as possible.
 - **Tree algorithms** (slides 59-61): ID3, C4.5,
   CART, CHAID. **In practice** `scikit-learn` implements an optimised
-  CART — `DecisionTreeClassifier`/`DecisionTreeRegressor` are **CART, not
-  ID3** — but ID3 is clearest for understanding the idea. **ID3**: uses
+  CART - `DecisionTreeClassifier`/`DecisionTreeRegressor` are **CART, not
+  ID3** - but ID3 is clearest for understanding the idea. **ID3**: uses
   entropy and information gain, works on categorical data, doesn't handle
   numeric data directly, produces multi-way splits, may overfit and
   produce biased trees because information gain favours attributes with
@@ -300,10 +300,10 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   MSE for regression, **always binary splits**, handles large datasets,
   supports cost-complexity pruning.
 - **3 purity measures** (slides 62-65): with pᵢ the
-  proportion of class i in the node — **classification error**
+  proportion of class i in the node - **classification error**
   Eₘ = 1 − max(pᵢ); **Gini impurity** = Σpᵢ(1 − pᵢ) = 1 − Σpᵢ²;
   **entropy** = −Σpᵢlog₂(pᵢ). Lower ⇒ purer. **Entropy's range** (new): 0
-  (perfectly pure) to log₂K (all classes equally likely) — with K = 3 the
+  (perfectly pure) to log₂K (all classes equally likely) - with K = 3 the
   maximum is log₂3 ≈ 1.585 bits. All three slides use **the same worked
   example**: a node with class A: 16, B: 13, C: 1.
 - **Rules to follow** (slide 66): entropy 0 ⇒ a
@@ -319,7 +319,7 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   `min_samples_leaf` / `max_depth` is reached. **Pruning** (new vs 2025):
   **pre-pruning** (early stopping via those rules) and **post-pruning**
   (grow the full tree, then cut back branches that don't improve
-  validation performance — in CART, cost-complexity pruning controlled by
+  validation performance - in CART, cost-complexity pruning controlled by
   α = `ccp_alpha`, penalising the number of leaves).
 - **The 4 detailed steps** (slide 71): compute the
   dataset's entropy → for every attribute, compute the entropy of all its
@@ -327,14 +327,14 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   the highest-gain attribute → repeat until stopping criteria are
   met.
 - **Single-tree pros and cons** (slide 72, **new**):
-  **pros** — highly interpretable, no scaling needed, handles numeric and
+  **pros** - highly interpretable, no scaling needed, handles numeric and
   categorical inputs, captures non-linearity and interactions
-  automatically. **Cons** — **unstable** (a small data change can produce
-  a very different tree — high variance); easily overfits at full depth;
+  automatically. **Cons** - **unstable** (a small data change can produce
+  a very different tree - high variance); easily overfits at full depth;
   axis-parallel splits approximate diagonal boundaries by steps. This
   motivates Section 5: averaging many trees removes most of the
   instability.
-- **Examples 4.1 and 4.2 — decision trees in
+- **Examples 4.1 and 4.2 - decision trees in
   Python** (slides 73-75): `DecisionTreeClassifier(criterion="gini",
   max_depth=3, min_samples_leaf=5, random_state=42)`, print train and
   test accuracy side by side (an overfitting diagnostic), confusion
@@ -345,7 +345,7 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 ### 5. Ensemble Methods (slides 77-86)
 
 - **What are random forests** (slide 77): an
-  **ensemble** algorithm — build many small, weak trees and combine them
+  **ensemble** algorithm - build many small, weak trees and combine them
   by averaging (regression) or majority vote (classification). **Two
   sources of randomness**: **bagging** (each tree on a bootstrap sample
   of the observations) and **feature subsampling** (at each split, only a
@@ -356,7 +356,7 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   overfitting versus a single deep tree; handles missing values and mixed
   types; accuracy improves up to a point then plateaus; provides
   **feature importance** scores; the **out-of-bag (OOB)** error gives a
-  free validation estimate — each observation is tested on the ~one third
+  free validation estimate - each observation is tested on the ~one third
   of trees that did not see it. **The slide's caveat** (new): "the more
   trees, the more accurate" is only true until the curve flattens; beyond
   that, extra trees cost without benefit.
@@ -369,11 +369,11 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   features through each tree's rules, store each predicted target → count
   the votes → take the most-voted target. **For regression**: replace the
   vote with the average of the n tree predictions.
-- **Example 5.1 — random forest in Python** (slides
+- **Example 5.1 - random forest in Python** (slides
   82-83): `RandomForestClassifier(n_estimators=500, max_features="sqrt",
   oob_score=True, random_state=42, n_jobs=-1)`, print `oob_score_` next
   to the test score, then rank the top 10 features.
-- **5.2 Boosting — the other big ensemble family**
+- **5.2 Boosting - the other big ensemble family**
   (slide 84, **entirely new**): bagging builds trees in *parallel*;
   boosting builds them *sequentially*, each correcting the previous
   ones' errors. **AdaBoost** re-weights misclassified observations;
@@ -416,20 +416,20 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   relationship between inputs x and a **quantitative** output y:
   y = f(x₁,…,x_p) + u, where u is the noise term. Linear and nonlinear
   regression. **Key note** (new): the **same framework** as
-  classification — only the type of y changes; everything from Section 2
+  classification - only the type of y changes; everything from Section 2
   applies unchanged. → [[linear-regression-k32]]
 - **Linear regression** (slide 90):
   y = β₀ + β₁x₁ + … + β_k x_k + u. The model serves **2 different
   purposes**: **classical statistics** (describing relationships,
   interpretation, hypothesis testing) and **machine learning**
   (predicting future outputs, out-of-sample accuracy). **The slide's
-  note** (new): the distinction matters — a model can be excellent for
+  note** (new): the distinction matters - a model can be excellent for
   explanation and mediocre for prediction, and vice versa; regularization
   (Section 7) deliberately trades a little unbiasedness for a lot of
   predictive accuracy.
-- **Two steps** (slide 91): **Step 1** — learn
+- **Two steps** (slide 91): **Step 1** - learn
   β₀,…,β_k from the training set, via OLS, LAD, MLE or MM (**OLS is the
-  most commonly used**). **Step 2** — predict for new data:
+  most commonly used**). **Step 2** - predict for new data:
   ŷ = β̂₀ + β̂₁x₁* + … + β̂_k x_k*.
 - **Special cases** (slide 92): **polynomial
   regression** (still linear in the parameters) and **qualitative
@@ -447,7 +447,7 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 - **7.2 Regularization** (slide 96): imposing a
   penalty for each parameter in the model; both the **magnitude of the
   coefficients** and of the error term are penalised, discouraging
-  complex models. The two most common are Ridge and Lasso — plus
+  complex models. The two most common are Ridge and Lasso - plus
   **Elastic Net** (new; combines both penalties and is often the safest
   default when predictors are numerous and correlated).
   → [[regularization-ridge-lasso-elastic-net-k32]]
@@ -458,12 +458,12 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   penalty with **α = 1 giving Lasso, α = 0 giving Ridge**; useful with
   strongly correlated predictors, where Lasso alone picks one arbitrarily
   and discards the rest while Elastic Net keeps the group. **Ridge's
-  closed form** (new): β̂ = (X'X + λI)⁻¹X'y — adding λI makes the matrix
+  closed form** (new): β̂ = (X'X + λI)⁻¹X'y - adding λI makes the matrix
   invertible even when X'X is singular, which is why Ridge handles
   multicollinearity and the k > n case. Lasso has no closed form and is
   solved numerically.
 - **Why Lasso sets coefficients exactly to zero**
-  (slide 99, **entirely new — the geometric argument**): both minimise
+  (slide 99, **entirely new - the geometric argument**): both minimise
   the residual sum of squares subject to a budget on the coefficients,
   and the budget's *shape* is what matters. Ridge's budget is a circle
   (β₁² + β₂² ≤ t), Lasso's a diamond (|β₁| + |β₂| ≤ t). **The Lasso
@@ -490,23 +490,23 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
   controls the penalty's strength. At λ = 0, Ridge and Lasso equal least
   squares; as λ → ∞ all slopes tend to 0; the ideal penalty is somewhere
   between. **How to choose λ in practice** (new): **do not choose by
-  eye** — fit over a grid of λ and pick the lowest cross-validated error;
+  eye** - fit over a grid of λ and pick the lowest cross-validated error;
   `RidgeCV` and `LassoCV` do this automatically. Note `scikit-learn`
   calls the parameter `alpha`, not λ.
-- **7.4 Example 7.1 — the basic syntax** (slides
+- **7.4 Example 7.1 - the basic syntax** (slides
   104-105): load `regression.csv`, split X and y, then fit
   `LinearRegression()`, `Ridge(alpha=10)`, `Lasso(alpha=0.01)` and
-  `ElasticNet(alpha=0.1, l1_ratio=0.5)` — in the code, `l1_ratio` plays
+  `ElasticNet(alpha=0.1, l1_ratio=0.5)` - in the code, `l1_ratio` plays
   the role of α in the formula while `alpha` plays the role of λ. Finally
   print all four test-set R² values side by side.
 - **7.5 Evaluating forecast accuracy** (slides
   106-107): MAE, MSE, MAPE, RMSE with their `scikit-learn` functions.
   **The "compare like with like" note** (new): always compute these on
   the test set, and always compare a regularized model against a plain
-  OLS baseline — if Ridge and Lasso don't beat OLS out of sample, the
+  OLS baseline - if Ridge and Lasso don't beat OLS out of sample, the
   extra complexity is not justified.
-- **7.6 Teamwork 3 — work in pairs** (slide 108):
-  using `Income.csv` with income as the dependent variable — load the
+- **7.6 Teamwork 3 - work in pairs** (slide 108):
+  using `Income.csv` with income as the dependent variable - load the
   data; create arrays for inputs and output; compute descriptive
   statistics; **plot the coefficient path against the tuning parameter**;
   create train and test sets; build, predict and evaluate Ridge and
@@ -517,7 +517,7 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 ### 8. Summary (slides 110-111)
 
 **Summary table of the 7 algorithms** (slide 110)
-— the chapter's best single revision tool:
+- the chapter's best single revision tool:
 
 | Algorithm | Task | Main hyperparameter | Needs scaling? | Main strength |
 |---|---|---|---|---|
@@ -541,11 +541,11 @@ automatic variable selection).
 
 **The instructor's 5 review questions** (slide 111):
 (1) Why does a very small K in KNN give low bias but high variance? (2) A
-node contains 20 observations of class A and 20 of class B — compute its
+node contains 20 observations of class A and 20 of class B - compute its
 entropy and Gini impurity; is it pure? (3) Explain why RMSE ≥ MAE always
-holds. (4) Your model has 98% training accuracy and 71% test accuracy —
+holds. (4) Your model has 98% training accuracy and 71% test accuracy -
 diagnose the problem and propose two remedies. (5) You have 400
-predictors and 120 observations — would you choose Ridge or Lasso, and
+predictors and 120 observations - would you choose Ridge or Lasso, and
 why?
 
 ## Companion code and data files
@@ -555,18 +555,18 @@ contains 7 files besides the PDF slides.
 
 ### Python scripts
 
-- **`Example3.1_Iris_New.py`** — the Example 3.1
+- **`Example3.1_Iris_New.py`** - the Example 3.1
   code from slides 41-48 concatenated into one file, sections separated
   by `%-----` lines. Covers all 4 blocks: load + split; scatter plot;
   scale + KNN with K = 5 + evaluation; best-K search with `GridSearchCV`;
   and predicting a new flower. **This file contains exactly the
-  intentional errors the slide warned about** — see below.
-- **`Example3.2_DecisionTree_New.py`** — the
+  intentional errors the slide warned about** - see below.
+- **`Example3.2_DecisionTree_New.py`** - the
   Example 4.1 decision tree code (slides 73-74). Two differences from the
   slide: it omits `min_samples_leaf=5`, and it *adds* the
   `y_pred = tree.predict(X_test)` line that slide 73 omits (slide 74 uses
   `y_pred` without ever defining it). It runs only if `X` and `y` were
-  defined earlier — it assumes the Example 3.1 loading block was run
+  defined earlier - it assumes the Example 3.1 loading block was run
   first.
 
 ### Data files
@@ -583,29 +583,29 @@ contains 7 files besides the PDF slides.
 `variety`, 50 of each species) drives Example 3.1; `Regression.csv` (104
 rows, `x1`-`x4` and `y`) drives Example 7.1, with `Regression.xlsx` the
 same data in Excel form; `Nationality.csv` (13 rows: `Age`,
-`Experience`, `Rank`, `Nationality`, `Go` — 7 YES / 6 NO) and
+`Experience`, `Rank`, `Nationality`, `Go` - 7 YES / 6 NO) and
 `TeleCustomers.csv` (1000 rows: `region`, `tenure`, `age`, `marital`,
-`address`, `income`, `ed`, `employ`) are named by no slide — see the
+`address`, `income`, `ed`, `employ`) are named by no slide - see the
 notes.
 
 ## Gaps / notes
 
 - **The errors in the Example 3.1 code are
-  INTENTIONAL** — slide 41 states "Challenge: The errors are intentional
+  INTENTIONAL** - slide 41 states "Challenge: The errors are intentional
   for learning purposes" and slide 42 repeats the note. Checked against
   the real `iris.csv`, there are 4 planted bugs: (1) **two consecutive
   `pd.read_csv` lines**, the first pointing at the instructor's local
-  `"E:/iris.csv"`; (2) `columns="species"` / `iris["species"]` — **there
+  `"E:/iris.csv"`; (2) `columns="species"` / `iris["species"]` - **there
   is no `species` column**, the real label column is `variety` (which the
   later plotting block uses correctly) ⇒ `KeyError`; (3) the plotting
   block uses `df[...]` but **`df` is never defined** (the variable is
   `iris`) ⇒ `NameError`; (4) `GridSearchCV(pipe, ...)` uses a **`pipe`
-  object that was never created** — the correct version needs a
+  object that was never created** - the correct version needs a
   `Pipeline` of `StandardScaler` + `KNeighborsClassifier` for the
   `"knn__n_neighbors"` prefix in `param_grid` to mean anything ⇒
   `NameError`. This is a deliberate debugging exercise, not a document
   defect.
-- **Teamwork 3 asks for `Income.csv` — that file is
+- **Teamwork 3 asks for `Income.csv` - that file is
   NOT in `raw/`**. In the Chapter03 folder only `TeleCustomers.csv` has
   an `income` column (plus 7 explanatory variables), so it is most likely
   the intended substitute (or `Income.csv` will be released separately).
@@ -622,7 +622,7 @@ notes.
   both contain the 1/n factor and RMSE = √MSE**; slide 32 has a similar
   box stating that selecting the K nearest neighbours happens **after**
   all distances are computed, not inside the loop. Both show the
-  instructor revising points that were easy to misread in earlier decks —
+  instructor revising points that were easy to misread in earlier decks -
   worth remembering, as these are exactly the points that get
   examined.
 - **Image-only content not extractable via
@@ -639,41 +639,41 @@ notes.
   the regression overfitting plot (slide 95), the Lasso vs Ridge
   illustration (slide 101) and the coefficient path (slide 103).
 - **Example 3.1 uses `iris.csv`, not
-  `scikit-learn`'s built-in IRIS** — so the column names follow the file
+  `scikit-learn`'s built-in IRIS** - so the column names follow the file
   (`sepal.length` with a dot, not the underscored `sepal_length` of
   `sklearn.datasets.load_iris`). A small point that causes real errors
   when students switch between the two sources.
 
 ## Links
 
-- [[supervised-learning-framework]] — the shared
+- [[supervised-learning-framework]] - the shared
   frame: labelled data, the function f̂, the 4 ML types, the vocabulary
   table.
-- [[train-test-split-and-cross-validation]] — data
+- [[train-test-split-and-cross-validation]] - data
   splitting, leakage, cross-validation.
-- [[model-evaluation-metrics-k32]] — regression and
+- [[model-evaluation-metrics-k32]] - regression and
   classification metrics.
-- [[overfitting-underfitting-k32]] — over/
-  underfitting and the bias–variance trade-off.
-- [[classification-k32]] — definition, the 3 problem
+- [[overfitting-underfitting-k32]] - over/
+  underfitting and the bias-variance trade-off.
+- [[classification-k32]] - definition, the 3 problem
   types, the 4-step workflow.
-- [[k-nearest-neighbors-k32]] — the KNN algorithm,
+- [[k-nearest-neighbors-k32]] - the KNN algorithm,
   distances, scaling, choosing K.
-- [[decision-tree-k32]] — decision trees, ID3/CART,
+- [[decision-tree-k32]] - decision trees, ID3/CART,
   purity, pruning.
-- [[random-forest-k32]] — random forests, bagging,
+- [[random-forest-k32]] - random forests, bagging,
   OOB error.
-- [[boosting-ensemble]] — boosting, AdaBoost/
+- [[boosting-ensemble]] - boosting, AdaBoost/
   Gradient/XGBoost, versus bagging.
-- [[linear-regression-k32]] — linear regression,
+- [[linear-regression-k32]] - linear regression,
   OLS, polynomials, dummies.
-- [[regularization-ridge-lasso-elastic-net-k32]] —
+- [[regularization-ridge-lasso-elastic-net-k32]] -
   Ridge/Lasso/Elastic Net, the geometry of the penalty, choosing
   λ.
-- [[chapter02-python-jupyter-k32]] — Chapter 2
+- [[chapter02-python-jupyter-k32]] - Chapter 2
   already taught every tool used here (pandas, matplotlib, and the
   scikit-learn "first taste").
-- [[tran-thi-tuan-anh]] — course instructor.
+- [[tran-thi-tuan-anh]] - course instructor.
 
 ## Citation
 

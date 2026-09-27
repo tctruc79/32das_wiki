@@ -21,12 +21,12 @@ closest training observations and returns the **mode** of their labels
 
 KNN directly executes its founding assumption: load
 the data and **standardise the features**, choose K, then for each new
-query x* — compute the distance to **every** training observation, sort
+query x* - compute the distance to **every** training observation, sort
 and keep the K nearest, read their labels, and return the mode
 (classification) or mean (regression) as the prediction. A point easily
 misunderstood about execution order: **selecting** the K nearest
 neighbours happens **after** all distances to every observation have
-been computed — it is not a filtering step that happens inside the loop
+been computed - it is not a filtering step that happens inside the loop
 over observations.
 
 ### 4 distance measures
@@ -41,7 +41,7 @@ With x = (x₁,…,x_p) and z = (z₁,…,z_p):
 | Hamming | The number of positions that differ | For categorical features |
 
 Euclidean (the default), Manhattan (city
-block, more robust to outliers), Minkowski (the general form — q = 2
+block, more robust to outliers), Minkowski (the general form - q = 2
 gives Euclidean, q = 1 gives Manhattan) and Hamming (for categorical
 features, counting differing positions). Minkowski and Hamming are **new
 in the 2026 version**.
@@ -50,7 +50,7 @@ in the 2026 version**.
 
 Because distance is the algorithm's whole
 foundation, each feature's unit of measurement directly affects the
-result — an example predicting credit default from 2 features
+result - an example predicting credit default from 2 features
 illustrates this clearly:
 
 | Feature | Customer A | Customer B |
@@ -61,15 +61,15 @@ illustrates this clearly:
 A numeric example, **new** in this cohort: the
 Euclidean distance √(5² + 50²) ≈ 50.2 between two credit customers is
 **almost entirely driven by income**, simply because income is measured
-in bigger numbers — not because it matters more. **Rule**: always
-standardise (z = (x − x̄)/s) or min–max scale before KNN, and **fit the
+in bigger numbers - not because it matters more. **Rule**: always
+standardise (z = (x − x̄)/s) or min-max scale before KNN, and **fit the
 scaler on the training set only**.
 
 ### Choosing K
 
 Choosing K requires running KNN over several
 values of K and picking the one **minimising the cross-validated
-error**, **not** the training error — since training error is always
+error**, **not** the training error - since training error is always
 lowest at K = 1 (every point is its own nearest neighbour, so it
 "predicts" perfectly on data it has already seen). A few accompanying
 rules:
@@ -92,14 +92,14 @@ decision boundary can be highly non-linear.
 **Cons**: significantly slower as features grow
 (the **curse of dimensionality**); prediction is computationally
 intensive as observations grow, since all distances are recomputed each
-time; it is **lazy learning** — nothing is learned at training time and
+time; it is **lazy learning** - nothing is learned at training time and
 the whole training set must be stored; sensitive to feature scaling and
 to irrelevant features.
 
-### Example 3.1 — the IRIS dataset
+### Example 3.1 - the IRIS dataset
 
 The workflow uses `iris.csv` (150 rows, 50 of each
-species; 4 features in cm — the dataset Fisher used for his linear
+species; 4 features in cm - the dataset Fisher used for his linear
 discriminant): load → split → scatter plot → `StandardScaler` (fit on
 train, transform on test) → `KNeighborsClassifier(n_neighbors=5)` →
 predict → confusion matrix and classification report → best-K search
@@ -107,30 +107,30 @@ with `GridSearchCV(cv=5)` over `range(1, 26, 2)` → **evaluate once** on
 the test set → predict a new flower.
 
 **Important**: the exercise states that **the
-errors in the code are intentional** — the 4 planted bugs are listed in
+errors in the code are intentional** - the 4 planted bugs are listed in
 [[chapter03-supervised-learning-k32]].
 
 ## Appears in
 
-[[chapter03-supervised-learning-k32]] — slides 31-38
+[[chapter03-supervised-learning-k32]] - slides 31-38
 (theory), 39-48 (Example 3.1), 49-50 (spam and fraud applications), 110
 (summary table: both tasks, key hyperparameter K, **scaling needed**),
 111 (review question 1).
 
 ## Related
 
-- [[classification-k32]] — KNN is the chapter's
+- [[classification-k32]] - KNN is the chapter's
   first classification algorithm (though it also does regression).
-- [[train-test-split-and-cross-validation]] — the
+- [[train-test-split-and-cross-validation]] - the
   mechanism for choosing K, and why the scaler is fitted on the training
   set only.
-- [[overfitting-underfitting-k32]] — small vs large
-  K is the chapter's most intuitive instance of the bias–variance
+- [[overfitting-underfitting-k32]] - small vs large
+  K is the chapter's most intuitive instance of the bias-variance
   trade-off.
-- [[decision-tree-k32]] — the next classification
+- [[decision-tree-k32]] - the next classification
   algorithm, representing the rule-based family (versus KNN's
   distance-based one) and needing **no scaling**.
-- [[regularization-ridge-lasso-elastic-net-k32]] —
+- [[regularization-ridge-lasso-elastic-net-k32]] -
   also requires standardisation, for the same reason: the result depends
   on the absolute size of the numbers.
 
@@ -139,5 +139,5 @@ errors in the code are intentional** — the 4 planted bugs are listed in
 Example 3.1 uses the `iris.csv` file, **not**
 `scikit-learn`'s built-in IRIS, so the column names follow the file:
 `sepal.length` (with a dot), and the label column is `variety`, not
-`species`. The slide code deliberately writes `species` — one of the 4
+`species`. The slide code deliberately writes `species` - one of the 4
 planted bugs.

@@ -8,16 +8,16 @@ status: complete
 ---
 
 > <br><span class="en">**How to read this page**: the 7-condition
-> checklist below is this page's most practical exam tool — use it to
+> checklist below is this page's most practical exam tool - use it to
 > grade any "given this business situation, is it a good data science
 > problem?" question the exam might pose. Apply all 7 conditions; a
-> single failure is enough to conclude "not suitable" — don't stop after
+> single failure is enough to conclude "not suitable" - don't stop after
 > checking just 1-2 conditions.</span>
 
 ## Definition
 
 Data-analytic thinking approaches a problem starting
-from the decision to be made — not from available data or tools — then
+from the decision to be made - not from available data or tools - then
 traces back the data's origin, a baseline, the evidence type, and the
 cost of errors, before assessing whether the problem actually suits data
 science.
@@ -34,11 +34,11 @@ science.
   attach a cost to being wrong, before building the model.
 - **"Business problem → data science problem"
   chain**: Problem → Decision → Analytical question → Data → Method →
-  Evidence → Decision. A closed loop — ends where it began, at a
+  Evidence → Decision. A closed loop - ends where it began, at a
   decision. If you can't name at least 2 possible actions, there's no
-  real decision — and therefore no data science project.
+  real decision - and therefore no data science project.
 - **7-condition checklist** for "does this problem
-  suit data science" — all must hold, any single failure stops it: (1) a
+  suit data science" - all must hold, any single failure stops it: (1) a
   real, changeable decision exists; (2) it recurs often enough to be
   worth the effort; (3) the outcome is well-defined, measurable,
   observable within a useful timeframe; (4) data describing the decision
@@ -52,15 +52,15 @@ science.
 
 ## Appears in
 
-- [[chapter01-introduction-k32]] — the compass/
+- [[chapter01-introduction-k32]] - the compass/
   movement metaphor, the 5 concrete steps, the business→data-science
   problem chain, the 7-condition checklist.
 
 ## Related concepts
 
-- [[data-driven-decision-making-k32]] — step 4 of
+- [[data-driven-decision-making-k32]] - step 4 of
   the 5-step process (distinguishing association/prediction/cause) maps
   directly onto the 5 types of analytics there.
-- [[data-science-definition-k32]] — the 7-condition
+- [[data-science-definition-k32]] - the 7-condition
   checklist is the operational version of the "working definition"
   (judged by whether a decision improves).

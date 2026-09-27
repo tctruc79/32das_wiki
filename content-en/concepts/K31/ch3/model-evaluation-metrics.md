@@ -25,10 +25,10 @@ data.
     of MSE.
   - Other metrics (not detailed in the slide): RSE,
     RAE, Normalized RMSE (Norm RMSEP), Relative RMSE (RRMSEP).
-  - **Mean Absolute Percentage Error (MAPE)** —
+  - **Mean Absolute Percentage Error (MAPE)** -
     added in Chapter 5: (1/n)Σ|Yᵢ−Ŷᵢ|/|Yᵢ| × 100. Unlike MAE/MSE/RMSE,
     MAPE is a **relative** metric (in %), so it's comparable across
-    problems with different scales — something MAE/MSE/RMSE (absolute
+    problems with different scales - something MAE/MSE/RMSE (absolute
     metrics) can't do.
 - **Cross-validation**: the technique for testing
   model effectiveness by splitting data into a training set and a testing
@@ -37,15 +37,15 @@ data.
 
 ## Appears in
 
-- [[chapter03-machine-learning-knn]] — the 3
+- [[chapter03-machine-learning-knn]] - the 3
   MAE/MSE/RMSE metrics, cross-validation (leave-one-out, K-folds); reused
   identically for evaluating KNN Regression (slide 39).
-- [[chapter05-ridge-lasso]] — adds MAPE (new,
+- [[chapter05-ridge-lasso]] - adds MAPE (new,
   absent from Chapter 3) to the regression evaluation metric set.
 
 ## Related concepts
 
-- [[overfitting-underfitting]] — cross-validation is
+- [[overfitting-underfitting]] - cross-validation is
   the main tool for detecting overfitting.
-- [[k-nearest-neighbors]] — uses these metrics when
+- [[k-nearest-neighbors]] - uses these metrics when
   KNN is applied to a regression problem.

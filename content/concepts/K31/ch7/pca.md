@@ -29,13 +29,13 @@ capture as much of the data's variation as possible, with k < p.</span>
   perpendicular to PC1; and so on.</span>
 - **Nền tảng toán học**: dựa trên **ma trận hiệp phương sai** giữa các
   biến gốc. **Trị riêng và véc-tơ riêng** của ma trận này xác định các
-  thành phần chính — trị riêng = phương sai giải thích bởi trục đó, véc-
+  thành phần chính - trị riêng = phương sai giải thích bởi trục đó, véc-
   tơ riêng = "đóng góp" của mỗi biến gốc vào trục đó. Tổng các trị riêng
   = trace của ma trận hiệp phương sai = tổng phương sai dữ liệu. Quy tắc
   kinh nghiệm: trục có trị riêng > 1 mới đáng giữ lại.
   <br><span class="en">**Mathematical foundation**: based on the
   **covariance matrix** among the original variables. Its **eigenvalues
-  and eigenvectors** determine the principal components — eigenvalue =
+  and eigenvectors** determine the principal components - eigenvalue =
   variance explained by that axis, eigenvector = each original variable's
   "contribution" to it. Sum of eigenvalues = trace of the covariance
   matrix = total data variance. Rule of thumb: axes with eigenvalue > 1
@@ -60,20 +60,20 @@ capture as much of the data's variation as possible, with k < p.</span>
 
 ## Xuất hiện trong - <span class="en">Appears in</span>
 
-- [[chapter07-pca]] — định nghĩa đầy đủ, hiệp phương sai, trị riêng/véc-
+- [[chapter07-pca]] - định nghĩa đầy đủ, hiệp phương sai, trị riêng/véc-
   tơ riêng, quy trình 5 bước, các ví dụ ứng dụng.
-  <br><span class="en">[[chapter07-pca]] — full definition, covariance,
+  <br><span class="en">[[chapter07-pca]] - full definition, covariance,
   eigenvalue/eigenvector, the 5-step procedure, application
   examples.</span>
 
 ## Liên quan - <span class="en">Related concepts</span>
 
-- [[pca-combined-with-other-algorithms]] — dùng PCA làm bước tiền xử lý
+- [[pca-combined-with-other-algorithms]] - dùng PCA làm bước tiền xử lý
   cho các thuật toán khác đã học trong môn.
-  <br><span class="en">[[pca-combined-with-other-algorithms]] — using
+  <br><span class="en">[[pca-combined-with-other-algorithms]] - using
   PCA as a preprocessing step for other algorithms taught in the
   course.</span>
-- [[clustering]] — nhánh giảm chiều (PCA) và nhánh phân cụm là 2 nhánh
+- [[clustering]] - nhánh giảm chiều (PCA) và nhánh phân cụm là 2 nhánh
   chính của học không giám sát trong môn.
-  <br><span class="en">[[clustering]] — dimension reduction (PCA) and
+  <br><span class="en">[[clustering]] - dimension reduction (PCA) and
   clustering are the course's 2 main unsupervised branches.</span>

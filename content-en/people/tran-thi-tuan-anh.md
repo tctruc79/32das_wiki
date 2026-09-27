@@ -11,17 +11,17 @@ status: complete
 
 Instructor of **Introduction to Data Science and
 Applications**, Vietnam-Netherlands Programme, University of Economics Ho
-Chi Minh City — teaches both the 2025 cohort and the 2026 (current)
+Chi Minh City - teaches both the 2025 cohort and the 2026 (current)
 cohort.
 
 This is the only page allowed to link to both the
-K31 and K32 clusters (see CLAUDE.md, "Tách cụm K31/K32") — because she is
+K31 and K32 clusters (see CLAUDE.md, "Tách cụm K31/K32") - because she is
 one real individual, not content that can diverge by cohort.
 
 ## Notes
 
 - Course website: K31 (2025) lists
-  sites.google.com/site/anhttt/; K32 (2026) lists anhttt.edu.vn — the
+  sites.google.com/site/anhttt/; K32 (2026) lists anhttt.edu.vn - the
   domain changed between cohorts.
 - Main textbooks: Provost & Fawcett (2013) *Data
   Science for Business*; VanderPlas (2016) *Python Data Science Handbook*
@@ -30,27 +30,27 @@ one real individual, not content that can diverge by cohort.
   with Applications in Python*.
 - Grading changed substantially between cohorts: K31
   used Participation 10% + Group Assignments 30% + Mini Group Project
-  60%; K32 uses Individual Assessment 50% + Group Assessment 50% — a
+  60%; K32 uses Individual Assessment 50% + Group Assessment 50% - a
   much heavier individual weighting.
 
 ## Appears in
 
-- [[chapter01-introduction]] — course info, grading,
+- [[chapter01-introduction]] - course info, grading,
   materials (K31, 2025).
-- [[chapter01-introduction-k32]] — course info,
+- [[chapter01-introduction-k32]] - course info,
   grading, materials (K32, 2026).
-- [[chapter02-python-jupyter-k32]] — the expanded
+- [[chapter02-python-jupyter-k32]] - the expanded
   Python/Jupyter tooling chapter (K32, 2026).
-- [[chapter03-supervised-learning-k32]] — the
+- [[chapter03-supervised-learning-k32]] - the
   112-slide supervised learning chapter covering the whole
   classification and regression branch (K32, 2026); this deck carries
   several self-correction boxes versus earlier versions (slides 17, 32)
   and a deliberate debugging exercise in the Example 3.1 code.
-- [[chapter04-unsupervised-learning-k32]] — the
+- [[chapter04-unsupervised-learning-k32]] - the
   86-slide unsupervised learning chapter covering all of clustering and PCA
   (K32, 2026); with 7 Python scripts and 2 images, two of the scripts
   carrying real bugs.
-- [[chapter05-deep-learning-k32]] — the 90-slide deep
+- [[chapter05-deep-learning-k32]] - the 90-slide deep
   learning chapter comprising 3 merged lectures (K32, 2026). It is the first
   chapter the instructor built **not from the course's two base textbooks**
   but from another university's course (slide 1 states so), and the first
