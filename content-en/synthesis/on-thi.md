@@ -3,7 +3,7 @@ type: synthesis
 title: "Exam Prep"
 tags: [synthesis, exam-prep]
 created: 2026-08-22
-updated: 2026-09-18
+updated: 2026-09-27
 status: complete
 ---
 
@@ -13,20 +13,21 @@ section).
 
 ## Quick lookup table
 
-| Chương | Khóa | Chủ đề | Ghi chú |
+| Chapter | Cohort | Topic | Note |
 |---|---|---|---|
-| [[chapter01-introduction]] | K31 | Khoa học dữ liệu là gì, kim tự tháp DIKW, 4 loại phân tích, tư duy phân tích dữ liệu | Bản slide 2025 khá sơ lược — nhiều slide chỉ có hình, không có định nghĩa chi tiết cho các thuật ngữ ở slide 23 |
-| [[chapter02-python-jupyter]] | K31 | Python (lịch sử, 5 thế hệ ngôn ngữ, ứng dụng), Jupyter Notebook (cài đặt, Markdown, chia sẻ) | Thuần công cụ, không có lý thuyết ML |
-| [[chapter03-machine-learning-knn]] | K31 | Tổng quan ML, lịch sử AI, overfitting/underfitting, Classification, KNN + ví dụ IRIS | Outline slide 3 nhắc Regression/Clustering/Dimension reduction/Association nhưng đó là dàn ý cả cụm Chapter 3-7, không phải nội dung file này |
-| [[chapter04-decision-tree-random-forest]] | K31 | Cây quyết định (ID3/C4.5/CART, purity measures) + Rừng ngẫu nhiên (ensemble) | |
-| [[chapter05-ridge-lasso]] | K31 | Hồi quy tuyến tính, quá khớp trong hồi quy, Ridge/Lasso, MAPE | Dữ liệu thực hành `regression.csv` không còn trong `raw/` |
-| [[chapter06-clustering]] | K31 | Học không giám sát: phân cụm, thước đo khoảng cách, K-Means, Hierarchical | Slide linkage methods chỉ có hình |
-| [[chapter07-pca]] | K31 | PCA: hiệp phương sai, trị riêng/véc-tơ riêng, quy trình, kết hợp với Clustering/Classification/Regression | Mật độ cross-reference cao nhất trong 8 chương |
-| [[chapter08-deep-learning]] | K31 | Lịch sử học sâu, perceptron, lan truyền tiến/lùi, ANN/CNN/RNN | Gap: chưa có nguồn giảng Logistic Regression chi tiết |
-| [[chapter01-introduction-k32]] | K32 | 5 V's, định nghĩa vận hành, DS vs Analytics vs BI, 5 loại phân tích (thêm Causal), checklist 7 điều kiện | Tách cụm — không link chéo K31 |
-| [[chapter02-python-jupyter-k32]] | K32 | Python (cú pháp đầy đủ), Jupyter (kernel/cell/magic commands), Python for Data Analysis (NumPy/pandas/matplotlib/seaborn/statsmodels/scikit-learn) dùng `Data2.csv` | Gần gấp đôi bản K31 (78 vs 41 slide) — thêm 2 phần hoàn toàn mới; tách cụm — không link chéo K31 |
-| [[chapter04-unsupervised-learning-k32]] | K32 | The entire unsupervised branch: clustering (distances, K-Means + k-means++, hierarchical + linkage + dendrogram, DBSCAN/GMM, the 7-point pitfalls checklist) and PCA (covariance, eigenvalues/eigenvectors, SVD, choosing m, loadings, image compression) + Part 3 chaining PCA with clustering/classification/regression (PCR) and data leakage | 86 slides. First use of **images** as practice data (`Image1.jpg`, `Image2.jpg`). 7 shipped scripts, **2 of them with real bugs** (`Example3.7_KMeans.py` sets `n_clusters=1` on 3-centre data - it runs and fails silently; `..._GenerateData_and_Clustering.py` stops with a `NameError`); the 2 image scripts need `skimage`/`cv2`, absent from the course environment. No code for hierarchical clustering, DBSCAN or GMM. Separated cluster - no K31 cross-links |
-| [[chapter03-supervised-learning-k32]] | K32 | Trọn nhánh học có giám sát: nền tảng ML, đánh giá mô hình (chỉ số hồi quy + phân loại, kiểm định chéo, độ chệch–phương sai), phân loại + KNN, cây quyết định, rừng ngẫu nhiên + tăng cường, hồi quy, Ridge/Lasso/Elastic Net | 112 slide — chương lớn nhất; gộp nội dung mà khóa 2025 chia làm 3 chương. Mã Ví dụ 3.1 **cố ý có lỗi** (slide 41-42 ghi rõ). Bài tập nhóm 3 cần `Income.csv` chưa có trong `raw/`. Tách cụm — không link chéo K31 |
+| [[chapter01-introduction]] | K31 | What data science is, the DIKW pyramid, the 4 kinds of analytics, data analytic thinking | The 2025 deck is fairly thin - many slides are pictures only, with no detailed definition of the terms on slide 23 |
+| [[chapter02-python-jupyter]] | K31 | Python (history, the 5 generations of languages, applications), Jupyter Notebook (installation, Markdown, sharing) | Pure tooling, no ML theory |
+| [[chapter03-machine-learning-knn]] | K31 | An ML overview, the history of AI, overfitting/underfitting, classification, KNN + the IRIS example | The outline on slide 3 mentions regression/clustering/dimension reduction/association, but that is the outline of the whole Chapter 3-7 block, not the content of this file |
+| [[chapter04-decision-tree-random-forest]] | K31 | Decision trees (ID3/C4.5/CART, purity measures) + random forest (ensembles) | |
+| [[chapter05-ridge-lasso]] | K31 | Linear regression, overfitting in regression, Ridge/Lasso, MAPE | The practice data `regression.csv` is no longer in `raw/` |
+| [[chapter06-clustering]] | K31 | Unsupervised learning: clustering, distance measures, K-Means, hierarchical | The linkage methods slide is a picture only |
+| [[chapter07-pca]] | K31 | PCA: covariance, eigenvalues/eigenvectors, the procedure, combining it with clustering/classification/regression | The highest cross-reference density of the 8 chapters |
+| [[chapter08-deep-learning]] | K31 | The history of deep learning, the perceptron, forward and backward propagation, ANN/CNN/RNN | Gap: no source teaches logistic regression in detail |
+| [[chapter01-introduction-k32]] | K32 | The 5 V's, an operational definition, DS vs analytics vs BI, 5 kinds of analytics (causal added), the 7-condition checklist | A separate cluster - no cross-links to K31 |
+| [[chapter02-python-jupyter-k32]] | K32 | Python (the full syntax), Jupyter (kernel/cell/magic commands), Python for Data Analysis (NumPy/pandas/matplotlib/seaborn/statsmodels/scikit-learn) using `Data2.csv` | Nearly twice the size of the K31 deck (78 vs 41 slides) - two entirely new parts added; a separate cluster - no cross-links to K31 |
+| [[chapter04-unsupervised-learning-k32]] | K32 | The whole unsupervised branch: clustering (distance, K-Means + k-means++, hierarchical + linkage + dendrogram, DBSCAN/GMM, a list of 7 pitfalls) and PCA (covariance, eigenvalues/eigenvectors, SVD, choosing m, loadings, image compression) + Part 3 combining PCA with clustering/classification/regression (PCR) and data leakage | 86 slides. The first use of **images** as practice data (`Image1.jpg`, `Image2.jpg`). 7 code files come with it, of which **2 contain real errors** (`Example3.7_KMeans.py` sets `n_clusters=1` on data with 3 centres - it runs and is silently wrong; `..._GenerateData_and_Clustering.py` stops with a `NameError`); 2 image files need `skimage`/`cv2`, which the course environment does not have. There is no code for hierarchical clustering, DBSCAN or GMM. A separate cluster - no cross-links to K31 |
+| [[chapter03-supervised-learning-k32]] | K32 | The whole supervised branch: ML foundations, model evaluation (regression + classification metrics, cross-validation, bias and variance), classification + KNN, decision trees, random forest + boosting, regression, Ridge/Lasso/Elastic Net | 112 slides - the largest chapter; it merges what the 2025 cohort split across 3 chapters. The Example 3.1 code **has a deliberate error** (slides 41-42 say so outright). Group exercise 3 needs `Income.csv`, which is not yet in `raw/`. A separate cluster - no cross-links to K31 |
+| [[chapter05-deep-learning-k32]] | K32 | The whole deep learning branch (90 slides, 3 lectures merged): the perceptron, dense layers, deep networks, loss functions, gradient descent + backpropagation, dropout and early stopping; RNN + BPTT + vanishing gradients + LSTM + self-attention/Transformer; an image as a matrix of numbers, convolution, CNN (conv/ReLU/pooling), object detection, segmentation, control | **The first chapter not built from the two base textbooks**: slide 1 says "Based on the MIT's course about Introduction to Deep Learning". **No code file, no data, no lab notebook at all** in `raw/` - quite unlike Ch.3 and Ch.4; the lab on slide 30 ("fill in the #TODOs") is missing. **No exercise and no discussion question at all** from the lecturer. Physical page 86 of the PDF is completely blank (91 pages → 90 slides). LSTM is named but its 3 gates are never written out; the Transformer only reaches one attention head. A separate cluster - no cross-links to K31 |
 
 ## Topic clusters
 
@@ -188,6 +189,67 @@ with ridge, `betahat = Vm gammahat`, the comparison with PLS) - the
 dimension-reduction branch, from
 [[chapter04-unsupervised-learning-k32]] (K32).
 
+### P. K32 - Chapter 5: Neural Network Foundations and Training
+
+_A separate cluster for K32._
+
+[[perceptron]] (a weighted sum plus a bias through a
+non-linearity; one perceptron draws only a line; the worked example on
+slide 10), [[activation-functions]] (sigmoid/tanh/ReLU with derivatives;
+the `W2(W1 x) = (W2 W1)x` argument, so a 100-layer linear network is one
+layer), [[dense-layers-and-deep-networks]] (a dense layer as one matrix
+multiply; what "hidden" literally means; depth needing no new mechanism),
+[[loss-functions-and-empirical-risk]] (one example's loss, the empirical
+loss, `J` as a function of `W`; binary cross-entropy versus MSE),
+[[gradient-descent]] (the loss landscape, the five-line algorithm, no
+closed form - unlike Chapters 3 and 4), [[backpropagation]] (the chain
+rule, the reuse of `∂J/∂ŷ`, why gradients flow backwards),
+[[learning-rate-and-optimizers]] (the three cases for `eta`, adaptive
+rates, the table of 5 optimisers from SGD 1952 to Adam 2014),
+[[mini-batch-gradient-descent]] (full versus stochastic versus mini-batch;
+the two reasons mini-batch wins) and [[dropout-and-early-stopping]] (two
+regularisation techniques that **do not modify the loss but the training
+procedure**) - the neural network foundations, from
+[[chapter05-deep-learning-k32]] (K32), lecture A1.
+
+### Q. K32 - Chapter 5: Sequence Modeling and Attention
+
+_A separate cluster for K32._
+
+[[sequence-modeling-design-criteria]] (the four
+criteria: variable length, long-term dependencies, order, parameter
+sharing; the four sequence shapes; three example sentences of which "good,
+not bad" versus "bad, not good" is the most memorable),
+[[word-embedding]] (vocabulary → index → vector; one-hot versus a learned
+embedding where similar words sit close), [[recurrent-neural-network]]
+(`ht = fW(xt, ht-1)`; the three matrices `Wxh`, `Whh`, `Why`; the reason
+for `tanh`; the unrolled graph), [[backpropagation-through-time]] (BPTT;
+multiplying many `Whh` producing exploding and vanishing gradients;
+`1.5^50` versus `0.5^50`; the "clouds" and "France" sentences),
+[[lstm-gated-cells]] (a gate as a sigmoid layer multiplied pointwise, the
+amount learned; the three remaining RNN limitations) and
+[[self-attention]] (the YouTube search analogy for `Q`/`K`/`V`; the four
+steps; why positional encoding is mandatory; the Transformer and LLMs) -
+the sequence branch, from [[chapter05-deep-learning-k32]] (K32), lecture
+A2.
+
+### R. K32 - Chapter 5: Computer Vision and Convolutional Networks
+
+_A separate cluster for K32._
+
+[[computer-vision-tasks]] (images as matrices of
+numbers in `[0, 255]`; the seven sources of variation that defeat
+hand-engineered features; the feature hierarchy stated on slide 4, repeated
+on 69, proven on 84; four heads on one backbone; R-CNN through Faster
+R-CNN), [[convolution-operation]] (filters, element-wise multiply and add;
+the number 9 in the X example; the `5 × 5` example giving 4; filters being
+**learned rather than hand-designed**) and
+[[convolutional-neural-network]] (the three operations conv/ReLU/pooling;
+the convolutional neuron being "exactly the perceptron from Lecture 1";
+stride and receptive field; max pooling for spatial invariance; the
+feature-learning and classification halves) - the vision branch, from
+[[chapter05-deep-learning-k32]] (K32), lecture A3.
+
 ## Tensions / differences between sources
 
 No real tension within the K31 cluster itself (8/8
@@ -254,9 +316,29 @@ percentages and a loadings table, but **none of the chapter's shipped
 a practical gap to know about before using those files as
 templates.
 
+One further note on Chapter 5 (K32), of the
+**cohort-difference** kind rather than a tension: the 2025 cohort taught deep
+learning in **a single chapter** at a general level, while the 2026 version
+expands it into **three full lectures** and adds self-attention and the
+Transformer architecture outright - material entirely absent from the 2025
+version. Per the cohort separation rule this is recorded in plain text only,
+with no wikilink between the clusters.
+
+And one note **within K32** worth recording: Chapter 5 is
+the first chapter **not built from the course's two base textbooks** but
+rebuilt from another university's course (slide 1 says so). The practical
+consequences are two gaps against the previous four chapters: (a) a **markedly
+higher mathematical level** - partial derivatives, the chain rule and gradient
+notation used as if familiar, whereas Chapters 3 and 4 largely stopped at sums,
+means and covariance matrices, with no revision slide bridging the gap; (b)
+**no practice material at all** - no code, no data, no lab notebook, even
+though slide 30 instructs the reader to open a notebook and fill in the
+`#TODO`s. This is a difference in source material, not a contradiction in
+content.
+
 ## Concept → source map
 
-| Khái niệm | Nguồn | Khóa |
+| Concept | Source | Cohort |
 |---|---|---|
 | [[big-data]] | [[chapter01-introduction]] | K31 |
 | [[dikw-pyramid]] | [[chapter01-introduction]] | K31 |
@@ -311,6 +393,24 @@ templates.
 | [[pca-loadings-interpretation]] | [[chapter04-unsupervised-learning-k32]] | K32 |
 | [[pca-combined-with-other-algorithms-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
 | [[principal-component-regression]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[perceptron]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[activation-functions]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[dense-layers-and-deep-networks]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[loss-functions-and-empirical-risk]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[gradient-descent]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[backpropagation]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[learning-rate-and-optimizers]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[mini-batch-gradient-descent]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[dropout-and-early-stopping]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[sequence-modeling-design-criteria]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[word-embedding]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[recurrent-neural-network]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[backpropagation-through-time]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[lstm-gated-cells]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[self-attention]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[convolution-operation]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[convolutional-neural-network]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[computer-vision-tasks]] | [[chapter05-deep-learning-k32]] | K32 |
 
 ## Exam question bank
 
@@ -486,3 +586,96 @@ highest revision priority._
 - (K32) Why can PCA **damage** a classification
   problem, and what should be used instead when prediction is the
   goal?
+
+### Additional questions from K32 Chapter 5
+
+_This chapter carries **no** review questions or
+discussion topics from the instructor - unlike Chapter 3 (5 questions, slide
+111) and Chapter 4 (6 topics, slide 82). Every question below is synthesised
+by this wiki from the slide content._
+
+- (K32) Write a perceptron's formula and state the role
+  of the bias `w0`. Why can a single perceptron only classify with a straight
+  line?
+- (K32) Show that a multi-layer network with linear
+  activations is equivalent to a single linear layer. What does that imply
+  about its decision boundary?
+- (K32) Compare sigmoid, tanh and ReLU by range and
+  derivative. Why is `tanh` chosen for the RNN state equation and sigmoid for
+  an LSTM gate?
+- (K32) What does "hidden layer" mean literally? What
+  does the training data say, and not say, about the values in that
+  layer?
+- (K32) Write the binary cross-entropy and MSE losses.
+  Which output type is each for, and how does each behave towards large
+  errors?
+- (K32) Why is there a minus sign in the update
+  `W <- W - eta ∂J/∂W`? And why is `J` regarded as a function of `W` rather
+  than of the data?
+- (K32) Explain backpropagation via the chain rule for a
+  two-weight network. Which factor is reused, and why does that reuse matter
+  computationally?
+- (K32) Give the three cases for the learning rate and
+  each one's consequence. Why does too small an `eta` not merely slow things
+  down but give a worse result?
+- (K32) Compare full-batch, stochastic and mini-batch
+  gradient descent. Give the **two** independent reasons mini-batch is the
+  default.
+- (K32) In what fundamental respect do dropout and early
+  stopping differ from ridge/lasso regularisation? Why must a **different**
+  subset be dropped each iteration, and why must all units be active at test
+  time?
+- (K32) Give the four sequence modeling design criteria.
+  Use the pair "The food was good, not bad at all" and "The food was bad, not
+  good at all" to explain the third.
+- (K32) Why can a neural network not take words as
+  input? Compare one-hot with a learned embedding on **two** counts: meaning
+  information, and dimensionality.
+- (K32) Write the two equations of an RNN cell and state
+  the roles of `Wxh`, `Whh`, `Why`. Which matrix causes the gradient problem,
+  and why?
+- (K32) How do exploding and vanishing gradients differ
+  in cause and in remedy? Why is it said that vanishing gradients make the
+  model **learn a skewed** rather than merely **a slow** model?
+- (K32) Which two operations make up an LSTM gate, and
+  why is the `(0, 1)` range essential to the mechanism? What part of a gate is
+  **learned**?
+- (K32) Give the three limitations of recurrent models.
+  Which does gating fix, and which does it **not**?
+- (K32) Explain `Q`, `K`, `V` through the search analogy.
+  Why must keys and values be two different things?
+- (K32) Write the self-attention formula and the four
+  steps leading to it. Why is **positional encoding mandatory** for
+  self-attention but not for an RNN?
+- (K32) Match each RNN limitation against how
+  self-attention handles it. Why does the distance between two elements no
+  longer affect the strength of the link between them?
+- (K32) What is an image to a computer? Give two reasons
+  it cannot be fed straight into a fully connected layer.
+- (K32) Define the convolution operation precisely. In
+  the X example, why does a perfectly matching patch sum to 9? What size
+  feature map does an `n × n` image with an `f × f` filter at stride 1
+  give?
+- (K32) Why do two of the three classical filters on
+  slide 78 have entries summing to zero? And what is the fundamental
+  difference between those filters and a CNN's?
+- (K32) Give the three operations that make a CNN and
+  each one's purpose. Which problem from the X example does max pooling
+  solve?
+- (K32) Why is a convolutional neuron said to be
+  "exactly the perceptron from Lecture 1"? What are the two differences, and
+  what assumption about the world does the second encode?
+- (K32) Distinguish a convolutional layer's depth `d`
+  from the input image's colour channels. What is the receptive field, and why
+  does it widen with depth?
+- (K32) What are the two halves of a classification CNN?
+  Why does that split let one feature extractor serve four different
+  problems?
+- (K32) At which three slides does the feature hierarchy
+  appear, and what role does each occurrence play in the chapter's
+  argument?
+- (K32) Which message of the whole chapter does the
+  evolution from the naive approach through R-CNN to Faster R-CNN
+  repeat?
+- (K32) Of the four heads on slide 87, which trains
+  **without human labelling**, and what is its loss?

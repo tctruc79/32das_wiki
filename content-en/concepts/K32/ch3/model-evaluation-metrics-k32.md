@@ -24,13 +24,13 @@ metrics.
 With n observations, true value yᵢ, predicted value
 ŷᵢ and error uᵢ = yᵢ − ŷᵢ:
 
-| Chỉ số | Công thức | Đặc điểm |
+| Metric | Formula | Character |
 |---|---|---|
-| MAE | (1/n)Σ\|yᵢ − ŷᵢ\| | Coi mọi sai số như nhau |
-| MSE | (1/n)Σ(yᵢ − ŷᵢ)² | Phạt nặng sai số lớn; đơn vị là bình phương của y |
-| RMSE | √MSE | Đưa sai số **về đúng đơn vị của y** |
-| MAPE | (100/n)Σ\|yᵢ − ŷᵢ\|/\|yᵢ\| | Không phụ thuộc thang đo, dễ truyền đạt |
-| R² | 1 − Σ(yᵢ − ŷᵢ)²/Σ(yᵢ − ȳ)² | Tỷ lệ biến thiên của y được mô hình giải thích |
+| MAE | (1/n)Σ\|yᵢ − ŷᵢ\| | Treats every error alike |
+| MSE | (1/n)Σ(yᵢ − ŷᵢ)² | Punishes large errors heavily; its unit is the square of y |
+| RMSE | √MSE | Brings the error **back into the unit of y** |
+| MAPE | (100/n)Σ\|yᵢ − ŷᵢ\|/\|yᵢ\| | Scale-free and easy to communicate |
+| R² | 1 − Σ(yᵢ − ŷᵢ)²/Σ(yᵢ − ȳ)² | The share of the variation in y that the model explains |
 
 Choosing a metric is not arbitrary — it depends
 directly on **the business consequence of a large error**. MAE treats

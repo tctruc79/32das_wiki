@@ -98,12 +98,12 @@ obvious way to do it".
   (slide 22, entirely new vs K31) puts Python, R, Stata/EViews and Excel
   side by side:
 
-  | Công cụ | Điểm mạnh | Hạn chế |
+  | Tool | Strength | Limitation |
   |---|---|---|
-  | Python | Đa dụng, khoa học dữ liệu, ML, tự động hóa, miễn phí | Chậm hơn C với vòng lặp nặng |
-  | R | Thống kê, kinh tế lượng, đồ họa, miễn phí | Ít đa dụng hơn |
-  | Stata, EViews | Kinh tế lượng dựng sẵn, cú pháp dễ | Bản quyền thương mại, kém linh hoạt |
-  | Excel | Quen thuộc, nhanh với dữ liệu nhỏ | Khó tái lập, giới hạn kích thước |
+  | Python | General purpose, data science, ML, automation, free | Slower than C on heavy loops |
+  | R | Statistics, econometrics, graphics, free | Less general purpose |
+  | Stata, EViews | Econometrics built in, easy syntax | Commercially licensed, less flexible |
+  | Excel | Familiar, quick on small data | Hard to reproduce, size limits |
 
   Conclusion: Python and R are **complements**, not
   substitutes. Tools: CPython interpreter; IDEs — PyCharm, Spyder,

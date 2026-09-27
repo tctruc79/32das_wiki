@@ -46,12 +46,12 @@ Supervised learning is only 1 of 4 types of machine
 learning, distinguished by the **kind of learning signal** the algorithm
 receives:
 
-| Loại | Tín hiệu học | Ví dụ nhiệm vụ |
+| Kind | Learning signal | Example task |
 |---|---|---|
-| Học có giám sát | Nhãn đúng do con người cung cấp | Phân loại (đầu ra rời rạc), hồi quy (đầu ra là số) |
-| Học không giám sát | Không có nhãn | Phân cụm, giảm chiều, luật kết hợp |
-| Học tăng cường | Phần thưởng/hình phạt từ môi trường | Tác nhân học qua tương tác |
-| Học tự giám sát | Nhãn tự sinh ra từ chính cấu trúc dữ liệu | Dự đoán từ kế tiếp — cách tiền huấn luyện các mô hình ngôn ngữ lớn |
+| Supervised learning | Correct labels supplied by people | Classification (discrete output), regression (numeric output) |
+| Unsupervised learning | No labels | Clustering, dimension reduction, association rules |
+| Reinforcement learning | Reward and punishment from the environment | An agent that learns through interaction |
+| Self-supervised learning | Labels generated from the structure of the data itself | Next-word prediction - the way large language models are pre-trained |
 
 Self-supervised learning is the most notable
 addition here: it explains why today's large language models don't need

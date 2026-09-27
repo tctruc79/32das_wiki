@@ -49,14 +49,14 @@ trade-off.
 Comparing the two ensemble families directly on 6
 criteria:
 
-| Tiêu chí | Đóng bao (rừng ngẫu nhiên) | Tăng cường (XGBoost) |
+| Criterion | Bagging (random forest) | Boosting (XGBoost) |
 |---|---|---|
-| Cách xây cây | Song song, độc lập | Tuần tự, cây sau sửa cây trước |
-| Đặc điểm cây | Sâu; độ chệch thấp, phương sai cao | Cây cụt nông; độ chệch cao |
-| Chủ yếu giảm | **Phương sai** | **Độ chệch** |
-| Rủi ro quá khớp | Thấp | Trung bình, cần tinh chỉnh |
-| Tốc độ tinh chỉnh | Nhanh, ít núm vặn | Chậm hơn, nhiều núm vặn |
-| Dùng điển hình | Mốc so sánh vững chắc | Vắt kiệt độ chính xác tối đa |
+| How the trees are built | In parallel, independently | Sequentially, each tree correcting the one before |
+| Character of a tree | Deep; low bias, high variance | Shallow stumps; high bias |
+| Mainly reduces | **Variance** | **Bias** |
+| Overfitting risk | Low | Moderate, needs tuning |
+| Tuning speed | Fast, few knobs | Slower, many knobs |
+| Typical use | A solid benchmark | Squeezing out the last of the accuracy |
 
 Comparing the two directly on 6 criteria: bagging builds
 trees in parallel and independently while boosting builds them

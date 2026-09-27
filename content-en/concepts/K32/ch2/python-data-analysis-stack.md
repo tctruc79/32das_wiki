@@ -63,15 +63,15 @@ numbers:
 import numpy as np
 
 a = np.array([1, 2, 3, 4, 5])
-print(a * 2)              # phép toán áp dụng lên MỌI phần tử cùng lúc
+print(a * 2)              # the operation applies to EVERY element at once
 print(a.mean(), a.std(), a.sum())
 
-M = np.array([[1, 2], [3, 4]])          # ma trận 2x2
+M = np.array([[1, 2], [3, 4]])          # a 2x2 matrix
 print(M.shape)
-print(M @ M)                            # nhân ma trận
+print(M @ M)                            # matrix multiplication
 
 np.random.seed(2026)
-x = np.random.normal(loc=0, scale=1, size=1000)   # 1000 số ngẫu nhiên N(0,1)
+x = np.random.normal(loc=0, scale=1, size=1000)   # 1000 random numbers, N(0,1)
 print(round(x.mean(), 4), round(x.std(), 4))
 ```
 

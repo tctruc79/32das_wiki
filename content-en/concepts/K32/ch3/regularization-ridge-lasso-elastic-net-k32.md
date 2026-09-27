@@ -34,7 +34,7 @@ function the model minimises.
 With λ as the parameter tuning the penalty's
 strength:
 
-| Mô hình | Hàm mất mát cần tối thiểu hóa |
+| Model | The loss function to minimise |
 |---|---|
 | OLS | Σᵢ(yᵢ − β₀ − Σⱼβⱼxⱼᵢ)² |
 | Ridge | Σᵢ(yᵢ − β₀ − Σⱼβⱼxⱼᵢ)² **+ λΣⱼβⱼ²** |
@@ -87,14 +87,14 @@ is what actually decides the outcome:
 Summarising every difference between the two
 methods across 6 criteria:
 
-| Tiêu chí | Ridge (L2) | Lasso (L1) |
+| Criterion | Ridge (L2) | Lasso (L1) |
 |---|---|---|
-| Hình phạt | λΣβⱼ² | λΣ\|βⱼ\| |
-| Hệ số | Co về gần 0, **không bao giờ đúng bằng 0** | **Một số bị đưa về đúng 0** |
-| Chọn biến | Không | **Có, tự động** |
-| Biến dự báo tương quan | Chia đều trọng số cho cả nhóm | Chọn 1 biến, bỏ các biến còn lại |
-| Hợp nhất khi | **Nhiều** biến dự báo, mỗi biến ảnh hưởng **nhỏ** | **Ít** biến dự báo, mỗi biến ảnh hưởng **lớn** |
-| Nghiệm | Dạng hiển (đóng) | Bằng phương pháp số |
+| Penalty | λΣβⱼ² | λΣ\|βⱼ\| |
+| Coefficients | Shrunk close to 0, **never exactly 0** | **Some are driven to exactly 0** |
+| Variable selection | No | **Yes, automatically** |
+| Correlated predictors | Spreads the weight evenly over the whole group | Keeps one variable and drops the rest |
+| Fits best when | **Many** predictors, each with a **small** effect | **Few** predictors, each with a **large** effect |
+| Solution | Closed form | By numerical methods |
 
 Summarising all the differences between the two on 6
 criteria: Ridge's L2

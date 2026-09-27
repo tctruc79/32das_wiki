@@ -33,12 +33,12 @@ over observations.
 
 With x = (x₁,…,x_p) and z = (z₁,…,z_p):
 
-| Khoảng cách | Công thức | Khi nào dùng |
+| Distance | Formula | When to use it |
 |---|---|---|
-| Euclid | √Σ(xⱼ − zⱼ)² | Mặc định |
-| Manhattan (ô bàn cờ) | Σ\|xⱼ − zⱼ\| | Bền hơn trước giá trị ngoại lai |
-| Minkowski | (Σ\|xⱼ − zⱼ\|^q)^(1/q) | Dạng tổng quát: q = 2 ⇒ Euclid, q = 1 ⇒ Manhattan |
-| Hamming | Số vị trí khác nhau | Cho đặc trưng phân loại |
+| Euclidean | √Σ(xⱼ − zⱼ)² | The default |
+| Manhattan (city block) | Σ\|xⱼ − zⱼ\| | More robust to outliers |
+| Minkowski | (Σ\|xⱼ − zⱼ\|^q)^(1/q) | The general form: q = 2 ⇒ Euclidean, q = 1 ⇒ Manhattan |
+| Hamming | The number of positions that differ | For categorical features |
 
 Euclidean (the default), Manhattan (city
 block, more robust to outliers), Minkowski (the general form — q = 2
@@ -53,10 +53,10 @@ foundation, each feature's unit of measurement directly affects the
 result — an example predicting credit default from 2 features
 illustrates this clearly:
 
-| Đặc trưng | Khách hàng A | Khách hàng B |
+| Feature | Customer A | Customer B |
 |---|---|---|
-| Tuổi (năm) | 30 | 35 |
-| Thu nhập (triệu đồng) | 20.000 | 20.050 |
+| Age (years) | 30 | 35 |
+| Income (million VND) | 20,000 | 20,050 |
 
 A numeric example, **new** in this cohort: the
 Euclidean distance √(5² + 50²) ≈ 50.2 between two credit customers is

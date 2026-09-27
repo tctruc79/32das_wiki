@@ -54,13 +54,13 @@ improves.
   Intelligence comparison** (5 criteria — question/data/methods/output/
   typical tools):
 
-  | Tiêu chí | Business Intelligence | Data Analytics | Data Science |
+  | Criterion | Business Intelligence | Data Analytics | Data Science |
   |---|---|---|---|
-  | Câu hỏi | Điều gì đã xảy ra? | Điều gì đã xảy ra, và vì sao? | Điều gì sẽ xảy ra, và nên làm gì? |
-  | Dữ liệu | Có cấu trúc, nội bộ, đã biết | Chủ yếu có cấu trúc | Cấu trúc + phi cấu trúc, thường có nguồn mới |
-  | Phương pháp | Báo cáo, tổng hợp | Phân tích thống kê, kiểm định | Mô hình hóa, học máy, lập trình |
-  | Đầu ra | Dashboard, báo cáo | Hiểu biết, đề xuất | Mô hình, dự đoán, sản phẩm dữ liệu |
-  | Công cụ điển hình | Power BI, Tableau, SQL | Excel, SQL, R | Python, R, thư viện học máy |
+  | The question | What happened? | What happened, and why? | What will happen, and what should be done? |
+  | Data | Structured, internal, known | Mostly structured | Structured + unstructured, often from new sources |
+  | Method | Reporting, aggregation | Statistical analysis, hypothesis testing | Modelling, machine learning, programming |
+  | Output | Dashboards, reports | Insight, recommendations | Models, predictions, data products |
+  | Typical tools | Power BI, Tableau, SQL | Excel, SQL, R | Python, R, machine learning libraries |
 
   **Common exam trap**: ✅ "Data Science, Data
   Analytics and Business Intelligence are 3 overlapping practices, most

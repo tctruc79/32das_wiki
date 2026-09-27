@@ -5,7 +5,7 @@ title: "Bản đồ môn học"
 title_en: "Course Map"
 tags: [overview]
 created: 2026-08-22
-updated: 2026-09-18
+updated: 2026-09-27
 ---
 
 ## Môn học - <span class="en">The course</span>
@@ -20,11 +20,11 @@ Instructor: [[tran-thi-tuan-anh]].</span>
 
 Wiki này theo dõi 2 khóa học tách biệt hoàn toàn (xem CLAUDE.md, mục "Tách
 cụm K31/K32"): K31 (2025, đã có đủ 8 chương trong `raw/`) và K32 (2026,
-khóa hiện tại, đang được giảng viên phát tài liệu dần).
+khóa hiện tại, đã đủ 5/5 chương — hết phần lý thuyết).
 <br><span class="en">This wiki tracks two fully separated cohorts (see
 CLAUDE.md, "Tách cụm K31/K32"): K31 (2025, all 8 chapters already in
-`raw/`) and K32 (2026, the current cohort, materials still being released
-by the instructor).</span>
+`raw/`) and K32 (2026, the current cohort, complete at 5/5 chapters — the
+theory is finished).</span>
 
 ### K31 (2025) — 8 chương - <span class="en">K31 (2025) — 8 Chapters</span>
 
@@ -39,9 +39,13 @@ by the instructor).</span>
 
 ### K32 (2026 — khóa hiện tại) - <span class="en">K32 (2026 — Current Cohort)</span>
 
-Wiki hiện có 4 chương K32 (Chapter 1-4):
-<br><span class="en">The wiki currently covers 4 K32 chapters (Chapters
-1-4):</span>
+Wiki có đủ 5 chương K32 (Chapter 1-5) — **đây là toàn bộ phần lý thuyết của
+khóa 2026, không có Chapter 6-8**. Sau Chapter 5 còn đúng 2 buổi: 1 buổi
+chuyên gia chia sẻ về học máy/học sâu, 1 buổi các nhóm thuyết trình.
+<br><span class="en">The wiki holds all 5 K32 chapters (Chapters 1-5) —
+**this is the entire theory component of the 2026 cohort; there is no
+Chapter 6-8**. After Chapter 5 exactly two sessions remain: an expert talk
+on machine learning/deep learning, and the group presentations.</span>
 
 - **Chapter 1** — 5 V's, định nghĩa vận hành, 5 loại phân tích (thêm
   Causal), checklist 7 điều kiện.
@@ -84,6 +88,31 @@ Wiki hiện có 4 chương K32 (Chapter 1-4):
   Comes with 7 Python scripts and 2 images - the first time the course
   uses images as practice data.</span>
 
+- **Chapter 5** ("Introduction to Deep Learning", 90 slide gồm **3 bài
+  giảng gộp trong 1 file**) - bài A1 perceptron và mạng nơ-ron (hàm kích
+  hoạt, lớp kết nối đầy đủ, hàm mất mát, hạ gradient và lan truyền ngược,
+  bỏ ngẫu nhiên và dừng sớm); bài A2 mô hình hóa chuỗi (RNN, lan truyền
+  ngược theo thời gian, gradient tiêu biến, LSTM, tự chú ý và Transformer);
+  bài A3 thị giác máy tính (ảnh là ma trận số, tích chập, CNN với
+  conv/ReLU/gộp, phát hiện đối tượng, phân đoạn, điều khiển liên tục). Hai
+  điểm khác mọi chương trước: đây là chương đầu tiên **dựng lại từ khóa học
+  của một trường khác** thay vì từ hai giáo trình nền của môn (slide 1 ghi
+  rõ), và là chương K32 đầu tiên **không có file mã hay dữ liệu đi kèm** -
+  thư mục `Chapter05/` chỉ có đúng 1 file PDF.
+  <br><span class="en">**Chapter 5** ("Introduction to Deep Learning", 90
+  slides comprising **3 lectures merged into one file**) - lecture A1 on
+  perceptrons and neural networks (activations, dense layers, losses,
+  gradient descent and backpropagation, dropout and early stopping);
+  lecture A2 on sequence modeling (RNNs, backpropagation through time,
+  vanishing gradients, LSTMs, self-attention and the Transformer); lecture
+  A3 on computer vision (images as number matrices, convolution, CNNs with
+  conv/ReLU/pooling, object detection, segmentation, continuous control).
+  Two departures from every earlier chapter: it is the first **rebuilt from
+  another university's course** rather than from the course's two base
+  textbooks (slide 1 says so), and the first K32 chapter with **no code or
+  data files at all** - the `Chapter05/` folder holds exactly one
+  PDF.</span>
+
 ## Ôn thi - <span class="en">Exam prep</span>
 
 [[on-thi]] — điểm tổng hợp duy nhất để ôn thi.
@@ -105,7 +134,7 @@ page.</span>
   mặc định mở sẵn: **📄 Nội dung theo slide** (toàn văn tường thuật
   chương) và **🔎 Khái niệm chi tiết** (toàn bộ nội dung từng trang
   concept — định nghĩa, công thức, ví dụ Python, không rút gọn). Tiền tố
-  `K31 ·`/`K32 ·` thống nhất trên mọi tab (K31 Ch.1-8 + K32 Ch.1-3 riêng,
+  `K31 ·`/`K32 ·` thống nhất trên mọi tab (K31 Ch.1-8 + K32 Ch.1-5 riêng,
   không link chéo cụm). Tab "Tất cả chương" gộp theo cụm chủ đề xuyên
   chương để nhìn tổng quan, và tab "Tự test" có câu hỏi ôn thi kèm đáp án
   gợi ý.
@@ -114,7 +143,7 @@ page.</span>
   — each chapter tab displays full-width, with 2 default-open groups:
   **📄 Full slide walkthrough** and **🔎 Concept deep-dives** (every
   concept page's complete content, nothing condensed). A uniform
-  `K31 ·`/`K32 ·` prefix stays on every tab (K31 Ch.1-8 + K32 Ch.1-3
+  `K31 ·`/`K32 ·` prefix stays on every tab (K31 Ch.1-8 + K32 Ch.1-5
   separate, no cross-cluster links). The "All chapters" tab groups
   content into cross-chapter thematic clusters for an overview, and the
   "Self-test" tab has exam questions with suggested answers.</span>

@@ -135,14 +135,14 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 - **Vocabulary table** (slide 14) — the most
   important reference for reading the rest of the deck:
 
-  | Thuật ngữ | Ý nghĩa |
+  | Term | Meaning |
   |---|---|
-  | Quan sát / thể hiện (observation / instance) | 1 hàng dữ liệu, (xᵢ, yᵢ) |
-  | Đặc trưng / đầu vào / biến dự báo / biến / chiều / thuộc tính | 1 cột dữ liệu, xⱼ |
-  | Nhãn / mục tiêu / đầu ra (label / target / output) | Đại lượng cần dự đoán, y |
-  | Mô hình (model) | Hàm đã học được, f̂ |
-  | Tham số (parameter) | Học được từ dữ liệu (vd βⱼ) |
-  | Siêu tham số (hyperparameter) | Do người dùng chọn trước khi huấn luyện (vd K, λ, độ sâu cây) |
+  | Observation / instance | One row of data, (xᵢ, yᵢ) |
+  | Feature / input / predictor / variable / dimension / attribute | One column of data, xⱼ |
+  | Label / target / output | The quantity to be predicted, y |
+  | Model | The function that has been learned, f̂ |
+  | Parameter | Learned from the data (e.g. βⱼ) |
+  | Hyperparameter | Chosen by the user before training (e.g. K, λ, tree depth) |
 
   The slide's takeaway: **parameters are estimated
   by the algorithm; hyperparameters are selected by you, usually with
@@ -387,14 +387,14 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 - **Bagging vs boosting table** (slide 85,
   **new**):
 
-  | Tiêu chí | Đóng bao (rừng ngẫu nhiên) | Tăng cường (XGBoost) |
+  | Criterion | Bagging (random forest) | Boosting (XGBoost) |
   |---|---|---|
-  | Cách xây cây | Song song, độc lập | Tuần tự, cây sau sửa cây trước |
-  | Đặc điểm cây | Sâu, độ chệch thấp, phương sai cao | Cây cụt nông, độ chệch cao |
-  | Chủ yếu giảm | Phương sai | Độ chệch |
-  | Rủi ro quá khớp | Thấp | Trung bình, cần tinh chỉnh |
-  | Tốc độ tinh chỉnh | Nhanh, ít núm vặn | Chậm hơn, nhiều núm vặn |
-  | Dùng điển hình | Mốc so sánh vững chắc | Vắt kiệt độ chính xác tối đa |
+  | How the trees are built | In parallel, independently | Sequentially, each tree correcting the one before |
+  | Character of a tree | Deep, low bias, high variance | Shallow stumps, high bias |
+  | Mainly reduces | Variance | Bias |
+  | Overfitting risk | Low | Moderate, needs tuning |
+  | Tuning speed | Fast, few knobs | Slower, many knobs |
+  | Typical use | A solid benchmark | Squeezing out the last of the accuracy |
 
   In prose: bagging builds trees in parallel and
   independently, boosting sequentially with each fixing the last;
@@ -474,14 +474,14 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 - **Lasso vs Ridge table** (slide 100, **new, 6
   criteria**):
 
-  | Tiêu chí | Ridge (L2) | Lasso (L1) |
+  | Criterion | Ridge (L2) | Lasso (L1) |
   |---|---|---|
-  | Hình phạt | λΣβⱼ² | λΣ\|βⱼ\| |
-  | Hệ số | Co về gần 0, không bao giờ đúng bằng 0 | Một số bị đưa về đúng 0 |
-  | Chọn biến | Không | Có, tự động |
-  | Biến dự báo tương quan | Chia đều trọng số cho cả nhóm | Chọn 1 biến, bỏ các biến còn lại |
-  | Hợp nhất khi | Nhiều biến dự báo cùng có ảnh hưởng nhỏ | Chỉ vài biến dự báo có ảnh hưởng lớn |
-  | Nghiệm | Dạng hiển (đóng) | Bằng phương pháp số |
+  | Penalty | λΣβⱼ² | λΣ\|βⱼ\| |
+  | Coefficients | Shrunk close to 0, never exactly 0 | Some are driven to exactly 0 |
+  | Variable selection | No | Yes, automatically |
+  | Correlated predictors | Spreads the weight evenly over the whole group | Keeps one variable and drops the rest |
+  | Fits best when | Many predictors each have a small effect | Only a few predictors have a large effect |
+  | Solution | Closed form | By numerical methods |
 
   **Mandatory note**: always standardise the
   features before fitting, otherwise the penalty is applied
@@ -519,15 +519,15 @@ Regression, Regularized Regression (Ridge/LASSO), Support Vector Machine.
 **Summary table of the 7 algorithms** (slide 110)
 — the chapter's best single revision tool:
 
-| Thuật toán | Bài toán | Siêu tham số chính | Cần chuẩn hóa? | Điểm mạnh chính |
+| Algorithm | Task | Main hyperparameter | Needs scaling? | Main strength |
 |---|---|---|---|---|
-| KNN | Cả hai | K | Có | Đơn giản, ranh giới linh hoạt |
-| Cây quyết định | Cả hai | độ sâu, số quan sát tối thiểu mỗi lá | Không | Luật diễn giải được |
-| Rừng ngẫu nhiên | Cả hai | `n_estimators`, `max_features` | Không | Mốc so sánh mạnh và ổn định |
-| Tăng cường | Cả hai | tốc độ học, số vòng | Không | Độ chính xác cao nhất trên dữ liệu bảng |
-| Hồi quy tuyến tính | Hồi quy | — | Không | Hệ số diễn giải được |
-| Ridge | Hồi quy | λ | Có | Xử lý được đa cộng tuyến |
-| Lasso | Hồi quy | λ | Có | Tự động chọn biến |
+| KNN | Both | K | Yes | Simple, flexible boundary |
+| Decision tree | Both | depth, minimum observations per leaf | No | Rules you can read |
+| Random forest | Both | `n_estimators`, `max_features` | No | A strong, stable benchmark |
+| Boosting | Both | learning rate, number of rounds | No | The highest accuracy on tabular data |
+| Linear regression | Regression | - | No | Coefficients you can read |
+| Ridge | Regression | λ | Yes | Copes with multicollinearity |
+| Lasso | Regression | λ | Yes | Selects variables on its own |
 
 In prose: KNN (both tasks, K, scaling needed,
 simple and flexible boundary); decision tree (both, depth/min leaf, no
@@ -571,13 +571,13 @@ contains 7 files besides the PDF slides.
 
 ### Data files
 
-| File | Kích thước | Cột | Dùng ở đâu |
+| File | Size | Columns | Where it is used |
 |---|---|---|---|
-| `iris.csv` | 150 hàng, 5 cột | `sepal.length`, `sepal.width`, `petal.length`, `petal.width`, `variety` (50 Setosa / 50 Versicolor / 50 Virginica) | Ví dụ 3.1 (KNN), slide 39-48 |
-| `Regression.csv` | 104 hàng, 5 cột | `x1`, `x2`, `x3`, `x4`, `y` | Ví dụ 7.1 (OLS/Ridge/Lasso/Elastic Net), slide 104 |
-| `Regression.xlsx` | — | cùng dữ liệu, dạng Excel | Bản Excel của file trên |
-| `Nationality.csv` | 13 hàng, 5 cột | `Age`, `Experience`, `Rank`, `Nationality`, `Go` (7 YES / 6 NO) | Không slide nào gọi tên — xem ghi chú |
-| `TeleCustomers.csv` | 1000 hàng, 8 cột | `region`, `tenure`, `age`, `marital`, `address`, `income`, `ed`, `employ` | Không slide nào gọi tên — xem ghi chú |
+| `iris.csv` | 150 rows, 5 columns | `sepal.length`, `sepal.width`, `petal.length`, `petal.width`, `variety` (50 Setosa / 50 Versicolor / 50 Virginica) | Example 3.1 (KNN), slides 39-48 |
+| `Regression.csv` | 104 rows, 5 columns | `x1`, `x2`, `x3`, `x4`, `y` | Example 7.1 (OLS/Ridge/Lasso/Elastic Net), slide 104 |
+| `Regression.xlsx` | - | the same data, in Excel form | The Excel version of the file above |
+| `Nationality.csv` | 13 rows, 5 columns | `Age`, `Experience`, `Rank`, `Nationality`, `Go` (7 YES / 6 NO) | No slide calls it by name - see the note |
+| `TeleCustomers.csv` | 1000 rows, 8 columns | `region`, `tenure`, `age`, `marital`, `address`, `income`, `ed`, `employ` | No slide calls it by name - see the note |
 
 **Data files**: `iris.csv` (150 rows, 4 features +
 `variety`, 50 of each species) drives Example 3.1; `Regression.csv` (104

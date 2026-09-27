@@ -20,13 +20,13 @@ is the **bias–variance trade-off**.
 
 ### The two states side by side
 
-| | Chưa khớp | Quá khớp |
+| | Underfitting | Overfitting |
 |---|---|---|
-| Vấn đề | Mô hình quá đơn giản | Mô hình quá phức tạp, học cả nhiễu |
-| Trên tập huấn luyện | Kém | Cực tốt |
-| Trên tập kiểm tra / dự báo | Kém | Kém |
-| Dấu hiệu nhận biết | Sai số huấn luyện cao, sai số kiểm tra cao, **hai con số gần nhau** | Sai số huấn luyện rất thấp, sai số kiểm tra cao hơn nhiều — **khoảng cách lớn** |
-| Cách xử lý | Mô hình phức tạp hơn; thêm hoặc cải thiện đặc trưng; **giảm** mức điều chuẩn | Mô hình đơn giản hơn; giảm độ phức tạp; thu thập thêm dữ liệu; **áp dụng** điều chuẩn; tỉa cây |
+| The problem | The model is too simple | The model is too complex and learns the noise too |
+| On the training set | Poor | Excellent |
+| On the test set / in forecasting | Poor | Poor |
+| How to spot it | High training error, high test error, **the two numbers close together** | Very low training error, far higher test error - **a large gap** |
+| What to do | A more complex model; add or improve features; **reduce** the amount of regularisation | A simpler model; cut the complexity; collect more data; **apply** regularisation; prune the tree |
 
 **Underfitting**: too simple; poor on both training and
 test data; symptom is high training error *and* high test error, close

@@ -4,7 +4,7 @@ type: overview
 title: "Course Map"
 tags: [overview]
 created: 2026-08-22
-updated: 2026-09-18
+updated: 2026-09-27
 ---
 
 ## The course
@@ -17,8 +17,8 @@ Instructor: [[tran-thi-tuan-anh]].
 
 This wiki tracks two fully separated cohorts (see
 CLAUDE.md, "Tách cụm K31/K32"): K31 (2025, all 8 chapters already in
-`raw/`) and K32 (2026, the current cohort, materials still being released
-by the instructor).
+`raw/`) and K32 (2026, the current cohort, complete at 5/5 chapters — the
+theory is finished).
 
 ### K31 (2025) — 8 Chapters
 
@@ -33,8 +33,10 @@ by the instructor).
 
 ### K32 (2026 — Current Cohort)
 
-The wiki currently covers 4 K32 chapters (Chapters
-1-4):
+The wiki holds all 5 K32 chapters (Chapters 1-5) —
+**this is the entire theory component of the 2026 cohort; there is no
+Chapter 6-8**. After Chapter 5 exactly two sessions remain: an expert talk
+on machine learning/deep learning, and the group presentations.
 
 - **Chapter 1** — the 5 V's, a working definition,
   5 types of analytics (adding Causal), the 7-condition checklist.
@@ -59,6 +61,20 @@ The wiki currently covers 4 K32 chapters (Chapters
   Comes with 7 Python scripts and 2 images - the first time the course
   uses images as practice data.
 
+- **Chapter 5** ("Introduction to Deep Learning", 90
+  slides comprising **3 lectures merged into one file**) - lecture A1 on
+  perceptrons and neural networks (activations, dense layers, losses,
+  gradient descent and backpropagation, dropout and early stopping);
+  lecture A2 on sequence modeling (RNNs, backpropagation through time,
+  vanishing gradients, LSTMs, self-attention and the Transformer); lecture
+  A3 on computer vision (images as number matrices, convolution, CNNs with
+  conv/ReLU/pooling, object detection, segmentation, continuous control).
+  Two departures from every earlier chapter: it is the first **rebuilt from
+  another university's course** rather than from the course's two base
+  textbooks (slide 1 says so), and the first K32 chapter with **no code or
+  data files at all** - the `Chapter05/` folder holds exactly one
+  PDF.
+
 ## Exam prep
 
 [[on-thi]] — the single compounding exam-prep
@@ -75,7 +91,7 @@ page.
   — each chapter tab displays full-width, with 2 default-open groups:
   **📄 Full slide walkthrough** and **🔎 Concept deep-dives** (every
   concept page's complete content, nothing condensed). A uniform
-  `K31 ·`/`K32 ·` prefix stays on every tab (K31 Ch.1-8 + K32 Ch.1-3
+  `K31 ·`/`K32 ·` prefix stays on every tab (K31 Ch.1-8 + K32 Ch.1-5
   separate, no cross-cluster links). The "All chapters" tab groups
   content into cross-chapter thematic clusters for an overview, and the
   "Self-test" tab has exam questions with suggested answers.

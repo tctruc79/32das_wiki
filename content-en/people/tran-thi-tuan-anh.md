@@ -3,7 +3,7 @@ type: person
 title: "Trần Thị Tuấn Anh"
 tags: [instructor]
 created: 2026-08-22
-updated: 2026-08-28
+updated: 2026-09-27
 status: complete
 ---
 
@@ -46,3 +46,13 @@ one real individual, not content that can diverge by cohort.
   classification and regression branch (K32, 2026); this deck carries
   several self-correction boxes versus earlier versions (slides 17, 32)
   and a deliberate debugging exercise in the Example 3.1 code.
+- [[chapter04-unsupervised-learning-k32]] — the
+  86-slide unsupervised learning chapter covering all of clustering and PCA
+  (K32, 2026); with 7 Python scripts and 2 images, two of the scripts
+  carrying real bugs.
+- [[chapter05-deep-learning-k32]] — the 90-slide deep
+  learning chapter comprising 3 merged lectures (K32, 2026). It is the first
+  chapter the instructor built **not from the course's two base textbooks**
+  but from another university's course (slide 1 states so), and the first
+  K32 chapter shipped with **no code or practice data at all**, and no
+  exercises or discussion questions either.

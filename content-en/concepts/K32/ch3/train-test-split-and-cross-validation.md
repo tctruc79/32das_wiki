@@ -40,11 +40,11 @@ set loses its role as a neutral referee the moment it is used for tuning.
 Cross-validation solves exactly this by rotating the train/validation
 role *inside* the training set, in 3 forms:
 
-| Dạng | Cách làm | Ghi chú |
+| Form | How it works | Note |
 |---|---|---|
-| Bỏ một quan sát (LOOCV) | Tập huấn luyện n − 1 quan sát, tập kiểm tra đúng 1 quan sát, lặp n lần | Tốn tính toán nhất |
-| K-phần (K-fold) | Chia thành K phần, huấn luyện trên K − 1, kiểm tra trên phần còn lại, xoay vòng rồi lấy trung bình K điểm số | K = 5 hoặc K = 10 là chuẩn |
-| K-phần phân tầng (stratified) | Như K-phần nhưng giữ nguyên tỷ lệ các lớp trong từng phần | **Luôn ưu tiên cho bài toán phân loại** |
+| Leave one out (LOOCV) | A training set of n − 1 observations, a test set of exactly 1, repeated n times | The most computationally costly |
+| K-fold | Split into K folds, train on K − 1, test on the one left out, rotate and average the K scores | K = 5 or K = 10 is the standard |
+| Stratified K-fold | Like K-fold, but each fold keeps the class proportions | **Always preferred for classification** |
 
 The correct workflow, recurring throughout the
 chapter's code examples, is: use cross-validation (typically via

@@ -4,7 +4,7 @@ title: "Ôn thi"
 title_en: "Exam Prep"
 tags: [synthesis, exam-prep]
 created: 2026-08-22
-updated: 2026-09-18
+updated: 2026-09-27
 status: complete
 ---
 
@@ -30,6 +30,7 @@ section).</span>
 | [[chapter02-python-jupyter-k32]] | K32 | Python (cú pháp đầy đủ), Jupyter (kernel/cell/magic commands), Python for Data Analysis (NumPy/pandas/matplotlib/seaborn/statsmodels/scikit-learn) dùng `Data2.csv` | Gần gấp đôi bản K31 (78 vs 41 slide) — thêm 2 phần hoàn toàn mới; tách cụm — không link chéo K31 |
 | [[chapter04-unsupervised-learning-k32]] | K32 | Trọn nhánh học không giám sát: phân cụm (khoảng cách, K-Means + k-means++, thứ bậc + liên kết + sơ đồ cây, DBSCAN/GMM, danh sách 7 bẫy) và PCA (hiệp phương sai, trị riêng/véc-tơ riêng, SVD, chọn m, hệ số tải, nén ảnh) + Part 3 ghép PCA với phân cụm/phân loại/hồi quy (PCR) và rò rỉ dữ liệu | 86 slide. Lần đầu dùng **ảnh** làm dữ liệu thực hành (`Image1.jpg`, `Image2.jpg`). 7 file mã đi kèm, trong đó **2 file có lỗi thật** (`Example3.7_KMeans.py` đặt `n_clusters=1` trên dữ liệu 3 tâm - chạy được và sai âm thầm; `..._GenerateData_and_Clustering.py` dừng với `NameError`); 2 file ảnh cần `skimage`/`cv2` không có trong môi trường môn học. Không có mã cho phân cụm thứ bậc, DBSCAN, GMM. Tách cụm - không link chéo K31 |
 | [[chapter03-supervised-learning-k32]] | K32 | Trọn nhánh học có giám sát: nền tảng ML, đánh giá mô hình (chỉ số hồi quy + phân loại, kiểm định chéo, độ chệch–phương sai), phân loại + KNN, cây quyết định, rừng ngẫu nhiên + tăng cường, hồi quy, Ridge/Lasso/Elastic Net | 112 slide — chương lớn nhất; gộp nội dung mà khóa 2025 chia làm 3 chương. Mã Ví dụ 3.1 **cố ý có lỗi** (slide 41-42 ghi rõ). Bài tập nhóm 3 cần `Income.csv` chưa có trong `raw/`. Tách cụm — không link chéo K31 |
+| [[chapter05-deep-learning-k32]] | K32 | Trọn nhánh học sâu (90 slide, 3 bài giảng gộp): perceptron, lớp Dense, mạng sâu, hàm mất mát, hạ gradient + lan truyền ngược, dropout/dừng sớm; RNN + BPTT + gradient tiêu biến + LSTM + tự chú ý/Transformer; ảnh là ma trận số, tích chập, CNN (conv/ReLU/gộp), phát hiện đối tượng, phân đoạn, điều khiển | **Chương đầu tiên không soạn từ 2 giáo trình nền**: slide 1 ghi "Based on the MIT's course about Introduction to Deep Learning". **Không có file mã, dữ liệu, hay lab notebook nào** trong `raw/` - khác hẳn Ch.3 và Ch.4; lab ở slide 30 ("fill in the #TODOs") không có. **Không có bài tập hay câu hỏi thảo luận nào** của giảng viên. Trang vật lý 86 của PDF trống hoàn toàn (91 trang → 90 slide). LSTM nêu tên nhưng không viết ra 3 cổng; Transformer chỉ tới mức 1 đầu chú ý. Tách cụm - không link chéo K31 |
 
 ## 2. Cụm chủ đề - <span class="en">Topic clusters</span>
 
@@ -286,6 +287,111 @@ with ridge, `betahat = Vm gammahat`, the comparison with PLS) - the
 dimension-reduction branch, from
 [[chapter04-unsupervised-learning-k32]] (K32).</span>
 
+### P. K32 - Chapter 5: Nền tảng mạng nơ-ron và huấn luyện - <span class="en">P. K32 - Chapter 5: Neural Network Foundations and Training</span>
+
+_Cụm riêng cho K32._
+<br><span class="en">_A separate cluster for K32._</span>
+
+[[perceptron]] (tổng có trọng số cộng trọng số chệch qua một hàm phi tuyến;
+một perceptron chỉ vẽ được một đường thẳng; ví dụ tính tay slide 10),
+[[activation-functions]] (sigmoid/tang hyperbolic/ReLU kèm đạo hàm; lập
+luận `W2(W1 x) = (W2 W1)x` nên mạng 100 lớp tuyến tính vẫn là một lớp),
+[[dense-layers-and-deep-networks]] (lớp Dense là một phép nhân ma trận;
+nghĩa đen của chữ "ẩn"; chiều sâu không cần cơ chế mới),
+[[loss-functions-and-empirical-risk]] (mất mát một quan sát, mất mát thực
+nghiệm, `J` là hàm của `W`; entropy chéo nhị phân so với MSE),
+[[gradient-descent]] (mặt cảnh quan mất mát, thuật toán năm dòng, không có
+nghiệm hiển - khác hẳn Chapter 3 và 4), [[backpropagation]] (quy tắc chuỗi,
+việc dùng lại thừa số `∂J/∂ŷ`, vì sao gradient chảy ngược),
+[[learning-rate-and-optimizers]] (ba tình huống của `eta`, tốc độ học thích
+nghi, bảng 5 bộ tối ưu từ SGD 1952 tới Adam 2014),
+[[mini-batch-gradient-descent]] (toàn phần so với ngẫu nhiên so với lô nhỏ;
+hai lý do lô nhỏ thắng) và [[dropout-and-early-stopping]] (hai kỹ thuật
+điều chuẩn **không sửa hàm mất mát mà sửa quy trình huấn luyện**) - nền
+tảng mạng nơ-ron, từ [[chapter05-deep-learning-k32]] (K32), bài giảng A1.
+<br><span class="en">[[perceptron]] (a weighted sum plus a bias through a
+non-linearity; one perceptron draws only a line; the worked example on
+slide 10), [[activation-functions]] (sigmoid/tanh/ReLU with derivatives;
+the `W2(W1 x) = (W2 W1)x` argument, so a 100-layer linear network is one
+layer), [[dense-layers-and-deep-networks]] (a dense layer as one matrix
+multiply; what "hidden" literally means; depth needing no new mechanism),
+[[loss-functions-and-empirical-risk]] (one example's loss, the empirical
+loss, `J` as a function of `W`; binary cross-entropy versus MSE),
+[[gradient-descent]] (the loss landscape, the five-line algorithm, no
+closed form - unlike Chapters 3 and 4), [[backpropagation]] (the chain
+rule, the reuse of `∂J/∂ŷ`, why gradients flow backwards),
+[[learning-rate-and-optimizers]] (the three cases for `eta`, adaptive
+rates, the table of 5 optimisers from SGD 1952 to Adam 2014),
+[[mini-batch-gradient-descent]] (full versus stochastic versus mini-batch;
+the two reasons mini-batch wins) and [[dropout-and-early-stopping]] (two
+regularisation techniques that **do not modify the loss but the training
+procedure**) - the neural network foundations, from
+[[chapter05-deep-learning-k32]] (K32), lecture A1.</span>
+
+### Q. K32 - Chapter 5: Mô hình hóa chuỗi và cơ chế chú ý - <span class="en">Q. K32 - Chapter 5: Sequence Modeling and Attention</span>
+
+_Cụm riêng cho K32._
+<br><span class="en">_A separate cluster for K32._</span>
+
+[[sequence-modeling-design-criteria]] (bốn tiêu chí: độ dài thay đổi, phụ
+thuộc dài hạn, thứ tự, dùng chung tham số; bốn dạng bài toán chuỗi; ba câu
+ví dụ trong đó "good, not bad" so với "bad, not good" là câu đáng nhớ
+nhất), [[word-embedding]] (từ vựng → chỉ số → véc-tơ; véc-tơ chỉ báo so với
+véc-tơ nhúng học được nơi các từ gần nghĩa nằm gần nhau),
+[[recurrent-neural-network]] (`ht = fW(xt, ht-1)`; ba ma trận `Wxh`, `Whh`,
+`Why`; lý do chọn `tanh`; đồ thị trải theo thời gian),
+[[backpropagation-through-time]] (BPTT; nhân nhiều `Whh` sinh ra gradient
+bùng nổ và gradient tiêu biến; `1.5^50` so với `0.5^50`; hai câu "clouds"
+và "France"), [[lstm-gated-cells]] (cổng là một lớp sigmoid nhân từng phần
+tử, mức lọt được học; ba giới hạn còn lại của RNN) và [[self-attention]]
+(phép loại suy tìm kiếm YouTube cho `Q`/`K`/`V`; bốn bước; vì sao mã hóa
+vị trí bắt buộc; Transformer và LLM) - nhánh chuỗi, từ
+[[chapter05-deep-learning-k32]] (K32), bài giảng A2.
+<br><span class="en">[[sequence-modeling-design-criteria]] (the four
+criteria: variable length, long-term dependencies, order, parameter
+sharing; the four sequence shapes; three example sentences of which "good,
+not bad" versus "bad, not good" is the most memorable),
+[[word-embedding]] (vocabulary → index → vector; one-hot versus a learned
+embedding where similar words sit close), [[recurrent-neural-network]]
+(`ht = fW(xt, ht-1)`; the three matrices `Wxh`, `Whh`, `Why`; the reason
+for `tanh`; the unrolled graph), [[backpropagation-through-time]] (BPTT;
+multiplying many `Whh` producing exploding and vanishing gradients;
+`1.5^50` versus `0.5^50`; the "clouds" and "France" sentences),
+[[lstm-gated-cells]] (a gate as a sigmoid layer multiplied pointwise, the
+amount learned; the three remaining RNN limitations) and
+[[self-attention]] (the YouTube search analogy for `Q`/`K`/`V`; the four
+steps; why positional encoding is mandatory; the Transformer and LLMs) -
+the sequence branch, from [[chapter05-deep-learning-k32]] (K32), lecture
+A2.</span>
+
+### R. K32 - Chapter 5: Thị giác máy tính và mạng tích chập - <span class="en">R. K32 - Chapter 5: Computer Vision and Convolutional Networks</span>
+
+_Cụm riêng cho K32._
+<br><span class="en">_A separate cluster for K32._</span>
+
+[[computer-vision-tasks]] (ảnh là ma trận số trong `[0, 255]`; bảy nguồn
+biến thiên làm đặc trưng thủ công thất bại; hệ phân tầng đặc trưng nêu ở
+slide 4, lặp ở 69, chứng minh ở 84; bốn đầu ra trên một xương sống; R-CNN
+tới Faster R-CNN), [[convolution-operation]] (bộ lọc, nhân từng phần tử rồi
+cộng; con số 9 trong ví dụ chữ X; ví dụ `5 × 5` cho ra 4; bộ lọc **được học
+chứ không do người thiết kế**) và [[convolutional-neural-network]] (ba phép
+toán conv/ReLU/gộp; nơ-ron tích chập "chính xác là perceptron của bài giảng
+1"; bước trượt và vùng tiếp nhận; gộp cực đại cho bất biến không gian; hai
+nửa học đặc trưng và phân loại) - nhánh thị giác, từ
+[[chapter05-deep-learning-k32]] (K32), bài giảng A3.
+<br><span class="en">[[computer-vision-tasks]] (images as matrices of
+numbers in `[0, 255]`; the seven sources of variation that defeat
+hand-engineered features; the feature hierarchy stated on slide 4, repeated
+on 69, proven on 84; four heads on one backbone; R-CNN through Faster
+R-CNN), [[convolution-operation]] (filters, element-wise multiply and add;
+the number 9 in the X example; the `5 × 5` example giving 4; filters being
+**learned rather than hand-designed**) and
+[[convolutional-neural-network]] (the three operations conv/ReLU/pooling;
+the convolutional neuron being "exactly the perceptron from Lecture 1";
+stride and receptive field; max pooling for spatial invariance; the
+feature-learning and classification halves) - the vision branch, from
+[[chapter05-deep-learning-k32]] (K32), lecture A3.</span>
+
 ## 3. Mâu thuẫn / khác biệt giữa các nguồn - <span class="en">Tensions / differences between sources</span>
 
 Không có mâu thuẫn thật trong nội bộ cụm K31 (8/8 chương). Riêng K31 vs
@@ -407,6 +513,41 @@ percentages and a loadings table, but **none of the chapter's shipped
 a practical gap to know about before using those files as
 templates.</span>
 
+Một ghi nhận nữa về Chapter 5 (K32), thuộc loại **khác biệt giữa các khóa**
+chứ không phải mâu thuẫn: khóa 2025 dạy học sâu trong **một chương duy
+nhất** ở mức khái quát, còn bản 2026 mở thành **ba bài giảng đầy đủ** và bổ
+sung hẳn cơ chế tự chú ý cùng kiến trúc Transformer - thứ hoàn toàn không có
+ở bản 2025. Theo quy tắc tách cụm, điều này chỉ ghi bằng chữ thường, không
+tạo wikilink giữa hai cụm.
+<br><span class="en">One further note on Chapter 5 (K32), of the
+**cohort-difference** kind rather than a tension: the 2025 cohort taught deep
+learning in **a single chapter** at a general level, while the 2026 version
+expands it into **three full lectures** and adds self-attention and the
+Transformer architecture outright - material entirely absent from the 2025
+version. Per the cohort separation rule this is recorded in plain text only,
+with no wikilink between the clusters.</span>
+
+Và một ghi nhận **trong nội bộ K32** đáng lưu: Chapter 5 là chương đầu tiên
+**không soạn từ hai giáo trình nền của môn** mà dựng lại từ khóa học của một
+trường khác (slide 1 ghi rõ). Hệ quả thực hành là hai chỗ lệch so với bốn
+chương trước: (a) **mức toán cao hơn hẳn** - đạo hàm riêng, quy tắc chuỗi, ký
+hiệu gradient được dùng như đã quen thuộc, trong khi Chapter 3 và 4 chủ yếu
+dừng ở tổng, trung bình và ma trận hiệp phương sai, và không có slide ôn lại
+nào bắc cầu; (b) **không có tài liệu thực hành nào** - không file mã, không
+dữ liệu, không lab notebook, dù slide 30 chỉ dẫn mở notebook và điền
+`#TODO`. Đây là khác biệt về chất liệu nguồn, không phải mâu thuẫn nội dung.
+<br><span class="en">And one note **within K32** worth recording: Chapter 5 is
+the first chapter **not built from the course's two base textbooks** but
+rebuilt from another university's course (slide 1 says so). The practical
+consequences are two gaps against the previous four chapters: (a) a **markedly
+higher mathematical level** - partial derivatives, the chain rule and gradient
+notation used as if familiar, whereas Chapters 3 and 4 largely stopped at sums,
+means and covariance matrices, with no revision slide bridging the gap; (b)
+**no practice material at all** - no code, no data, no lab notebook, even
+though slide 30 instructs the reader to open a notebook and fill in the
+`#TODO`s. This is a difference in source material, not a contradiction in
+content.</span>
+
 ## 4. Bản đồ khái niệm → nguồn - <span class="en">Concept → source map</span>
 
 | Khái niệm | Nguồn | Khóa |
@@ -464,6 +605,24 @@ templates.</span>
 | [[pca-loadings-interpretation]] | [[chapter04-unsupervised-learning-k32]] | K32 |
 | [[pca-combined-with-other-algorithms-k32]] | [[chapter04-unsupervised-learning-k32]] | K32 |
 | [[principal-component-regression]] | [[chapter04-unsupervised-learning-k32]] | K32 |
+| [[perceptron]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[activation-functions]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[dense-layers-and-deep-networks]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[loss-functions-and-empirical-risk]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[gradient-descent]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[backpropagation]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[learning-rate-and-optimizers]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[mini-batch-gradient-descent]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[dropout-and-early-stopping]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[sequence-modeling-design-criteria]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[word-embedding]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[recurrent-neural-network]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[backpropagation-through-time]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[lstm-gated-cells]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[self-attention]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[convolution-operation]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[convolutional-neural-network]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[computer-vision-tasks]] | [[chapter05-deep-learning-k32]] | K32 |
 
 ## 5. Ngân hàng câu hỏi ôn thi - <span class="en">Exam question bank</span>
 
@@ -765,3 +924,171 @@ highest revision priority._</span>
   <br><span class="en">(K32) Why can PCA **damage** a classification
   problem, and what should be used instead when prediction is the
   goal?</span>
+
+### Câu hỏi bổ sung từ Chapter 5 K32 - <span class="en">Additional questions from K32 Chapter 5</span>
+
+_Chương này **không có** câu hỏi ôn tập hay chủ đề thảo luận nào do giảng
+viên ra - khác Chapter 3 (5 câu, slide 111) và Chapter 4 (6 chủ đề, slide
+82). Toàn bộ danh sách dưới đây do wiki tổng hợp từ nội dung slide._
+<br><span class="en">_This chapter carries **no** review questions or
+discussion topics from the instructor - unlike Chapter 3 (5 questions, slide
+111) and Chapter 4 (6 topics, slide 82). Every question below is synthesised
+by this wiki from the slide content._</span>
+
+- (K32) Viết công thức của một perceptron và nói rõ vai trò của trọng số
+  chệch `w0`. Vì sao một perceptron đơn lẻ chỉ phân loại được bằng một đường
+  thẳng?
+  <br><span class="en">(K32) Write a perceptron's formula and state the role
+  of the bias `w0`. Why can a single perceptron only classify with a straight
+  line?</span>
+- (K32) Chứng minh rằng một mạng nhiều lớp với hàm kích hoạt tuyến tính
+  tương đương một lớp tuyến tính duy nhất. Hệ quả của điều đó với biên quyết
+  định là gì?
+  <br><span class="en">(K32) Show that a multi-layer network with linear
+  activations is equivalent to a single linear layer. What does that imply
+  about its decision boundary?</span>
+- (K32) So sánh sigmoid, tang hyperbolic và ReLU theo miền giá trị và đạo
+  hàm. Vì sao `tanh` được chọn cho phương trình trạng thái của RNN, còn
+  sigmoid được chọn cho cổng của LSTM?
+  <br><span class="en">(K32) Compare sigmoid, tanh and ReLU by range and
+  derivative. Why is `tanh` chosen for the RNN state equation and sigmoid for
+  an LSTM gate?</span>
+- (K32) "Lớp ẩn" nghĩa là gì theo nghĩa đen? Dữ liệu huấn luyện nói gì và
+  không nói gì về các giá trị trong lớp đó?
+  <br><span class="en">(K32) What does "hidden layer" mean literally? What
+  does the training data say, and not say, about the values in that
+  layer?</span>
+- (K32) Viết hàm mất mát entropy chéo nhị phân và MSE. Mỗi hàm dùng cho loại
+  đầu ra nào, và tính cách của từng hàm trước các sai số lớn khác nhau ra
+  sao?
+  <br><span class="en">(K32) Write the binary cross-entropy and MSE losses.
+  Which output type is each for, and how does each behave towards large
+  errors?</span>
+- (K32) Vì sao trong công thức cập nhật `W <- W - eta ∂J/∂W` lại có dấu trừ?
+  Và vì sao `J` được coi là hàm của `W` chứ không của dữ liệu?
+  <br><span class="en">(K32) Why is there a minus sign in the update
+  `W <- W - eta ∂J/∂W`? And why is `J` regarded as a function of `W` rather
+  than of the data?</span>
+- (K32) Giải thích lan truyền ngược bằng quy tắc chuỗi cho một mạng hai
+  trọng số. Thừa số nào được dùng lại, và vì sao việc dùng lại đó quan trọng
+  về mặt chi phí tính toán?
+  <br><span class="en">(K32) Explain backpropagation via the chain rule for a
+  two-weight network. Which factor is reused, and why does that reuse matter
+  computationally?</span>
+- (K32) Nêu ba tình huống của tốc độ học và hậu quả của từng tình huống. Vì
+  sao `eta` quá nhỏ không chỉ làm chậm mà còn cho kết quả tệ hơn?
+  <br><span class="en">(K32) Give the three cases for the learning rate and
+  each one's consequence. Why does too small an `eta` not merely slow things
+  down but give a worse result?</span>
+- (K32) So sánh hạ gradient toàn phần, hạ gradient ngẫu nhiên và lô nhỏ. Nêu
+  **hai** lý do độc lập khiến lô nhỏ là lựa chọn mặc định.
+  <br><span class="en">(K32) Compare full-batch, stochastic and mini-batch
+  gradient descent. Give the **two** independent reasons mini-batch is the
+  default.</span>
+- (K32) Dropout và dừng sớm khác điều chuẩn Ridge/Lasso ở điểm căn bản nào?
+  Vì sao phải bỏ một tập con **khác nhau ở mỗi vòng lặp**, và vì sao khi
+  kiểm tra thì mọi nút phải hoạt động lại?
+  <br><span class="en">(K32) In what fundamental respect do dropout and early
+  stopping differ from ridge/lasso regularisation? Why must a **different**
+  subset be dropped each iteration, and why must all units be active at test
+  time?</span>
+- (K32) Nêu bốn tiêu chí thiết kế mô hình chuỗi. Dùng cặp câu "The food was
+  good, not bad at all" và "The food was bad, not good at all" để giải thích
+  tiêu chú thứ ba.
+  <br><span class="en">(K32) Give the four sequence modeling design criteria.
+  Use the pair "The food was good, not bad at all" and "The food was bad, not
+  good at all" to explain the third.</span>
+- (K32) Vì sao mạng nơ-ron không nhận được từ ngữ làm đầu vào? So sánh véc-tơ
+  chỉ báo với véc-tơ nhúng học được theo **hai** tiêu chí: thông tin về nghĩa,
+  và số chiều.
+  <br><span class="en">(K32) Why can a neural network not take words as
+  input? Compare one-hot with a learned embedding on **two** counts: meaning
+  information, and dimensionality.</span>
+- (K32) Viết hai phương trình của một ô RNN và nêu vai trò của ba ma trận
+  `Wxh`, `Whh`, `Why`. Ma trận nào gây ra bài toán gradient, và vì sao?
+  <br><span class="en">(K32) Write the two equations of an RNN cell and state
+  the roles of `Wxh`, `Whh`, `Why`. Which matrix causes the gradient problem,
+  and why?</span>
+- (K32) Gradient bùng nổ và gradient tiêu biến khác nhau ở nguyên nhân nào
+  và được chữa bằng cách nào? Vì sao nói gradient tiêu biến làm mô hình
+  **học lệch** chứ không chỉ **học chậm**?
+  <br><span class="en">(K32) How do exploding and vanishing gradients differ
+  in cause and in remedy? Why is it said that vanishing gradients make the
+  model **learn a skewed** rather than merely **a slow** model?</span>
+- (K32) Một cổng trong ô LSTM gồm hai phép toán nào, và vì sao miền giá trị
+  `(0, 1)` là điều kiện để cơ chế đó hoạt động? Điều gì trong cổng là **được
+  học**?
+  <br><span class="en">(K32) Which two operations make up an LSTM gate, and
+  why is the `(0, 1)` range essential to the mechanism? What part of a gate is
+  **learned**?</span>
+- (K32) Nêu ba giới hạn của mô hình hồi tiếp. Cổng chữa được giới hạn nào và
+  **không** chữa được giới hạn nào?
+  <br><span class="en">(K32) Give the three limitations of recurrent models.
+  Which does gating fix, and which does it **not**?</span>
+- (K32) Giải thích `Q`, `K`, `V` bằng phép loại suy tìm kiếm. Vì sao khóa và
+  giá trị phải là hai thứ khác nhau?
+  <br><span class="en">(K32) Explain `Q`, `K`, `V` through the search analogy.
+  Why must keys and values be two different things?</span>
+- (K32) Viết công thức tự chú ý và nêu bốn bước dẫn tới nó. Vì sao **mã hóa
+  vị trí là bắt buộc** với tự chú ý mà không bắt buộc với RNN?
+  <br><span class="en">(K32) Write the self-attention formula and the four
+  steps leading to it. Why is **positional encoding mandatory** for
+  self-attention but not for an RNN?</span>
+- (K32) Đối chiếu từng giới hạn của RNN với cách tự chú ý xử lý nó. Vì sao
+  khoảng cách giữa hai phần tử không còn ảnh hưởng tới độ mạnh liên kết giữa
+  chúng?
+  <br><span class="en">(K32) Match each RNN limitation against how
+  self-attention handles it. Why does the distance between two elements no
+  longer affect the strength of the link between them?</span>
+- (K32) Với máy tính, một bức ảnh là gì? Nêu hai lý do không thể đưa ảnh
+  thẳng vào một lớp kết nối đầy đủ.
+  <br><span class="en">(K32) What is an image to a computer? Give two reasons
+  it cannot be fed straight into a fully connected layer.</span>
+- (K32) Định nghĩa chính xác phép tích chập. Trong ví dụ chữ X, vì sao mảng
+  khớp hoàn hảo cho tổng bằng 9? Ảnh `n × n` với bộ lọc `f × f` và bước trượt
+  1 cho bản đồ đặc trưng kích thước bao nhiêu?
+  <br><span class="en">(K32) Define the convolution operation precisely. In
+  the X example, why does a perfectly matching patch sum to 9? What size
+  feature map does an `n × n` image with an `f × f` filter at stride 1
+  give?</span>
+- (K32) Vì sao hai trong ba bộ lọc cổ điển ở slide 78 có tổng các phần tử
+  bằng 0? Và điểm khác biệt căn bản giữa các bộ lọc đó với bộ lọc trong một
+  CNN là gì?
+  <br><span class="en">(K32) Why do two of the three classical filters on
+  slide 78 have entries summing to zero? And what is the fundamental
+  difference between those filters and a CNN's?</span>
+- (K32) Nêu ba phép toán làm nên một CNN và công dụng của từng phép. Gộp cực
+  đại giải bài toán nào đã đặt ra ở ví dụ chữ X?
+  <br><span class="en">(K32) Give the three operations that make a CNN and
+  each one's purpose. Which problem from the X example does max pooling
+  solve?</span>
+- (K32) Vì sao nói nơ-ron trong lớp tích chập "chính xác là perceptron của
+  bài giảng 1"? Hai điểm khác biệt là gì, và điểm thứ hai mã hóa giả định gì
+  về thế giới?
+  <br><span class="en">(K32) Why is a convolutional neuron said to be
+  "exactly the perceptron from Lecture 1"? What are the two differences, and
+  what assumption about the world does the second encode?</span>
+- (K32) Phân biệt chiều sâu `d` của một lớp tích chập với số kênh màu của
+  ảnh đầu vào. Vùng tiếp nhận là gì, và vì sao nó rộng ra theo độ sâu?
+  <br><span class="en">(K32) Distinguish a convolutional layer's depth `d`
+  from the input image's colour channels. What is the receptive field, and why
+  does it widen with depth?</span>
+- (K32) Hai nửa của một CNN phân loại là gì? Vì sao cách chia đó cho phép
+  cùng một bộ trích đặc trưng phục vụ bốn bài toán khác nhau?
+  <br><span class="en">(K32) What are the two halves of a classification CNN?
+  Why does that split let one feature extractor serve four different
+  problems?</span>
+- (K32) Hệ phân tầng đặc trưng được nhắc ở ba slide nào, và mỗi lần đóng vai
+  trò gì trong lập luận của chương?
+  <br><span class="en">(K32) At which three slides does the feature hierarchy
+  appear, and what role does each occurrence play in the chapter's
+  argument?</span>
+- (K32) Mạch tiến hóa từ cách làm ngây thơ qua R-CNN tới Faster R-CNN lặp
+  lại thông điệp nào của cả chương?
+  <br><span class="en">(K32) Which message of the whole chapter does the
+  evolution from the naive approach through R-CNN to Faster R-CNN
+  repeat?</span>
+- (K32) Trong bốn đầu ra ở slide 87, đầu ra nào huấn luyện **không cần nhãn
+  do người gán**, và hàm mất mát của nó là gì?
+  <br><span class="en">(K32) Of the four heads on slide 87, which trains
+  **without human labelling**, and what is its loss?</span>

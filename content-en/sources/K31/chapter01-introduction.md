@@ -31,7 +31,7 @@ source_file: "raw/Lecture Notes/K31/VNP_DataScience_Chapter01_Introduction_2025.
   thinking.
 - This 2025 slide deck is fairly terse — several
   slides have only a title + illustrative image, with no extractable text
-  (flagged explicitly in Nội dung chính below; no content is invented
+  (flagged explicitly in Key content below; no content is invented
   beyond what the slide actually contains).
 
 ## Key content

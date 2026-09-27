@@ -21,7 +21,7 @@ cat > public/index.html << 'EOF'
 <html lang="vi"><head><meta charset="utf-8"/>
 <meta http-equiv="refresh" content="0; url=./bi/"/>
 <link rel="canonical" href="./bi/"/>
-<title>32_DBC Wiki</title>
+<title>32_DAS Wiki</title>
 </head><body>
 <p>Đang chuyển tới <a href="./bi/">bản song ngữ</a>… / Redirecting to the <a href="./bi/">bilingual version</a>…</p>
 <script>location.replace("./bi/");</script>

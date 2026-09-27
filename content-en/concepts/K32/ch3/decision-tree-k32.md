@@ -29,11 +29,11 @@ unwanted branches; depth = the longest root-to-leaf path.
 
 **New versus 2025**:
 
-| | Cây phân loại | Cây hồi quy |
+| | Classification tree | Regression tree |
 |---|---|---|
-| Đầu ra | Định tính | Định lượng |
-| Tiêu chí tách | Độ không thuần Gini, độ hỗn loạn, sai số phân loại | Mức giảm phương sai, MSE |
-| Dự đoán tại nút lá | **Phạm trù chiếm đa số** | **Trung bình hoặc trung vị** |
+| Output | Qualitative | Quantitative |
+| Splitting criterion | Gini impurity, entropy, classification error | Variance reduction, MSE |
+| Prediction at a leaf | **The majority category** | **The mean or the median** |
 
 **New versus 2025**: classification trees
 have qualitative output, split on Gini/entropy/classification error, and
@@ -55,11 +55,11 @@ With pᵢ the proportion of observations of class i
 in the node, K classes and Σpᵢ = 1 (a pure node contains only 1 class),
 there are 3 ways to measure purity:
 
-| Thước đo | Công thức | Ghi chú |
+| Measure | Formula | Note |
 |---|---|---|
-| Sai số phân loại | Eₘ = 1 − max(pᵢ) | Đơn giản nhất |
-| Độ không thuần Gini (Gini impurity) | Σpᵢ(1 − pᵢ) = 1 − Σpᵢ² | Tiêu chí mặc định của CART |
-| Độ hỗn loạn (entropy) | −Σpᵢ·log₂(pᵢ) | Tiêu chí của ID3; chạy từ 0 (thuần khiết) tới log₂K |
+| Classification error | Eₘ = 1 − max(pᵢ) | The simplest |
+| Gini impurity | Σpᵢ(1 − pᵢ) = 1 − Σpᵢ² | The default criterion of CART |
+| Entropy | −Σpᵢ·log₂(pᵢ) | The criterion of ID3; it runs from 0 (pure) up to log₂K |
 
 Lower ⇒ purer. The 3 purity measures are
 classification error 1 − max(pᵢ), **Gini impurity** 1 − Σpᵢ² (CART's
@@ -95,11 +95,11 @@ C4.5, CART, CHAID), the 2 most worth mastering are:
 
 | | ID3 | CART |
 |---|---|---|
-| Bài toán | Phân loại | Cả phân loại lẫn hồi quy |
-| Tiêu chí | Độ hỗn loạn + độ lợi thông tin | Gini (phân loại), MSE (hồi quy) |
-| Dữ liệu số | **Không xử lý trực tiếp** | Xử lý được |
-| Kiểu tách | **Nhiều nhánh** (mỗi phạm trù 1 nhánh) | **Luôn nhị phân** (câu hỏi có/không) |
-| Điểm yếu / mạnh | Dễ quá khớp, tạo cây thiên lệch vì độ lợi thông tin **ưu ái thuộc tính có nhiều giá trị phân biệt** | Xử lý được dữ liệu lớn, hỗ trợ tỉa theo chi phí–độ phức tạp |
+| Task | Classification | Both classification and regression |
+| Criterion | Entropy + information gain | Gini (classification), MSE (regression) |
+| Numeric data | **Not handled directly** | Handled |
+| Kind of split | **Multi-way** (one branch per category) | **Always binary** (a yes/no question) |
+| Weakness / strength | Overfits easily and grows a biased tree, because information gain **favours attributes with many distinct values** | Handles large data, and supports cost-complexity pruning |
 
 ID3: classification only, entropy + information
 gain, does **not** handle numeric data directly, **multi-way** splits,
