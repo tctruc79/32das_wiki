@@ -4,7 +4,7 @@ title: "Ôn thi"
 title_en: "Exam Prep"
 tags: [synthesis, exam-prep]
 created: 2026-08-22
-updated: 2026-09-27
+updated: 2026-09-28
 status: complete
 ---
 
@@ -31,6 +31,7 @@ section).</span>
 | [[chapter04-unsupervised-learning-k32]] | K32 | Trọn nhánh học không giám sát: phân cụm (khoảng cách, K-Means + k-means++, thứ bậc + liên kết + sơ đồ cây, DBSCAN/GMM, danh sách 7 bẫy) và PCA (hiệp phương sai, trị riêng/véc-tơ riêng, SVD, chọn m, hệ số tải, nén ảnh) + Part 3 ghép PCA với phân cụm/phân loại/hồi quy (PCR) và rò rỉ dữ liệu | 86 slide. Lần đầu dùng **ảnh** làm dữ liệu thực hành (`Image1.jpg`, `Image2.jpg`). 7 file mã đi kèm, trong đó **2 file có lỗi thật** (`Example3.7_KMeans.py` đặt `n_clusters=1` trên dữ liệu 3 tâm - chạy được và sai âm thầm; `..._GenerateData_and_Clustering.py` dừng với `NameError`); 2 file ảnh cần `skimage`/`cv2` không có trong môi trường môn học. Không có mã cho phân cụm thứ bậc, DBSCAN, GMM. Tách cụm - không link chéo K31 |
 | [[chapter03-supervised-learning-k32]] | K32 | Trọn nhánh học có giám sát: nền tảng ML, đánh giá mô hình (chỉ số hồi quy + phân loại, kiểm định chéo, độ chệch-phương sai), phân loại + KNN, cây quyết định, rừng ngẫu nhiên + tăng cường, hồi quy, Ridge/Lasso/Elastic Net | 112 slide - chương lớn nhất; gộp nội dung mà khóa 2025 chia làm 3 chương. Mã Ví dụ 3.1 **cố ý có lỗi** (slide 41-42 ghi rõ). Bài tập nhóm 3 cần `Income.csv` chưa có trong `raw/`. Tách cụm - không link chéo K31 |
 | [[chapter05-deep-learning-k32]] | K32 | Trọn nhánh học sâu (90 slide, 3 bài giảng gộp): perceptron, lớp Dense, mạng sâu, hàm mất mát, hạ gradient + lan truyền ngược, dropout/dừng sớm; RNN + BPTT + gradient tiêu biến + LSTM + tự chú ý/Transformer; ảnh là ma trận số, tích chập, CNN (conv/ReLU/gộp), phát hiện đối tượng, phân đoạn, điều khiển | **Chương đầu tiên không soạn từ 2 giáo trình nền**: slide 1 ghi "Based on the MIT's course about Introduction to Deep Learning". **Không có file mã, dữ liệu, hay lab notebook nào** trong `raw/` - khác hẳn Ch.3 và Ch.4; lab ở slide 30 ("fill in the #TODOs") không có. **Không có bài tập hay câu hỏi thảo luận nào** của giảng viên. Trang vật lý 86 của PDF trống hoàn toàn (91 trang → 90 slide). LSTM nêu tên nhưng không viết ra 3 cổng; Transformer chỉ tới mức 1 đầu chú ý. Tách cụm - không link chéo K31 |
+| [[chapter06-large-language-models]] | K32 | Mô hình ngôn ngữ lớn: LLM là bộ dự đoán token kế tiếp; cơ chế chú ý dựng từ trực giác (ví dụ *mole*, truy vấn/khóa/giá trị, mẫu hình chú ý); Transformer chỉ có bộ giải mã qua 6 bước (mặt nạ nhân quả, nhiều đầu, MLP, lưu đệm khóa-giá trị); và `ChatGPT = LLM + lớp vỏ` (lời nhắc hệ thống, công cụ, bộ nhớ, giới hạn ngữ cảnh) | **Chương ngoài kế hoạch đã ghi nhận** - tính đến 27/09 K32 được xác nhận hết lý thuyết ở Chapter 5. 71 slide, soạn cùng ngày ingest. **Tiếp nối đúng chỗ Chapter 5 dừng**: Ch.5 dựng xong một đầu chú ý rồi dừng và nói rõ không có slide nào vẽ khối Transformer hoàn chỉnh; Ch.6 lấp khoảng trống đó. **Không có file mã, dữ liệu hay bài tập nào**. Chân trang ghi `/ 75` nhưng chỉ có 71 trang. Mọi con số minh họa đều **được ghi rõ là bịa ra**. Tách cụm - không link chéo K31 |
 
 ## 2. Cụm chủ đề - <span class="en">Topic clusters</span>
 
@@ -392,6 +393,74 @@ stride and receptive field; max pooling for spatial invariance; the
 feature-learning and classification halves) - the vision branch, from
 [[chapter05-deep-learning-k32]] (K32), lecture A3.</span>
 
+### S. K32 - Chapter 6: LLM và cơ chế chú ý - <span class="en">S. K32 - Chapter 6: LLMs and Attention</span>
+
+_Cụm riêng cho K32._
+<br><span class="en">_A separate cluster for K32._</span>
+
+[[large-language-model]] (định nghĩa slide 3 và **câu điều chỉnh quan trọng
+hơn** ở slide 4: gán xác suất cho *toàn bộ* từ kế tiếp có thể; tham số là chỗ
+chữ "lớn" nằm, hàng trăm tỉ, **không người nào đặt**, bắt đầu ngẫu nhiên;
+GPT-3 và con số 2.600 năm; mốc **trước 2017 xử lý từng từ một**, rồi
+Transformer) và [[attention-pattern]] (ví dụ *mole* ba nghĩa; **véc-tơ nhúng
+của *mole* giống hệt nhau trong cả ba câu**; truy vấn `WQ`, khóa `WK`, giá trị
+`WV`; softmax **theo cột**; `Kᵀ Q`; **kích thước mẫu hình chú ý bằng bình
+phương độ dài ngữ cảnh**) - phần 1 của chương, từ
+[[chapter06-large-language-models]] (K32).
+<br><span class="en">[[large-language-model]] (the slide 3 definition and the
+**more important qualification** on slide 4; parameters as where "large"
+lives; GPT-3 and the 2,600-year figure; the pre-2017 turning point) and
+[[attention-pattern]] (the three-meaning *mole* example; the **identical**
+embeddings; `WQ`, `WK`, `WV`; softmax **down columns**; `Kᵀ Q`; the
+**context-squared** attention pattern) - the chapter's part 1.</span>
+
+### T. K32 - Chapter 6: Transformer và sinh văn bản - <span class="en">T. K32 - Chapter 6: The Transformer and Generation</span>
+
+_Cụm riêng cho K32._
+<br><span class="en">_A separate cluster for K32._</span>
+
+[[transformer-architecture]] (sáu bước từ văn bản tới token kế tiếp; **mặt nạ
+nhân quả** - khái niệm mới so với Chapter 5, và là thứ khiến bài toán dự đoán
+token kế tiếp còn có nghĩa; bảng truy vấn/khóa/giá trị kèm **lời tự cảnh báo
+rằng đó chỉ là phép loại suy**; **chú ý kết hợp véc-tơ giá trị chứ không phải
+bản thân các từ**; nhiều đầu + kết nối tắt; **chú ý là phép duy nhất di chuyển
+thông tin ngang qua các vị trí, MLP thì không**; cảnh báo **vai trò các lớp là
+phân tán, không phải "từ rồi ngữ pháp rồi nghĩa"**; bảng **học được so với
+tính ra**) và [[tokenization-and-generation]] (token là từ hoặc **mảnh của
+từ**, ví dụ `Chat|G|PT`; ba bước tách - tra bảng nhúng - cộng vị trí; **quy tắc
+giải mã không phải lúc nào cũng chọn token xác suất cao nhất**; token kết thúc
+cũng chỉ là một token; vì sao câu trả lời **trông như tự gõ ra**) - phần 2 của
+chương, từ [[chapter06-large-language-models]] (K32).
+<br><span class="en">[[transformer-architecture]] (the six steps; the
+**causal mask**; the Q/K/V table with its **self-warning that it is an
+analogy**; **attention combines Value vectors, not words**; heads and residual
+connections; **attention is the only operation moving information across
+positions**; the **distributed layer roles** caution; the **learned versus
+computed** table) and [[tokenization-and-generation]] (word pieces; the three
+conversion steps; **sampling rather than always taking the top token**; the
+end token being an ordinary token; why replies **seem to type themselves**) -
+the chapter's part 2.</span>
+
+### U. K32 - Chapter 6: Lớp ứng dụng ChatGPT - <span class="en">U. K32 - Chapter 6: The ChatGPT Application Layer</span>
+
+_Cụm riêng cho K32._
+<br><span class="en">_A separate cluster for K32._</span>
+
+[[chatgpt-application-layer]] (**ChatGPT không phải là LLM**: LLM là "bộ não"
+làm đúng một việc, ứng dụng là "lớp vỏ"; `ChatGPT = LLM + dựng lời nhắc + tách
+token + vòng lặp sinh + phụ trợ`; **LLM chỉ xuất hiện ở 1 trong 4 bước của
+đường ống**; lời nhắc ẩn gồm lời nhắc hệ thống + lịch sử + tin nhắn mới, nên
+**ChatGPT không hề "nhớ"** mà lịch sử được dán lại mỗi lượt; bốn phụ trợ công
+cụ / bộ nhớ / an toàn / giới hạn ngữ cảnh, và **điểm chung là cả bốn chỉ sửa
+lời nhắc chứ không sửa mô hình**; phép loại suy **nhà văn bị nhốt trong phòng
+và người trợ lý bên ngoài**) - phần 3 của chương, từ
+[[chapter06-large-language-models]] (K32).
+<br><span class="en">[[chatgpt-application-layer]] (**ChatGPT is not the
+LLM**; the formula; the LLM appearing in only one of four pipeline steps; the
+hidden prompt, so it **never "remembers"**; the four extras and the point that
+**all of them change the prompt, not the model**; the **writer-in-a-room**
+analogy) - the chapter's part 3.</span>
+
 ## 3. Mâu thuẫn / khác biệt giữa các nguồn - <span class="en">Tensions / differences between sources</span>
 
 Không có mâu thuẫn thật trong nội bộ cụm K31 (8/8 chương). Riêng K31 vs
@@ -548,6 +617,45 @@ though slide 30 instructs the reader to open a notebook and fill in the
 `#TODO`s. This is a difference in source material, not a contradiction in
 content.</span>
 
+Ghi nhận thứ hai **trong nội bộ K32**, giữa Chapter 5 và Chapter 6: **cùng
+một cơ chế chú ý được dạy hai lần**, và hai lần ấy **không mâu thuẫn mà bổ
+sung cho nhau**. Chapter 5 dựng một đầu tự chú ý bằng phép loại suy tìm kiếm
+YouTube rồi **dừng lại và nói rõ là dừng** - không kết nối tắt, không chuẩn
+hóa theo lớp, không bộ mã hóa/bộ giải mã. Chapter 6 lấp đúng khoảng trống đó:
+thêm **mặt nạ nhân quả**, **MLP theo từng vị trí**, **kết nối tắt**, **nhiều
+lớp**, **lớp đầu ra và vòng lặp sinh**. Ba chỗ cần để ý khi đọc nối hai
+chương:
+<br><span class="en">A second note **within K32**, between Chapters 5 and 6:
+**the same attention mechanism is taught twice**, and the two passes
+**complement rather than contradict**. Chapter 5 builds one head and **stops,
+saying so**; Chapter 6 fills the gap with the **causal mask**, the
+**per-position MLP**, **residual connections**, **many layers** and the
+**output layer with its generation loop**. Three things to watch when reading
+them together:</span>
+
+- **Ký hiệu**: Chapter 5 viết `softmax(Q · K′ / scaling)`, Chapter 6 viết
+  `softmax(Kᵀ Q)`. Đây là **cùng một đại lượng** dưới hai quy ước véc-tơ hàng
+  và véc-tơ cột; nhưng **Chapter 6 bỏ mất mẫu số chia tỉ lệ**, nên khi trả lời
+  thi nên dùng dạng đầy đủ của Chapter 5.
+  <br><span class="en">**Notation**: the same quantity under row-vector and
+  column-vector conventions, but **Chapter 6 drops the scaling denominator** -
+  use Chapter 5's fuller form.</span>
+- **Mặt nạ**: Chapter 5 **không hề nhắc tới mặt nạ nhân quả**. Nếu chỉ đọc
+  Chapter 5 thì cơ chế chú ý ở đó cho phép mọi vị trí nhìn thấy mọi vị trí
+  khác - đúng cho một bộ mã hóa, nhưng **không sinh văn bản được**.
+  <br><span class="en">**Masking**: Chapter 5 **never mentions the causal
+  mask**, so its attention lets every position see every other - fine for an
+  encoder, but **it cannot generate**.</span>
+- **Hệ phân tầng**: Chapter 5 **chứng minh** hệ phân tầng đặc trưng cho mạng
+  tích chập (cạnh → mắt mũi tai → khuôn mặt, slide 84). Chapter 6 **cố ý từ
+  chối** đưa ra một hệ phân tầng gọn tương đương cho Transformer, nói rằng vai
+  trò các lớp là **phân tán và chồng lấn**. Đây là khác biệt thật giữa hai
+  kiến trúc chứ không phải chương sau viết sơ sài hơn.
+  <br><span class="en">**Hierarchy**: Chapter 5 **demonstrates** the CNN
+  feature hierarchy; Chapter 6 **deliberately declines** a tidy equivalent for
+  Transformers, calling layer roles **distributed and overlapping**. A real
+  architectural difference, not a thinner treatment.</span>
+
 ## 4. Bản đồ khái niệm → nguồn - <span class="en">Concept → source map</span>
 
 | Khái niệm | Nguồn | Khóa |
@@ -623,6 +731,11 @@ content.</span>
 | [[convolution-operation]] | [[chapter05-deep-learning-k32]] | K32 |
 | [[convolutional-neural-network]] | [[chapter05-deep-learning-k32]] | K32 |
 | [[computer-vision-tasks]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[large-language-model]] | [[chapter06-large-language-models]] | K32 |
+| [[attention-pattern]] | [[chapter06-large-language-models]] | K32 |
+| [[transformer-architecture]] | [[chapter06-large-language-models]] | K32 |
+| [[tokenization-and-generation]] | [[chapter06-large-language-models]] | K32 |
+| [[chatgpt-application-layer]] | [[chapter06-large-language-models]] | K32 |
 
 ## 5. Ngân hàng câu hỏi ôn thi - <span class="en">Exam question bank</span>
 
@@ -1100,3 +1213,137 @@ by this wiki from the slide content._</span>
   do người gán**, và hàm mất mát của nó là gì?
   <br><span class="en">(K32) Of the four heads on slide 87, which trains
   **without human labelling**, and what is its loss?</span>
+
+### 5 câu hỏi ôn tập do chính giảng viên ra (K32, Chapter 6, slide 70) - <span class="en">The instructor's own 5 review questions (K32, Chapter 6, slide 70)</span>
+
+_Đây là câu hỏi in trực tiếp trên slide - mức ưu tiên ôn tập cao nhất. Khác
+Chapter 5 vốn không có câu hỏi nào của giảng viên, Chapter 6 quay lại kiểu
+Chapter 3 và Chapter 4. Cả 5 câu đều trả lời được hoàn toàn bằng nội dung
+trong chương, và lời giải nằm rải ở ba phần khác nhau - ghi kèm dưới đây._
+<br><span class="en">_Printed directly on the slide - the highest revision
+priority. Unlike Chapter 5, which carried none, Chapter 6 returns to the
+pattern of Chapters 3 and 4. All five are fully answerable from the chapter
+itself, with the answers spread across its three parts._</span>
+
+1. **Vì sao ChatGPT có vẻ "nhớ" các tin nhắn trước trong một cuộc trò
+   chuyện?** Vì nó **không nhớ**. Ứng dụng dựng lại một lời nhắc ẩn ở **mỗi
+   lượt**, gồm lời nhắc hệ thống + **toàn bộ lịch sử trò chuyện có nhãn người
+   nói** + tin nhắn mới, rồi đưa cả khối đó cho mô hình đọc lại từ đầu (slide
+   60-61). Bảng slide 55 chốt lại lý do sâu hơn: **tham số mô hình đứng yên
+   trong lúc suy luận**, thứ thay đổi là đầu vào.
+   <br><span class="en">**Why does ChatGPT seem to "remember" earlier
+   messages?** Because it does not. The app rebuilds a hidden prompt **every
+   turn** - system prompt + **the whole labelled history** + the new message -
+   and the model rereads it from scratch (slides 60-61). Slide 55 gives the
+   deeper reason: **parameters stay fixed during inference**; only the input
+   changes.</span>
+2. **Token là gì, và vì sao cần tới nó?** Token là **một từ nguyên vẹn hoặc
+   một mảnh của từ**, mỗi token mang một **số ID từ một bộ từ vựng cố định**
+   (slide 62). Cần tới nó vì **LLM chỉ hiểu số** (slide 62), nói kỹ hơn là
+   **quá trình huấn luyện chỉ làm việc với giá trị liên tục** (slide 12). Lưu
+   ý bẫy: ví dụ trong chương giả định một token một từ cho dễ đọc, nhưng bộ
+   tách token thật **cắt một từ thành nhiều token** - chính slide 62 minh họa
+   `Chat | G | PT | is | fun`.
+   <br><span class="en">**What is a token, and why is it needed?** A whole
+   word or a word piece, each with an **ID from a fixed vocabulary** (slide
+   62), needed because **the LLM only understands numbers** (slide 62) - more
+   precisely, **training only works with continuous values** (slide 12). The
+   trap: one token per word is a simplification, as `Chat | G | PT | is |
+   fun` shows.</span>
+3. **Vì sao cùng một câu hỏi lại có thể cho ra các câu trả lời khác nhau?**
+   Hai tầng, và câu trả lời đủ phải nêu cả hai. **Tầng mô hình**: đầu ra vốn
+   là **một phân phối xác suất trên toàn bộ token**, không phải một đáp án
+   (slide 4). **Tầng ứng dụng**: hệ thống chọn token bằng **một quy tắc giải
+   mã, chẳng hạn lấy mẫu**, và **không phải lúc nào cũng chọn token có xác
+   suất cao nhất** (slide 52); slide 63 gọi đó là "chọn một token, có thêm một
+   chút ngẫu nhiên". Tức **tính ngẫu nhiên là lựa chọn thiết kế của ứng dụng,
+   không phải khuyết tật của mô hình**.
+   <br><span class="en">**Why can the same question produce different
+   answers?** Two levels. **Model**: the output is **a distribution**, not an
+   answer (slide 4). **App**: the system picks with **a decoding rule such as
+   sampling** and **does not always choose the most probable token** (slides
+   52, 63). The randomness is **an application design choice**.</span>
+4. **Kết quả tìm kiếm web đến được LLM bằng cách nào?** Mô hình **không truy
+   cập internet**. Nó **viết ra một yêu cầu** dạng `search: weather Hanoi`;
+   **ứng dụng chạy tìm kiếm**; **kết quả được dán vào lời nhắc**; rồi **LLM
+   viết tiếp dựa trên phần văn bản mới dán đó** (slide 67). Đây là trường hợp
+   riêng của ý chốt số 5: **công cụ hoạt động bằng cách thay đổi thứ được đưa
+   vào lời nhắc, không phải bằng cách thay đổi mô hình** (slide 69).
+   <br><span class="en">**How does a web search result reach the LLM?** The
+   model **does not access the internet**: it **writes a request**, the app
+   **runs the search**, the **results are pasted into the prompt**, and the
+   model **continues writing from them** (slide 67) - a special case of
+   takeaway 5 (slide 69).</span>
+5. **Chuyện gì xảy ra khi một cuộc trò chuyện vượt quá giới hạn ngữ cảnh?**
+   LLM **đọc được một lượng văn bản có hạn mỗi lần**, nên trò chuyện dài bị
+   **cắt bớt hoặc tóm tắt lại** (slide 66). Câu trả lời đầy đủ nên nói thêm
+   **vì sao có giới hạn ấy**, và lý do nằm tận slide 38 ở phần 1: **kích thước
+   của mẫu hình chú ý bằng bình phương độ dài ngữ cảnh**, nên gấp đôi cửa sổ
+   ngữ cảnh là **gấp bốn** chi phí chú ý. Hệ quả thực hành: **cắt bớt và tóm
+   tắt không phải là bộ nhớ** - chi tiết ở đầu cuộc trò chuyện có thể biến mất
+   hẳn mà không có cảnh báo.
+   <br><span class="en">**What happens when a conversation exceeds the context
+   limit?** It is **trimmed or summarized** (slide 66). A full answer adds
+   **why** the limit exists, from slide 38: **the attention pattern's size is
+   the square of the context size**, so doubling the window **quadruples** the
+   cost. And **trimming is not memory** - early detail can vanish
+   silently.</span>
+
+### Câu hỏi bổ sung từ Chapter 6 K32 - <span class="en">Additional questions from K32 Chapter 6</span>
+
+- (K32) Slide 3 nói LLM "dự đoán từ kế tiếp", slide 4 nói nó "gán xác suất
+  cho toàn bộ từ kế tiếp có thể". Vì sao câu thứ hai mới là câu chính xác, và
+  nó giải thích được những hành vi nào của mô hình?
+  <br><span class="en">(K32) Slide 3 says an LLM "predicts the next word",
+  slide 4 that it "assigns a probability to all possible next words". Why is
+  the second accurate, and what behaviours does it explain?</span>
+- (K32) Trong ví dụ ba nghĩa của từ *mole*, véc-tơ nhúng của *mole* sau bước
+  đầu tiên là gì? Bước nào mới làm ba trường hợp khác nhau, và nó làm bằng
+  cách nào?
+  <br><span class="en">(K32) In the three-meaning *mole* example, what is
+  *mole*'s embedding after the first step? Which step differentiates the three
+  cases, and how?</span>
+- (K32) Giải thích vì sao softmax được áp **theo cột** chứ không theo hàng khi
+  chuẩn hóa lưới tích vô hướng khóa - truy vấn.
+  <br><span class="en">(K32) Explain why softmax is applied **down columns**
+  rather than across rows when normalising the key-query grid.</span>
+- (K32) Cần tới ba ma trận `WQ`, `WK`, `WV` chứ không phải một - vì sao? Tách
+  khóa khỏi giá trị cho phép làm được điều gì mà một ma trận duy nhất không
+  làm được?
+  <br><span class="en">(K32) Why three matrices rather than one? What does
+  separating keys from values allow?</span>
+- (K32) Mặt nạ nhân quả là gì, và vì sao thiếu nó thì bài toán huấn luyện "dự
+  đoán token kế tiếp" trở nên vô nghĩa?
+  <br><span class="en">(K32) What is the causal mask, and why would
+  next-token training be meaningless without it?</span>
+- (K32) Chú ý và MLP khác nhau ở một điểm căn bản về **hướng di chuyển của
+  thông tin**. Nêu điểm đó và hệ quả của nó.
+  <br><span class="en">(K32) Attention and the MLP differ fundamentally in
+  **which way information moves**. State the difference and its
+  consequence.</span>
+- (K32) Kích thước mẫu hình chú ý bằng bình phương độ dài ngữ cảnh. Nối con số
+  này với mục "giới hạn ngữ cảnh" ở phần 3 và rút ra kết luận thực hành.
+  <br><span class="en">(K32) Link the context-squared attention pattern to the
+  context limit in part 3, and draw a practical conclusion.</span>
+- (K32) Đọc bảng "học được trong lúc huấn luyện" so với "tính cho đầu vào hiện
+  tại" ở slide 55. Bảng này giải thích cùng lúc ba chuyện gì?
+  <br><span class="en">(K32) Read slide 55's learned-versus-computed table.
+  Which three things does it explain at once?</span>
+- (K32) Vì sao câu trả lời của ChatGPT trông như đang tự gõ ra? Đây là hiệu
+  ứng được thêm vào cho đẹp hay hệ quả của kiến trúc?
+  <br><span class="en">(K32) Why does a ChatGPT reply seem to type itself out?
+  Is that a cosmetic effect or an architectural consequence?</span>
+- (K32) Ý chốt số 5 nói công cụ, bộ nhớ và kiểm tra an toàn đều "hoạt động
+  bằng cách thay đổi thứ được đưa vào lời nhắc". Dùng ý đó làm quy tắc suy
+  luận cho một tính năng mới bất kỳ của một ứng dụng chat.
+  <br><span class="en">(K32) Use takeaway 5 as a reasoning rule for any new
+  chat-app feature.</span>
+- (K32) Chapter 5 dừng ở đâu trong việc dựng Transformer, và Chapter 6 bổ sung
+  đúng những gì? Nêu ít nhất ba thành phần mà Chapter 6 thêm vào.
+  <br><span class="en">(K32) Where did Chapter 5 stop in building the
+  Transformer, and what exactly does Chapter 6 add? Name at least three
+  components.</span>
+- (K32) Phép loại suy "nhà văn bị nhốt trong phòng" mã hóa được bốn đặc điểm
+  nào của hệ thống cùng một lúc?
+  <br><span class="en">(K32) Which four properties does the
+  writer-in-a-room analogy encode at once?</span>

@@ -20,11 +20,11 @@ Instructor: [[tran-thi-tuan-anh]].</span>
 
 Wiki này theo dõi 2 khóa học tách biệt hoàn toàn (xem CLAUDE.md, mục "Tách
 cụm K31/K32"): K31 (2025, đã có đủ 8 chương trong `raw/`) và K32 (2026,
-khóa hiện tại, đã đủ 5/5 chương - hết phần lý thuyết).
+khóa hiện tại, 6 chương tính tới 2026-09-28).
 <br><span class="en">This wiki tracks two fully separated cohorts (see
 CLAUDE.md, "Tách cụm K31/K32"): K31 (2025, all 8 chapters already in
-`raw/`) and K32 (2026, the current cohort, complete at 5/5 chapters - the
-theory is finished).</span>
+`raw/`) and K32 (2026, the current cohort, 6 chapters as of
+2026-09-28).</span>
 
 ### K31 (2025) - 8 chương - <span class="en">K31 (2025) - 8 Chapters</span>
 
@@ -39,13 +39,16 @@ theory is finished).</span>
 
 ### K32 (2026 - khóa hiện tại) - <span class="en">K32 (2026 - Current Cohort)</span>
 
-Wiki có đủ 5 chương K32 (Chapter 1-5) - **đây là toàn bộ phần lý thuyết của
-khóa 2026, không có Chapter 6-8**. Sau Chapter 5 còn đúng 2 buổi: 1 buổi
-chuyên gia chia sẻ về học máy/học sâu, 1 buổi các nhóm thuyết trình.
-<br><span class="en">The wiki holds all 5 K32 chapters (Chapters 1-5) -
-**this is the entire theory component of the 2026 cohort; there is no
-Chapter 6-8**. After Chapter 5 exactly two sessions remain: an expert talk
-on machine learning/deep learning, and the group presentations.</span>
+Wiki có 6 chương K32 (Chapter 1-6). Chapter 5 từng được ghi nhận là chương
+lý thuyết cuối, nhưng **Chapter 6 về mô hình ngôn ngữ lớn xuất hiện trong
+`raw/` ngày 2026-09-28** - nội dung và độ sâu của nó khớp với **buổi chuyên
+gia chia sẻ** trong kế hoạch, và nó do chính giảng viên soạn. Sau Chapter 6
+còn buổi các nhóm thuyết trình.
+<br><span class="en">The wiki holds 6 K32 chapters (Chapters 1-6). Chapter 5
+was recorded as the final theory chapter, but **a Chapter 6 on large language
+models appeared in `raw/` on 2026-09-28** - its content and depth match the
+planned **expert-talk session**, and the instructor authored it herself. The
+group presentations follow.</span>
 
 - **Chapter 1** - 5 V's, định nghĩa vận hành, 5 loại phân tích (thêm
   Causal), checklist 7 điều kiện.
@@ -112,6 +115,33 @@ on machine learning/deep learning, and the group presentations.</span>
   textbooks (slide 1 says so), and the first K32 chapter with **no code or
   data files at all** - the `Chapter05/` folder holds exactly one
   PDF.</span>
+
+- **Chapter 6** ("Large Language Models", 71 slide, **3 phần**) - phần 1 LLM
+  và cơ chế chú ý (LLM là hàm dự đoán token kế tiếp **gán xác suất cho toàn
+  bộ từ vựng**; tham số là chỗ chữ "lớn" nằm; ví dụ *mole* ba nghĩa; truy
+  vấn, khóa, giá trị; softmax theo cột; **kích thước mẫu hình chú ý bằng bình
+  phương độ dài ngữ cảnh**); phần 2 sáu bước của Transformer chỉ có bộ giải
+  mã (**mặt nạ nhân quả**, nhiều đầu và kết nối tắt, MLP theo từng vị trí,
+  lưu đệm khóa-giá trị, bảng **học được so với tính ra**); phần 3
+  **`ChatGPT = LLM + lớp vỏ`** (lời nhắc hệ thống, lịch sử dán lại mỗi lượt
+  nên **mô hình không hề "nhớ"**, công cụ, bộ nhớ, kiểm tra an toàn, giới hạn
+  ngữ cảnh). Chương này **tiếp nối đúng chỗ Chapter 5 dừng lại**: Chapter 5
+  dựng xong một đầu tự chú ý rồi nói rõ không có slide nào vẽ khối Transformer
+  hoàn chỉnh. Có **5 câu hỏi ôn của giảng viên** (slide 70), và **không có
+  file mã hay dữ liệu** nào.
+  <br><span class="en">**Chapter 6** ("Large Language Models", 71 slides in
+  **3 parts**) - part 1 on LLMs and attention (an LLM as a next-token
+  predictor **assigning a probability to the whole vocabulary**; parameters
+  as where "large" lives; the three-meaning *mole* example; queries, keys and
+  values; softmax down columns; **the attention pattern sized as the square
+  of the context**); part 2 on the six steps of a decoder-only Transformer
+  (**the causal mask**, multiple heads and residual connections, the
+  per-position MLP, key-value caching, the **learned-versus-computed**
+  table); part 3 on **`ChatGPT = LLM + wrapper`** (system prompt, a history
+  re-pasted every turn so the model **never "remembers"**, tools, memory,
+  safety checks, the context limit). It **resumes exactly where Chapter 5
+  stopped**. It carries **5 instructor review questions** (slide 70) and **no
+  code or data files**.</span>
 
 ## Ôn thi - <span class="en">Exam prep</span>
 

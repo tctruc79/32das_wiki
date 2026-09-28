@@ -3,7 +3,7 @@ type: synthesis
 title: "Exam Prep"
 tags: [synthesis, exam-prep]
 created: 2026-08-22
-updated: 2026-09-27
+updated: 2026-09-28
 status: complete
 ---
 
@@ -28,6 +28,7 @@ section).
 | [[chapter04-unsupervised-learning-k32]] | K32 | The whole unsupervised branch: clustering (distance, K-Means + k-means++, hierarchical + linkage + dendrogram, DBSCAN/GMM, a list of 7 pitfalls) and PCA (covariance, eigenvalues/eigenvectors, SVD, choosing m, loadings, image compression) + Part 3 combining PCA with clustering/classification/regression (PCR) and data leakage | 86 slides. The first use of **images** as practice data (`Image1.jpg`, `Image2.jpg`). 7 code files come with it, of which **2 contain real errors** (`Example3.7_KMeans.py` sets `n_clusters=1` on data with 3 centres - it runs and is silently wrong; `..._GenerateData_and_Clustering.py` stops with a `NameError`); 2 image files need `skimage`/`cv2`, which the course environment does not have. There is no code for hierarchical clustering, DBSCAN or GMM. A separate cluster - no cross-links to K31 |
 | [[chapter03-supervised-learning-k32]] | K32 | The whole supervised branch: ML foundations, model evaluation (regression + classification metrics, cross-validation, bias and variance), classification + KNN, decision trees, random forest + boosting, regression, Ridge/Lasso/Elastic Net | 112 slides - the largest chapter; it merges what the 2025 cohort split across 3 chapters. The Example 3.1 code **has a deliberate error** (slides 41-42 say so outright). Group exercise 3 needs `Income.csv`, which is not yet in `raw/`. A separate cluster - no cross-links to K31 |
 | [[chapter05-deep-learning-k32]] | K32 | The whole deep learning branch (90 slides, 3 lectures merged): the perceptron, dense layers, deep networks, loss functions, gradient descent + backpropagation, dropout and early stopping; RNN + BPTT + vanishing gradients + LSTM + self-attention/Transformer; an image as a matrix of numbers, convolution, CNN (conv/ReLU/pooling), object detection, segmentation, control | **The first chapter not built from the two base textbooks**: slide 1 says "Based on the MIT's course about Introduction to Deep Learning". **No code file, no data, no lab notebook at all** in `raw/` - quite unlike Ch.3 and Ch.4; the lab on slide 30 ("fill in the #TODOs") is missing. **No exercise and no discussion question at all** from the lecturer. Physical page 86 of the PDF is completely blank (91 pages → 90 slides). LSTM is named but its 3 gates are never written out; the Transformer only reaches one attention head. A separate cluster - no cross-links to K31 |
+| [[chapter06-large-language-models]] | K32 | Large language models: an LLM as a next-token predictor; attention built from intuition (the *mole* example, query/key/value, the attention pattern); the decoder-only Transformer in 6 steps (causal mask, multiple heads, the MLP, key-value caching); and `ChatGPT = LLM + wrapper` (system prompt, tools, memory, the context limit) | **A chapter outside the recorded plan** - as of 27/09 K32 was confirmed finished at Chapter 5. 71 slides, authored the same day it was ingested. **It resumes exactly where Chapter 5 stopped**: Ch.5 built one attention head, then said outright that no slide draws a complete Transformer block; Ch.6 fills that gap. **No code, data or exercise files.** The footer reads `/ 75` though there are only 71 pages. Every illustrative figure is **explicitly labelled as invented**. Separate cluster - no cross-links to K31 |
 
 ## Topic clusters
 
@@ -250,6 +251,41 @@ stride and receptive field; max pooling for spatial invariance; the
 feature-learning and classification halves) - the vision branch, from
 [[chapter05-deep-learning-k32]] (K32), lecture A3.
 
+### S. K32 - Chapter 6: LLMs and Attention
+
+_A separate cluster for K32._
+
+[[large-language-model]] (the slide 3 definition and the
+**more important qualification** on slide 4; parameters as where "large"
+lives; GPT-3 and the 2,600-year figure; the pre-2017 turning point) and
+[[attention-pattern]] (the three-meaning *mole* example; the **identical**
+embeddings; `WQ`, `WK`, `WV`; softmax **down columns**; `Kᵀ Q`; the
+**context-squared** attention pattern) - the chapter's part 1.
+
+### T. K32 - Chapter 6: The Transformer and Generation
+
+_A separate cluster for K32._
+
+[[transformer-architecture]] (the six steps; the
+**causal mask**; the Q/K/V table with its **self-warning that it is an
+analogy**; **attention combines Value vectors, not words**; heads and residual
+connections; **attention is the only operation moving information across
+positions**; the **distributed layer roles** caution; the **learned versus
+computed** table) and [[tokenization-and-generation]] (word pieces; the three
+conversion steps; **sampling rather than always taking the top token**; the
+end token being an ordinary token; why replies **seem to type themselves**) -
+the chapter's part 2.
+
+### U. K32 - Chapter 6: The ChatGPT Application Layer
+
+_A separate cluster for K32._
+
+[[chatgpt-application-layer]] (**ChatGPT is not the
+LLM**; the formula; the LLM appearing in only one of four pipeline steps; the
+hidden prompt, so it **never "remembers"**; the four extras and the point that
+**all of them change the prompt, not the model**; the **writer-in-a-room**
+analogy) - the chapter's part 3.
+
 ## Tensions / differences between sources
 
 No real tension within the K31 cluster itself (8/8
@@ -336,6 +372,25 @@ though slide 30 instructs the reader to open a notebook and fill in the
 `#TODO`s. This is a difference in source material, not a contradiction in
 content.
 
+A second note **within K32**, between Chapters 5 and 6:
+**the same attention mechanism is taught twice**, and the two passes
+**complement rather than contradict**. Chapter 5 builds one head and **stops,
+saying so**; Chapter 6 fills the gap with the **causal mask**, the
+**per-position MLP**, **residual connections**, **many layers** and the
+**output layer with its generation loop**. Three things to watch when reading
+them together:
+
+- **Notation**: the same quantity under row-vector and
+  column-vector conventions, but **Chapter 6 drops the scaling denominator** -
+  use Chapter 5's fuller form.
+- **Masking**: Chapter 5 **never mentions the causal
+  mask**, so its attention lets every position see every other - fine for an
+  encoder, but **it cannot generate**.
+- **Hierarchy**: Chapter 5 **demonstrates** the CNN
+  feature hierarchy; Chapter 6 **deliberately declines** a tidy equivalent for
+  Transformers, calling layer roles **distributed and overlapping**. A real
+  architectural difference, not a thinner treatment.
+
 ## Concept → source map
 
 | Concept | Source | Cohort |
@@ -411,12 +466,18 @@ content.
 | [[convolution-operation]] | [[chapter05-deep-learning-k32]] | K32 |
 | [[convolutional-neural-network]] | [[chapter05-deep-learning-k32]] | K32 |
 | [[computer-vision-tasks]] | [[chapter05-deep-learning-k32]] | K32 |
+| [[large-language-model]] | [[chapter06-large-language-models]] | K32 |
+| [[attention-pattern]] | [[chapter06-large-language-models]] | K32 |
+| [[transformer-architecture]] | [[chapter06-large-language-models]] | K32 |
+| [[tokenization-and-generation]] | [[chapter06-large-language-models]] | K32 |
+| [[chatgpt-application-layer]] | [[chapter06-large-language-models]] | K32 |
 
 ## Exam question bank
 
-The 20 quick warm-up questions for K32 Chapter 3 (about 20 seconds each)
-live on their own page, [[warm-up-ch3-k32]] - the question bank below is
-the kind that needs deeper reasoning and calculation.
+The 20 quick warm-up questions for K32 Chapter 3
+(about 20 seconds each) live on their own page, [[warm-up-ch3-k32]] -
+the question bank below is the kind that needs deeper reasoning and
+calculation.
 
 - Distinguish the 4 types of analytics (descriptive/
   diagnostic/predictive/prescriptive) - given a concrete example, classify
@@ -683,3 +744,70 @@ by this wiki from the slide content._
   repeat?
 - (K32) Of the four heads on slide 87, which trains
   **without human labelling**, and what is its loss?
+
+### The instructor's own 5 review questions (K32, Chapter 6, slide 70)
+
+_Printed directly on the slide - the highest revision
+priority. Unlike Chapter 5, which carried none, Chapter 6 returns to the
+pattern of Chapters 3 and 4. All five are fully answerable from the chapter
+itself, with the answers spread across its three parts._
+
+1. **Why does ChatGPT seem to "remember" earlier
+   messages?** Because it does not. The app rebuilds a hidden prompt **every
+   turn** - system prompt + **the whole labelled history** + the new message -
+   and the model rereads it from scratch (slides 60-61). Slide 55 gives the
+   deeper reason: **parameters stay fixed during inference**; only the input
+   changes.
+2. **What is a token, and why is it needed?** A whole
+   word or a word piece, each with an **ID from a fixed vocabulary** (slide
+   62), needed because **the LLM only understands numbers** (slide 62) - more
+   precisely, **training only works with continuous values** (slide 12). The
+   trap: one token per word is a simplification, as `Chat | G | PT | is |
+   fun` shows.
+3. **Why can the same question produce different
+   answers?** Two levels. **Model**: the output is **a distribution**, not an
+   answer (slide 4). **App**: the system picks with **a decoding rule such as
+   sampling** and **does not always choose the most probable token** (slides
+   52, 63). The randomness is **an application design choice**.
+4. **How does a web search result reach the LLM?** The
+   model **does not access the internet**: it **writes a request**, the app
+   **runs the search**, the **results are pasted into the prompt**, and the
+   model **continues writing from them** (slide 67) - a special case of
+   takeaway 5 (slide 69).
+5. **What happens when a conversation exceeds the context
+   limit?** It is **trimmed or summarized** (slide 66). A full answer adds
+   **why** the limit exists, from slide 38: **the attention pattern's size is
+   the square of the context size**, so doubling the window **quadruples** the
+   cost. And **trimming is not memory** - early detail can vanish
+   silently.
+
+### Additional questions from K32 Chapter 6
+
+- (K32) Slide 3 says an LLM "predicts the next word",
+  slide 4 that it "assigns a probability to all possible next words". Why is
+  the second accurate, and what behaviours does it explain?
+- (K32) In the three-meaning *mole* example, what is
+  *mole*'s embedding after the first step? Which step differentiates the three
+  cases, and how?
+- (K32) Explain why softmax is applied **down columns**
+  rather than across rows when normalising the key-query grid.
+- (K32) Why three matrices rather than one? What does
+  separating keys from values allow?
+- (K32) What is the causal mask, and why would
+  next-token training be meaningless without it?
+- (K32) Attention and the MLP differ fundamentally in
+  **which way information moves**. State the difference and its
+  consequence.
+- (K32) Link the context-squared attention pattern to the
+  context limit in part 3, and draw a practical conclusion.
+- (K32) Read slide 55's learned-versus-computed table.
+  Which three things does it explain at once?
+- (K32) Why does a ChatGPT reply seem to type itself out?
+  Is that a cosmetic effect or an architectural consequence?
+- (K32) Use takeaway 5 as a reasoning rule for any new
+  chat-app feature.
+- (K32) Where did Chapter 5 stop in building the
+  Transformer, and what exactly does Chapter 6 add? Name at least three
+  components.
+- (K32) Which four properties does the
+  writer-in-a-room analogy encode at once?

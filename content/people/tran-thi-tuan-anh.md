@@ -3,7 +3,7 @@ type: person
 title: "Trần Thị Tuấn Anh"
 tags: [instructor]
 created: 2026-08-22
-updated: 2026-09-27
+updated: 2026-09-28
 status: complete
 ---
 
@@ -90,3 +90,15 @@ one real individual, not content that can diverge by cohort.</span>
   but from another university's course (slide 1 states so), and the first
   K32 chapter shipped with **no code or practice data at all**, and no
   exercises or discussion questions either.</span>
+- [[chapter06-large-language-models]] - chương mô hình ngôn ngữ lớn 71 slide
+  (K32, 2026), soạn ngày 2026-09-28. Giảng viên quay lại thói quen **ra câu
+  hỏi ôn tập trên slide** (5 câu, slide 70) sau khi Chapter 5 không có câu
+  nào, nhưng vẫn **không kèm file mã hay dữ liệu**. Chương này xuất hiện
+  **sau khi K32 đã được xác nhận hết lý thuyết ở Chapter 5**, và nội dung của
+  nó khớp với buổi chuyên gia chia sẻ trong kế hoạch.
+  <br><span class="en">[[chapter06-large-language-models]] - the 71-slide
+  large language models chapter (K32, 2026), authored on 2026-09-28. The
+  instructor returns to **printing review questions on a slide** (five, slide
+  70) after Chapter 5 carried none, but still ships **no code or data**. It
+  appeared **after K32 had been confirmed finished at Chapter 5**, and its
+  content matches the planned expert-talk session.</span>

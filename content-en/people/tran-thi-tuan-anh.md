@@ -3,7 +3,7 @@ type: person
 title: "Trần Thị Tuấn Anh"
 tags: [instructor]
 created: 2026-08-22
-updated: 2026-09-27
+updated: 2026-09-28
 status: complete
 ---
 
@@ -56,3 +56,9 @@ one real individual, not content that can diverge by cohort.
   but from another university's course (slide 1 states so), and the first
   K32 chapter shipped with **no code or practice data at all**, and no
   exercises or discussion questions either.
+- [[chapter06-large-language-models]] - the 71-slide
+  large language models chapter (K32, 2026), authored on 2026-09-28. The
+  instructor returns to **printing review questions on a slide** (five, slide
+  70) after Chapter 5 carried none, but still ships **no code or data**. It
+  appeared **after K32 had been confirmed finished at Chapter 5**, and its
+  content matches the planned expert-talk session.

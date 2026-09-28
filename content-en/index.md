@@ -17,8 +17,8 @@ Instructor: [[tran-thi-tuan-anh]].
 
 This wiki tracks two fully separated cohorts (see
 CLAUDE.md, "Tách cụm K31/K32"): K31 (2025, all 8 chapters already in
-`raw/`) and K32 (2026, the current cohort, complete at 5/5 chapters - the
-theory is finished).
+`raw/`) and K32 (2026, the current cohort, 6 chapters as of
+2026-09-28).
 
 ### K31 (2025) - 8 Chapters
 
@@ -33,10 +33,11 @@ theory is finished).
 
 ### K32 (2026 - Current Cohort)
 
-The wiki holds all 5 K32 chapters (Chapters 1-5) -
-**this is the entire theory component of the 2026 cohort; there is no
-Chapter 6-8**. After Chapter 5 exactly two sessions remain: an expert talk
-on machine learning/deep learning, and the group presentations.
+The wiki holds 6 K32 chapters (Chapters 1-6). Chapter 5
+was recorded as the final theory chapter, but **a Chapter 6 on large language
+models appeared in `raw/` on 2026-09-28** - its content and depth match the
+planned **expert-talk session**, and the instructor authored it herself. The
+group presentations follow.
 
 - **Chapter 1** - the 5 V's, a working definition,
   5 types of analytics (adding Causal), the 7-condition checklist.
@@ -74,6 +75,20 @@ on machine learning/deep learning, and the group presentations.
   textbooks (slide 1 says so), and the first K32 chapter with **no code or
   data files at all** - the `Chapter05/` folder holds exactly one
   PDF.
+
+- **Chapter 6** ("Large Language Models", 71 slides in
+  **3 parts**) - part 1 on LLMs and attention (an LLM as a next-token
+  predictor **assigning a probability to the whole vocabulary**; parameters
+  as where "large" lives; the three-meaning *mole* example; queries, keys and
+  values; softmax down columns; **the attention pattern sized as the square
+  of the context**); part 2 on the six steps of a decoder-only Transformer
+  (**the causal mask**, multiple heads and residual connections, the
+  per-position MLP, key-value caching, the **learned-versus-computed**
+  table); part 3 on **`ChatGPT = LLM + wrapper`** (system prompt, a history
+  re-pasted every turn so the model **never "remembers"**, tools, memory,
+  safety checks, the context limit). It **resumes exactly where Chapter 5
+  stopped**. It carries **5 instructor review questions** (slide 70) and **no
+  code or data files**.
 
 ## Exam prep
 
