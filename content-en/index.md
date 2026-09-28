@@ -4,7 +4,7 @@ type: overview
 title: "Course Map"
 tags: [overview]
 created: 2026-08-22
-updated: 2026-09-27
+updated: 2026-09-28
 ---
 
 ## The course
@@ -92,6 +92,9 @@ page.
   **📄 Full slide walkthrough** and **🔎 Concept deep-dives** (every
   concept page's complete content, nothing condensed). A uniform
   `K31 ·`/`K32 ·` prefix stays on every tab (K31 Ch.1-8 + K32 Ch.1-5
-  separate, no cross-cluster links). The "All chapters" tab groups
-  content into cross-chapter thematic clusters for an overview, and the
-  "Self-test" tab has exam questions with suggested answers.
+  separate, no cross-cluster links). Two tabs, "K31 · All chapters" and
+  "K32 · All chapters", group each cohort's concepts into cross-chapter
+  thematic clusters for an overview - every concept there is a
+  default-closed card that expands into its detail plus a pointer to the
+  chapter tab holding the full text. The "Self-test" tab has exam questions
+  with suggested answers.

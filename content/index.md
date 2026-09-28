@@ -5,7 +5,7 @@ title: "Bản đồ môn học"
 title_en: "Course Map"
 tags: [overview]
 created: 2026-08-22
-updated: 2026-09-27
+updated: 2026-09-28
 ---
 
 ## Môn học - <span class="en">The course</span>
@@ -135,15 +135,20 @@ page.</span>
   chương) và **🔎 Khái niệm chi tiết** (toàn bộ nội dung từng trang
   concept - định nghĩa, công thức, ví dụ Python, không rút gọn). Tiền tố
   `K31 ·`/`K32 ·` thống nhất trên mọi tab (K31 Ch.1-8 + K32 Ch.1-5 riêng,
-  không link chéo cụm). Tab "Tất cả chương" gộp theo cụm chủ đề xuyên
-  chương để nhìn tổng quan, và tab "Tự test" có câu hỏi ôn thi kèm đáp án
-  gợi ý.
+  không link chéo cụm). Hai tab "K31 · Tất cả chương" và "K32 · Tất cả
+  chương" gộp khái niệm của từng khóa theo cụm chủ đề xuyên chương để nhìn
+  tổng quan - mỗi khái niệm ở đây là một thẻ mặc định đóng, bấm vào là bung
+  ra nội dung chi tiết kèm dòng trỏ về tab chương chứa toàn văn. Tab "Tự
+  test" có câu hỏi ôn thi kèm đáp án gợi ý.
   <br><span class="en">Interactive bilingual Mindmap Artifact:
   [claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d](https://claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d)
   - each chapter tab displays full-width, with 2 default-open groups:
   **📄 Full slide walkthrough** and **🔎 Concept deep-dives** (every
   concept page's complete content, nothing condensed). A uniform
   `K31 ·`/`K32 ·` prefix stays on every tab (K31 Ch.1-8 + K32 Ch.1-5
-  separate, no cross-cluster links). The "All chapters" tab groups
-  content into cross-chapter thematic clusters for an overview, and the
-  "Self-test" tab has exam questions with suggested answers.</span>
+  separate, no cross-cluster links). Two tabs, "K31 · All chapters" and
+  "K32 · All chapters", group each cohort's concepts into cross-chapter
+  thematic clusters for an overview - every concept there is a
+  default-closed card that expands into its detail plus a pointer to the
+  chapter tab holding the full text. The "Self-test" tab has exam questions
+  with suggested answers.</span>
