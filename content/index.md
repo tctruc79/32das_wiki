@@ -138,8 +138,10 @@ page.</span>
   không link chéo cụm). Hai tab "K31 · Tất cả chương" và "K32 · Tất cả
   chương" gộp khái niệm của từng khóa theo cụm chủ đề xuyên chương để nhìn
   tổng quan - mỗi khái niệm ở đây là một thẻ mặc định đóng, bấm vào là bung
-  ra nội dung chi tiết kèm dòng trỏ về tab chương chứa toàn văn. Tab "Tự
-  test" có câu hỏi ôn thi kèm đáp án gợi ý.
+  ra 3 phần: câu định nghĩa, mục "Tóm tắt nhanh", rồi mục "Toàn văn" chép
+  nguyên vẹn thẻ khái niệm tương ứng trong tab chương, nên học chi tiết
+  được mà không cần rời tab tổng hợp. Tab "Tự test" có câu hỏi ôn thi kèm
+  đáp án gợi ý.
   <br><span class="en">Interactive bilingual Mindmap Artifact:
   [claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d](https://claude.ai/code/artifact/b8658df9-a364-400c-9505-144a96fd639d)
   - each chapter tab displays full-width, with 2 default-open groups:
@@ -149,6 +151,8 @@ page.</span>
   separate, no cross-cluster links). Two tabs, "K31 · All chapters" and
   "K32 · All chapters", group each cohort's concepts into cross-chapter
   thematic clusters for an overview - every concept there is a
-  default-closed card that expands into its detail plus a pointer to the
-  chapter tab holding the full text. The "Self-test" tab has exam questions
+  default-closed card that expands into three parts: a definition, a "Quick
+  summary" section, and a "Full text" section reproducing the matching
+  concept card from its chapter tab verbatim, so the detail is studiable
+  without leaving the synthesis tab. The "Self-test" tab has exam questions
   with suggested answers.</span>

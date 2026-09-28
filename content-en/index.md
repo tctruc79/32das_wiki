@@ -95,6 +95,8 @@ page.
   separate, no cross-cluster links). Two tabs, "K31 · All chapters" and
   "K32 · All chapters", group each cohort's concepts into cross-chapter
   thematic clusters for an overview - every concept there is a
-  default-closed card that expands into its detail plus a pointer to the
-  chapter tab holding the full text. The "Self-test" tab has exam questions
+  default-closed card that expands into three parts: a definition, a "Quick
+  summary" section, and a "Full text" section reproducing the matching
+  concept card from its chapter tab verbatim, so the detail is studiable
+  without leaving the synthesis tab. The "Self-test" tab has exam questions
   with suggested answers.
